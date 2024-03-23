@@ -1,0 +1,39 @@
+{
+  "name": "@viaz/types",
+  "version": "0.0.2-beta.3",
+  "description": "viaz types",
+  "main": "index.ts",
+  "module": "index.ts",
+  "types": "index.ts",
+  "exports": {
+    ".": {
+      "default": "index.ts",
+      "require": "index.ts",
+      "module": "index.ts"
+    }
+  },
+  "files": [
+    "index.ts",
+    "global.ts",
+    "shVz",
+    "components",
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@viaz/constants": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.19"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

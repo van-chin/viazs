@@ -1,0 +1,25 @@
+{
+  "name": "@viaz/utils",
+  "version": "0.0.2-beta.3",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.19"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@viaz/constants": "workspace:*",
+    "@viaz/enums": "workspace:*",
+    "@viaz/hooks": "workspace:*",
+    "@viaz/types": "workspace:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

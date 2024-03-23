@@ -1,0 +1,7497 @@
+{
+  "form": [
+    {
+      "label": "表单标题",
+      "field": "title",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入表单标题",
+          "allowClear": true
+        }
+      }
+    },
+    {
+      "label": "表单布局",
+      "field": "layout",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "horizontal",
+              "label": "水平"
+            },
+            {
+              "value": "vertical",
+              "label": "垂直"
+            },
+            {
+              "value": "inline",
+              "label": "内联"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "标签的文本对齐方式",
+      "field": "labelAlign",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "left",
+              "label": "左对齐"
+            },
+            {
+              "value": "right",
+              "label": "右对齐"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "label 标签布局",
+      "field": "labelCol.style.width",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "tooltip": {
+        "title": "表单域 model 字段，在使用 validate、resetFields 方法的情况下，该属性是必填的。修改时会同步重置验证规则为[]"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入额外的提示信息"
+        }
+      }
+    },
+    {
+      "label": "额外的提示信息",
+      "field": "extra",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "tooltip": {
+        "title": "表单域 model 字段，在使用 validate、resetFields 方法的情况下，该属性是必填的。修改时会同步重置验证规则为[]"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入额外的提示信息"
+        }
+      }
+    },
+    {
+      "label": "是否展示冒号",
+      "field": "colon",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否展示标签",
+      "field": "labelShow",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    }
+  ],
+  "form-item": [
+    {
+      "label": "标签",
+      "field": "label",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入标签"
+        }
+      }
+    },
+    {
+      "label": "model字段",
+      "field": "name",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入model字段"
+        }
+      },
+      "required": true,
+      "tooltip": {
+        "title": "表单域 model 字段，在使用 validate、resetFields 方法的情况下，该属性是必填的。修改时会同步重置验证规则为[]"
+      }
+    },
+    {
+      "label": "提示信息",
+      "field": "tooltip",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入提示信息",
+          "allowClear": true
+        }
+      }
+    },
+    {
+      "label": "额外的提示信息",
+      "field": "extra",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入额外的提示信息"
+        }
+      }
+    },
+    {
+      "label": "是否展示冒号",
+      "field": "colon",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "展示状态",
+      "field": "displayState",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "tooltip": {
+        "title": "控制组件的展示状态，关闭不会展示，但会保留字段"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "校验规则",
+      "field": "rules",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "tooltip": {
+        "title": "Form 组件提供了表单验证的功能，只需要通过 rules 属性传入约定的验证规则，并将 FormItem 的 name 属性设置为需校验的字段名即可。校验规则参见 async-validator"
+      },
+      "component": {
+        "name": "VzDesignerCustomizationRules",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否必填",
+      "field": "required",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    }
+  ],
+  "input": [
+    {
+      "label": "占位提示",
+      "field": "placeholder",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "默认值",
+      "field": "defaultValue",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 默认内容"
+        }
+      }
+    },
+    {
+      "label": "最大长度",
+      "field": "maxlength",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入最大长度"
+        }
+      }
+    },
+    {
+      "label": "前置标签",
+      "field": "addonBefore",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入前置标签"
+        }
+      }
+    },
+    {
+      "label": "后置标签",
+      "field": "addonAfter",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后置标签"
+        }
+      }
+    },
+    {
+      "label": "前缀图标",
+      "field": "prefix",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 前缀图标 暂时只支持字符串"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后缀"
+        }
+      }
+    },
+    {
+      "label": "后缀图标",
+      "field": "suffix",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 后缀图标 暂时只支持字符串"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后缀"
+        }
+      }
+    },
+    {
+      "label": "类型",
+      "field": "type",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "声明 input 类型，同原生 input 标签的 type 属性，见：MDN(请直接使用 <a-textarea /> 代替 type=\"textarea\")。"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 输入框的类型"
+        }
+      }
+    },
+    {
+      "label": "输入框的 id",
+      "field": "id",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 输入框的id"
+        }
+      }
+    },
+    {
+      "label": "是否有边框",
+      "field": "bordered",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "允许清除内容",
+      "field": "allowClear",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "字数提示",
+      "field": "showCount",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "是否禁用",
+      "field": "disabled",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "尺寸",
+      "field": "size",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "组件大小。注：标准表单内的输入框大小限制为 middle。可选 large middle small"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "",
+              "label": "默认"
+            },
+            {
+              "value": "large",
+              "label": "大"
+            },
+            {
+              "value": "middle",
+              "label": "中"
+            },
+            {
+              "value": "small",
+              "label": "小"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "校验状态",
+      "field": "status",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置校验状态。注：一般情况无需设置,由验证规则自动生成。"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": null,
+              "label": "无"
+            },
+            {
+              "value": "error",
+              "label": "错误"
+            },
+            {
+              "value": "warning",
+              "label": "警告"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "事件",
+      "field": "events",
+      "tooltip": {
+        "title": "组件的事件，渲染组件可以进行响应"
+      },
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "VzDesignerCustomizationEvents",
+        "vModelField": "value",
+        "props": {
+          "events": [
+            {
+              "name": "change",
+              "description": "输入框内容变化时的回调",
+              "callback": "function(e)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "pressEnter",
+              "description": "按下回车的回调",
+              "callback": "function(e)",
+              "arguments": ["e"]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "textarea": [
+    {
+      "label": "占位提示",
+      "field": "placeholder",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "默认值",
+      "field": "defaultValue",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 默认内容"
+        }
+      }
+    },
+    {
+      "label": "最大长度",
+      "field": "maxlength",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入最大长度"
+        }
+      }
+    },
+    {
+      "label": "前置标签",
+      "field": "addonBefore",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入前置标签"
+        }
+      }
+    },
+    {
+      "label": "后置标签",
+      "field": "addonAfter",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后置标签"
+        }
+      }
+    },
+    {
+      "label": "前缀图标",
+      "field": "prefix",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 前缀图标 暂时只支持字符串"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后缀"
+        }
+      }
+    },
+    {
+      "label": "后缀图标",
+      "field": "suffix",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 后缀图标 暂时只支持字符串"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后缀"
+        }
+      }
+    },
+    {
+      "label": "类型",
+      "field": "type",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "声明 input 类型，同原生 input 标签的 type 属性，见：MDN(请直接使用 <a-textarea /> 代替 type=\"textarea\")。"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 输入框的类型"
+        }
+      }
+    },
+    {
+      "label": "输入框的 id",
+      "field": "id",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 输入框的id"
+        }
+      }
+    },
+    {
+      "label": "是否有边框",
+      "field": "bordered",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "允许清除内容",
+      "field": "allowClear",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "字数提示",
+      "field": "showCount",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "是否禁用",
+      "field": "disabled",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "尺寸",
+      "field": "size",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "组件大小。注：标准表单内的输入框大小限制为 middle。可选 large middle small"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "",
+              "label": "默认"
+            },
+            {
+              "value": "large",
+              "label": "大"
+            },
+            {
+              "value": "middle",
+              "label": "中"
+            },
+            {
+              "value": "small",
+              "label": "小"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "校验状态",
+      "field": "status",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置校验状态。注：一般情况无需设置,由验证规则自动生成。"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": null,
+              "label": "无"
+            },
+            {
+              "value": "error",
+              "label": "错误"
+            },
+            {
+              "value": "warning",
+              "label": "警告"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "事件",
+      "field": "events",
+      "tooltip": {
+        "title": "组件的事件，渲染组件可以进行响应"
+      },
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "VzDesignerCustomizationEvents",
+        "vModelField": "value",
+        "props": {
+          "events": [
+            {
+              "name": "change",
+              "description": "输入框内容变化时的回调",
+              "callback": "function(e)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "pressEnter",
+              "description": "按下回车的回调xxxxx",
+              "callback": "function(e)",
+              "arguments": ["e"]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "input-number": [
+    {
+      "label": "占位提示",
+      "field": "placeholder",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "默认值",
+      "field": "defaultValue",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 默认内容"
+        }
+      }
+    },
+    {
+      "label": "最小值",
+      "field": "min",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 最小值"
+        }
+      }
+    },
+    {
+      "label": "最大值",
+      "field": "max",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 最大值"
+        }
+      }
+    },
+    {
+      "label": "步进",
+      "field": "step",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "增加减少的步进，可以为小数"
+      },
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 步进"
+        }
+      }
+    },
+    {
+      "label": "小数点",
+      "field": "decimalSeparator",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "小数点"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 小数点"
+        }
+      }
+    },
+    {
+      "label": "数值精度",
+      "field": "precision",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "增加减少的步进，可以为小数"
+      },
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 数值精度"
+        }
+      }
+    },
+    {
+      "label": "前置标签",
+      "field": "addonBefore",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入前置标签"
+        }
+      }
+    },
+    {
+      "label": "后置标签",
+      "field": "addonAfter",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后置标签"
+        }
+      }
+    },
+    {
+      "label": "前缀图标",
+      "field": "prefix",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 前缀图标 暂时只支持字符串"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后缀"
+        }
+      }
+    },
+    {
+      "label": "输入框的 id",
+      "field": "id",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 输入框的id"
+        }
+      }
+    },
+    {
+      "label": "格式化",
+      "field": "formatter",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "指定输入框展示值的格式。 为函数类型"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 "
+        }
+      }
+    },
+    {
+      "label": "解析器",
+      "field": "parser",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "指定从 formatter 里转换回数字的方式，和 formatter 搭配使用。为函数类型"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 "
+        }
+      }
+    },
+    {
+      "label": "增减按钮",
+      "field": "controls",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否显示 右侧的增减按钮。"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "快捷键行为",
+      "field": "keyboard",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否启用键盘快捷行为。上下键可以调整数字内容"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "字符值模式",
+      "field": "stringMode",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "字符值模式，开启后支持高精度小数。同时 change 事件将返回 string 类型"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "自动获取焦点",
+      "field": "autofocus",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否有边框",
+      "field": "bordered",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "字数提示",
+      "field": "showCount",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "是否禁用",
+      "field": "disabled",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "尺寸",
+      "field": "size",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "组件大小。注：标准表单内的输入框大小限制为 middle。可选 large middle small"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "",
+              "label": "默认"
+            },
+            {
+              "value": "large",
+              "label": "大"
+            },
+            {
+              "value": "middle",
+              "label": "中"
+            },
+            {
+              "value": "small",
+              "label": "小"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "校验状态",
+      "field": "status",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置校验状态。注：一般情况无需设置,由验证规则自动生成。"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": null,
+              "label": "无"
+            },
+            {
+              "value": "error",
+              "label": "错误"
+            },
+            {
+              "value": "warning",
+              "label": "警告"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "CLASS",
+      "field": "class",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 组件样式类名"
+        }
+      }
+    },
+    {
+      "label": "事件",
+      "field": "events",
+      "tooltip": {
+        "title": "组件的事件，渲染组件可以进行响应"
+      },
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "VzDesignerCustomizationEvents",
+        "vModelField": "value",
+        "props": {
+          "events": [
+            {
+              "name": "change",
+              "description": "输入框内容变化时的回调",
+              "callback": "function(e)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "pressEnter",
+              "description": "按下回车的回调",
+              "callback": "function(e)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "step",
+              "description": "点击上下箭头的回调",
+              "callback": "function(value: number, info: { offset: number, type: 'up' | 'down' }) => void",
+              "arguments": ["e"]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "input-password": [
+    {
+      "label": "占位提示",
+      "field": "placeholder",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "默认值",
+      "field": "defaultValue",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 默认内容"
+        }
+      }
+    },
+    {
+      "label": "最大长度",
+      "field": "maxlength",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入最大长度"
+        }
+      }
+    },
+    {
+      "label": "前置标签",
+      "field": "addonBefore",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入前置标签"
+        }
+      }
+    },
+    {
+      "label": "后置标签",
+      "field": "addonAfter",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后置标签"
+        }
+      }
+    },
+    {
+      "label": "前缀图标",
+      "field": "prefix",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 前缀图标 暂时只支持字符串"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后缀"
+        }
+      }
+    },
+    {
+      "label": "后缀图标",
+      "field": "suffix",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 后缀图标 暂时只支持字符串"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后缀"
+        }
+      }
+    },
+    {
+      "label": "类型",
+      "field": "type",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "声明 input 类型，同原生 input 标签的 type 属性，见：MDN(请直接使用 <a-textarea /> 代替 type=\"textarea\")。"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 输入框的类型"
+        }
+      }
+    },
+    {
+      "label": "输入框的 id",
+      "field": "id",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 输入框的id"
+        }
+      }
+    },
+    {
+      "label": "密码显隐",
+      "field": "visibilityToggle",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否显示切换按钮或者控制密码显隐"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "密码是否可见",
+      "field": "visible",
+      "visibilityToggler": true,
+      "visible": false,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否有边框",
+      "field": "bordered",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "允许清除内容",
+      "field": "allowClear",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "字数提示",
+      "field": "showCount",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否禁用",
+      "field": "disabled",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "尺寸",
+      "field": "size",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "组件大小。注：标准表单内的输入框大小限制为 middle。可选 large middle small"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "",
+              "label": "默认"
+            },
+            {
+              "value": "large",
+              "label": "大"
+            },
+            {
+              "value": "middle",
+              "label": "中"
+            },
+            {
+              "value": "small",
+              "label": "小"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "校验状态",
+      "field": "status",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置校验状态。注：一般情况无需设置,由验证规则自动生成。"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": null,
+              "label": "无"
+            },
+            {
+              "value": "error",
+              "label": "错误"
+            },
+            {
+              "value": "warning",
+              "label": "警告"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "事件",
+      "field": "events",
+      "tooltip": {
+        "title": "组件的事件，渲染组件可以进行响应"
+      },
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "VzDesignerCustomizationEvents",
+        "vModelField": "value",
+        "props": {
+          "events": [
+            {
+              "name": "change",
+              "description": "输入框内容变化时的回调",
+              "callback": "function(e)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "pressEnter",
+              "description": "按下回车的回调",
+              "callback": "function(e)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "focus",
+              "description": "获得焦点时回调",
+              "callback": "function(value: string)",
+              "arguments": ["value"]
+            },
+            {
+              "name": "blur",
+              "description": "失去焦点时的回调",
+              "callback": "function(e)",
+              "arguments": ["e"]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "select": [
+    {
+      "label": "占位提示",
+      "field": "placeholder",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "默认值",
+      "field": "defaultValue",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 默认内容"
+        }
+      }
+    },
+    {
+      "label": "最大长度",
+      "field": "maxlength",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入最大长度"
+        }
+      }
+    },
+    {
+      "label": "前置标签",
+      "field": "addonBefore",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入前置标签"
+        }
+      }
+    },
+    {
+      "label": "后置标签",
+      "field": "addonAfter",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后置标签"
+        }
+      }
+    },
+    {
+      "label": "前缀图标",
+      "field": "prefix",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 前缀图标 暂时只支持字符串"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后缀"
+        }
+      }
+    },
+    {
+      "label": "后缀图标",
+      "field": "suffix",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 后缀图标 暂时只支持字符串"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后缀"
+        }
+      }
+    },
+    {
+      "label": "类型",
+      "field": "type",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "声明 input 类型，同原生 input 标签的 type 属性，见：MDN(请直接使用 <a-textarea /> 代替 type=\"textarea\")。"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 输入框的类型"
+        }
+      }
+    },
+    {
+      "label": "输入框的 id",
+      "field": "id",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 输入框的id"
+        }
+      }
+    },
+    {
+      "label": "是否有边框",
+      "field": "bordered",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "允许清除内容",
+      "field": "allowClear",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "自动获取焦点",
+      "field": "autofocus",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "默认展开",
+      "field": "defaultOpen",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否默认展开下拉菜单"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "下拉菜单className",
+      "field": "popupClassName",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "下拉菜单的 className 属性"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入 下拉菜单className"
+        }
+      }
+    },
+    {
+      "label": "是否默认高亮第一个选项",
+      "field": "defaultActiveFirstOption",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否默认高亮第一个选项"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "下拉菜单和选择器同宽",
+      "field": "dropdownMatchSelectWidth",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "下拉菜单和选择器同宽。默认将设置 min-width，当值小于选择框宽度时会被忽略。false 时会关闭虚拟滚动，暂时不支持数值设置"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "菜单自定义样式",
+      "field": "dropdownMenuStyle",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "dropdown 菜单自定义样式"
+      },
+      "component": {
+        "name": "ATextarea",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入 dropdown 菜单自定义样式"
+        }
+      }
+    },
+    {
+      "label": "下拉菜单的 style 属性",
+      "field": "dropdownStyle",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "下拉菜单的 style 属性"
+      },
+      "component": {
+        "name": "ATextarea",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入 dropdown 下拉菜单的 style 属性"
+        }
+      }
+    },
+    {
+      "label": "自定义节点",
+      "field": "fieldNames",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "自定义节点 label、value、options 的字段，默认 { label: label, value: value, options: options }"
+      },
+      "component": {
+        "name": "VzDesignerCustomizationFieldNames",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 dropdown 下拉菜单的 style 属性"
+        }
+      }
+    },
+    {
+      "label": "数据",
+      "field": "options",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "custom",
+      "tooltip": {
+        "title": "options 数据，如果设置则不需要手动构造 selectOption 节点"
+      },
+      "component": {
+        "name": "VzDesignerCustomizationOptions",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "模式",
+      "field": "mode",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 Select 的模式为多选或标签"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "",
+              "label": "默认"
+            },
+            {
+              "value": "multiple",
+              "label": "multiple"
+            },
+            {
+              "value": "tags",
+              "label": "tags"
+            },
+            {
+              "value": "combobox",
+              "label": "combobox"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "最多显示多少个 tag",
+      "field": "maxTagCount",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "最大显示的 tag 文本长度",
+      "field": "maxTagTextLength",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "设置弹窗滚动高度",
+      "field": "listHeight",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+
+    {
+      "label": "下拉小箭头",
+      "field": "showArrow",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否显示下拉小箭头 默认值 单选为 true,多选为 false"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "控制搜索文本",
+      "field": "searchValue",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否显示下拉小箭头 默认值 单选为 true,多选为 false"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "当下拉列表为空时显示的内容",
+      "field": "notFoundContent",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "当下拉列表为空时显示的内容, 暂时只支持字符串内容"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否可搜索",
+      "field": "showSearch",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "配置是否可搜索 默认值 单选为 false,多选为 true"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否根据输入项进行筛选",
+      "field": "filterOption",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否根据输入项进行筛选。当其为一个函数时，会接收 inputValue option 两个参数，当 option 符合筛选条件时，应返回 true，反之则返回 false。暂时只支持boolean"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否在选中项后清空搜索框",
+      "field": "autoClearSearchValue",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否在选中项后清空搜索框，只在 mode 为 multiple 或 tags 时有效。"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否把每个选项的 label 包装到 value 中",
+      "field": "labelInValue",
+      "visibilityToggler": true,
+      "visible": false,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否把每个选项的 label 包装到 value 中，会把 Select 的 value 类型从 string 变为 {key: string, label: vNodes, originLabel: any} 的格式, originLabel（3.1） 保持原始类型，如果通过 a-select-option children 构造的节点，该值是是个函数（即 a-select-option 的默认插槽）"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "选择框弹出的位置",
+      "field": "placement",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "选择框弹出的位置。可选 bottomLeft bottomRight topLeft topRight"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "bottomLeft",
+              "label": "左下"
+            },
+            {
+              "value": "bottomRight",
+              "label": "右下"
+            },
+            {
+              "value": "topLeft",
+              "label": "左上"
+            },
+            {
+              "value": "topRight",
+              "label": "右上"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "虚拟滚动",
+      "field": "virtual",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 false 时关闭虚拟滚动"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否禁用",
+      "field": "disabled",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "尺寸",
+      "field": "size",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "组件大小。注：标准表单内的输入框大小限制为 middle。可选 large middle small"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "",
+              "label": "默认"
+            },
+            {
+              "value": "large",
+              "label": "大"
+            },
+            {
+              "value": "middle",
+              "label": "中"
+            },
+            {
+              "value": "small",
+              "label": "小"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "校验状态",
+      "field": "status",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置校验状态。注：一般情况无需设置,由验证规则自动生成。"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": null,
+              "label": "无"
+            },
+            {
+              "value": "error",
+              "label": "错误"
+            },
+            {
+              "value": "warning",
+              "label": "警告"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "CLASS",
+      "field": "class",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 组件样式类名"
+        }
+      }
+    },
+    {
+      "label": "事件",
+      "field": "events",
+      "tooltip": {
+        "title": "组件的事件，渲染组件可以进行响应"
+      },
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "VzDesignerCustomizationEvents",
+        "vModelField": "value",
+        "props": {
+          "events": [
+            {
+              "name": "change",
+              "description": "选中 option，或 input 的 value 变化（combobox 模式下）时，调用此函数",
+              "callback": "function(value, option:Option | Array<Option>)",
+              "arguments": ["value", "option"]
+            },
+            {
+              "name": "deselect",
+              "description": "取消选中时调用，参数为选中项的 value (或 key) 值，仅在 multiple 或 tags 模式下生效",
+              "callback": "function(value，option:Option)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "dropdownVisibleChange",
+              "description": "展开下拉菜单的回调",
+              "callback": "function(open: boolean)",
+              "arguments": ["open"]
+            },
+            {
+              "name": "inputKeyDown",
+              "description": "键盘按下时回调",
+              "callback": "function(e: Event)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "mouseenter",
+              "description": "鼠标移入时回调",
+              "callback": "function(e: Event)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "mouseleave",
+              "description": "鼠标移出时回调",
+              "callback": "function(e: Event)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "popupScroll",
+              "description": "下拉列表滚动时的回调",
+              "callback": "function(e: Event)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "search",
+              "description": "文本框值变化时回调",
+              "callback": "function(e: Event)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "select",
+              "description": "被选中时调用，参数为选中项的 value (或 key) 值",
+              "callback": "function(value, option:Option)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "focus",
+              "description": "获得焦点时回调",
+              "callback": "function(value: string)",
+              "arguments": ["value"]
+            },
+            {
+              "name": "blur",
+              "description": "失去焦点时的回调",
+              "callback": "function(e)",
+              "arguments": ["e"]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "vz-select": [
+    {
+      "label": "占位提示",
+      "field": "placeholder",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "默认值",
+      "field": "defaultValue",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 默认内容"
+        }
+      }
+    },
+    {
+      "label": "最大长度",
+      "field": "maxlength",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入最大长度"
+        }
+      }
+    },
+    {
+      "label": "前置标签",
+      "field": "addonBefore",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入前置标签"
+        }
+      }
+    },
+    {
+      "label": "后置标签",
+      "field": "addonAfter",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后置标签"
+        }
+      }
+    },
+    {
+      "label": "前缀图标",
+      "field": "prefix",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 前缀图标 暂时只支持字符串"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后缀"
+        }
+      }
+    },
+    {
+      "label": "后缀图标",
+      "field": "suffix",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 后缀图标 暂时只支持字符串"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后缀"
+        }
+      }
+    },
+    {
+      "label": "类型",
+      "field": "type",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "声明 input 类型，同原生 input 标签的 type 属性，见：MDN(请直接使用 <a-textarea /> 代替 type=\"textarea\")。"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 输入框的类型"
+        }
+      }
+    },
+    {
+      "label": "输入框的 id",
+      "field": "id",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 输入框的id"
+        }
+      }
+    },
+    {
+      "label": "是否有边框",
+      "field": "bordered",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "允许清除内容",
+      "field": "allowClear",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "自动获取焦点",
+      "field": "autofocus",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "默认展开",
+      "field": "defaultOpen",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否默认展开下拉菜单"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "下拉菜单className",
+      "field": "popupClassName",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "下拉菜单的 className 属性"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入 下拉菜单className"
+        }
+      }
+    },
+    {
+      "label": "是否默认高亮第一个选项",
+      "field": "defaultActiveFirstOption",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否默认高亮第一个选项"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "下拉菜单和选择器同宽",
+      "field": "dropdownMatchSelectWidth",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "下拉菜单和选择器同宽。默认将设置 min-width，当值小于选择框宽度时会被忽略。false 时会关闭虚拟滚动，暂时不支持数值设置"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "菜单自定义样式",
+      "field": "dropdownMenuStyle",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "dropdown 菜单自定义样式"
+      },
+      "component": {
+        "name": "ATextarea",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入 dropdown 菜单自定义样式"
+        }
+      }
+    },
+    {
+      "label": "下拉菜单的 style 属性",
+      "field": "dropdownStyle",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "下拉菜单的 style 属性"
+      },
+      "component": {
+        "name": "ATextarea",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入 dropdown 下拉菜单的 style 属性"
+        }
+      }
+    },
+    {
+      "label": "自定义节点",
+      "field": "fieldNames",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "自定义节点 label、value、options 的字段，默认 { label: label, value: value, options: options }"
+      },
+      "component": {
+        "name": "VzDesignerCustomizationFieldNames",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 dropdown 下拉菜单的 style 属性"
+        }
+      }
+    },
+    {
+      "label": "模式",
+      "field": "mode",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 Select 的模式为多选或标签"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "",
+              "label": "默认"
+            },
+            {
+              "value": "multiple",
+              "label": "multiple"
+            },
+            {
+              "value": "tags",
+              "label": "tags"
+            },
+            {
+              "value": "combobox",
+              "label": "combobox"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "最多显示多少个 tag",
+      "field": "maxTagCount",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "最大显示的 tag 文本长度",
+      "field": "maxTagTextLength",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "设置弹窗滚动高度",
+      "field": "listHeight",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "数据",
+      "field": "options",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "custom",
+      "tooltip": {
+        "title": "options 数据，如果设置则不需要手动构造 selectOption 节点"
+      },
+      "component": {
+        "name": "VzDesignerCustomizationOptions",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "下拉小箭头",
+      "field": "showArrow",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否显示下拉小箭头 默认值 单选为 true,多选为 false"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "控制搜索文本",
+      "field": "searchValue",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否显示下拉小箭头 默认值 单选为 true,多选为 false"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "当下拉列表为空时显示的内容",
+      "field": "notFoundContent",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "当下拉列表为空时显示的内容, 暂时只支持字符串内容"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否可搜索",
+      "field": "showSearch",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "配置是否可搜索 默认值 单选为 false,多选为 true"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否根据输入项进行筛选",
+      "field": "filterOption",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否根据输入项进行筛选。当其为一个函数时，会接收 inputValue option 两个参数，当 option 符合筛选条件时，应返回 true，反之则返回 false。暂时只支持boolean"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否在选中项后清空搜索框",
+      "field": "autoClearSearchValue",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否在选中项后清空搜索框，只在 mode 为 multiple 或 tags 时有效。"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否把每个选项的 label 包装到 value 中",
+      "field": "labelInValue",
+      "visibilityToggler": true,
+      "visible": false,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否把每个选项的 label 包装到 value 中，会把 Select 的 value 类型从 string 变为 {key: string, label: vNodes, originLabel: any} 的格式, originLabel（3.1） 保持原始类型，如果通过 a-select-option children 构造的节点，该值是是个函数（即 a-select-option 的默认插槽）"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "选择框弹出的位置",
+      "field": "placement",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "选择框弹出的位置。可选 bottomLeft bottomRight topLeft topRight"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "bottomLeft",
+              "label": "左下"
+            },
+            {
+              "value": "bottomRight",
+              "label": "右下"
+            },
+            {
+              "value": "topLeft",
+              "label": "左上"
+            },
+            {
+              "value": "topRight",
+              "label": "右上"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "虚拟滚动",
+      "field": "virtual",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 false 时关闭虚拟滚动"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否禁用",
+      "field": "disabled",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "尺寸",
+      "field": "size",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "组件大小。注：标准表单内的输入框大小限制为 middle。可选 large middle small"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "",
+              "label": "默认"
+            },
+            {
+              "value": "large",
+              "label": "大"
+            },
+            {
+              "value": "middle",
+              "label": "中"
+            },
+            {
+              "value": "small",
+              "label": "小"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "校验状态",
+      "field": "status",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置校验状态。注：一般情况无需设置,由验证规则自动生成。"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": null,
+              "label": "无"
+            },
+            {
+              "value": "error",
+              "label": "错误"
+            },
+            {
+              "value": "warning",
+              "label": "警告"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "CLASS",
+      "field": "class",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 组件样式类名"
+        }
+      }
+    },
+    {
+      "label": "事件",
+      "field": "events",
+      "tooltip": {
+        "title": "组件的事件，渲染组件可以进行响应"
+      },
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "VzDesignerCustomizationEvents",
+        "vModelField": "value",
+        "props": {
+          "events": [
+            {
+              "name": "change",
+              "description": "选中 option，或 input 的 value 变化（combobox 模式下）时，调用此函数",
+              "callback": "function(value, option:Option | Array<Option>)",
+              "arguments": ["value", "option"]
+            },
+            {
+              "name": "deselect",
+              "description": "取消选中时调用，参数为选中项的 value (或 key) 值，仅在 multiple 或 tags 模式下生效",
+              "callback": "function(value，option:Option)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "dropdownVisibleChange",
+              "description": "展开下拉菜单的回调",
+              "callback": "function(open: boolean)",
+              "arguments": ["open"]
+            },
+            {
+              "name": "inputKeyDown",
+              "description": "键盘按下时回调",
+              "callback": "function(e: Event)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "mouseenter",
+              "description": "鼠标移入时回调",
+              "callback": "function(e: Event)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "mouseleave",
+              "description": "鼠标移出时回调",
+              "callback": "function(e: Event)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "popupScroll",
+              "description": "下拉列表滚动时的回调",
+              "callback": "function(e: Event)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "search",
+              "description": "文本框值变化时回调",
+              "callback": "function(e: Event)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "select",
+              "description": "被选中时调用，参数为选中项的 value (或 key) 值",
+              "callback": "function(value, option:Option)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "focus",
+              "description": "获得焦点时回调",
+              "callback": "function(value: string)",
+              "arguments": ["value"]
+            },
+            {
+              "name": "blur",
+              "description": "失去焦点时的回调",
+              "callback": "function(e)",
+              "arguments": ["e"]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "vz-list-checkbox-group": [
+    {
+      "label": "占位提示",
+      "field": "placeholder",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "默认值",
+      "field": "defaultValue",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 默认内容"
+        }
+      }
+    },
+    {
+      "label": "最大长度",
+      "field": "maxlength",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入最大长度"
+        }
+      }
+    },
+    {
+      "label": "前置标签",
+      "field": "addonBefore",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入前置标签"
+        }
+      }
+    },
+    {
+      "label": "后置标签",
+      "field": "addonAfter",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后置标签"
+        }
+      }
+    },
+    {
+      "label": "前缀图标",
+      "field": "prefix",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 前缀图标 暂时只支持字符串"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后缀"
+        }
+      }
+    },
+    {
+      "label": "后缀图标",
+      "field": "suffix",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 后缀图标 暂时只支持字符串"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后缀"
+        }
+      }
+    },
+    {
+      "label": "类型",
+      "field": "type",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "声明 input 类型，同原生 input 标签的 type 属性，见：MDN(请直接使用 <a-textarea /> 代替 type=\"textarea\")。"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 输入框的类型"
+        }
+      }
+    },
+    {
+      "label": "输入框的 id",
+      "field": "id",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 输入框的id"
+        }
+      }
+    },
+    {
+      "label": "是否有边框",
+      "field": "bordered",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "允许清除内容",
+      "field": "allowClear",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "自动获取焦点",
+      "field": "autofocus",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "默认展开",
+      "field": "defaultOpen",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否默认展开下拉菜单"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "下拉菜单className",
+      "field": "popupClassName",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "下拉菜单的 className 属性"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入 下拉菜单className"
+        }
+      }
+    },
+    {
+      "label": "是否默认高亮第一个选项",
+      "field": "defaultActiveFirstOption",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否默认高亮第一个选项"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "下拉菜单和选择器同宽",
+      "field": "dropdownMatchSelectWidth",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "下拉菜单和选择器同宽。默认将设置 min-width，当值小于选择框宽度时会被忽略。false 时会关闭虚拟滚动，暂时不支持数值设置"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "菜单自定义样式",
+      "field": "dropdownMenuStyle",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "dropdown 菜单自定义样式"
+      },
+      "component": {
+        "name": "ATextarea",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入 dropdown 菜单自定义样式"
+        }
+      }
+    },
+    {
+      "label": "下拉菜单的 style 属性",
+      "field": "dropdownStyle",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "下拉菜单的 style 属性"
+      },
+      "component": {
+        "name": "ATextarea",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入 dropdown 下拉菜单的 style 属性"
+        }
+      }
+    },
+    {
+      "label": "自定义节点",
+      "field": "fieldNames",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "自定义节点 label、value、options 的字段，默认 { label: label, value: value, options: options }"
+      },
+      "component": {
+        "name": "VzDesignerCustomizationFieldNames",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 dropdown 下拉菜单的 style 属性"
+        }
+      }
+    },
+    {
+      "label": "模式",
+      "field": "mode",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 Select 的模式为多选或标签"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "",
+              "label": "默认"
+            },
+            {
+              "value": "multiple",
+              "label": "multiple"
+            },
+            {
+              "value": "tags",
+              "label": "tags"
+            },
+            {
+              "value": "combobox",
+              "label": "combobox"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "最多显示多少个 tag",
+      "field": "maxTagCount",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "最大显示的 tag 文本长度",
+      "field": "maxTagTextLength",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "设置弹窗滚动高度",
+      "field": "listHeight",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "数据",
+      "field": "options",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "custom",
+      "tooltip": {
+        "title": "options 数据，如果设置则不需要手动构造 selectOption 节点"
+      },
+      "component": {
+        "name": "VzDesignerCustomizationOptions",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "下拉小箭头",
+      "field": "showArrow",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否显示下拉小箭头 默认值 单选为 true,多选为 false"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "控制搜索文本",
+      "field": "searchValue",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否显示下拉小箭头 默认值 单选为 true,多选为 false"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "当下拉列表为空时显示的内容",
+      "field": "notFoundContent",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "当下拉列表为空时显示的内容, 暂时只支持字符串内容"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否可搜索",
+      "field": "showSearch",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "配置是否可搜索 默认值 单选为 false,多选为 true"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否根据输入项进行筛选",
+      "field": "filterOption",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否根据输入项进行筛选。当其为一个函数时，会接收 inputValue option 两个参数，当 option 符合筛选条件时，应返回 true，反之则返回 false。暂时只支持boolean"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否在选中项后清空搜索框",
+      "field": "autoClearSearchValue",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否在选中项后清空搜索框，只在 mode 为 multiple 或 tags 时有效。"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否把每个选项的 label 包装到 value 中",
+      "field": "labelInValue",
+      "visibilityToggler": true,
+      "visible": false,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否把每个选项的 label 包装到 value 中，会把 Select 的 value 类型从 string 变为 {key: string, label: vNodes, originLabel: any} 的格式, originLabel（3.1） 保持原始类型，如果通过 a-select-option children 构造的节点，该值是是个函数（即 a-select-option 的默认插槽）"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "选择框弹出的位置",
+      "field": "placement",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "选择框弹出的位置。可选 bottomLeft bottomRight topLeft topRight"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "bottomLeft",
+              "label": "左下"
+            },
+            {
+              "value": "bottomRight",
+              "label": "右下"
+            },
+            {
+              "value": "topLeft",
+              "label": "左上"
+            },
+            {
+              "value": "topRight",
+              "label": "右上"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "虚拟滚动",
+      "field": "virtual",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 false 时关闭虚拟滚动"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否禁用",
+      "field": "disabled",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "尺寸",
+      "field": "size",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "组件大小。注：标准表单内的输入框大小限制为 middle。可选 large middle small"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "",
+              "label": "默认"
+            },
+            {
+              "value": "large",
+              "label": "大"
+            },
+            {
+              "value": "middle",
+              "label": "中"
+            },
+            {
+              "value": "small",
+              "label": "小"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "校验状态",
+      "field": "status",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置校验状态。注：一般情况无需设置,由验证规则自动生成。"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": null,
+              "label": "无"
+            },
+            {
+              "value": "error",
+              "label": "错误"
+            },
+            {
+              "value": "warning",
+              "label": "警告"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "CLASS",
+      "field": "class",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 组件样式类名"
+        }
+      }
+    },
+    {
+      "label": "事件",
+      "field": "events",
+      "tooltip": {
+        "title": "组件的事件，渲染组件可以进行响应"
+      },
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "VzDesignerCustomizationEvents",
+        "vModelField": "value",
+        "props": {
+          "events": [
+            {
+              "name": "change",
+              "description": "选中 option，或 input 的 value 变化（combobox 模式下）时，调用此函数",
+              "callback": "function(value, option:Option | Array<Option>)",
+              "arguments": ["value", "option"]
+            },
+            {
+              "name": "deselect",
+              "description": "取消选中时调用，参数为选中项的 value (或 key) 值，仅在 multiple 或 tags 模式下生效",
+              "callback": "function(value，option:Option)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "dropdownVisibleChange",
+              "description": "展开下拉菜单的回调",
+              "callback": "function(open: boolean)",
+              "arguments": ["open"]
+            },
+            {
+              "name": "inputKeyDown",
+              "description": "键盘按下时回调",
+              "callback": "function(e: Event)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "mouseenter",
+              "description": "鼠标移入时回调",
+              "callback": "function(e: Event)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "mouseleave",
+              "description": "鼠标移出时回调",
+              "callback": "function(e: Event)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "popupScroll",
+              "description": "下拉列表滚动时的回调",
+              "callback": "function(e: Event)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "search",
+              "description": "文本框值变化时回调",
+              "callback": "function(e: Event)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "select",
+              "description": "被选中时调用，参数为选中项的 value (或 key) 值",
+              "callback": "function(value, option:Option)",
+              "arguments": ["e"]
+            },
+            {
+              "name": "focus",
+              "description": "获得焦点时回调",
+              "callback": "function(value: string)",
+              "arguments": ["value"]
+            },
+            {
+              "name": "blur",
+              "description": "失去焦点时的回调",
+              "callback": "function(e)",
+              "arguments": ["e"]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "cascader": [
+    {
+      "label": "占位提示",
+      "field": "placeholder",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "默认值",
+      "field": "defaultValue",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 默认内容"
+        }
+      }
+    },
+    {
+      "label": "最大长度",
+      "field": "maxlength",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入最大长度"
+        }
+      }
+    },
+    {
+      "label": "前置标签",
+      "field": "addonBefore",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入前置标签"
+        }
+      }
+    },
+    {
+      "label": "后置标签",
+      "field": "addonAfter",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后置标签"
+        }
+      }
+    },
+    {
+      "label": "前缀图标",
+      "field": "prefix",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 前缀图标 暂时只支持字符串"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后缀"
+        }
+      }
+    },
+    {
+      "label": "后缀图标",
+      "field": "suffix",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 后缀图标 暂时只支持字符串"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后缀"
+        }
+      }
+    },
+    {
+      "label": "类型",
+      "field": "type",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "声明 input 类型，同原生 input 标签的 type 属性，见：MDN(请直接使用 <a-textarea /> 代替 type=\"textarea\")。"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 输入框的类型"
+        }
+      }
+    },
+    {
+      "label": "输入框的 id",
+      "field": "id",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 输入框的id"
+        }
+      }
+    },
+    {
+      "label": "是否有边框",
+      "field": "bordered",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "允许清除内容",
+      "field": "allowClear",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "自动获取焦点",
+      "field": "autofocus",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "默认展开",
+      "field": "defaultOpen",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否默认展开下拉菜单"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "自定义浮层类名 popupClassName",
+      "field": "popupClassName",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "下拉菜单的 className 属性"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入 下拉菜单className"
+        }
+      }
+    },
+    {
+      "label": "是否默认高亮第一个选项",
+      "field": "defaultActiveFirstOption",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否默认高亮第一个选项"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "下拉菜单和选择器同宽",
+      "field": "dropdownMatchSelectWidth",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "下拉菜单和选择器同宽。默认将设置 min-width，当值小于选择框宽度时会被忽略。false 时会关闭虚拟滚动，暂时不支持数值设置"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "菜单自定义样式",
+      "field": "dropdownMenuStyle",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "dropdown 菜单自定义样式"
+      },
+      "component": {
+        "name": "ATextarea",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入 dropdown 菜单自定义样式"
+        }
+      }
+    },
+    {
+      "label": "自定义浮层样式",
+      "field": "dropdownStyle",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "自定义浮层样式 style 属性 CSSProperties"
+      },
+      "component": {
+        "name": "ATextarea",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入 dropdown 下拉菜单的 style 属性"
+        }
+      }
+    },
+    {
+      "label": "自定义节点",
+      "field": "fieldNames",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "自定义节点 label、value、options 的字段，默认 { label: label, value: value, options: options }"
+      },
+      "component": {
+        "name": "VzDesignerCustomizationFieldNames",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 dropdown 下拉菜单的 style 属性"
+        }
+      }
+    },
+    {
+      "label": "模式",
+      "field": "mode",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 Select 的模式为多选或标签"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "",
+              "label": "默认"
+            },
+            {
+              "value": "multiple",
+              "label": "multiple"
+            },
+            {
+              "value": "tags",
+              "label": "tags"
+            },
+            {
+              "value": "combobox",
+              "label": "combobox"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "最多显示多少个 tag",
+      "field": "maxTagCount",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "最大显示的 tag 文本长度",
+      "field": "maxTagTextLength",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "设置弹窗滚动高度",
+      "field": "listHeight",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "后缀图标",
+      "field": "suffixIcon",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "后缀图标 暂时只支持字符串"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "数据",
+      "field": "options",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "custom",
+      "tooltip": {
+        "title": "options 数据，如果设置则不需要手动构造 selectOption 节点"
+      },
+      "component": {
+        "name": "VzDesignerCustomizationOptions",
+        "vModelField": "value",
+        "props": {
+          "api": {},
+          "param": {
+            "aaa": "aa"
+          }
+        }
+      }
+    },
+    {
+      "label": "下拉小箭头",
+      "field": "showArrow",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否显示下拉小箭头 默认值 单选为 true,多选为 false"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否可搜索",
+      "field": "showSearch",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "在选择框中显示搜索框 暂时只支持boolean"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "搜索占位",
+      "field": "searchValue",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "搜索占位文本 placeholder"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 搜索占位文本 placeholder"
+        }
+      }
+    },
+    {
+      "label": "当下拉列表为空时显示的内容",
+      "field": "notFoundContent",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "当下拉列表为空时显示的内容, 暂时只支持字符串内容"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否根据输入项进行筛选",
+      "field": "filterOption",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否根据输入项进行筛选。当其为一个函数时，会接收 inputValue option 两个参数，当 option 符合筛选条件时，应返回 true，反之则返回 false。暂时只支持boolean"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否在选中项后清空搜索框",
+      "field": "autoClearSearchValue",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否在选中项后清空搜索框，只在 mode 为 multiple 或 tags 时有效。"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否把每个选项的 label 包装到 value 中",
+      "field": "labelInValue",
+      "visibilityToggler": true,
+      "visible": false,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否把每个选项的 label 包装到 value 中，会把 Select 的 value 类型从 string 变为 {key: string, label: vNodes, originLabel: any} 的格式, originLabel（3.1） 保持原始类型，如果通过 a-select-option children 构造的节点，该值是是个函数（即 a-select-option 的默认插槽）"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "选择框弹出的位置",
+      "field": "placement",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "选择框弹出的位置。可选 bottomLeft | bottomRight | topLeft | topRight | bottomLeft"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "bottomLeft",
+              "label": "左下"
+            },
+            {
+              "value": "bottomRight",
+              "label": "右下"
+            },
+            {
+              "value": "topLeft",
+              "label": "左上"
+            },
+            {
+              "value": "topRight",
+              "label": "右上"
+            },
+            {
+              "value": "bottomLeft",
+              "label": "左下"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "虚拟滚动",
+      "field": "virtual",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 false 时关闭虚拟滚动"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "回填方式",
+      "field": "showCheckedStrategy",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "定义选中项回填的方式。Cascader.SHOW_CHILD: 只显示选中的子节点。Cascader.SHOW_PARENT: 只显示父节点（当父节点下所有子节点都选中时）。"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "SHOW_PARENT",
+              "label": "SHOW_PARENT"
+            },
+            {
+              "value": "SHOW_CHILD",
+              "label": "SHOW_CHILD"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "次级菜单的展开方式",
+      "field": "expandTrigger",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "次级菜单的展开方式 click | hover"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "click",
+              "label": "click"
+            },
+            {
+              "value": "hover",
+              "label": "hover"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "是否多选",
+      "field": "multiple",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "点选即选择",
+      "field": "changeOnSelect",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否禁用",
+      "field": "disabled",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "尺寸",
+      "field": "size",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "组件大小。注：标准表单内的输入框大小限制为 middle。可选 large middle small"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "",
+              "label": "默认"
+            },
+            {
+              "value": "large",
+              "label": "大"
+            },
+            {
+              "value": "middle",
+              "label": "中"
+            },
+            {
+              "value": "small",
+              "label": "小"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "校验状态",
+      "field": "status",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置校验状态。注：一般情况无需设置,由验证规则自动生成。"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": null,
+              "label": "无"
+            },
+            {
+              "value": "error",
+              "label": "错误"
+            },
+            {
+              "value": "warning",
+              "label": "警告"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "CLASS",
+      "field": "class",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 组件样式类名"
+        }
+      }
+    },
+    {
+      "label": "事件",
+      "field": "events",
+      "tooltip": {
+        "title": "组件的事件，渲染组件可以进行响应"
+      },
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "VzDesignerCustomizationEvents",
+        "vModelField": "value",
+        "props": {
+          "events": [
+            {
+              "name": "change",
+              "description": "选择完成后的回调",
+              "callback": "function(value, selectedOptions)",
+              "arguments": ["value", "selectedOptions"]
+            },
+            {
+              "name": "dropdownVisibleChange",
+              "description": "展开下拉菜单的回调",
+              "callback": "function(value: boolean)",
+              "arguments": ["value"]
+            },
+            {
+              "name": "search",
+              "description": "监听搜索，返回输入的值",
+              "callback": "function(value: string)",
+              "arguments": ["value"]
+            },
+            {
+              "name": "focus",
+              "description": "获得焦点时回调",
+              "callback": "function(value: string)",
+              "arguments": ["value"]
+            },
+            {
+              "name": "blur",
+              "description": "失去焦点时的回调",
+              "callback": "function(e)",
+              "arguments": ["e"]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "vz-cascader": [
+    {
+      "label": "占位提示",
+      "field": "placeholder",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "默认值",
+      "field": "defaultValue",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 默认内容"
+        }
+      }
+    },
+    {
+      "label": "最大长度",
+      "field": "maxlength",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入最大长度"
+        }
+      }
+    },
+    {
+      "label": "前置标签",
+      "field": "addonBefore",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入前置标签"
+        }
+      }
+    },
+    {
+      "label": "后置标签",
+      "field": "addonAfter",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后置标签"
+        }
+      }
+    },
+    {
+      "label": "前缀图标",
+      "field": "prefix",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 前缀图标 暂时只支持字符串"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后缀"
+        }
+      }
+    },
+    {
+      "label": "后缀图标",
+      "field": "suffix",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 后缀图标 暂时只支持字符串"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入后缀"
+        }
+      }
+    },
+    {
+      "label": "类型",
+      "field": "type",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "声明 input 类型，同原生 input 标签的 type 属性，见：MDN(请直接使用 <a-textarea /> 代替 type=\"textarea\")。"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 输入框的类型"
+        }
+      }
+    },
+    {
+      "label": "输入框的 id",
+      "field": "id",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 输入框的id"
+        }
+      }
+    },
+    {
+      "label": "是否有边框",
+      "field": "bordered",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "允许清除内容",
+      "field": "allowClear",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "自动获取焦点",
+      "field": "autofocus",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "默认展开",
+      "field": "defaultOpen",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否默认展开下拉菜单"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "自定义浮层类名 popupClassName",
+      "field": "popupClassName",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "下拉菜单的 className 属性"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入 下拉菜单className"
+        }
+      }
+    },
+    {
+      "label": "是否默认高亮第一个选项",
+      "field": "defaultActiveFirstOption",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否默认高亮第一个选项"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "下拉菜单和选择器同宽",
+      "field": "dropdownMatchSelectWidth",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "下拉菜单和选择器同宽。默认将设置 min-width，当值小于选择框宽度时会被忽略。false 时会关闭虚拟滚动，暂时不支持数值设置"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "菜单自定义样式",
+      "field": "dropdownMenuStyle",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "dropdown 菜单自定义样式"
+      },
+      "component": {
+        "name": "ATextarea",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入 dropdown 菜单自定义样式"
+        }
+      }
+    },
+    {
+      "label": "自定义浮层样式",
+      "field": "dropdownStyle",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "自定义浮层样式 style 属性 CSSProperties"
+      },
+      "component": {
+        "name": "ATextarea",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入 dropdown 下拉菜单的 style 属性"
+        }
+      }
+    },
+
+    {
+      "label": "模式",
+      "field": "mode",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 Select 的模式为多选或标签"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "",
+              "label": "默认"
+            },
+            {
+              "value": "multiple",
+              "label": "multiple"
+            },
+            {
+              "value": "tags",
+              "label": "tags"
+            },
+            {
+              "value": "combobox",
+              "label": "combobox"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "最多显示多少个 tag",
+      "field": "maxTagCount",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "最大显示的 tag 文本长度",
+      "field": "maxTagTextLength",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "设置弹窗滚动高度",
+      "field": "listHeight",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "后缀图标",
+      "field": "suffixIcon",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "后缀图标 暂时只支持字符串"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "自定义节点",
+      "field": "fieldNames",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "自定义节点 label、value、options 的字段，默认 { label: label, value: value, options: options }"
+      },
+      "component": {
+        "name": "VzDesignerCustomizationFieldNames",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 dropdown 下拉菜单的 style 属性"
+        }
+      }
+    },
+    {
+      "label": "数据",
+      "field": "options",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "custom",
+      "tooltip": {
+        "title": "options 数据，如果设置则不需要手动构造 selectOption 节点"
+      },
+      "component": {
+        "name": "VzDesignerCustomizationOptions",
+        "vModelField": "value",
+        "props": {
+          "api": {},
+          "param": {}
+        }
+      }
+    },
+    {
+      "label": "下拉小箭头",
+      "field": "showArrow",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否显示下拉小箭头 默认值 单选为 true,多选为 false"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否可搜索",
+      "field": "showSearch",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "在选择框中显示搜索框 暂时只支持boolean"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "搜索占位",
+      "field": "searchValue",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "搜索占位文本 placeholder"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 搜索占位文本 placeholder"
+        }
+      }
+    },
+    {
+      "label": "当下拉列表为空时显示的内容",
+      "field": "notFoundContent",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "当下拉列表为空时显示的内容, 暂时只支持字符串内容"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否根据输入项进行筛选",
+      "field": "filterOption",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否根据输入项进行筛选。当其为一个函数时，会接收 inputValue option 两个参数，当 option 符合筛选条件时，应返回 true，反之则返回 false。暂时只支持boolean"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否在选中项后清空搜索框",
+      "field": "autoClearSearchValue",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否在选中项后清空搜索框，只在 mode 为 multiple 或 tags 时有效。"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否把每个选项的 label 包装到 value 中",
+      "field": "labelInValue",
+      "visibilityToggler": true,
+      "visible": false,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否把每个选项的 label 包装到 value 中，会把 Select 的 value 类型从 string 变为 {key: string, label: vNodes, originLabel: any} 的格式, originLabel（3.1） 保持原始类型，如果通过 a-select-option children 构造的节点，该值是是个函数（即 a-select-option 的默认插槽）"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "选择框弹出的位置",
+      "field": "placement",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "选择框弹出的位置。可选 bottomLeft | bottomRight | topLeft | topRight | bottomLeft"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "bottomLeft",
+              "label": "左下"
+            },
+            {
+              "value": "bottomRight",
+              "label": "右下"
+            },
+            {
+              "value": "topLeft",
+              "label": "左上"
+            },
+            {
+              "value": "topRight",
+              "label": "右上"
+            },
+            {
+              "value": "bottomLeft",
+              "label": "左下"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "虚拟滚动",
+      "field": "virtual",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 false 时关闭虚拟滚动"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "回填方式",
+      "field": "showCheckedStrategy",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "定义选中项回填的方式。Cascader.SHOW_CHILD: 只显示选中的子节点。Cascader.SHOW_PARENT: 只显示父节点（当父节点下所有子节点都选中时）。"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "SHOW_PARENT",
+              "label": "SHOW_PARENT"
+            },
+            {
+              "value": "SHOW_CHILD",
+              "label": "SHOW_CHILD"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "次级菜单的展开方式",
+      "field": "expandTrigger",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "次级菜单的展开方式 click | hover"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "click",
+              "label": "click"
+            },
+            {
+              "value": "hover",
+              "label": "hover"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "是否多选",
+      "field": "multiple",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "点选即选择",
+      "field": "changeOnSelect",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否禁用",
+      "field": "disabled",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "尺寸",
+      "field": "size",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "组件大小。注：标准表单内的输入框大小限制为 middle。可选 large middle small"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "",
+              "label": "默认"
+            },
+            {
+              "value": "large",
+              "label": "大"
+            },
+            {
+              "value": "middle",
+              "label": "中"
+            },
+            {
+              "value": "small",
+              "label": "小"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "校验状态",
+      "field": "status",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置校验状态。注：一般情况无需设置,由验证规则自动生成。"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": null,
+              "label": "无"
+            },
+            {
+              "value": "error",
+              "label": "错误"
+            },
+            {
+              "value": "warning",
+              "label": "警告"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+
+    {
+      "label": "CLASS",
+      "field": "class",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 组件样式类名"
+        }
+      }
+    },
+
+    {
+      "label": "事件",
+      "field": "events",
+      "tooltip": {
+        "title": "组件的事件，渲染组件可以进行响应"
+      },
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "VzDesignerCustomizationEvents",
+        "vModelField": "value",
+        "props": {
+          "events": [
+            {
+              "name": "change",
+              "description": "选择完成后的回调",
+              "callback": "function(value, selectedOptions)",
+              "arguments": ["value", "selectedOptions"]
+            },
+            {
+              "name": "dropdownVisibleChange",
+              "description": "展开下拉菜单的回调",
+              "callback": "function(value: boolean)",
+              "arguments": ["value"]
+            },
+            {
+              "name": "search",
+              "description": "监听搜索，返回输入的值",
+              "callback": "function(value: string)",
+              "arguments": ["value"]
+            },
+            {
+              "name": "focus",
+              "description": "获得焦点时回调",
+              "callback": "function(value: string)",
+              "arguments": ["value"]
+            },
+            {
+              "name": "blur",
+              "description": "失去焦点时的回调",
+              "callback": "function(e)",
+              "arguments": ["e"]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "radio-group": [
+    {
+      "label": "默认值",
+      "field": "defaultValue",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 默认内容"
+        }
+      }
+    },
+    {
+      "label": "NAME",
+      "field": "name",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "RadioGroup 下所有 input[type=\"radio\"] 的 name 属性"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 name"
+        }
+      }
+    },
+    {
+      "label": "数据",
+      "field": "options",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "custom",
+      "tooltip": {
+        "title": "options 数据，以配置形式设置子元素"
+      },
+      "component": {
+        "name": "VzDesignerCustomizationOptions",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "展示类型",
+      "field": "optionType",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "default",
+              "label": "default"
+            },
+            {
+              "value": "button",
+              "label": "button"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "RadioButton 的风格样式",
+      "field": "buttonStyle",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "RadioButton 的风格样式，目前有描边和填色两种风格"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "outline",
+              "label": "outline"
+            },
+            {
+              "value": "solid",
+              "label": "solid"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "是否禁用",
+      "field": "disabled",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "尺寸",
+      "field": "size",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "组件大小。注：标准表单内的输入框大小限制为 middle。可选 large middle small"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "",
+              "label": "默认"
+            },
+            {
+              "value": "large",
+              "label": "大"
+            },
+            {
+              "value": "middle",
+              "label": "中"
+            },
+            {
+              "value": "small",
+              "label": "小"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "事件",
+      "field": "events",
+      "tooltip": {
+        "title": "组件的事件，渲染组件可以进行响应"
+      },
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "VzDesignerCustomizationEvents",
+        "vModelField": "value",
+        "props": {
+          "events": [
+            {
+              "name": "change",
+              "description": "选项变化时的回调函数",
+              "callback": "function(e:Event)",
+              "arguments": ["e"]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "checkbox-group": [
+    {
+      "label": "默认值",
+      "field": "defaultValue",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 默认内容"
+        }
+      }
+    },
+    {
+      "label": "NAME",
+      "field": "name",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "CheckboxGroup  下所有 input[type=\"radio\"] 的 name 属性"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 name"
+        }
+      }
+    },
+    {
+      "label": "数据",
+      "field": "options",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "custom",
+      "tooltip": {
+        "title": "options 数据，以配置形式设置子元素"
+      },
+      "component": {
+        "name": "VzDesignerCustomizationOptions",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否禁用",
+      "field": "disabled",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "事件",
+      "field": "events",
+      "tooltip": {
+        "title": "组件的事件，渲染组件可以进行响应"
+      },
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "VzDesignerCustomizationEvents",
+        "vModelField": "value",
+        "props": {
+          "events": [
+            {
+              "name": "change",
+              "description": "选项变化时的回调函数",
+              "callback": "function(checkedValue:string|string[])",
+              "arguments": ["checkedValue"]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "date-picker": [
+    {
+      "label": "此刻按钮",
+      "field": "showNow",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "当设定了 showTime 的时候，面板是否显示“此刻”按钮"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "时间选择",
+      "field": "showTime",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "增加时间选择功能"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "今天按钮",
+      "field": "showToday",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否展示“今天”按钮"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "绑定值的格式",
+      "field": "valueFormat",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "可选，绑定值的格式，对 value、defaultValue、defaultPickerValue 起作用。不指定则绑定值为 dayjs 对象"
+      },
+      "component": {
+        "name": "ATextarea",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 额外的弹出日历样式"
+        }
+      }
+    },
+    {
+      "label": "校验状态",
+      "field": "status",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置校验状态。注：一般情况无需设置,由验证规则自动生成。"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": null,
+              "label": "无"
+            },
+            {
+              "value": "error",
+              "label": "错误"
+            },
+            {
+              "value": "warning",
+              "label": "警告"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "额外的弹出日历样式",
+      "field": "popupStyle",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ATextarea",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 额外的弹出日历样式"
+        }
+      }
+    },
+    {
+      "label": "选择框弹出的位置",
+      "field": "placement",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "选择框弹出的位置。可选 bottomLeft bottomRight topLeft topRight"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "bottomLeft",
+              "label": "左下"
+            },
+            {
+              "value": "bottomRight",
+              "label": "右下"
+            },
+            {
+              "value": "topLeft",
+              "label": "左上"
+            },
+            {
+              "value": "topRight",
+              "label": "右上"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "占位提示",
+      "field": "placeholder",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "选择器类型",
+      "field": "picker",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置选择器类型"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "date",
+              "label": "日期"
+            },
+            {
+              "value": "week",
+              "label": "周"
+            },
+            {
+              "value": "month",
+              "label": "月"
+            },
+            {
+              "value": "quarter",
+              "label": "季度"
+            },
+            {
+              "value": "year",
+              "label": "年"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "日期面板的状态",
+      "field": "mode",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "日期面板的状态"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "time",
+              "label": "time"
+            },
+            {
+              "value": "date",
+              "label": "date"
+            },
+            {
+              "value": "month",
+              "label": "month"
+            },
+            {
+              "value": "year",
+              "label": "year"
+            },
+            {
+              "value": "decade",
+              "label": "decade"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "默认值",
+      "field": "defaultValue",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 默认内容"
+        }
+      }
+    },
+    {
+      "label": "日期格式",
+      "field": "format",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置日期格式，为数组时支持多格式匹配，展示以第一个为准。配置参考 dayjs，支持自定义格式"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 日期格式"
+        }
+      }
+    },
+    {
+      "label": "尺寸",
+      "field": "size",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "组件大小。注：标准表单内的输入框大小限制为 middle。可选 large middle small"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "",
+              "label": "默认"
+            },
+            {
+              "value": "large",
+              "label": "大"
+            },
+            {
+              "value": "middle",
+              "label": "中"
+            },
+            {
+              "value": "small",
+              "label": "小"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "额外的弹出日历 className",
+      "field": "dropdownClassName",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置日期格式，为数组时支持多格式匹配，展示以第一个为准。配置参考 dayjs，支持自定义格式"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 日期格式"
+        }
+      }
+    },
+    {
+      "label": "输入框为只读",
+      "field": "inputReadOnly",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "自动获取焦点",
+      "field": "autofocus",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "清除按钮",
+      "field": "allowClear",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否显示清除按钮"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否有边框",
+      "field": "bordered",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "是否禁用",
+      "field": "disabled",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "CLASS",
+      "field": "class",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 组件样式类名"
+        }
+      }
+    },
+    {
+      "label": "事件",
+      "field": "events",
+      "tooltip": {
+        "title": "组件的事件，渲染组件可以进行响应"
+      },
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "VzDesignerCustomizationEvents",
+        "vModelField": "value",
+        "props": {
+          "events": [
+            {
+              "name": "openChange",
+              "description": "弹出日历和关闭日历的回调",
+              "callback": "function(status)",
+              "arguments": ["status"]
+            },
+            {
+              "name": "panelChange",
+              "description": "日期面板变化时的回调",
+              "callback": "function(value, mode)",
+              "arguments": ["value", "mode"]
+            },
+            {
+              "name": "change",
+              "description": "时间发生变化的回调",
+              "callback": "function(date: dayjs | string, dateString: string)",
+              "arguments": ["date", "dateString"]
+            },
+            {
+              "name": "ok",
+              "description": "点击确定按钮的回调",
+              "callback": "function(date: dayjs | string)",
+              "arguments": ["date"]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "date-range-picker": [
+    {
+      "label": "占位提示",
+      "field": "placeholder",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "VzDesignerCustomizationPlaceholder",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
+      "label": "绑定值的格式",
+      "field": "valueFormat",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "可选，绑定值的格式，对 value、defaultValue、defaultPickerValue 起作用。不指定则绑定值为 dayjs 对象"
+      },
+      "component": {
+        "name": "ATextarea",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 额外的弹出日历样式"
+        }
+      }
+    },
+    {
+      "label": "校验状态",
+      "field": "status",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置校验状态。注：一般情况无需设置,由验证规则自动生成。"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": null,
+              "label": "无"
+            },
+            {
+              "value": "error",
+              "label": "错误"
+            },
+            {
+              "value": "warning",
+              "label": "警告"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "额外的弹出日历样式",
+      "field": "popupStyle",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ATextarea",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 额外的弹出日历样式"
+        }
+      }
+    },
+    {
+      "label": "选择框弹出的位置",
+      "field": "placement",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "选择框弹出的位置。可选 bottomLeft bottomRight topLeft topRight"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "bottomLeft",
+              "label": "左下"
+            },
+            {
+              "value": "bottomRight",
+              "label": "右下"
+            },
+            {
+              "value": "topLeft",
+              "label": "左上"
+            },
+            {
+              "value": "topRight",
+              "label": "右上"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+
+    {
+      "label": "选择器类型",
+      "field": "picker",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置选择器类型"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "date",
+              "label": "日期"
+            },
+            {
+              "value": "week",
+              "label": "周"
+            },
+            {
+              "value": "month",
+              "label": "月"
+            },
+            {
+              "value": "year",
+              "label": "年"
+            },
+            {
+              "value": "quarter",
+              "label": "刻"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "日期面板的状态",
+      "field": "mode",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "日期面板的状态"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "time",
+              "label": "time"
+            },
+            {
+              "value": "date",
+              "label": "date"
+            },
+            {
+              "value": "month",
+              "label": "month"
+            },
+            {
+              "value": "year",
+              "label": "year"
+            },
+            {
+              "value": "decade",
+              "label": "decade"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "默认值",
+      "field": "defaultValue",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 默认内容"
+        }
+      }
+    },
+    {
+      "label": "日期格式",
+      "field": "format",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置日期格式，为数组时支持多格式匹配，展示以第一个为准。配置参考 dayjs，支持自定义格式"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 日期格式"
+        }
+      }
+    },
+    {
+      "label": "尺寸",
+      "field": "size",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "组件大小。注：标准表单内的输入框大小限制为 middle。可选 large middle small"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "",
+              "label": "默认"
+            },
+            {
+              "value": "large",
+              "label": "大"
+            },
+            {
+              "value": "middle",
+              "label": "中"
+            },
+            {
+              "value": "small",
+              "label": "小"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "额外的弹出日历 className",
+      "field": "dropdownClassName",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置日期格式，为数组时支持多格式匹配，展示以第一个为准。配置参考 dayjs，支持自定义格式"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 日期格式"
+        }
+      }
+    },
+    {
+      "label": "输入框为只读",
+      "field": "inputReadOnly",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "自动获取焦点",
+      "field": "autofocus",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "清除按钮",
+      "field": "allowClear",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否显示清除按钮"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否有边框",
+      "field": "bordered",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "是否禁用",
+      "field": "disabled",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "CLASS",
+      "field": "class",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 组件样式类名"
+        }
+      }
+    },
+    {
+      "label": "事件",
+      "field": "events",
+      "tooltip": {
+        "title": "组件的事件，渲染组件可以进行响应"
+      },
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "VzDesignerCustomizationEvents",
+        "vModelField": "value",
+        "props": {
+          "events": [
+            {
+              "name": "openChange",
+              "description": "弹出日历和关闭日历的回调",
+              "callback": "function(status)",
+              "arguments": ["status"]
+            },
+            {
+              "name": "panelChange",
+              "description": "日期面板变化时的回调",
+              "callback": "function(value, mode)",
+              "arguments": ["value", "mode"]
+            },
+            {
+              "name": "calendarChange",
+              "description": "待选日期发生变化的回调",
+              "callback": "function(dates: [dayjs, dayjs] | [string, string], dateStrings: [string, string], info: { range:start|end })",
+              "arguments": ["dates", "dateStrings", "info"]
+            },
+            {
+              "name": "change",
+              "description": "日期范围发生变化的回调",
+              "callback": "function(dates: [dayjs, dayjs] | [string, string], dateStrings: [string, string])",
+              "arguments": ["dates", "dateStrings"]
+            },
+            {
+              "name": "ok",
+              "description": "点击确定按钮的回调",
+              "callback": "function(dates: [dayjs, dayjs] | [string, string])",
+              "arguments": ["dates"]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "slider": [
+    {
+      "label": "Tooltip 将会始终显示",
+      "field": "tooltipOpen",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "值为true时，Tooltip 将会始终显示；否则始终不显示，哪怕在拖拽及移入时。"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "Tooltip 展示位置",
+      "field": "tooltipPlacement",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置 Tooltip 展示位置。参考 Tooltip。"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "",
+              "label": "默认"
+            },
+            {
+              "value": "large",
+              "label": "大"
+            },
+            {
+              "value": "middle",
+              "label": "中"
+            },
+            {
+              "value": "small",
+              "label": "小"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "垂直方向",
+      "field": "vertical",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "值为 true 时，Slider 为垂直方向"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "双滑块模式",
+      "field": "range",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "反向坐标轴",
+      "field": "reverse",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "最小值",
+      "field": "min",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 最小值"
+        }
+      }
+    },
+    {
+      "label": "最大值",
+      "field": "max",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 最大值"
+        }
+      }
+    },
+    {
+      "label": "步长",
+      "field": "step",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "步长，取值必须大于 0，并且可被 (max - min) 整除。当 marks 不为空对象时，可以设置 step 为 null，此时 Slider 的可选值仅有 marks 标出来的部分。"
+      },
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 步进"
+        }
+      }
+    },
+    {
+      "label": "是否只能拖拽到刻度上",
+      "field": "dots",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "包含关系",
+      "field": "included",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "marks 不为空对象时有效，值为 true 时表示值为包含关系，false 表示并列"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "校验状态",
+      "field": "status",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "设置校验状态。注：一般情况无需设置,由验证规则自动生成。"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": null,
+              "label": "无"
+            },
+            {
+              "value": "error",
+              "label": "错误"
+            },
+            {
+              "value": "warning",
+              "label": "警告"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "默认值",
+      "field": "defaultValue",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 默认内容"
+        }
+      }
+    },
+    {
+      "label": "尺寸",
+      "field": "size",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "组件大小。注：标准表单内的输入框大小限制为 middle。可选 large middle small"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "",
+              "label": "默认"
+            },
+            {
+              "value": "large",
+              "label": "大"
+            },
+            {
+              "value": "middle",
+              "label": "中"
+            },
+            {
+              "value": "small",
+              "label": "小"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "自动获取焦点",
+      "field": "autofocus",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "是否禁用",
+      "field": "disabled",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "事件",
+      "field": "events",
+      "tooltip": {
+        "title": "组件的事件，渲染组件可以进行响应"
+      },
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "VzDesignerCustomizationEvents",
+        "vModelField": "value",
+        "props": {
+          "events": [
+            {
+              "name": "change",
+              "description": "当 Slider 的值发生改变时，会触发 change 事件，并把改变后的值作为参数传入。",
+              "callback": "function(value)",
+              "arguments": ["value"]
+            },
+            {
+              "name": "afterChange",
+              "description": "与 mouseup 触发时机一致，把当前值作为参数传入。",
+              "callback": "function(value)",
+              "arguments": ["value"]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "switch": [
+    {
+      "label": "选中时的值",
+      "field": "checkedValue",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "VzDesignerCustomizationPropValue",
+        "vModelField": "value",
+        "props": {
+          "type": "switch",
+          "field": "checkedValue"
+        }
+      }
+    },
+    {
+      "label": "选中时的内容",
+      "field": "checkedChildren",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+
+    {
+      "label": "未选中时的值",
+      "field": "unCheckedValue",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "VzDesignerCustomizationPropValue",
+        "vModelField": "value",
+        "props": {
+          "type": "switch",
+          "field": "unCheckedChildren"
+        }
+      }
+    },
+    {
+      "label": "未选中时的内容",
+      "field": "unCheckedChildren",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+
+    {
+      "label": "自动获取焦点",
+      "field": "autofocus",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "加载中的开关",
+      "field": "loading",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "是否禁用",
+      "field": "disabled",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "尺寸",
+      "field": "size",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "组件大小。注：标准表单内的输入框大小限制为 middle。可选 large middle small"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "",
+              "label": "默认"
+            },
+            {
+              "value": "large",
+              "label": "大"
+            },
+            {
+              "value": "middle",
+              "label": "中"
+            },
+            {
+              "value": "small",
+              "label": "小"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+
+    {
+      "label": "默认值",
+      "field": "defaultValue",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 默认内容"
+        }
+      }
+    },
+    {
+      "label": "事件",
+      "field": "events",
+      "tooltip": {
+        "title": "组件的事件，渲染组件可以进行响应"
+      },
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "VzDesignerCustomizationEvents",
+        "vModelField": "value",
+        "props": {
+          "events": [
+            {
+              "name": "change",
+              "description": "当 Slider 的值发生改变时，会触发 change 事件，并把改变后的值作为参数传入。",
+              "callback": "function(value)",
+              "arguments": ["value"]
+            },
+            {
+              "name": "afterChange",
+              "description": "与 mouseup 触发时机一致，把当前值作为参数传入。",
+              "callback": "function(value)",
+              "arguments": ["value"]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "color-picker": [],
+  "vz-uploader": [
+    {
+      "label": "上传地址",
+      "field": "action",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "文件上传地址"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 上传地址"
+        }
+      }
+    },
+
+    {
+      "label": "发到后台的文件参数名",
+      "field": "name",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+
+      "tooltip": {
+        "title": "发到后台的文件参数名"
+      },
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 发到后台的文件参数名"
+        }
+      }
+    },
+
+    {
+      "label": "限制上传数量",
+      "field": "maxCount",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "限制上传数量。当为 1 时，始终用最新上传的文件代替当前文件"
+      },
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {
+          "min": 1,
+          "max": 99
+        }
+      }
+    },
+
+    {
+      "label": "上传列表样式",
+      "field": "listType",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "上传列表的内建样式，支持三种基本样式 text, picture 和 picture-card"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "text",
+              "label": "TEXT"
+            },
+            {
+              "value": "picture",
+              "label": "PICTURE"
+            },
+            {
+              "value": "picture-card",
+              "label": "PICTURE-CARD"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+    {
+      "label": "上传请求的 http method",
+      "field": "method",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "上传请求的 http method"
+      },
+      "component": {
+        "name": "ARadioGroup",
+        "vModelField": "value",
+        "props": {
+          "options": [
+            {
+              "value": "post",
+              "label": "POST"
+            },
+            {
+              "value": "get",
+              "label": "GET"
+            },
+            {
+              "value": "put",
+              "label": "PUT"
+            }
+          ],
+          "optionType": "button"
+        }
+      }
+    },
+
+    {
+      "label": "是否支持多选文件",
+      "field": "multiple",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否支持多选文件，ie10+ 支持。开启后按住 ctrl 可选择多个文件。"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+
+    {
+      "label": "是否展示 uploadList",
+      "field": "showUploadList",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "是否展示 uploadList, 可设为一个对象，用于单独设定 showPreviewIcon, showRemoveIcon 和 showDownloadIcon"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "携带 cookie",
+      "field": "withCredentials",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "上传请求时是否携带 cookie"
+      },
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "是否禁用",
+      "field": "disabled",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "事件",
+      "field": "events",
+      "tooltip": {
+        "title": "组件的事件，渲染组件可以进行响应"
+      },
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "VzDesignerCustomizationEvents",
+        "vModelField": "value",
+        "props": {
+          "events": [
+            {
+              "name": "change",
+              "description": "上传文件改变时的状态，详见 change",
+              "callback": "function(info: UploadChangeParam)",
+              "arguments": ["info"]
+            },
+            {
+              "name": "download",
+              "description": "点击下载文件时的回调，如果没有指定，则默认跳转到文件 url 对应的标签页。",
+              "callback": "function(file:UploadFile): void",
+              "arguments": ["file"]
+            },
+            {
+              "name": "drop",
+              "description": "当文件被拖入上传区域时执行的回调功能",
+              "callback": "(event: DragEvent) => void",
+              "arguments": ["event"]
+            },
+
+            {
+              "name": "preview",
+              "description": "点击文件链接或预览图标时的回调",
+              "callback": "function(file: UploadFile)",
+              "arguments": ["file"]
+            },
+            {
+              "name": "reject",
+              "description": "拖拽文件不符合 accept 类型时的回调",
+              "callback": "function(fileList)",
+              "arguments": ["fileList"]
+            },
+            {
+              "name": "remove",
+              "description": "点击移除文件时的回调，返回值为 false 时不移除。支持返回一个 Promise 对象，Promise 对象 resolve(false) 或 reject 时不移除",
+              "callback": "function(file): boolean | Promise",
+              "arguments": ["file"]
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "card-layout": [],
+  "grid-layout-col": [
+    {
+      "label": "栅格占位格数",
+      "field": "span",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 占位格数"
+        }
+      }
+    }
+  ],
+  "vz-form-divider": [
+    {
+      "label": "标题",
+      "field": "title",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 标题"
+        }
+      }
+    },
+    {
+      "label": "是否为虚线",
+      "field": "dashed",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "分隔线宽度",
+      "field": "width",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {
+          "min": 1,
+          "max": 10
+        }
+      }
+    },
+    {
+      "label": "分隔线颜色",
+      "field": "borderColor",
+      "visibilityToggler": true,
+      "visible": true,
+      "tooltip": {
+        "title": "请使用 RGB/A 色标值"
+      },
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {}
+      }
+    }
+  ]
+}

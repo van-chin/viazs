@@ -1,0 +1,143 @@
+{
+  "model": {
+    "l1XGDzt4z9P4eycIrzrzq": "",
+    "jyQ-4DdqEnm7P47RL_6kq": "",
+    "Z2HIVTWTEVTyjWCIxYIhD": ""
+  },
+  "rules": {
+    "l1XGDzt4z9P4eycIrzrzq": [],
+    "jyQ-4DdqEnm7P47RL_6kq": [],
+    "Z2HIVTWTEVTyjWCIxYIhD": []
+  },
+  "items": [
+    {
+      "id": "tHGUhT0q4Ddzuf86gjg21",
+      "key": "tHGUhT0q4Ddzuf86gjg21",
+      "title": "表单",
+      "icon": "iconoir:input-field",
+      "type": "form",
+      "vModelField": "value",
+      "item": {
+        "name": "f_9GqdghhCcT4Dr6VZp-i",
+        "colon": true,
+        "displayState": true,
+        "labelShow": true,
+        "layout": "horizontal",
+        "labelAlign": "right",
+        "labelCol": {
+          "style": {
+            "width": "100px"
+          }
+        }
+      },
+      "children": [
+        {
+          "id": "a-88V4Xvh_kjy0xL0WNDk",
+          "key": "a-88V4Xvh_kjy0xL0WNDk",
+          "title": "文本域",
+          "icon": "bi:textarea-resize",
+          "type": "textarea",
+          "vModelField": "value",
+          "item": {
+            "label": "文本域",
+            "name": "jyQ-4DdqEnm7P47RL_6kq",
+            "tooltip": "",
+            "extra": "",
+            "required": false,
+            "colon": true,
+            "displayState": true,
+            "rules": [],
+            "autoLink": false
+          },
+          "component": {
+            "name": "ATextarea",
+            "events": {},
+            "props": {
+              "placeholder": "请输入",
+              "bordered": true
+            },
+            "emitsEvents": {}
+          },
+          "componentProps": [],
+          "formItemProps": [],
+          "class": "click-way-textarea"
+        },
+        {
+          "id": "Ewj8Z9JtvEPUF407NrSei",
+          "key": "Ewj8Z9JtvEPUF407NrSei",
+          "title": "输入框",
+          "icon": "iconoir:input-field",
+          "type": "input",
+          "vModelField": "value",
+          "item": {
+            "label": "输入框",
+            "name": "l1XGDzt4z9P4eycIrzrzq",
+            "tooltip": "",
+            "extra": "",
+            "required": false,
+            "colon": true,
+            "displayState": true,
+            "rules": [],
+            "autoLink": false
+          },
+          "component": {
+            "name": "AInput",
+            "events": {},
+            "props": {
+              "placeholder": "请输入",
+              "bordered": true,
+              "showCount": false,
+              "size": "",
+              "events": {}
+            },
+            "emitsEvents": {}
+          },
+          "componentProps": [],
+          "formItemProps": [],
+          "class": "click-way-input"
+        },
+        {
+          "id": "SaDhVUb7FVGwo3wUOK_YZ",
+          "key": "SaDhVUb7FVGwo3wUOK_YZ",
+          "title": "输入框",
+          "icon": "iconoir:input-field",
+          "type": "input",
+          "vModelField": "value",
+          "item": {
+            "label": "输入框",
+            "name": "Z2HIVTWTEVTyjWCIxYIhD",
+            "tooltip": "",
+            "extra": "",
+            "required": false,
+            "colon": true,
+            "displayState": true,
+            "rules": [],
+            "autoLink": false
+          },
+          "component": {
+            "name": "AInput",
+            "events": {},
+            "props": {
+              "placeholder": "请输入",
+              "bordered": true,
+              "showCount": false,
+              "size": "",
+              "events": {}
+            },
+            "emitsEvents": {}
+          },
+          "componentProps": [],
+          "formItemProps": [],
+          "class": "click-way-input"
+        }
+      ],
+      "component": {
+        "name": "AForm",
+        "props": {}
+      },
+      "componentProps": [],
+      "formItemProps": [],
+      "class": ""
+    }
+  ]
+}

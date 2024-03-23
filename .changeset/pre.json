@@ -1,0 +1,35 @@
+{
+  "mode": "pre",
+  "tag": "beta",
+  "initialVersions": {
+    "docs": "0.0.2-alpha.0",
+    "@internals/build": "0.0.2-alpha.10",
+    "@viaz/components": "0.0.2-alpha.10",
+    "@viaz/constants": "0.0.2-alpha.10",
+    "@viaz/directives": "0.0.2-alpha.10",
+    "@viaz/enums": "0.0.2-alpha.10",
+    "@viaz/hooks": "0.0.2-alpha.10",
+    "@viaz/themes": "0.0.2-alpha.10",
+    "@viaz/types": "0.0.2-alpha.10",
+    "@viaz/utils": "0.0.2-alpha.10",
+    "viaz": "0.0.2-alpha.10",
+    "play": "0.0.0"
+  },
+  "changesets": [
+    "cold-items-confess",
+    "curly-crabs-wonder",
+    "fifty-houses-explode",
+    "gentle-crabs-dress",
+    "gold-pumpkins-attack",
+    "good-lions-speak",
+    "khaki-impalas-laugh",
+    "olive-suits-wash",
+    "perfect-cats-exercise",
+    "pink-dryers-compete",
+    "popular-berries-tell",
+    "rich-elephants-type",
+    "ten-pots-wonder",
+    "wet-jeans-swim",
+    "wild-mayflies-fetch"
+  ]
+}

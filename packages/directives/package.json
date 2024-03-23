@@ -1,0 +1,22 @@
+{
+  "name": "@viaz/directives",
+  "version": "0.0.2-beta.3",
+  "description": "viaz directives",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@viaz/types": "workspace:*"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.21"
+  },
+  "keywords": [],
+  "author": "Van Chin",
+  "license": "MIT"
+}

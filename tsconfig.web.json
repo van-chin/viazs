@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "composite": true,
+    "jsx": "preserve",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["node", "jsdom"],
+    "skipLibCheck": true
+  },
+  "include": [
+    "packages",
+    "packages/**/*",
+    "typings/components.d.ts",
+    "typings/env.d.ts"
+  ],
+  "exclude": ["node_modules", "**/dist", "**/__tests__/**/*", "**/*.md"]
+}

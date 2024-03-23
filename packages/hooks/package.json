@@ -1,0 +1,19 @@
+{
+  "name": "@viaz/hooks",
+  "version": "0.0.2-beta.3",
+  "description": "viaz hooks",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.19"
+  },
+  "keywords": [],
+  "author": "Van Chin",
+  "license": "MIT"
+}

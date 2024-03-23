@@ -1,0 +1,41 @@
+{
+  "name": "viaz",
+  "version": "0.0.2-beta.3",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build"
+  },
+  "main": "index.ts",
+  "module": "index.ts",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "dist/viaz.umd.js",
+      "module": "dist/viaz.mjs",
+      "types": "dist/index.d.ts"
+    },
+    "./*": "./*"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@viaz/types": "workspace:*",
+    "@viaz/utils": "workspace:*",
+    "@viaz/directives": "workspace:*",
+    "@viaz/hooks": "workspace:*",
+    "@viaz/components": "workspace:*",
+    "@viaz/constants": "workspace:*"
+  },
+  "peerDependencies": {
+    "vue": ">=3.4.19"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

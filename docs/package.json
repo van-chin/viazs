@@ -1,0 +1,26 @@
+{
+  "name": "docs",
+  "version": "0.0.2-alpha.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build --force"
+  },
+  "dependencies": {
+    "@viaz/components": "workspace:*",
+    "@vueuse/core": "^10.8.0",
+    "markdown-it": "^14.0.0",
+    "viaz": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/markdown-it": "^13.0.7",
+    "fs-extra": "^11.2.0",
+    "markdown-it-shikiji": "^0.10.2",
+    "shikiji": "^0.10.2"
+  }
+}

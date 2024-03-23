@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* ==============nprogress========== */
+#nprogress {
+  pointer-events: none;
+
+  .bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    width: 100%;
+    height: 2px;
+    background-color: @primary-color;
+    opacity: 0.75;
+  }
+}
+
+/* 强制设置 Drawer 的 padding 由 padding: 16px 24px 调整为 padding: 13px 24px */
+.ant-drawer-header {
+  padding: 12px 24px !important;
+}
+
+.swiper-pagination {
+  border: 10px solid red;
+}
+
+.taskbar-popover {
+  .ant-popover-content {
+    // border: 1px solid red;
+    .ant-popover-arrow {
+      display: none;
+    }
+
+    .ant-popover-inner {
+      // border: 1px solid red;
+      padding: 6px 16px;
+    }
+  }
+}
+
+// .ims-form-table {
+//   .ant-table-cell {
+//     .ant-select-selection-placeholder {
+//       text-align: left;
+//     }
+//     .ant-select-selection-item {
+//       text-align: left;
+//     }
+//   }
+
+//   .ant-select-item-option {
+//     text-align: left;
+//   }
+// }

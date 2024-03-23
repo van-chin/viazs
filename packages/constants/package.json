@@ -1,0 +1,10 @@
+{
+  "name": "@viaz/constants",
+  "version": "0.0.2-beta.3",
+  "license": "MIT",
+  "main": "index.ts",
+  "author": "Van Chin",
+  "publishConfig": {
+    "access": "public"
+  }
+}

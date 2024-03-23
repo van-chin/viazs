@@ -1,0 +1,35 @@
+{
+  "name": "@viaz/components",
+  "version": "0.0.2-beta.3",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@viaz/constants": "workspace:*",
+    "@viaz/hooks": "workspace:*",
+    "@viaz/types": "workspace:*",
+    "@viaz/utils": "workspace:*",
+    "@viaz/enums": "workspace:*",
+    "monaco-editor": "^0.46.0"
+  },
+  "peerDependencies": {
+    "iconify-icon": "^2.0.0",
+    "vue": "^3.4.19"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@visactor/vtable": "^0.19.1",
+    "@vueuse/core": "^10.8.0",
+    "lodash-es": "^4.17.21",
+    "vue-hooks-plus": "^1.8.8",
+    "vue-json-pretty": "^2.3.0"
+  }
+}
