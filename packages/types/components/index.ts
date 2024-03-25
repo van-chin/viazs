@@ -47,3 +47,5 @@ export * from "./hover-mask";
 export * from "./configuration-value";
 
 export * from "./checkbox-input";
+
+export * from "./checkbox-input-number";

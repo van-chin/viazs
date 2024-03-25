@@ -204,6 +204,7 @@ const componentItems: ItemType[] = reactive([
       getItem("FormTable 表单表格", "form-table"),
       getItem("ConfigurationValue 配置值", "configuration-value"),
       getItem("CheckboxInput 选择输入组合框", "checkbox-input"),
+      getItem("CheckboxInputNumber 选择数字输入组合框", "checkbox-input-number"),
     ],
     "group"
   ),

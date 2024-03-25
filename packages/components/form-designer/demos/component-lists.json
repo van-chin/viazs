@@ -992,5 +992,38 @@
     },
     "componentProps": [],
     "formItemProps": []
+  },
+  {
+    "id": "1",
+    "key": "1",
+    "title": "选择输入数字框",
+    "icon": "iconoir:input-field",
+    "type": "checkbox-input-number",
+    "componentName": "VzCheckboxInputNumber",
+    "vModelField": "value",
+    "item": {
+      "label": "选择输入数字框",
+      "name": "",
+      "tooltip": "",
+      "extra": "",
+      "required": false,
+      "colon": true,
+      "displayState": true,
+      "rules": []
+    },
+    "component": {
+      "name": "VzCheckboxInputNumber",
+      "events": {},
+      "props": {
+        "checkboxLabel":"效期",
+        "placeholder": "请输入",
+        "bordered": true,
+        "showCount": false,
+        "size": "",
+        "events": {}
+      }
+    },
+    "componentProps": [],
+    "formItemProps": []
   }
 ]

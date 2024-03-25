@@ -1,7 +1,8 @@
 <template>
   <div class="bd-red p-2">
-    <vz-checkbox-input :checkbox-label="checkboxLabel" placeholder="xxxx"></vz-checkbox-input>
+    <vz-checkbox-input-number :checkbox-label="checkboxLabel" placeholder="xxxx"></vz-checkbox-input-number>
      
+    
 {{ checkboxLabel }}
     <a-button @click="changeCheckboxLabel">change</a-button>
   </div>

@@ -141,6 +141,16 @@ const components: AppRouteModule = {
         icon: "simple-icons:about-dot-me",
       },
     },
+    {
+      path: "checkbox-input-number",
+      name: "components.checkbox-input-number",
+      component: () =>
+        import("@viaz/components/checkbox-input-number/demos/index.demo.md"),
+      meta: {
+        title: "components.checkbox-input-number",
+        icon: "simple-icons:about-dot-me",
+      },
+    },
   ],
 };
 
