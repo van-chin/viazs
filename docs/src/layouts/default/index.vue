@@ -203,6 +203,7 @@ const componentItems: ItemType[] = reactive([
       getItem("FormRenderer 表单渲染器", "form-renderer"),
       getItem("FormTable 表单表格", "form-table"),
       getItem("ConfigurationValue 配置值", "configuration-value"),
+      getItem("CheckboxInput 选择输入组合框", "checkbox-input"),
     ],
     "group"
   ),

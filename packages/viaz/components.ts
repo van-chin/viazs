@@ -31,6 +31,7 @@ import {
   VzDynamicPanel,
   VzHoverMask,
   VzConfigurationValue,
+  VzCheckboxInput
 } from "@viaz/components";
 
 export default [
@@ -64,4 +65,5 @@ export default [
   VzDynamicPanel,
   VzHoverMask,
   VzConfigurationValue,
+  VzCheckboxInput,
 ] as Plugin[];

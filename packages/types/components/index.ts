@@ -45,3 +45,5 @@ export * from "./dynamic-panel";
 export * from "./hover-mask";
 
 export * from "./configuration-value";
+
+export * from "./checkbox-input";
