@@ -36,7 +36,8 @@ import {
   VzCheckboxGroupInput,
   VzCheckboxGroup,
   VzCheckboxDatePicker,
-  VzCheckboxDateRangePicker
+  VzCheckboxDateRangePicker,
+  VzCheckboxGroupInputNumber
 } from "@viaz/components";
 
 export default [
@@ -75,5 +76,6 @@ export default [
   VzCheckboxGroupInput,
   VzCheckboxGroup,
   VzCheckboxDatePicker,
-  VzCheckboxDateRangePicker
+  VzCheckboxDateRangePicker,
+  VzCheckboxGroupInputNumber
 ] as Plugin[];

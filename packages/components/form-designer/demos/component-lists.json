@@ -494,7 +494,6 @@
     "componentProps": [],
     "formItemProps": []
   },
- 
   {
     "id": "88",
     "key": "88",
@@ -517,8 +516,8 @@
       "name": "ACheckbox",
       "events": {},
       "props": {
-        "autofocus":false,
-        "indeterminate":false
+        "autofocus": false,
+        "indeterminate": false
       }
     },
     "componentProps": [],
@@ -618,7 +617,10 @@
       "name": "ARangePicker",
       "events": {},
       "props": {
-        "placeholder": ["开始时间", "结束时间"]
+        "placeholder": [
+          "开始时间",
+          "结束时间"
+        ]
       }
     },
     "componentProps": [],
@@ -819,7 +821,7 @@
             "component": {
               "name": "AInput",
               "vModelField": "value",
-              "type":"input",
+              "type": "input",
               "props": {
                 "placeholder": "请输入姓名"
               }
@@ -833,7 +835,7 @@
             "component": {
               "name": "AInputNumber",
               "vModelField": "value",
-              "type":"input-number",
+              "type": "input-number",
               "props": {
                 "placeholder": "请输入年龄"
               }
@@ -961,15 +963,15 @@
     "formItemProps": []
   },
   {
-    "id": "1",
-    "key": "1",
-    "title": "选择输入框",
+    "id": "102",
+    "key": "102",
+    "title": "复选输入框",
     "icon": "iconoir:input-field",
-    "type": "checkbox-input",
+    "type": "vz-checkbox-input",
     "componentName": "VzCheckboxInput",
     "vModelField": "value",
     "item": {
-      "label": "选择输入框",
+      "label": "复选输入框",
       "name": "",
       "tooltip": "",
       "extra": "",
@@ -982,7 +984,7 @@
       "name": "VzCheckboxInput",
       "events": {},
       "props": {
-        "checkboxLabel":"效期",
+        "checkboxLabel": "效期",
         "placeholder": "请输入",
         "bordered": true,
         "showCount": false,
@@ -994,15 +996,15 @@
     "formItemProps": []
   },
   {
-    "id": "1",
-    "key": "1",
-    "title": "选择输入数字框",
+    "id": "101",
+    "key": "101",
+    "title": "复选数字输入框",
     "icon": "iconoir:input-field",
     "type": "checkbox-input-number",
     "componentName": "VzCheckboxInputNumber",
     "vModelField": "value",
     "item": {
-      "label": "选择输入数字框",
+      "label": "复选数字输入框",
       "name": "",
       "tooltip": "",
       "extra": "",
@@ -1015,8 +1017,192 @@
       "name": "VzCheckboxInputNumber",
       "events": {},
       "props": {
-        "checkboxLabel":"效期",
+        "checkboxLabel": "效期",
         "placeholder": "请输入",
+        "bordered": true,
+        "showCount": false,
+        "size": "",
+        "events": {}
+      }
+    },
+    "componentProps": [],
+    "formItemProps": []
+  },
+  {
+    "id": "103",
+    "key": "103",
+    "title": "复选组数字输入框",
+    "icon": "iconoir:input-field",
+    "type": "checkbox-group-input-number",
+    "componentName": "VzCheckboxGroupInputNumber",
+    "vModelField": "value",
+    "item": {
+      "label": "复选组数字输入框",
+      "name": "",
+      "tooltip": "",
+      "extra": "",
+      "required": false,
+      "colon": true,
+      "displayState": true,
+      "rules": []
+    },
+    "component": {
+      "name": "VzCheckboxGroupInputNumber",
+      "events": {},
+      "props": {
+        "options": [
+          {
+            "label": "开单",
+            "value": 1,
+            "disabled": false
+          },
+          {
+            "label": "划扣",
+            "value": 2,
+            "disabled": false
+          }
+        ],
+        "checked": [],
+        "checkboxLabel": "效期",
+        "placeholder": "请输入",
+        "bordered": true,
+        "showCount": false,
+        "size": "",
+        "events": {}
+      }
+    },
+    "componentProps": [],
+    "formItemProps": []
+  },
+  {
+    "id": "104",
+    "key": "104",
+    "title": "复选组输入框",
+    "icon": "iconoir:input-field",
+    "type": "checkbox-group-input",
+    "componentName": "VzCheckboxGroupInput",
+    "vModelField": "value",
+    "item": {
+      "label": "复选组输入框",
+      "name": "",
+      "tooltip": "",
+      "extra": "",
+      "required": false,
+      "colon": true,
+      "displayState": true,
+      "rules": []
+    },
+    "component": {
+      "name": "VzCheckboxGroupInput",
+      "events": {},
+      "props": {
+        "options": [
+          {
+            "label": "开单",
+            "value": 1,
+            "disabled": false
+          },
+          {
+            "label": "划扣",
+            "value": 2,
+            "disabled": false
+          }
+        ],
+        "checked": [],
+        "checkboxLabel": "效期",
+        "placeholder": "请输入",
+        "bordered": true,
+        "showCount": false,
+        "size": "",
+        "events": {}
+      }
+    },
+    "componentProps": [],
+    "formItemProps": []
+  },
+  {
+    "id": "105",
+    "key": "105",
+    "title": "复选日期选择",
+    "icon": "iconoir:input-field",
+    "type": "checkbox-date-picker",
+    "componentName": "VzCheckboxDatePicker",
+    "vModelField": "value",
+    "item": {
+      "label": "复选日期选择",
+      "name": "",
+      "tooltip": "",
+      "extra": "",
+      "required": false,
+      "colon": true,
+      "displayState": true,
+      "rules": []
+    },
+    "component": {
+      "name": "VzCheckboxDatePicker",
+      "events": {},
+      "props": {
+        "options": [
+          {
+            "label": "开单",
+            "value": 1,
+            "disabled": false
+          },
+          {
+            "label": "划扣",
+            "value": 2,
+            "disabled": false
+          }
+        ],
+        "checked": false,
+        "checkboxLabel": "",
+        "placeholder": "请输入",
+        "bordered": true,
+        "showCount": false,
+        "size": "",
+        "events": {}
+      }
+    },
+    "componentProps": [],
+    "formItemProps": []
+  },
+  {
+    "id": "105",
+    "key": "105",
+    "title": "复选日期范围选择",
+    "icon": "iconoir:input-field",
+    "type": "checkbox-date-range-picker",
+    "componentName": "VzCheckboxDateRangePicker",
+    "vModelField": "value",
+    "item": {
+      "label": "复选日期范围选择",
+      "name": "",
+      "tooltip": "",
+      "extra": "",
+      "required": false,
+      "colon": true,
+      "displayState": true,
+      "rules": []
+    },
+    "component": {
+      "name": "VzCheckboxDateRangePicker",
+      "events": {},
+      "props": {
+        "options": [
+          {
+            "label": "开单",
+            "value": 1,
+            "disabled": false
+          },
+          {
+            "label": "划扣",
+            "value": 2,
+            "disabled": false
+          }
+        ],
+        "checked": false,
+        "checkboxLabel": "",
+        "placeholder": ["开始时间","结束时间"],
         "bordered": true,
         "showCount": false,
         "size": "",

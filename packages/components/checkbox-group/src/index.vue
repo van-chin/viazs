@@ -58,7 +58,7 @@ const onChange = (checkedValue: CheckboxGroupValue) => {
 
 .@{prefix-cls} {
   // --at-apply: w-full h-full;
-  border: 1px solid red;
+  // border: 1px solid red;
 
 }
 </style>

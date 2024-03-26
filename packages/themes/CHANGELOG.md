@@ -1,5 +1,17 @@
 # @viaz/themes
 
+## 0.0.2-beta.5
+
+### Patch Changes
+
+- omp code
+
+## 0.0.2-beta.4
+
+### Patch Changes
+
+- add sm comps
+
 ## 0.0.2-beta.3
 
 ### Patch Changes

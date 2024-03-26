@@ -1,5 +1,21 @@
 # @viaz/types
 
+## 0.0.2-beta.5
+
+### Patch Changes
+
+- omp code
+- Updated dependencies
+  - @viaz/constants@0.0.2-beta.5
+
+## 0.0.2-beta.4
+
+### Patch Changes
+
+- add sm comps
+- Updated dependencies
+  - @viaz/constants@0.0.2-beta.4
+
 ## 0.0.2-beta.3
 
 ### Patch Changes

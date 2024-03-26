@@ -16,6 +16,7 @@
     "play": "0.0.0"
   },
   "changesets": [
+    "afraid-wolves-reply",
     "cold-items-confess",
     "curly-crabs-wonder",
     "fifty-houses-explode",
@@ -28,6 +29,7 @@
     "pink-dryers-compete",
     "popular-berries-tell",
     "rich-elephants-type",
+    "silver-houses-try",
     "ten-pots-wonder",
     "wet-jeans-swim",
     "wild-mayflies-fetch"

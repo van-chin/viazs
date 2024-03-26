@@ -1,5 +1,19 @@
 # @internals/build
 
+## 0.0.2-beta.16
+
+### Patch Changes
+
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.5
+
+## 0.0.2-beta.15
+
+### Patch Changes
+
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.4
+
 ## 0.0.2-beta.14
 
 ### Patch Changes

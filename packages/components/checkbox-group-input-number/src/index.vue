@@ -2,27 +2,27 @@
   <div :class="prefixCls">
     
     <vz-checkbox-group  v-model:value="modelChecked" v-bind="$attrs" :max="1"></vz-checkbox-group>
-    <a-input v-model:value="modelValue" v-bind="$attrs" :disabled="!modelChecked.length" ></a-input>
+    <a-input-number v-model:value="modelValue" v-bind="$attrs" :disabled="!modelChecked.length" ></a-input-number>
   </div>
 </template>
 
 <script lang="ts" setup>
 
-import type { VzCheckboxGroupInputProps } from "@viaz/types";
+import type { VzCheckboxGroupInputNumberProps } from "@viaz/types";
 
 import { useStyle } from "@viaz/hooks";
+import { toRefs } from "vue";
 
+const { prefixCls } = useStyle("checkbox-group-input-number");
 
-const { prefixCls } = useStyle("checkbox-group-input");
-
-const COMPONENT_NAME = "VzCheckboxGroupInput";
+const COMPONENT_NAME = "VzCheckboxGroupInputNumber";
 
 defineOptions({
   name: COMPONENT_NAME,
 });
 
 
-const props = withDefaults(defineProps<VzCheckboxGroupInputProps>(), {});
+const props = withDefaults(defineProps<VzCheckboxGroupInputNumberProps>(), {});
 
 const modelChecked = defineModel("checked",{default:[]});
 
@@ -32,7 +32,7 @@ const modelValue = defineModel<string>("value", {});
 </script>
 
 <style lang="less" scoped>
-@prefix-cls: ~"@{namespace}-checkbox-group-input";
+@prefix-cls: ~"@{namespace}-checkbox-group-input-number";
 
 .@{prefix-cls} {
   --at-apply: w-full h-full;

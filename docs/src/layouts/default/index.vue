@@ -2,20 +2,12 @@
   <div :class="prefixCls">
     <div :class="`${prefixCls}-header`">
       <div class="flex items-center">
-        <iconify-icon
-          icon="devicon:antdesign"
-          class="text-6 mr-2"
-        ></iconify-icon>
+        <iconify-icon icon="devicon:antdesign" class="text-6 mr-2"></iconify-icon>
 
         VIAZ
       </div>
       <div class="flex items-center">
-        <a-menu
-          v-model:selectedKeys="current"
-          mode="horizontal"
-          :items="items"
-          class="header-nav-menu"
-        />
+        <a-menu v-model:selectedKeys="current" mode="horizontal" :items="items" class="header-nav-menu" />
 
         <a-dropdown class="ml-2">
           <template #overlay>
@@ -31,10 +23,7 @@
           <a-button>
             <div class="flex items-center">
               5.14.1
-              <iconify-icon
-                icon="ant-design:down-outlined"
-                style="vertical-align: -0.125em"
-              ></iconify-icon>
+              <iconify-icon icon="ant-design:down-outlined" style="vertical-align: -0.125em"></iconify-icon>
             </div>
           </a-button>
         </a-dropdown>
@@ -42,35 +31,21 @@
     </div>
 
     <div :class="`${prefixCls}-contents`">
-      <OverlayScrollbarsComponent
-        ref="scrollbarRef"
-        class="overlayscrollbars-vue h-full"
-        :options="{
-          scrollbars: {
-            autoHide: 'leave',
-            autoHideDelay: 1,
-          },
-        }"
-        defer
-      >
-        <a-menu
-          id="dddddd"
-          style="width: 256px"
-          mode="inline"
-          :items="componentItems"
-          @click="onComponentMenuClick"
-        ></a-menu>
+      <OverlayScrollbarsComponent ref="scrollbarRef" class="overlayscrollbars-vue h-full" :options="{
+    scrollbars: {
+      autoHide: 'leave',
+      autoHideDelay: 1,
+    },
+  }" defer>
+        <a-menu id="dddddd" style="width: 256px" mode="inline" :items="componentItems"
+          @click="onComponentMenuClick"></a-menu>
       </OverlayScrollbarsComponent>
-      <overlay-scrollbars-component
-        class="overlayscrollbars-vue h-full flex-1 p-2"
-        :options="{
-          scrollbars: {
-            autoHide: 'leave',
-            autoHideDelay: 1,
-          },
-        }"
-        defer
-      >
+      <overlay-scrollbars-component class="overlayscrollbars-vue h-full flex-1 p-2" :options="{
+    scrollbars: {
+      autoHide: 'leave',
+      autoHideDelay: 1,
+    },
+  }" defer>
         <router-view></router-view>
       </overlay-scrollbars-component>
     </div>
@@ -157,9 +132,7 @@ const componentItems: ItemType[] = reactive([
     null,
     [
       getItem("Button 按钮", "button"),
-      getItem("FloatButton 悬浮按钮", "float-button"),
-      getItem("Icon 图标", "icon"),
-      getItem("Typography 排版", "typography"),
+
     ],
     "group"
   ),
@@ -172,9 +145,6 @@ const componentItems: ItemType[] = reactive([
     null,
     [
       getItem("DynamicPanel 动态面板", "dynamic-panel"),
-      getItem("FloatButton 悬浮按钮", "float-button"),
-      getItem("Icon 图标", "icon"),
-      getItem("Typography 排版", "typography"),
     ],
     "group"
   ),
@@ -185,68 +155,61 @@ const componentItems: ItemType[] = reactive([
     null,
     [
       getItem("Button 按钮", "button"),
-      getItem("FloatButton 悬浮按钮", "float-button"),
-      getItem("Icon 图标", "icon"),
-      getItem("Typography 排版", "typography"),
+
     ],
     "group"
   ),
 
   getItem(
-    "数据录入",
+    "数据录入 10",
     "grp",
     null,
     [
       getItem("Select 选择框", "select"),
       getItem("ListCheckboxGroup 列表多选框组", "list-checkbox-group"),
-      getItem("FormDesigner 表单设计器", "form-designer"),
-      getItem("FormRenderer 表单渲染器", "form-renderer"),
       getItem("FormTable 表单表格", "form-table"),
       getItem("ConfigurationValue 配置值", "configuration-value"),
-      
       getItem("CheckboxGroup 复选框组", "checkbox-group"),
       getItem("CheckboxInput 复选输入框", "checkbox-input"),
       getItem("CheckboxInputNumber 复选数字输入框", "checkbox-input-number"),
-
       getItem("CheckboxDatePicker 复选日期选择框", "checkbox-date-picker"),
-
       getItem("CheckboxDateRangePicker 复选日期范围选择框", "checkbox-date-range-picker"),
-      
       getItem("CheckboxGroupInput 复选框组输入框", "checkbox-group-input"),
-      
-      
     ],
     "group"
   ),
 
   getItem(
-    "数据展示",
+    "表单 2",
     "grp",
     null,
     [
-      getItem("Table 表格", "table"),
-      getItem("FloatButton 悬浮按钮", "float-button"),
-      getItem("Icon 图标", "icon"),
-      getItem("Typography 排版", "typography"),
+      getItem("FormDesigner 表单设计器", "form-designer"),
+      getItem("FormRenderer 表单渲染器", "form-renderer"),
     ],
     "group"
   ),
 
+  getItem(
+    "数据展示 1",
+    "grp",
+    null,
+    [
+      getItem("Table 表格", "table"),
+    ],
+    "group"
+  ),
   getItem(
     "反馈",
     "grp",
     null,
     [
-      getItem("Button 按钮", "button"),
-      getItem("FloatButton 悬浮按钮", "float-button"),
-      getItem("Icon 图标", "icon"),
-      getItem("Typography 排版", "typography"),
+      getItem("xxxxx 按钮", "button"),
     ],
     "group"
   ),
-
   getItem(
-    "其他",
+    "其他 1",
     "grp",
     null,
     [getItem("HoverMask 悬停遮罩", "hover-mask")],

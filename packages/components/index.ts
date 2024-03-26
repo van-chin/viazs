@@ -43,3 +43,5 @@ export * from "./checkbox-group";
 export * from "./checkbox-date-picker";
 
 export * from "./checkbox-date-range-picker";
+
+export * from "./checkbox-group-input-number";

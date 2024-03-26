@@ -1,5 +1,5 @@
 <template>
-  <div class="bd-red">
+  <div class="">
     {{ configurationedValue }}
     <VzConfigurationValue
       :valueTypes
