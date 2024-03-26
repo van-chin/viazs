@@ -1,6 +1,6 @@
 <template>
   <div :class="prefixCls">
-    <a-checkbox v-model:checked="modelChecked" v-bind="$attrs" >{{ checkboxLabel }}</a-checkbox>
+    <a-checkbox v-model:checked="modelChecked" v-bind="$attrs" @change="onCheckboxChange" >{{ checkboxLabel }}</a-checkbox>
     <a-input-number v-model:value="modelValue" class="w-full" v-bind="$attrs" :disabled="!modelChecked" ></a-input-number>
   </div>
 </template>
@@ -25,6 +25,12 @@ const modelValue = defineModel<string>("value",{});
 const modelChecked = defineModel<boolean>("checked",{default:false});
 
 const { checkboxLabel  } = toRefs(props);
+
+const onCheckboxChange = (event: Event) => {
+  if (event.target?.checked === false) {
+    modelValue.value = undefined;
+  }
+}
 
 </script>
 

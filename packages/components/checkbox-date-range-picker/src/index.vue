@@ -1,41 +1,43 @@
 <template>
   <div :class="prefixCls">
     <a-checkbox v-model:checked="modelChecked" v-bind="$attrs" @change="onCheckboxChange">{{ checkboxLabel }}</a-checkbox>
-    <a-input v-model:value="modelValue" v-bind="$attrs" :disabled="!modelChecked" ></a-input>
+    <a-range-picker v-model:value="modelValue" v-bind="$attrs" :disabled="!modelChecked" ></a-range-picker>
   </div>
 </template>
 
 <script lang="ts" setup>
 
-import type { VzCheckboxInputProps } from "@viaz/types";
+import type { VzCheckboxDateRangePickerProps,DateRangeValue } from "@viaz/types";
+
 
 import { useStyle } from "@viaz/hooks";
 import { toRefs } from "vue";
 
-const { prefixCls } = useStyle("checkbox-input");
+const { prefixCls } = useStyle("checkbox-date-range-picker");
 
-const COMPONENT_NAME = "VzCheckboxInput";
+const COMPONENT_NAME = "VzCheckboxDateRangePicker";
 
 defineOptions({
   name: COMPONENT_NAME,
 });
 
-const props = withDefaults(defineProps<VzCheckboxInputProps>(), {});
-const modelValue = defineModel<string>("value",{});
+const props = withDefaults(defineProps<VzCheckboxDateRangePickerProps>(), {});
+const modelValue = defineModel<DateRangeValue>("value",{});
 const modelChecked = defineModel<boolean>("checked",{default:false});
 
 const { checkboxLabel  } = toRefs(props);
 
+
 const onCheckboxChange = (event: Event) => {
   if (event.target?.checked === false) {
-    modelValue.value = undefined;
+    modelValue.value = [];
   }
 }
 
 </script>
 
 <style lang="less" scoped>
-@prefix-cls: ~"@{namespace}-checkbox-input";
+@prefix-cls: ~"@{namespace}-checkbox-date-range-picker";
 
 .@{prefix-cls} {
   --at-apply: w-full h-full;

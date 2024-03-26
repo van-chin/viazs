@@ -151,6 +151,51 @@ const components: AppRouteModule = {
         icon: "simple-icons:about-dot-me",
       },
     },
+    {
+      path: "checkbox-group-input",
+      name: "components.checkbox-group-input",
+      component: () =>
+        import("@viaz/components/checkbox-group-input/demos/index.demo.md"),
+      meta: {
+        title: "components.checkbox-group-input",
+        icon: "simple-icons:about-dot-me",
+      },
+    },
+    {
+      path: "checkbox-group",
+      name: "components.checkbox-group",
+      component: () =>
+        import("@viaz/components/checkbox-group/demos/index.demo.md"),
+      meta: {
+        title: "components.checkbox-group",
+        icon: "simple-icons:about-dot-me",
+      },
+    },
+
+    {
+      path: "checkbox-date-picker",
+      name: "components.checkbox-date-picker",
+      component: () =>
+        import("@viaz/components/checkbox-date-picker/demos/index.demo.md"),
+      meta: {
+        title: "components.checkbox-date-picker",
+        icon: "simple-icons:about-dot-me",
+      },
+    },
+
+    {
+      path: "checkbox-date-range-picker",
+      name: "components.checkbox-date-range-picker",
+      component: () =>
+        import("@viaz/components/checkbox-date-range-picker/demos/index.demo.md"),
+      meta: {
+        title: "components.checkbox-date-range-picker",
+        icon: "simple-icons:about-dot-me",
+      },
+    },
+
+
+  
   ],
 };
 

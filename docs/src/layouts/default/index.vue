@@ -203,8 +203,18 @@ const componentItems: ItemType[] = reactive([
       getItem("FormRenderer 表单渲染器", "form-renderer"),
       getItem("FormTable 表单表格", "form-table"),
       getItem("ConfigurationValue 配置值", "configuration-value"),
-      getItem("CheckboxInput 选择输入组合框", "checkbox-input"),
-      getItem("CheckboxInputNumber 选择数字输入组合框", "checkbox-input-number"),
+      
+      getItem("CheckboxGroup 复选框组", "checkbox-group"),
+      getItem("CheckboxInput 复选输入框", "checkbox-input"),
+      getItem("CheckboxInputNumber 复选数字输入框", "checkbox-input-number"),
+
+      getItem("CheckboxDatePicker 复选日期选择框", "checkbox-date-picker"),
+
+      getItem("CheckboxDateRangePicker 复选日期范围选择框", "checkbox-date-range-picker"),
+      
+      getItem("CheckboxGroupInput 复选框组输入框", "checkbox-group-input"),
+      
+      
     ],
     "group"
   ),
