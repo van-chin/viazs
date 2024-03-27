@@ -1,5 +1,13 @@
 # @imsjs/ims-ui-enums
 
+## 0.0.2-beta.7
+
+### Patch Changes
+
+- feat checkbox-group
+- Updated dependencies
+  - @viaz/hooks@0.0.2-beta.7
+
 ## 0.0.2-beta.6
 
 ### Patch Changes

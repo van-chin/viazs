@@ -1,3 +1,7 @@
+
+
+import { DataApi, DataParams } from "../shims/networks";
+
 export interface VzCheckboxGroupOption {
     label: string;
     value: string | number;
@@ -9,6 +13,10 @@ export interface VzCheckboxGroupOption {
 
 
 export interface VzCheckboxGroupProps {
+    fieldNames?:object;
+    api?: Function | DataApi;
+    /** 接口参数 */
+    params?: DataParams[];
     /** 数据选项 */
     options: VzCheckboxGroupOption[],
     /** 可被勾选的 checkbox 的最小数量 */

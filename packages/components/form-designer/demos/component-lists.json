@@ -568,6 +568,52 @@
     "formItemProps": []
   },
   {
+    "id": "88",
+    "key": "88",
+    "title": "多选组合框",
+    "icon": "mingcute:checkbox-line",
+    "type": "vz-checkbox-group",
+    "componentName": "VzCheckboxGroup",
+    "vModelField": "value",
+    "item": {
+      "label": "多选组合框",
+      "name": "",
+      "tooltip": "",
+      "extra": "",
+      "required": false,
+      "colon": true,
+      "displayState": true,
+      "rules": []
+    },
+    "component": {
+      "name": "VzCheckboxGroup",
+      "events": {},
+      "props": {
+        "api": {},
+        "params": [],
+        "options": [
+          {
+            "id": "ACheckboxGroupOption-0BMV2r47Uz07S3kFA-flow",
+            "value": "选项一",
+            "label": "选项一"
+          },
+          {
+            "id": "ACheckboxGroupOption-1BMV2r47Uz07S3kFA-flow",
+            "value": "选项二",
+            "label": "选项二"
+          },
+          {
+            "id": "ACheckboxGroupOption-2BMV2r47Uz07S3kFA-flow",
+            "value": "选项三",
+            "label": "选项三"
+          }
+        ]
+      }
+    },
+    "componentProps": [],
+    "formItemProps": []
+  },
+  {
     "id": "9",
     "key": "9",
     "title": "日期选择器",

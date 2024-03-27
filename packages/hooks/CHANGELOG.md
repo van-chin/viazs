@@ -1,5 +1,11 @@
 # @viaz/hooks
 
+## 0.0.2-beta.7
+
+### Patch Changes
+
+- feat checkbox-group
+
 ## 0.0.2-beta.6
 
 ### Patch Changes

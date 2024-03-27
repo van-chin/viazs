@@ -1,5 +1,18 @@
 # viaz
 
+## 0.0.2-beta.7
+
+### Patch Changes
+
+- feat checkbox-group
+- Updated dependencies
+  - @viaz/components@0.0.2-beta.7
+  - @viaz/directives@0.0.2-beta.7
+  - @viaz/constants@0.0.2-beta.7
+  - @viaz/hooks@0.0.2-beta.7
+  - @viaz/types@0.0.2-beta.7
+  - @viaz/utils@0.0.2-beta.7
+
 ## 0.0.2-beta.6
 
 ### Patch Changes
