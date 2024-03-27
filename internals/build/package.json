@@ -1,6 +1,6 @@
 {
   "name": "@internals/build",
-  "version": "0.0.2-beta.16",
+  "version": "0.0.2-beta.17",
   "description": "",
   "private": true,
   "main": "index.ts",

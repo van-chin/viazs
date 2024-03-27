@@ -1,5 +1,18 @@
 # viaz
 
+## 0.0.2-beta.6
+
+### Patch Changes
+
+- add comp events
+- Updated dependencies
+  - @viaz/components@0.0.2-beta.6
+  - @viaz/directives@0.0.2-beta.6
+  - @viaz/constants@0.0.2-beta.6
+  - @viaz/hooks@0.0.2-beta.6
+  - @viaz/types@0.0.2-beta.6
+  - @viaz/utils@0.0.2-beta.6
+
 ## 0.0.2-beta.5
 
 ### Patch Changes

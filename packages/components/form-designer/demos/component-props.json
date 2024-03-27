@@ -8482,6 +8482,14 @@
               ]
             },
             {
+              "name": "checkboxChange",
+              "description": "复选框变化时的回调",
+              "callback": "(checked: boolean) => void",
+              "arguments": [
+                "checked"
+              ]
+            },
+            {
               "name": "pressEnter",
               "description": "按下回车的回调",
               "callback": "function(e)",
@@ -8803,6 +8811,14 @@
               "callback": "function(e)",
               "arguments": [
                 "e"
+              ]
+            },
+            {
+              "name": "checkboxChange",
+              "description": "复选框变化时的回调",
+              "callback": "(checked: boolean) => void",
+              "arguments": [
+                "checked"
               ]
             },
             {
@@ -9130,6 +9146,14 @@
               ]
             },
             {
+              "name": "checkboxChange",
+              "description": "复选框变化时的回调",
+              "callback": "(checked: boolean) => void",
+              "arguments": [
+                "checked"
+              ]
+            },
+            {
               "name": "pressEnter",
               "description": "按下回车的回调",
               "callback": "function(e)",
@@ -9451,6 +9475,14 @@
               "callback": "function(e)",
               "arguments": [
                 "e"
+              ]
+            },
+            {
+              "name": "checkboxChange",
+              "description": "复选框变化时的回调",
+              "callback": "(checked: boolean) => void",
+              "arguments": [
+                "checked"
               ]
             },
             {
@@ -9778,6 +9810,14 @@
               ]
             },
             {
+              "name": "checkboxGroupChange",
+              "description": "复选框组变化时的回调",
+              "callback": "(checkedValue: CheckboxValue[]) => void",
+              "arguments": [
+                "checkedValue"
+              ]
+            },
+            {
               "name": "pressEnter",
               "description": "按下回车的回调",
               "callback": "function(e)",
@@ -10099,6 +10139,14 @@
               "callback": "function(e)",
               "arguments": [
                 "e"
+              ]
+            },
+            {
+              "name": "checkboxGroupChange",
+              "description": "复选框组变化时的回调",
+              "callback": "(checkedValue: CheckboxValue[]) => void",
+              "arguments": [
+                "checkedValue"
               ]
             },
             {

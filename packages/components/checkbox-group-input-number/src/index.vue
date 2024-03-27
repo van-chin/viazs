@@ -1,14 +1,16 @@
 <template>
   <div :class="prefixCls">
     
-    <vz-checkbox-group  v-model:value="modelChecked" v-bind="$attrs" :max="1"></vz-checkbox-group>
+    <vz-checkbox-group  v-model:value="modelChecked" v-bind="$attrs" :max="1" @change="onCheckboxGroupChange"></vz-checkbox-group>
     <a-input-number v-model:value="modelValue" v-bind="$attrs" :disabled="!modelChecked.length" ></a-input-number>
   </div>
 </template>
 
 <script lang="ts" setup>
 
-import type { VzCheckboxGroupInputNumberProps } from "@viaz/types";
+import type { VzCheckboxGroupInputNumberProps,CheckboxValue } from "@viaz/types";
+
+import type { CheckboxGroupProps } from "ant-design-vue";
 
 import { useStyle } from "@viaz/hooks";
 import { toRefs } from "vue";
@@ -21,12 +23,19 @@ defineOptions({
   name: COMPONENT_NAME,
 });
 
+const emits = defineEmits<{
+  checkboxGroupChange: [checkedValue: CheckboxValue[]]
+}>();
 
 const props = withDefaults(defineProps<VzCheckboxGroupInputNumberProps>(), {});
 
 const modelChecked = defineModel("checked",{default:[]});
 
 const modelValue = defineModel<string>("value", {});
+
+const onCheckboxGroupChange: CheckboxGroupProps["onChange"] = (checkedValue) => {
+  emits('checkboxGroupChange', checkedValue);
+}
 
 
 </script>

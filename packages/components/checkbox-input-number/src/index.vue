@@ -21,8 +21,15 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<VzCheckboxInputNumberProps>(), {});
+
 const modelValue = defineModel<string>("value",{});
+
 const modelChecked = defineModel<boolean>("checked",{default:false});
+
+const emits = defineEmits<{
+  checkboxChange: [checked: boolean]
+}>();
+
 
 const { checkboxLabel  } = toRefs(props);
 
@@ -30,6 +37,7 @@ const onCheckboxChange = (event: Event) => {
   if (event.target?.checked === false) {
     modelValue.value = undefined;
   }
+  emits('checkboxChange',event.target.checked);
 }
 
 </script>

@@ -1,5 +1,11 @@
 # @viaz/hooks
 
+## 0.0.2-beta.6
+
+### Patch Changes
+
+- add comp events
+
 ## 0.0.2-beta.5
 
 ### Patch Changes

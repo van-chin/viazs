@@ -18,6 +18,7 @@
         :components-props="componentsProps"
         :component-lists="componentLists"
         @save="onSave"
+      
       ></vz-form-designer>
     </a-drawer>
   </div>

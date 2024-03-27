@@ -21,6 +21,10 @@ defineOptions({
   name: COMPONENT_NAME,
 });
 
+const emits = defineEmits<{
+  checkboxChange: [checked: boolean]
+}>();
+
 const props = withDefaults(defineProps<VzCheckboxDateRangePickerProps>(), {});
 const modelValue = defineModel<DateRangeValue>("value",{});
 const modelChecked = defineModel<boolean>("checked",{default:false});
@@ -32,6 +36,7 @@ const onCheckboxChange = (event: Event) => {
   if (event.target?.checked === false) {
     modelValue.value = [];
   }
+  emits('checkboxChange',event.target.checked);
 }
 
 </script>

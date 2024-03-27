@@ -967,7 +967,7 @@
     "key": "102",
     "title": "复选输入框",
     "icon": "iconoir:input-field",
-    "type": "vz-checkbox-input",
+    "type": "checkbox-input",
     "componentName": "VzCheckboxInput",
     "vModelField": "value",
     "item": {
@@ -984,7 +984,7 @@
       "name": "VzCheckboxInput",
       "events": {},
       "props": {
-        "checkboxLabel": "效期",
+        "checkboxLabel": "",
         "placeholder": "请输入",
         "bordered": true,
         "showCount": false,

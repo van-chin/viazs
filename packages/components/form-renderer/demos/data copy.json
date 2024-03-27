@@ -1,11 +1,13 @@
 {
   "model": {
-    "day": "",
-    "expired": ""
+    "l1XGDzt4z9P4eycIrzrzq": "",
+    "jyQ-4DdqEnm7P47RL_6kq": "",
+    "Z2HIVTWTEVTyjWCIxYIhD": ""
   },
   "rules": {
-    "day": [],
-    "expired": []
+    "l1XGDzt4z9P4eycIrzrzq": [],
+    "jyQ-4DdqEnm7P47RL_6kq": [],
+    "Z2HIVTWTEVTyjWCIxYIhD": []
   },
   "items": [
     {
@@ -30,61 +32,53 @@
       },
       "children": [
         {
-          "id": "0_GoHiiFu5ZG079AXucTe",
-          "key": "0_GoHiiFu5ZG079AXucTe",
-          "title": "复选输入框",
-          "icon": "iconoir:input-field",
-          "type": "checkbox-input",
-          "componentName": "VzCheckboxInput",
+          "id": "a-88V4Xvh_kjy0xL0WNDk",
+          "key": "a-88V4Xvh_kjy0xL0WNDk",
+          "title": "文本域",
+          "icon": "bi:textarea-resize",
+          "type": "textarea",
           "vModelField": "value",
           "item": {
-            "label": "开单效期",
-            "name": "day",
+            "label": "文本域",
+            "name": "jyQ-4DdqEnm7P47RL_6kq",
             "tooltip": "",
             "extra": "",
             "required": false,
             "colon": true,
             "displayState": true,
-            "rules": []
+            "rules": [],
+            "autoLink": false
           },
           "component": {
-            "name": "VzCheckboxInput",
-            "events": {
-              "checkboxChange": [
-                "checked"
-              ]
-            },
+            "name": "ATextarea",
+            "events": {},
             "props": {
-              "checkboxLabel": "",
               "placeholder": "请输入",
-              "bordered": true,
-              "showCount": false,
-              "size": "",
-              "events": {},
-              "suffix": "天"
-            }
+              "bordered": true
+            },
+            "emitsEvents": {}
           },
           "componentProps": [],
           "formItemProps": [],
-          "class": "click-way-checkbox-input"
+          "class": "click-way-textarea"
         },
         {
-          "id": "PbuC6CwvXIWS2NJCp20cj",
-          "key": "PbuC6CwvXIWS2NJCp20cj",
+          "id": "Ewj8Z9JtvEPUF407NrSei",
+          "key": "Ewj8Z9JtvEPUF407NrSei",
           "title": "输入框",
           "icon": "iconoir:input-field",
           "type": "input",
-          "componentName": "AInput",
           "vModelField": "value",
           "item": {
-            "label": "expired",
-            "name": "expired",
+            "label": "输入框",
+            "name": "l1XGDzt4z9P4eycIrzrzq",
             "tooltip": "",
             "extra": "",
             "required": false,
             "colon": true,
-            "displayState": false,
-            "rules": []
+            "displayState": true,
+            "rules": [],
+            "autoLink": false
           },
           "component": {
             "name": "AInput",
@@ -95,7 +89,42 @@
               "showCount": false,
               "size": "",
               "events": {}
-            }
+            },
+            "emitsEvents": {}
+          },
+          "componentProps": [],
+          "formItemProps": [],
+          "class": "click-way-input"
+        },
+        {
+          "id": "SaDhVUb7FVGwo3wUOK_YZ",
+          "key": "SaDhVUb7FVGwo3wUOK_YZ",
+          "title": "输入框",
+          "icon": "iconoir:input-field",
+          "type": "input",
+          "vModelField": "value",
+          "item": {
+            "label": "输入框",
+            "name": "Z2HIVTWTEVTyjWCIxYIhD",
+            "tooltip": "",
+            "extra": "",
+            "required": false,
+            "colon": true,
+            "displayState": true,
+            "rules": [],
+            "autoLink": false
+          },
+          "component": {
+            "name": "AInput",
+            "events": {},
+            "props": {
+              "placeholder": "请输入",
+              "bordered": true,
+              "showCount": false,
+              "size": "",
+              "events": {}
+            },
+            "emitsEvents": {}
           },
           "componentProps": [],
           "formItemProps": [],
