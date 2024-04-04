@@ -48,6 +48,8 @@
   >
     <div :class="`${prefixCls}-filter`" v-if="!initialing" ref="filterEl">
       <VzFormRenderer :data="searcher"></VzFormRenderer>
+
+      <div>searcher</div>
       <!-- aa -->
 
       <!-- <vz-form -->

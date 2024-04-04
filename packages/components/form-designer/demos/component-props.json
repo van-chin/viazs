@@ -9359,6 +9359,52 @@
       }
     },
     {
+      "label": "可被勾选的 checkbox 的最小数量",
+      "field": "min",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 默认内容"
+        }
+      }
+    },
+    {
+      "label": "可被勾选的 checkbox 的最大数量",
+      "field": "max",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 默认内容"
+        }
+      }
+    },
+    {
+      "label": "数据",
+      "field": "options",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "custom",
+      "tooltip": {
+        "title": "options 数据，以配置形式设置子元素"
+      },
+      "component": {
+        "name": "VzDesignerCustomizationOptions",
+        "vModelField": "value",
+        "props": {}
+      }
+    },
+    {
       "label": "前置标签",
       "field": "addonBefore",
       "visibilityToggler": false,
@@ -9718,6 +9764,52 @@
         "props": {
           "placeholder": "请输入后置标签"
         }
+      }
+    },
+    {
+      "label": "可被勾选的 checkbox 的最小数量",
+      "field": "min",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 默认内容"
+        }
+      }
+    },
+    {
+      "label": "可被勾选的 checkbox 的最大数量",
+      "field": "max",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInputNumber",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 默认内容"
+        }
+      }
+    },
+    {
+      "label": "数据",
+      "field": "options",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "custom",
+      "tooltip": {
+        "title": "options 数据，以配置形式设置子元素"
+      },
+      "component": {
+        "name": "VzDesignerCustomizationOptions",
+        "vModelField": "value",
+        "props": {}
       }
     },
     {
