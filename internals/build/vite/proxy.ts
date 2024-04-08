@@ -37,6 +37,6 @@ export function createProxy(list: ProxyList = []) {
     }
   }
 
-  console.info('proxyTargetList =>',proxyTargetList);
+  // console.info('proxyTargetList =>',proxyTargetList);
   return proxyTargetList;
 }

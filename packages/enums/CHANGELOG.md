@@ -1,5 +1,13 @@
 # @imsjs/ims-ui-enums
 
+## 0.0.2-beta.8
+
+### Patch Changes
+
+- feat table vz-page actions
+- Updated dependencies
+  - @viaz/hooks@0.0.2-beta.8
+
 ## 0.0.2-beta.7
 
 ### Patch Changes

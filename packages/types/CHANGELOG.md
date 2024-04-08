@@ -1,5 +1,13 @@
 # @viaz/types
 
+## 0.0.2-beta.8
+
+### Patch Changes
+
+- feat table vz-page actions
+- Updated dependencies
+  - @viaz/constants@0.0.2-beta.8
+
 ## 0.0.2-beta.7
 
 ### Patch Changes

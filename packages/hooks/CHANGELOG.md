@@ -1,5 +1,11 @@
 # @viaz/hooks
 
+## 0.0.2-beta.8
+
+### Patch Changes
+
+- feat table vz-page actions
+
 ## 0.0.2-beta.7
 
 ### Patch Changes
