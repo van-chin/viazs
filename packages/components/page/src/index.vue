@@ -6,46 +6,29 @@
       </template>
 
       <template v-for="(action, index) in actions">
-        <template
-          v-if="
-            action.position === PageCurdActionPositionEnum.TABLE_ROW_OPERATIONS
-          "
-        >
+        <template v-if="
+          action.position === PageCurdActionPositionEnum.TABLE_ROW_OPERATIONS
+        ">
           <template v-if="action.component === 'VzPopconfirmButton'">
-            <component
-              :is="action.component"
-              :key="`action-${index}`"
-              v-bind="action.props"
-              :disabled="
-                action.emit === 'curd-destroy'
-                  ? record.deletedAt !== null
-                  : !record.deletedAt
-              "
-              @confirm="onAction(action.emit, record)"
-            />
+            <component :is="action.component" :key="`action-${index}`" v-bind="action.props" :disabled="action.emit === 'curd-destroy'
+                ? record.deletedAt !== null
+                : !record.deletedAt
+              " @confirm="onAction(action.emit, record)" />
           </template>
 
           <template v-else>
-            <component
-              :is="action.component"
-              :key="`action-${index}`"
-              v-bind="action.props"
-              @click="onAction(action.emit, record)"
-            />
+            <component :is="action.component" :key="`action-${index}`" v-bind="action.props"
+              @click="onAction(action.emit, record)" />
           </template>
         </template>
       </template>
     </a-space>
   </define-operations>
 
-  <div
-    :class="prefixCls"
-    ref="imsElRef"
-    :style="{
-      position: 'relative',
-      border: '1px solid #ebedf0',
-    }"
-  >
+  <div :class="prefixCls" ref="imsElRef" :style="{
+    position: 'relative',
+    border: '1px solid #ebedf0',
+  }">
     <div :class="`${prefixCls}-filter`" v-if="!initialing" ref="filterEl">
       <VzFormRenderer :data="searcher"></VzFormRenderer>
 
@@ -57,93 +40,46 @@
       <div :class="`${prefixCls}-filter-condition-bar`" v-if="conditionBar">
         <fieldset>
           <legend>筛选条件</legend>
-          <a-tag v-for="n in 20" :key="n" color="blue" closable class="mb-2"
-            >状态：启用</a-tag
-          >
+          <a-tag v-for="n in 20" :key="n" color="blue" closable class="mb-2">状态：启用</a-tag>
         </fieldset>
       </div>
 
-      <div
-        :class="`${prefixCls}-filter-action-bar`"
-        class="mt-2"
-        ref="actionBarRef"
-      >
+      <div :class="`${prefixCls}-filter-action-bar`" class="mt-2" ref="actionBarRef">
         <a-space>
           <template v-for="(action, index) in actions">
-            <component
-              :is="action.component"
-              :key="`action-${index}`"
-              v-bind="action.props"
-              @click="onAction(action.emit, {})"
-              v-if="
+            <component :is="action.component" :key="`action-${index}`" v-bind="action.props"
+              @click="onAction(action.emit, {})" v-if="
                 action.position ===
                 PageCurdActionPositionEnum.FILTER_ACTION_BAR_LEFT
-              "
-            />
+              " />
           </template>
         </a-space>
         <a-space>
           <template v-for="(action, index) in actions">
-            <component
-              v-if="
-                action.position ===
-                PageCurdActionPositionEnum.FILTER_ACTION_BAR_RIGHT
-              "
-              :is="action.component"
-              :key="`action-${index}`"
-              v-bind="action.props"
-              @click="onAction(action.emit, { a: 'aa', b: 'b' })"
-            />
+            <component v-if="
+              action.position ===
+              PageCurdActionPositionEnum.FILTER_ACTION_BAR_RIGHT
+            " :is="action.component" :key="`action-${index}`" v-bind="action.props"
+              @click="onAction(action.emit, { a: 'aa', b: 'b' })" />
           </template>
 
-          <vz-button
-            :loading="filtering"
-            text="重置"
-            icon="ant-design:retweet-outlined"
-            @click="onFilterFormReset"
-          />
-          <vz-button
-            type="primary"
-            :loading="filtering"
-            text="查询"
-            icon="ant-design:search-outlined"
-            @click="onQuery(1)"
-          />
+          <vz-button :loading="filtering" text="重置" icon="ant-design:retweet-outlined" @click="onFilterFormReset" />
+          <vz-button type="primary" :loading="filtering" text="查询" icon="ant-design:search-outlined"
+            @click="onQuery(1)" />
           <a-space :size="0">
             <!-- -->
-            <vz-button
-              type="link"
-              :gapless="true"
-              text="展开搜索"
-              @click="onFilterFormSearch"
-              v-if="filters.spans > 48"
-            />
+            <vz-button type="link" :gapless="true" text="展开搜索" @click="onFilterFormSearch" v-if="filters.spans > 48" />
 
-            <a-dropdown
-              v-if="false"
-              placement="bottomLeft"
-              :trigger="['click']"
-            >
-              <icon
-                icon="tabler:settings-down"
-                :inline="true"
-                color="#1677ff"
-                class="cursor-pointer"
-              />
+            <a-dropdown v-if="false" placement="bottomLeft" :trigger="['click']">
+              <icon icon="tabler:settings-down" :inline="true" color="#1677ff" class="cursor-pointer" />
               <template #overlay>
                 <a-menu>
                   <a-menu-item :disabled="filters.spans < 48">
-                    <a-checkbox
-                      v-model:checked="conditionBar"
-                      :disabled="filters.spans < 48"
-                      >筛选条件</a-checkbox
-                    >
+                    <a-checkbox v-model:checked="conditionBar" :disabled="filters.spans < 48">筛选条件</a-checkbox>
                   </a-menu-item>
                   <a-menu-divider />
                   <a-menu-item>
-                    <a-checkbox v-model:checked="immediateSearch"
-                      >立即搜索</a-checkbox
-                    >
+                    <a-checkbox v-model:checked="immediateSearch">立即搜索</a-checkbox>
                   </a-menu-item>
                   <a-menu-item>
                     <template #icon>
@@ -155,43 +91,24 @@
                 </a-menu>
               </template>
             </a-dropdown>
-            <div
-              @click="onAdvancedFilter"
-              v-if="filter.items[0].children.length"
-            >
+            <div @click="onAdvancedFilter" v-if="filter.items[0].children.length">
               <vz-button type="link" :gapless="true" text="高级筛选" />
-              <icon
-                icon="ant-design:down-outlined"
-                :inline="true"
-                color="#1677ff"
-                class="cursor-pointer"
-              />
+              <icon icon="ant-design:down-outlined" :inline="true" color="#1677ff" class="cursor-pointer" />
             </div>
           </a-space>
         </a-space>
       </div>
     </div>
     <!-- height="calc(100vh - 168px)" -->
-    <a-drawer
-      v-model:open="advancedFiltering"
-      :getContainer="() => imsElRef"
-      :closable="false"
-      placement="top"
-      :mask="true"
-      :headerStyle="{
+    <a-drawer v-model:open="advancedFiltering" :getContainer="() => imsElRef" :closable="false" placement="top"
+      :mask="true" :headerStyle="{
         padding: '8px 12px',
-      }"
-      title="高级筛选"
-      root-class-name="advanced-filter"
-      :root-style="{ position: 'absolute !important' }"
-      height="100%"
+      }" title="高级筛选" root-class-name="advanced-filter" :root-style="{ position: 'absolute !important' }" height="100%"
       :maskStyle="{
         background: 'rgba(0, 0, 0, 0.01)',
-      }"
-      :bodyStyle="{
+      }" :bodyStyle="{
         padding: '16px',
-      }"
-    >
+      }">
       <template #extra>
         <a-space>
           <a-button>保存为</a-button>
@@ -213,82 +130,42 @@
           <div>
             <a-space>
               <template v-for="(action, index) in actions">
-                <component
-                  :is="action.component"
-                  :key="`action-${index}`"
-                  v-bind="action.props"
-                  @click="onAction(action.emit, {})"
-                  v-if="
+                <component :is="action.component" :key="`action-${index}`" v-bind="action.props"
+                  @click="onAction(action.emit, {})" v-if="
                     action.position ===
                     PageCurdActionPositionEnum.FILTER_ACTION_BAR_LEFT
-                  "
-                />
+                  " />
               </template>
             </a-space>
           </div>
           <div>
             <a-space>
               <template v-for="(action, index) in actions">
-                <component
-                  v-if="
-                    action.position ===
-                    PageCurdActionPositionEnum.FILTER_ACTION_BAR_RIGHT
-                  "
-                  :is="action.component"
-                  :key="`action-${index}`"
-                  v-bind="action.props"
-                  @click="onAction(action.emit, { a: 'aa', b: 'b' })"
-                />
+                <component v-if="
+                  action.position ===
+                  PageCurdActionPositionEnum.FILTER_ACTION_BAR_RIGHT
+                " :is="action.component" :key="`action-${index}`" v-bind="action.props"
+                  @click="onAction(action.emit, { a: 'aa', b: 'b' })" />
               </template>
 
-              <vz-button
-                :loading="filtering"
-                text="重置"
-                icon="ant-design:retweet-outlined"
-                @click="onFilterFormReset"
-              />
-              <vz-button
-                type="primary"
-                :loading="filtering"
-                text="查询"
-                icon="ant-design:search-outlined"
-                @click="onQuery(2)"
-              />
+              <vz-button :loading="filtering" text="重置" icon="ant-design:retweet-outlined" @click="onFilterFormReset" />
+              <vz-button type="primary" :loading="filtering" text="查询" icon="ant-design:search-outlined"
+                @click="onQuery(2)" />
               <a-space :size="0">
                 <!-- -->
-                <vz-button
-                  type="link"
-                  :gapless="true"
-                  text="展开搜索"
-                  @click="onFilterFormSearch"
-                  v-if="filters.spans > 48"
-                />
+                <vz-button type="link" :gapless="true" text="展开搜索" @click="onFilterFormSearch"
+                  v-if="filters.spans > 48" />
 
-                <a-dropdown
-                  v-if="false"
-                  placement="bottomLeft"
-                  :trigger="['click']"
-                >
-                  <icon
-                    icon="tabler:settings-down"
-                    :inline="true"
-                    color="#1677ff"
-                    class="cursor-pointer"
-                  />
+                <a-dropdown v-if="false" placement="bottomLeft" :trigger="['click']">
+                  <icon icon="tabler:settings-down" :inline="true" color="#1677ff" class="cursor-pointer" />
                   <template #overlay>
                     <a-menu>
                       <a-menu-item :disabled="filters.spans < 48">
-                        <a-checkbox
-                          v-model:checked="conditionBar"
-                          :disabled="filters.spans < 48"
-                          >筛选条件</a-checkbox
-                        >
+                        <a-checkbox v-model:checked="conditionBar" :disabled="filters.spans < 48">筛选条件</a-checkbox>
                       </a-menu-item>
                       <a-menu-divider />
                       <a-menu-item>
-                        <a-checkbox v-model:checked="immediateSearch"
-                          >立即搜索</a-checkbox
-                        >
+                        <a-checkbox v-model:checked="immediateSearch">立即搜索</a-checkbox>
                       </a-menu-item>
                       <a-menu-item>
                         <template #icon>
@@ -302,12 +179,7 @@
                 </a-dropdown>
                 <div @click="onAdvancedFilter">
                   <vz-button type="link" :gapless="true" text="简单筛选" />
-                  <icon
-                    icon="ant-design:up-outlined"
-                    :inline="true"
-                    color="#1677ff"
-                    class="cursor-pointer"
-                  />
+                  <icon icon="ant-design:up-outlined" :inline="true" color="#1677ff" class="cursor-pointer" />
                 </div>
               </a-space>
             </a-space>
@@ -319,20 +191,9 @@
     <div :class="`${prefixCls}-table`">
       <!-- <vz-json-viewer :data="paginations" editable showLine></vz-json-viewer> -->
       <!-- {{ paginations }} -->
-      <vz-table
-        v-if="!initialing"
-        v-bind="$attrs"
-        :paginations="paginations"
-        :columns="columns"
-        :schemes="schemes"
-        :dataTable="dataTable"
-        :rowSelection="rowSelection"
-        :lists="lists"
-        :footer-bar="true"
-        :loading="filtering"
-        :pagination="false"
-        @paginationChange="paginationChange"
-      >
+      <vz-table v-if="!initialing" v-bind="$attrs" :paginations="paginations" :columns="columns" :schemes="schemes"
+        :dataTable="dataTable" :rowSelection="rowSelection" :lists="lists" :footer-bar="true" :loading="filtering"
+        :pagination="false" @paginationChange="paginationChange">
         <!-- 透传 slots -->
         <template v-for="(_, name) in $slots" v-slot:[name]="slotProps">
           <template v-if="name === 'bodyCell'">
@@ -358,32 +219,24 @@
 
               <!-- column.combination = column.hasOwnProperty('combination') === false ||  false || TableColumnCombinationModeEnum.MERGE  -->
 
-              <template
-                v-if="
-                  slotProps.column.combination ===
-                  TableColumnCombinationModeEnum.OVERLAY_MERGE
-                "
-              >
+              <template v-if="
+                slotProps.column.combination ===
+                TableColumnCombinationModeEnum.OVERLAY_MERGE
+              ">
                 <!-- 覆盖合并overlay_merge 暂时处理为 合并(merge) -->
 
                 <a-space class="overlay_merge" :key="name">
                   <slot :name="name" v-bind="slotProps || {}"></slot>
 
-                  <reuse-operations
-                    :record="slotProps.record"
-                    :column="slotProps.column"
-                    :index="slotProps.index"
-                    :text="slotProps.text"
-                  ></reuse-operations>
+                  <reuse-operations :record="slotProps.record" :column="slotProps.column" :index="slotProps.index"
+                    :text="slotProps.text"></reuse-operations>
                 </a-space>
               </template>
 
-              <template
-                v-else-if="
-                  slotProps.column.combination ===
-                  TableColumnCombinationModeEnum.OVERLAY
-                "
-              >
+              <template v-else-if="
+                slotProps.column.combination ===
+                TableColumnCombinationModeEnum.OVERLAY
+              ">
                 <!-- 覆盖 overlay -->
                 <a-space class="overlay" :key="name">
                   <slot :name="name" v-bind="slotProps || {}"></slot>
@@ -400,12 +253,8 @@
 
                   <slot :name="name" v-bind="slotProps || {}"></slot>
 
-                  <reuse-operations
-                    :record="slotProps.record"
-                    :column="slotProps.column"
-                    :index="slotProps.index"
-                    :text="slotProps.text"
-                  ></reuse-operations>
+                  <reuse-operations :record="slotProps.record" :column="slotProps.column" :index="slotProps.index"
+                    :text="slotProps.text"></reuse-operations>
                 </a-space>
               </template>
             </template>
@@ -419,17 +268,9 @@
         </template>
         <!-- 透传 slots -->
 
-        <template
-          v-if="!slotsNames.includes('bodyCell')"
-          #bodyCell="{ text, record, index, column }"
-        >
+        <template v-if="!slotsNames.includes('bodyCell')" #bodyCell="{ text, record, index, column }">
           <template v-if="column.key === 'operations'">
-            <reuse-operations
-              :record="record"
-              :column="column"
-              :index="index"
-              :text="text"
-            ></reuse-operations>
+            <reuse-operations :record="record" :column="column" :index="index" :text="text"></reuse-operations>
           </template>
         </template>
 
@@ -443,33 +284,29 @@
               <template #overlay>
                 <a-menu>
                   <a-menu-item key="1">
-                    <template #icon
-                      ><icon icon="ant-design:delete-outlined"></icon
-                    ></template>
+                    <template #icon>
+                      <icon icon="ant-design:delete-outlined"></icon>
+                    </template>
 
                     删除
                   </a-menu-item>
                   <a-menu-item key="2">
-                    <template #icon
-                      ><icon icon="ri:device-recover-line"></icon
-                    ></template>
+                    <template #icon>
+                      <icon icon="ri:device-recover-line"></icon>
+                    </template>
                     恢复
                   </a-menu-item>
                   <a-menu-item key="3">
-                    <template #icon
-                      ><icon icon="ant-design:delete-outlined"></icon
-                    ></template>
+                    <template #icon>
+                      <icon icon="ant-design:delete-outlined"></icon>
+                    </template>
                     其他
                   </a-menu-item>
                 </a-menu>
               </template>
               <a-button :disabled="!selectedRowKeys.length">
                 <span>批量操作</span>
-                <icon
-                  icon="ant-design:up-outlined"
-                  :inline="true"
-                  class="ml-2"
-                />
+                <icon icon="ant-design:up-outlined" :inline="true" class="ml-2" />
               </a-button>
             </a-dropdown>
           </a-space>
@@ -477,11 +314,7 @@
       </vz-table>
     </div>
     <!--  -->
-    <a-spin
-      :class="`${prefixCls}-spin`"
-      v-if="initialing"
-      tip="Initializing..."
-    ></a-spin>
+    <a-spin :class="`${prefixCls}-spin`" v-if="initialing" tip="Initializing..."></a-spin>
   </div>
 </template>
 
@@ -507,7 +340,7 @@ import { PageCurdProps, PageCurdAction, VzTableColumn } from "@viaz/types";
 
 import { VzFormRenderer } from "../../form-renderer";
 
-import { ref, watch, computed, useSlots, unref } from "vue";
+import { ref, watch, computed, useSlots, unref, toRefs } from "vue";
 
 const COMPONENT_NAME = "VzPage";
 
@@ -723,17 +556,21 @@ const props = withDefaults(defineProps<PageCurdProps>(), {
 });
 
 // differenceBy
-const differenceSet: PageCurdAction[] = differenceBy(
-  DEFAULT_ACTIONS,
-  props.actions,
-  "emit"
-);
+// const differenceSet: PageCurdAction[] = differenceBy(
+//   DEFAULT_ACTIONS,
+//   props.actions,
+//   "emit"
+// );
 
-console.info("differenceSet =>", differenceSet);
+// console.info("differenceSet =>", differenceSet);
 
-// const actions = Object.assign(DEFAULT_ACTIONS, props.actions,differenceSet);
+// const actions = Object.assign(props.actions,DEFAULT_ACTIONS,differenceSet);
 
-const actions = unionBy(DEFAULT_ACTIONS, props.actions, "emit");
+// const actions = unionBy(DEFAULT_ACTIONS, props.actions, "emit");
+
+const { actions } = toRefs(props);
+
+console.info("actions =>", actions);
 
 const selectedRowKeys = ref<any[]>([]); // Check here to configure the default column
 

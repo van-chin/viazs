@@ -13,6 +13,7 @@ import App from "./App.vue";
 
 import { router, setupRouter } from "@/router";
 import { setupRouterGuard } from "@/router/guards";
+import { setupStore } from "@/stores";
 
 import { registerGlobComponent } from "@/components";
 
@@ -20,6 +21,8 @@ import { registerGlobComponent } from "@/components";
   // if(window)
 
   const app = createApp(App);
+
+  setupStore(app);
 
   registerGlobComponent(app);
 

@@ -1,58 +1,29 @@
 <template>
   <DefineCurd class="tmp-reuse" v-slot="{ text, record, index, column }">
     <a-space>
-      <Vz-button
-        type="link"
-        size="small"
-        :gapless="true"
-        text="查看"
-        @click="onDetail(record)"
-      />
 
-      <Vz-button
-        type="link"
-        size="small"
-        :gapless="true"
-        text="编辑"
-        @click="onEdit(record)"
-      />
+      <!-- <component :is="" v-f></component> -->
 
-      <Vz-popconfirm-button
-        :canConfirm="false"
-        :disabled="record.deletedAt"
-        :gapless="true"
-        type="link"
-        text="删除"
-        title="确定要删除此数据么?"
-        @confirm="onDelete(record)"
-      />
-      <Vz-popconfirm-button
-        :canConfirm="false"
-        :disabled="!record.deletedAt"
-        :gapless="true"
-        type="link"
-        text="恢复"
-        title="确定要恢复此数据么?"
-        @confirm="onRecover(record)"
-      />
+      <component :is="action.component" v-bind="action.props" @click="onDetail(record)" :key="index"
+        v-for="(action, index) in actions" />
+
+
+      <!-- <Vz-button type="link" size="small" :gapless="true" text="查看" @click="onDetail(record)"   />
+
+      <Vz-button type="link" size="small" :gapless="true" text="编辑" @click="onEdit(record)" />
+
+      <Vz-popconfirm-button :canConfirm="false" :disabled="record.deletedAt" :gapless="true" type="link" text="删除"
+        title="确定要删除此数据么?" @confirm="onDelete(record)" />
+      <Vz-popconfirm-button :canConfirm="false" :disabled="!record.deletedAt" :gapless="true" type="link" text="恢复"
+        title="确定要恢复此数据么?" @confirm="onRecover(record)" /> -->
     </a-space>
   </DefineCurd>
   <div :class="`${prefixCls}-wrapper`">
     <!-- <Vz-json-viewer :data="modelLists"></Vz-json-viewer> -->
     <div :class="`${prefixCls}-content`" ref="contentElRef">
-      <a-table
-        :class="prefixCls"
-        v-bind="$attrs"
-        ref="tableRef"
-        :data-source="modelLists || []"
-        :components="tblComponents"
-        bordered
-        expandFixed="right"
-        :columns="states.currentColumns"
-        :pagination="false"
-        :scroll="tableScroll"
-        @resizeColumn="onResizeColumn"
-      >
+      <a-table :class="prefixCls" v-bind="$attrs" ref="tableRef" :data-source="modelLists || []"
+        :components="tblComponents" bordered expandFixed="right" :columns="states.currentColumns" :pagination="false"
+        :scroll="tableScroll" @resizeColumn="onResizeColumn">
         <!-- 透传 slot  /** 开始 */  -->
         <template v-for="(_, name) in $slots" v-slot:[name]="slotProps">
           <template v-if="name === 'headerCell'">
@@ -70,10 +41,7 @@
                   /> -->
 
                     <template #overlay>
-                      <a-menu
-                        @click="onTableSizeChange"
-                        v-model:selectedKeys="state.tableSize"
-                      >
+                      <a-menu @click="onTableSizeChange" v-model:selectedKeys="state.tableSize">
                         <a-menu-item key="large"> 默认 </a-menu-item>
                         <a-menu-item key="middle"> 中等 </a-menu-item>
                         <a-menu-item key="small"> 紧凑 </a-menu-item>
@@ -81,13 +49,8 @@
                     </template>
                   </a-dropdown>
 
-                  <icon
-                    v-if="schemes?.length >= 1"
-                    @click="openColumnsSet"
-                    icon="ant-design:setting-outlined"
-                    :inline="true"
-                    class="cursor-pointer"
-                  >
+                  <icon v-if="schemes?.length >= 1" @click="openColumnsSet" icon="ant-design:setting-outlined"
+                    :inline="true" class="cursor-pointer">
                   </icon>
                 </a-space>
               </div>
@@ -95,32 +58,26 @@
           </template>
 
           <template v-else-if="name === 'bodyCell'">
-            <template
-              v-if="slotProps.column.formatType === ColumnFormatTypeEnum.INDEX"
-            >
+            <template v-if="slotProps.column.formatType === ColumnFormatTypeEnum.INDEX">
               {{
                 (paginations?.current - 1) * paginations?.pageSize +
                 slotProps.index +
                 1
               }}
             </template>
-            <template
-              v-if="
-                slotProps.column.formatType === ColumnFormatTypeEnum.DATETIME
-              "
-            >
+            <template v-if="
+              slotProps.column.formatType === ColumnFormatTypeEnum.DATETIME
+            ">
               {{
                 slotProps.text
                   ? unref(
-                      useDateFormat(slotProps.text, slotProps.column.formater)
-                    )
+                    useDateFormat(slotProps.text, slotProps.column.formater)
+                  )
                   : "-"
               }}
             </template>
 
-            <template
-              v-if="slotProps.column.formatType === ColumnFormatTypeEnum.JOIN"
-            >
+            <template v-if="slotProps.column.formatType === ColumnFormatTypeEnum.JOIN">
               {{
                 slotProps.text
                   ? slotProps.text.join(slotProps.column.formater)
@@ -149,28 +106,19 @@
         </template>
 
         <!-- 透传 slot  /** 结束 */  -->
-
+        <!-- // large middle small @select="onTableSizeChange" -->
         <!-- 内置默认的（会被透出solt重写覆盖） slot   /** 开始 */  -->
-        <template
-          #headerCell="{ title, column }"
-          v-if="!slotsNames.includes('headerCell')"
-        >
+        <template #headerCell="{ title, column }" v-if="!slotsNames.includes('headerCell')">
           <template v-if="column.key === 'operations'">
             <div class="flex justify-between items-center">
               <span>{{ title }}</span>
               <a-space>
                 <a-dropdown placement="bottom" :trigger="['click']">
-                  <icon
-                    icon="ant-design:column-height-outlined"
-                    :inline="true"
-                  />
+                  <icon icon="ant-design:column-height-outlined" :inline="true" />
 
-                  // large middle small @select="onTableSizeChange"
+
                   <template #overlay>
-                    <a-menu
-                      @click="onTableSizeChange"
-                      v-model:selectedKeys="state.tableSize"
-                    >
+                    <a-menu @click="onTableSizeChange" v-model:selectedKeys="state.tableSize">
                       <a-menu-item key="large"> 默认 </a-menu-item>
                       <a-menu-item key="middle"> 中等 </a-menu-item>
                       <a-menu-item key="small"> 紧凑 </a-menu-item>
@@ -178,23 +126,15 @@
                   </template>
                 </a-dropdown>
 
-                <icon
-                  v-if="schemes?.length >= 1"
-                  @click="openColumnsSet"
-                  icon="ant-design:setting-outlined"
-                  :inline="true"
-                  class="cursor-pointer"
-                >
+                <icon v-if="schemes?.length >= 1" @click="openColumnsSet" icon="ant-design:setting-outlined"
+                  :inline="true" class="cursor-pointer">
                 </icon>
               </a-space>
             </div>
           </template>
         </template>
 
-        <template
-          v-if="!slotsNames.includes('bodyCell')"
-          #bodyCell="{ text, record, index, column }"
-        >
+        <template v-if="!slotsNames.includes('bodyCell')" #bodyCell="{ text, record, index, column }">
           <!-- date/datetime 格式化  -->
           <template v-if="column.formatType === 2">
             {{ text ? unref(useDateFormat(text, column.formater)) : "-" }}
@@ -202,52 +142,26 @@
           <template v-if="column.key === 'operations'">
             <!-- <div>内置</div> -->
 
-            <ReuseCurd
-              :record="record"
-              :column="column"
-              :text="text"
-              :index="index"
-            />
+            <ReuseCurd :record="record" :column="column" :text="text" :index="index" />
           </template>
         </template>
 
         <!-- 内置 slot  /** 结束 */  -->
       </a-table>
-      <a-drawer
-        v-if="schemes?.length >= 1"
-        title="数列方案配置"
-        placement="right"
-        width="90%"
-        size="large"
-        :bodyStyle="bodyStyle"
-        :headerStyle="{ padding: '16px !important' }"
-        v-model:open="columnsSetting"
-        :get-container="false"
-        :style="{ position: 'absolute' }"
-      >
-        <VzSchemeSetting
-          v-if="schemes?.length >= 1"
-          :data-table="dataTable"
-        ></VzSchemeSetting>
+      <a-drawer v-if="schemes?.length >= 1" title="数列方案配置" placement="right" width="90%" size="large"
+        :bodyStyle="bodyStyle" :headerStyle="{ padding: '16px !important' }" v-model:open="columnsSetting"
+        :get-container="false" :style="{ position: 'absolute' }">
+        <VzSchemeSetting v-if="schemes?.length >= 1" :data-table="dataTable"></VzSchemeSetting>
       </a-drawer>
     </div>
 
-    <div
-      :class="`${prefixCls}-footer-bar flex justify-between items-center bg-white px-2 h-50px `"
-      v-if="footerBar"
-    >
+    <div :class="`${prefixCls}-footer-bar flex justify-between items-center bg-white px-2 h-50px `" v-if="footerBar">
       <div>
         <slot name="footer-action"></slot>
       </div>
 
-      <a-pagination
-        v-bind="paginations"
-        @change="onPaginationChange"
-        :show-total="(total: number) => `总共 ${total} 条`"
-        show-size-changer
-        :responsive="true"
-        show-quick-jumper
-      ></a-pagination>
+      <a-pagination v-bind="paginations" @change="onPaginationChange" :show-total="(total: number) => `总共 ${total} 条`"
+        show-size-changer :responsive="true" show-quick-jumper></a-pagination>
     </div>
   </div>
 </template>
@@ -289,7 +203,6 @@ import { map, intersection } from "lodash-es";
 import {
   createReusableTemplate,
   useResizeObserver,
-  useElementSize,
   useDateFormat,
 } from "@vueuse/core";
 
@@ -307,20 +220,67 @@ const attrs = useAttrs();
 const { prefixCls } = useStyle("table");
 
 const props = withDefaults(defineProps<VzTableProps>(), {
-  sortable: true,
+  sortable: false,
   animation: 600,
   uri: false,
   schemes: [],
   footerBar: true,
   paginations: {},
   columns: [],
+  actions: [
+    {
+      position: "ro",
+      component: "VzButton",
+      props: {
+        type: "link",
+        text: "查看",
+        gapless: true,
+        size: "small",
+      },
+      emit: "curd-detail",
+    },
+    {
+      position: "ro",
+      component: "VzButton",
+      props: {
+        type: "link",
+        text: "编辑",
+        gapless: true,
+      },
+      emit: "curd-edit",
+    },
+    {
+      position: "ro",
+      component: "VzPopconfirmButton",
+
+      props: {
+        canConfirm: false,
+        type: "link",
+        text: "删除",
+        title: "确定要删除此数据么?",
+        gapless: true,
+      },
+      emit: "curd-destroy",
+    },
+    {
+      position: "ro",
+      component: "VzPopconfirmButton",
+      props: {
+        canConfirm: false,
+        type: "link",
+        text: "恢复",
+        title: "确定要恢复此数据么?",
+        gapless: true,
+      },
+      emit: "curd-recovery",
+    },
+  ],
 });
 
-// const { sortable, animation, uri, schemes, footerBar, paginations, columns } =
-//   toRefs(props);
 
-const { sortable, animation, uri, schemes, footerBar, paginations, columns } =
-  props;
+
+const { sortable, animation, uri, schemes, footerBar, paginations, columns, actions } =
+  toRefs(props);
 
 // 重用模板
 const { define: DefineCurd, reuse: ReuseCurd } = createReusableTemplate();
@@ -362,11 +322,7 @@ const tableScroll = ref({
 });
 
 onMounted(() => {
-  //   console.group('onMounted');
-  //   console.info('contentElRef =>',contentElRef.value);
-  //   // const { height: wrapperHeight } = useElementSize(document.querySelector('.Vz-table'));
-  // // console.info('wrapperHeight =>',wrapperHeight);
-  //   console.groupEnd();
+  console.info('vvv =>','xxx');
 });
 
 // 表格高度
@@ -393,7 +349,7 @@ useResizeObserver(contentElRef, (entries) => {
   // console.info("tableScroll =>", tableScroll.value);
 });
 
-const internalProcess = uri !== false;
+const internalProcess = uri.value !== false;
 // console.info("Vz-table:internalProcess =>", internalProcess);
 // large middle small
 let tableSize = ref(["large"]);
@@ -422,7 +378,7 @@ const scTableRowSelection: TableProps["rowSelection"] = {
   // })
 };
 
-if (schemes.length >= 1) {
+if (schemes.value.length >= 1) {
   // customRow.value = useDraggable<any>(schemes[0].columns);
 }
 
@@ -464,18 +420,18 @@ const emit = defineEmits<{
 const slots = useSlots();
 const slotsNames = Object.keys(slots);
 
-columns.forEach((item) => {
+columns.value.forEach((item) => {
   if (item.dataIndex.includes(".")) {
     console.info("有 .");
     item.dataIndex = item.dataIndex.split(".");
   }
 });
 
-states.value.currentColumns = columns;
+states.value.currentColumns = columns.value;
 
 // 判单 columns 是否包含 operations 列
-if (columns) {
-  const operationsKeyIndex = columns.findIndex(
+if (columns.value) {
+  const operationsKeyIndex = columns.value.findIndex(
     (column) => column.key === "operations"
   );
 }
@@ -556,7 +512,7 @@ const schemeColumns = [
 // }
 
 // CURD openDetail
-const lastPageSize = ref(paginations.pageSize);
+const lastPageSize = ref(paginations.value.pageSize);
 const onPaginationChange: PaginationProps["onChange"] = (page, pageSize) => {
   if (lastPageSize.value !== pageSize) {
     page = 1;
@@ -599,12 +555,14 @@ const sortedKeys = ref<string[] | number[]>([]);
 
 const tblComponents = ref({});
 
-if (sortable) {
+console.info('xxx sortable =>', sortable);
+
+if (sortable.value === true) {
   tblComponents.value = {
     body: {
       wrapper: h(VzTableSortable, {
         rowKey: attrs.rowKey,
-        animation: animation,
+        animation: animation.value,
         // dragHandler: dragHandler,
         onDragEnd: (dragEvent, indexs, keys) => {
           console.info("attrs.rowKey =>", attrs.rowKey);
@@ -615,9 +573,9 @@ if (sortable) {
           const sortabledData = sortedIntersectionKeys.map(
             (item) =>
               modelLists.value[
-                modelLists.value.findIndex(
-                  (element) => element[attrs.rowKey] == item
-                )
+              modelLists.value.findIndex(
+                (element) => element[attrs.rowKey] == item
+              )
               ]
           );
           modelLists.value = sortabledData;
@@ -657,7 +615,9 @@ if (sortable) {
 
 .@{prefix-cls} {
   --at-apply: h-full flex-1;
+
   :deep(.draggables) {
+
     // border: 1px solid red;
     td:first-child {
       // border: 1px solid red;

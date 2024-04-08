@@ -6,7 +6,7 @@ export interface Reservation {
   sort: number;
   description: string;
   remark: string;
-  createdAt: MaybeDayjs;
-  updatedAt: MaybeDayjs;
-  deletedAt?: MaybeDayjs;
+  createdAt: any;
+  updatedAt: any;
+  deletedAt?: any;
 }

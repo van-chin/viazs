@@ -6,6 +6,13 @@ import {
   ColumnFormatTypeEnum,
 } from "@viaz/enums";
 
+export interface VzTableRowAction {
+  position: "ro";
+  component: string;
+  props: object;
+  emit: string;
+}
+
 export interface VzTableProps {
   /**
    * 行拖拽
@@ -19,7 +26,7 @@ export interface VzTableProps {
   paginations?: any;
   footerBar?: boolean | object;
   uri?: string | false;
-
+  actions?: VzTableRowAction[];
   // dataSource: object[];
 }
 
@@ -52,6 +59,10 @@ export interface DragEndParams {
    */
   sortabledDataSource: object[];
 }
+
+// import { PageCurdProps, PageCurdAction, VzTableColumn } from "@viaz/types";
+
+
 
 export interface VzTableColumn extends TableColumnType {
   /**

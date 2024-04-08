@@ -1,25 +1,38 @@
 <template>
   <div class="h-400px">
-    <vz-table :paginations="{ pageSize: 10 }" :lists="dataSource" :columns="columns" rowKey="key" @dragEnd="dragEnded"
-      :actions="actions">
-    
+    page
+    <vz-page row-key="id" :actions="curdActions" :store="reservationStore" :tables="tables">
       <template #bodyCell="{ column, text, record }">
         <template v-if="column.key === 'operations'">
           <vz-button type="link" gapless>确认</vz-button>
           <vz-button type="link" gapless>接待</vz-button>
           <vz-button type="link" gapless>取消</vz-button>
-          <!-- <vz-button type="link" gapless>改期</vz-button> -->
+          
 
         </template>
 
       </template>
-    
-    </vz-table>
+
+    </vz-page>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
+
+import { useReservationStore } from '@/stores/modules/hiss/reservationStore';
+// import { useReservationStore } from './stores/reservationStore';
+
+console.info('useReservationStore =>',useReservationStore);
+
+const reservationStore = useReservationStore();
+
+const tables = {
+  rowKey: 'id',
+  pagination: false,
+  sortable:true,
+  expandFixed: 'right'
+};
 
 const columns = [
   {
@@ -44,7 +57,7 @@ const columns = [
   },
 ];
 
-const actions = [
+const curdActions = [
   {
     position: "ro",
     component: "VzButton",
@@ -61,24 +74,24 @@ const actions = [
     component: "VzButton",
     props: {
       type: "link",
-      text: "编vv辑",
+      text: "编辑",
       gapless: true,
     },
     emit: "curd-edit",
   },
-  {
-    position: "ro",
-    component: "VzPopconfirmButton",
+  // {
+  //   position: "ro",
+  //   component: "VzPopconfirmButton",
 
-    props: {
-      canConfirm: false,
-      type: "link",
-      text: "删除xxx",
-      title: "确定要删除此数据么?",
-      gapless: true,
-    },
-    emit: "curd-destroy",
-  },
+  //   props: {
+  //     canConfirm: false,
+  //     type: "link",
+  //     text: "删除",
+  //     title: "确定要删除此数据么?",
+  //     gapless: true,
+  //   },
+  //   emit: "curd-destroy",
+  // },
   // {
   //   position: "ro",
   //   component: "VzPopconfirmButton",

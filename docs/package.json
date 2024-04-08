@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "@viaz/components": "workspace:*",
+    "@viaz/types": "workspace:*",
+    "@viaz/utils": "workspace:*",
+    "@viaz/hooks": "workspace:*",
     "@vueuse/core": "^10.8.0",
     "markdown-it": "^14.0.0",
     "viaz": "workspace:*"

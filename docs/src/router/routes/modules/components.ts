@@ -52,6 +52,15 @@ const components: AppRouteModule = {
       },
     },
     {
+      path: "page",
+      name: "components.page",
+      component: () => import("@viaz/components/page/demos/index.demo.md"),
+      meta: {
+        title: "components.page",
+        icon: "simple-icons:about-dot-me",
+      },
+    },
+    {
       path: "list-checkbox-group",
       name: "components.list-checkbox-group",
       component: () =>

@@ -196,6 +196,7 @@ const componentItems: ItemType[] = reactive([
     null,
     [
       getItem("Table 表格", "table"),
+      getItem("Page 页面", "page"),
     ],
     "group"
   ),

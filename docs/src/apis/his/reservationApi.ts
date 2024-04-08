@@ -1,7 +1,9 @@
-import { defHttp } from '@/utils/http/axios';
-import { ErrorMessageMode } from '#/axios';
 
-import { Reservation } from '@/models/modules/his/reservationModel';
+import { defHttp } from '@viaz/utils';
+
+import type { ErrorMessageMode } from "@viaz/types";
+
+import type { Reservation } from '@/models/modules/his/reservationModel';
 
 export const uri = 'hiss/v1/reservations';
 
