@@ -1,9 +1,10 @@
 {
   "name": "@viaz/enums",
-  "version": "0.0.2-beta.8",
+  "version": "0.0.2-beta.10",
   "description": "",
   "keywords": [],
   "license": "MIT",
+  "type": "module",
   "author": "Van Chin",
   "main": "index.ts",
   "scripts": {

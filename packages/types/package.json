@@ -1,7 +1,8 @@
 {
   "name": "@viaz/types",
-  "version": "0.0.2-beta.8",
+  "version": "0.0.2-beta.10",
   "description": "viaz types",
+  "type": "module",
   "main": "index.ts",
   "module": "index.ts",
   "types": "index.ts",
@@ -25,6 +26,7 @@
     "build": "vite build"
   },
   "dependencies": {
+    "@viaz/enums": "workspace:*",
     "@viaz/constants": "workspace:*"
   },
   "publishConfig": {

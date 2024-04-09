@@ -1,5 +1,5 @@
 import type { PluginOption } from "vite";
-import UnoCSS from "unocss/vite";
+import UnoCSS from 'unocss/vite';
 
 export function configUnoCss(): PluginOption[] {
   const plugins: PluginOption[] = [];

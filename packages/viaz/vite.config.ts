@@ -43,9 +43,11 @@ export default ({ mode, command }: ConfigEnv): UserConfig => {
 
     build: {
       lib: {
-        entry: "./index.ts",
+        // entry: "./index.ts",
+        entry: resolve(__dirname, 'index.ts'),
+        // entry: "./index.ts",
         name: "viaz",
-        formats: ["es"],
+        // formats: ["es"],
       },
       minify: false,
       commonjsOptions: {

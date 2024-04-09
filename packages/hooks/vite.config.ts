@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: "./index.ts",
-      name: "utils",
+      name: "hooks",
     },
   },
 });

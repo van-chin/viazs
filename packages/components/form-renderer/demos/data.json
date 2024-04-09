@@ -1,11 +1,11 @@
 {
   "model": {
-    "day": "",
-    "expired": ""
+    "tb": [],
+    "aaa": ""
   },
   "rules": {
-    "day": [],
-    "expired": []
+    "tb": [],
+    "aaa": []
   },
   "items": [
     {
@@ -30,76 +30,182 @@
       },
       "children": [
         {
-          "id": "0_GoHiiFu5ZG079AXucTe",
-          "key": "0_GoHiiFu5ZG079AXucTe",
-          "title": "复选输入框",
-          "icon": "iconoir:input-field",
-          "type": "checkbox-input",
-          "componentName": "VzCheckboxInput",
+          "id": "KOJXLYEMljzcxewgncoMZ",
+          "key": "KOJXLYEMljzcxewgncoMZ",
+          "title": "输入表格",
+          "icon": "ant-design:cloud-upload-outlined",
+          "type": "vz-form-table",
+          "componentName": "VzFormTable",
           "vModelField": "value",
           "item": {
-            "label": "开单效期",
-            "name": "day",
+            "label": "输入表格",
+            "name": "tb",
             "tooltip": "",
             "extra": "",
             "required": false,
             "colon": true,
             "displayState": true,
-            "rules": []
+            "rules": [],
+            "autoLink": false
           },
           "component": {
-            "name": "VzCheckboxInput",
-            "events": {
-              "checkboxChange": [
-                "checked"
-              ]
-            },
+            "name": "VzFormTable",
+            "events": {},
             "props": {
-              "checkboxLabel": "",
-              "placeholder": "请输入",
+              "rowKey": "id",
               "bordered": true,
-              "showCount": false,
-              "size": "",
-              "events": {},
-              "suffix": "天"
-            }
+              "dataSource": [
+                {
+                  "id": "1",
+                  "key": "name",
+                  "name": "假数据",
+                  "age": 18
+                },
+                {
+                  "id": "2",
+                  "key": "name",
+                  "name": "假数据二",
+                  "age": 19
+                }
+              ],
+              "columns": [
+                {
+                  "id": "1",
+                  "title": "选择",
+                  "dataIndex": "name",
+                  "key": "name",
+                  "component": {
+                    "name": "ASelect",
+                    "vModelField": "value",
+                    "type": "select",
+                    "props": {
+                      "bordered": true,
+                      "allowClear": true,
+                      "placeholder": "请选择",
+                      "virtual": true,
+                      "fieldNames": {
+                        "label": "label",
+                        "value": "value",
+                        "options": "options"
+                      },
+                      "options": [
+                        {
+                          "id": "1",
+                          "label": "选项一",
+                          "value": "选项一"
+                        },
+                        {
+                          "id": "2",
+                          "label": "选项二",
+                          "value": "选项二"
+                        },
+                        {
+                          "id": "3",
+                          "label": "选项三",
+                          "value": "选项三"
+                        }
+                      ],
+                      "events": {}
+                    },
+                    "events": {
+                      "change": [
+                        "value",
+                        "option"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "2",
+                  "title": "年龄",
+                  "dataIndex": "age",
+                  "key": "age",
+                  "component": {
+                    "name": "AInputNumber",
+                    "vModelField": "value",
+                    "type": "input-number",
+                    "props": {
+                      "placeholder": "请输入年龄"
+                    }
+                  }
+                }
+              ],
+              "initial": {
+                "name": "zs",
+                "age": 18,
+                "status": false,
+                "abc": true,
+                "users": [],
+                "abcd": {}
+              }
+            },
+            "emitsEvents": {}
           },
           "componentProps": [],
           "formItemProps": [],
-          "class": "click-way-checkbox-input"
+          "class": "click-way-vz-form-table"
         },
         {
-          "id": "PbuC6CwvXIWS2NJCp20cj",
-          "key": "PbuC6CwvXIWS2NJCp20cj",
-          "title": "输入框",
-          "icon": "iconoir:input-field",
-          "type": "input",
-          "componentName": "AInput",
+          "id": "JnW26p-4jC1QD2sq27vOW",
+          "key": "JnW26p-4jC1QD2sq27vOW",
+          "title": "选择框",
+          "icon": "tabler:select",
+          "type": "select",
+          "componentName": "ASelect",
           "vModelField": "value",
           "item": {
-            "label": "expired",
-            "name": "expired",
+            "label": "选择框",
+            "name": "aaa",
             "tooltip": "",
             "extra": "",
             "required": false,
             "colon": true,
-            "displayState": false,
-            "rules": []
+            "displayState": true,
+            "rules": [],
+            "autoLink": false
           },
           "component": {
-            "name": "AInput",
-            "events": {},
+            "name": "ASelect",
+            "events": {
+              "change": [
+                "value",
+                "option"
+              ]
+            },
             "props": {
-              "placeholder": "请输入",
               "bordered": true,
-              "showCount": false,
-              "size": "",
+              "allowClear": true,
+              "placeholder": "请选择",
+              "virtual": true,
+              "fieldNames": {
+                "label": "label",
+                "value": "value",
+                "options": "options"
+              },
+              "options": [
+                {
+                  "id": "1",
+                  "label": "选项一",
+                  "value": "选项一"
+                },
+                {
+                  "id": "2",
+                  "label": "选项二",
+                  "value": "选项二"
+                },
+                {
+                  "id": "3",
+                  "label": "选项三",
+                  "value": "选项三"
+                }
+              ],
               "events": {}
-            }
+            },
+            "emitsEvents": {}
           },
           "componentProps": [],
           "formItemProps": [],
-          "class": "click-way-input"
+          "class": "click-way-select"
         }
       ],
       "component": {

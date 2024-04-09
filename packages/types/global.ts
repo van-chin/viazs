@@ -1,4 +1,5 @@
-import type { VNodeChild, PropType as VuePropType, Ref, Directive } from "vue";
+// import type { VNodeChild, PropType as VuePropType, Ref, Directive } from "vue";
+import type { Ref, Directive } from "vue";
 
 import type { NrlType } from "./shims/networks";
 

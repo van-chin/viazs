@@ -1,12 +1,7 @@
 <template>
   <div class="">
-    <vz-form-table
-      rowKey="id"
-      :columns="columns"
-      bordered
-      :initial="initial"
-      v-model:value="dataSource"
-    ></vz-form-table>
+    <vz-form-table rowKey="id" @name-change="onNameChange" :columns="columns" bordered :initial="initial"
+      v-model:value="dataSource"></vz-form-table>
 
     <VzJsonViewer class="h-200px" :data="dataSource"></VzJsonViewer>
   </div>
@@ -16,6 +11,12 @@
 import { ref, h } from "vue";
 
 const activeColumnKey = ref<string>();
+
+
+const onNameChange = ({ index, e }) => {
+  console.info('onNameChange index=>', index);
+  console.info('onNameChange e=>', e);
+}
 
 const customHeaderCell = (column) => {
   return {
@@ -55,6 +56,11 @@ const columns = [
     component: {
       name: "AInput",
       vModelField: "value",
+      events: {
+        "change": [
+          "e",
+        ]
+      },
       props: {
         placeholder: "请输入姓名",
       },

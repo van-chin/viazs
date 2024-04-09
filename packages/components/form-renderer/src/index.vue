@@ -6,39 +6,25 @@
       <template v-for="(item, index) in data.items[0].children">
         <template v-if="item.type === 'grid-layout'">
           <a-row :gutter="6">
-            <a-col
-              :key="index"
-              v-for="(rowItem, index) in item.children"
-              :span="
-                rowItem.component.props.span
-                  ? rowItem.component.props.span
-                  : 24 / item.children.length
-              "
-            >
+            <a-col :key="index" v-for="(rowItem, index) in item.children" :span="rowItem.component.props.span
+              ? rowItem.component.props.span
+              : 24 / item.children.length
+              ">
               <template v-for="ric in rowItem.children">
-                <a-form-item
-                  v-if="ric.item.displayState === true"
-                  v-bind="
-                    ric.type === 'ims-form-divider'
-                      ? Object.assign(
-                          ric.item,
-                          formInstance.validateInfos[ric.item.name],
-                          { label: '' }
-                        )
-                      : Object.assign(
-                          ric.item,
-                          formInstance.validateInfos[ric.item.name]
-                        )
-                  "
-                  :label="data.items[0].item.labelShow ? ric.item.label : ''"
-                >
-                  <component
-                    :class="ric.component.class"
-                    :is="ric.component.name || 'AInput'"
-                    v-bind="ric.component.props"
-                    v-on="ric.component?.emitsEvents || {}"
-                    v-model:[ric.vModelField]="data.model[ric.item.name]"
-                  ></component>
+                <a-form-item v-if="ric.item.displayState === true" v-bind="ric.type === 'ims-form-divider'
+                  ? Object.assign(
+                    ric.item,
+                    formInstance.validateInfos[ric.item.name],
+                    { label: '' }
+                  )
+                  : Object.assign(
+                    ric.item,
+                    formInstance.validateInfos[ric.item.name]
+                  )
+                  " :label="data.items[0].item.labelShow ? ric.item.label : ''">
+                  <component :class="ric.component.class" :is="ric.component.name || 'AInput'"
+                    v-bind="ric.component.props" v-on="ric.component?.emitsEvents || {}"
+                    v-model:[ric.vModelField]="data.model[ric.item.name]"></component>
                 </a-form-item>
               </template>
             </a-col>
@@ -46,29 +32,33 @@
         </template>
 
         <template v-else>
-          <a-form-item
-            v-if="item.item.displayState === true"
-            v-bind="
-              item.type === 'ims-form-divider'
-                ? Object.assign(
-                    item.item,
-                    formInstance.validateInfos[item.item.name],
-                    { label: '' }
-                  )
-                : Object.assign(
-                    item.item,
-                    formInstance.validateInfos[item.item.name]
-                  )
-            "
-            :label="data.items[0].item.labelShow ? item.item.label : ''"
-          >
-            <component
-              :is="item.component.name || 'AInput'"
-              :class="item.component.class"
-              v-bind="item.component.props"
-              v-on="item.component?.emitsEvents || {}"
-              v-model:[item.vModelField]="data.model[item.item.name]"
-            ></component>
+          <a-form-item v-if="item.item.displayState === true" v-bind="item.type === 'ims-form-divider'
+            ? Object.assign(
+              item.item,
+              formInstance.validateInfos[item.item.name],
+              { label: '' }
+            )
+            : Object.assign(
+              item.item,
+              formInstance.validateInfos[item.item.name]
+            )
+            " :label="data.items[0].item.labelShow ? item.item.label : ''">
+
+            <tetemplate v-if="item.component.name === 'VzFormTable'">
+              <!-- {{ item }} -->
+              <component :is="item.component.name || 'AInput'" :class="item.component.class"
+                v-bind="item.component.props" v-on="item.component?.emitsEvents || {}"
+                @field-events="(params: any) => onFieldEvents(item.item.name, params)"
+                v-model:[item.vModelField]="data.model[item.item.name]"></component>
+            </tetemplate>
+
+            <tetemplate v-else>
+              <component :is="item.component.name || 'AInput'" :class="item.component.class"
+                v-bind="item.component.props" v-on="item.component?.emitsEvents || {}"
+                v-model:[item.vModelField]="data.model[item.item.name]"></component>
+            </tetemplate>
+
+
           </a-form-item>
         </template>
       </template>
@@ -115,9 +105,24 @@ const emits = defineEmits<{
 
 const emitEventHandler = (field: string, event: string, params: any) => {
   const eo = `${field}-${event}`;
+  console.info('form-renderer eo =>', eo);
   currentInstance.emitsOptions[eo] = null;
   emits(eo, params);
 };
+
+const onFieldEvents = (field: string, params: any) => {
+  console.info('onFieldEvents field=>', field);
+  console.info('onFieldEvents params=>', params);
+  // columnField: field, event, params: params
+
+  const {columnField,event} = params;
+
+  const eo = `${field}-${columnField}-${event}`;
+
+  console.info('onFieldEvents .eo =>', eo);
+
+  emits(eo, params.params);
+}
 
 const { data } = toRefs(props);
 

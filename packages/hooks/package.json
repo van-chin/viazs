@@ -1,8 +1,9 @@
 {
   "name": "@viaz/hooks",
-  "version": "0.0.2-beta.8",
+  "version": "0.0.2-beta.10",
   "description": "viaz hooks",
   "main": "index.ts",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "vite build"

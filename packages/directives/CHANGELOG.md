@@ -1,5 +1,21 @@
 # @viaz/directives
 
+## 0.0.2-beta.10
+
+### Patch Changes
+
+- update import entry
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.10
+
+## 0.0.2-beta.9
+
+### Patch Changes
+
+- remove vz-page searcher
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.9
+
 ## 0.0.2-beta.8
 
 ### Patch Changes

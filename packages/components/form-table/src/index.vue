@@ -7,17 +7,9 @@
       </div>
     </div>
 
-    <a-table
-      :class="`${prefixCls}-antdv-table`"
-      v-bind="$attrs"
-      :columns="parseedColumns"
-      :data-source="modelValue"
-      @change="onChange"
-      :rowKey="rowKey"
-      ref="tableRef"
-      :customHeaderCell="customHeaderCell"
-      :customHeaderRow="customHeaderRow"
-    >
+    <a-table :class="`${prefixCls}-antdv-table`" v-bind="$attrs" :columns="parseedColumns" :data-source="modelValue"
+      @change="onChange" :rowKey="rowKey" ref="tableRef" :customHeaderCell="customHeaderCell"
+      :customHeaderRow="customHeaderRow">
       <!-- 透传 slot  /** 开始 */  -->
       <template v-for="(_, name) in $slots" v-slot:[name]="slotProps">
         <template v-if="name === 'headerCell'">
@@ -38,11 +30,7 @@
                   </template>
                 </a-dropdown>
 
-                <icon
-                  icon="ant-design:setting-outlined"
-                  :inline="true"
-                  class="cursor-pointer"
-                >
+                <icon icon="ant-design:setting-outlined" :inline="true" class="cursor-pointer">
                 </icon>
               </a-space>
             </div>
@@ -50,30 +38,24 @@
         </template>
 
         <template v-else-if="name === 'bodyCell'">
-          <template
-            v-if="slotProps.column.formatType === ColumnFormatTypeEnum.INDEX"
-          >
+          <template v-if="slotProps.column.formatType === ColumnFormatTypeEnum.INDEX">
             {{
               (paginations?.current - 1) * paginations?.pageSize +
               slotProps.index +
               1
             }}
           </template>
-          <template
-            v-if="slotProps.column.formatType === ColumnFormatTypeEnum.DATETIME"
-          >
+          <template v-if="slotProps.column.formatType === ColumnFormatTypeEnum.DATETIME">
             {{
               slotProps.text
                 ? unref(
-                    useDateFormat(slotProps.text, slotProps.column.formater)
-                  )
+                  useDateFormat(slotProps.text, slotProps.column.formater)
+                )
                 : "-"
             }}
           </template>
 
-          <template
-            v-if="slotProps.column.formatType === ColumnFormatTypeEnum.JOIN"
-          >
+          <template v-if="slotProps.column.formatType === ColumnFormatTypeEnum.JOIN">
             {{
               slotProps.text
                 ? slotProps.text.join(slotProps.column.formater)
@@ -91,12 +73,7 @@
                 {{ calcIndex(slotProps.index) }}
               </div>
               <div :class="`${prefixCls}-index-wrapper-delete delete`">
-                <a-button
-                  size="small"
-                  danger
-                  shape="circle"
-                  @click="onDeleteRow(slotProps.index)"
-                >
+                <a-button size="small" danger shape="circle" @click="onDeleteRow(slotProps.index)">
                   <icon icon="ant-design:delete-outlined" :inline="true" />
                 </a-button>
               </div>
@@ -121,17 +98,8 @@
       <template #headerCell="{ title, column }">
         <template v-if="column.key === 'index'">
           <div>
-            <a-button
-              v-if="hab === false"
-              size="small"
-              type="primary"
-              shape="circle"
-              @click="onAddRow"
-            >
-              <iconify-icon
-                icon="ant-design:plus-outlined"
-                :inline="true"
-              ></iconify-icon>
+            <a-button v-if="hab === false" size="small" type="primary" shape="circle" @click="onAddRow">
+              <iconify-icon icon="ant-design:plus-outlined" :inline="true"></iconify-icon>
             </a-button>
             <span v-else>{{ title }}</span>
           </div>
@@ -147,16 +115,8 @@
               {{ calcIndex(index) }}
             </div>
             <div :class="`${prefixCls}-index-wrapper-delete delete`">
-              <a-button
-                size="small"
-                danger
-                shape="circle"
-                @click="onDeleteRow(index)"
-              >
-                <iconify-icon
-                  icon="ant-design:delete-outlined"
-                  :inline="true"
-                ></iconify-icon>
+              <a-button size="small" danger shape="circle" @click="onDeleteRow(index)">
+                <iconify-icon icon="ant-design:delete-outlined" :inline="true"></iconify-icon>
               </a-button>
             </div>
           </div>
@@ -164,19 +124,12 @@
 
         <template v-else>
           <template v-if="column.component">
-            <component
-              :is="column.component.name"
-              v-bind="column.component.props"
-              v-on="parseEvents(column, index)"
-              :index="index"
-              :class="
-                column.component.name === 'ACheckbox' ||
+            <component :is="column.component.name" v-bind="column.component.props" v-on="parseEvents(column, index)"
+              :index="index" :class="column.component.name === 'ACheckbox' ||
                 column.component.name === 'ASwitch'
-                  ? ''
-                  : 'w-full'
-              "
-              v-model:[column.component.vModelField]="record[column.dataIndex]"
-            >
+                ? ''
+                : 'w-full'
+                " v-model:[column.component.vModelField]="record[column.dataIndex]">
             </component>
           </template>
 
@@ -256,15 +209,17 @@ const customHeaderRow = (columns, index) => {
 const emits = defineEmits<{
   added: [totality: number];
   deleted: [totality: number];
+  fieldEvents: [params: any];
 }>();
 // 动态生成 emit 事件
 const emitEventHandler = (field: string, event: string, params: any) => {
   const eo = `${field}-${event}`;
 
   currentInstance.emitsOptions[eo] = null;
-  // console.info('eo =>',eo);
-  // console.info('params =>',params);
+  console.info('form-table eo =>', eo);
+  console.info('params =>', params);
   emits(eo, params);
+  emits('fieldEvents', { columnField: field, event, params: params });
 };
 const parseEvents = (column: VzFormTableColumn, index: number) => {
   if (column.component?.hasOwnProperty("events")) {
@@ -488,6 +443,7 @@ watch(
   &-action-bar {
     --at-apply: flex justify-between items-center p-2 mb-2;
   }
+
   // border: 1px solid red;
   &-index-wrapper {
     // border: 1px solid red;
@@ -495,6 +451,7 @@ watch(
     height: 24px;
     min-height: 24px;
     --at-apply: flex justify-center items-center;
+
     &-index {
       // display: none;
     }
@@ -504,10 +461,12 @@ watch(
     }
 
     &:hover {
+
       // background-color: red;
       .index {
         display: none;
       }
+
       .delete {
         display: block;
       }
@@ -522,6 +481,7 @@ watch(
     .ant-select-selection-placeholder {
       text-align: left;
     }
+
     .ant-select-selection-item {
       text-align: left;
     }

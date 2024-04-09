@@ -67,7 +67,7 @@
 
         <div :class="`${prefixCls}-modal-wrap-content-comp-props`">
           <div :class="`${prefixCls}-modal-wrap-content-comp-props-title`">
-            <a-typography-text strong>组件属性 </a-typography-text>
+            <a-typography-text strong>组件属性</a-typography-text>
 
             <div class="flex items-center">
               <iconify-icon icon="ant-design:close-outlined" @click="onConfigurationPropsClose"
@@ -76,22 +76,22 @@
 
           </div>
           <div :class="`${prefixCls}-modal-wrap-content-comp-props-content`">
+            
             <vz-overlay-scrollbar>
               <div class="px-2">
                 <template v-for="item in activedRowComponentProps">
                   <template v-if="['events', 'class'].includes(item.field)">
 
+          
                     <VzDesignerCustomizationProp v-if="item.show !== false" v-bind="item"
                       v-model:value="activeRowComponent[item.field]" v-model:apply="item.apply">
                     </VzDesignerCustomizationProp>
 
                   </template>
                   <template v-else>
-
-
                     <VzDesignerCustomizationProp v-if="item.show !== false" v-bind="item"
-                      v-model:value="activeRowComponent[item.field]" v-model:params="activeRowComponent['params']"
-                      v-model:api="activeRowComponent['api']" v-model:apply="item.apply" v-model:mode="item.mode">
+                      v-model:value="activeRowComponent.props[item.field]" v-model:params="activeRowComponent.props['params']"
+                      v-model:api="activeRowComponent.props['api']" v-model:apply="item.apply" v-model:mode="item.mode">
                     </VzDesignerCustomizationProp>
 
 
@@ -179,7 +179,8 @@ const initial = {
 
 const onConfigurationProps = (record:any, index: number) => {
 
-  activeRowComponent.value = record.component.props;
+  // activeRowComponent.value = record.component.props;
+  activeRowComponent.value = record.component;
   activedRowComponentProps.value = componentProps[record.component.type];
 
   propsOpen.value = true;

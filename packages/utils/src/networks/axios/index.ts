@@ -5,7 +5,7 @@ import type { AxiosResponse, AxiosRequestConfig } from "axios";
 import type { RequestOptions, Result } from "@viaz/types";
 import type { AxiosTransform, CreateAxiosOptions } from "./axiosTransform";
 
-import type { Recordable } from "@viaz/types";
+// import type { Recordable } from "@viaz/types";
 
 import { clone } from "lodash-es";
 import { VAxios } from "./Axios";
@@ -198,9 +198,9 @@ const transform: AxiosTransform = {
     const refreshToken = getToken(REFRESH_TOKEN_KEY);
     console.info("requestInterceptors.refreshToken =>", refreshToken);
 
-    if (token && (config as Recordable)?.requestOptions?.withToken !== false) {
+    if (token && (config as Recordable<any>)?.requestOptions?.withToken !== false) {
       // jwt token
-      (config as Recordable).headers.Authorization =
+      (config as Recordable<any>).headers.Authorization =
         options.authenticationScheme
           ? `${options.authenticationScheme} ${token}`
           : token;
@@ -208,10 +208,10 @@ const transform: AxiosTransform = {
 
     if (
       refreshToken &&
-      (config as Recordable)?.requestOptions?.withAuthorizationRefreshToken ===
+      (config as Recordable<any>)?.requestOptions?.withAuthorizationRefreshToken ===
         true
     ) {
-      (config as Recordable).headers["Authorization-Refresh-Token"] =
+      (config as Recordable<any>).headers["Authorization-Refresh-Token"] =
         options.authenticationScheme
           ? `${options.authenticationScheme} ${refreshToken}`
           : refreshToken;
@@ -219,10 +219,10 @@ const transform: AxiosTransform = {
 
     if (
       token &&
-      (config as Recordable)?.requestOptions?.withAuthorizationAccessToken ===
+      (config as Recordable<any>)?.requestOptions?.withAuthorizationAccessToken ===
         true
     ) {
-      (config as Recordable).headers["Authorization-Access-Token"] =
+      (config as Recordable<any>).headers["Authorization-Access-Token"] =
         options.authenticationScheme
           ? `${options.authenticationScheme} ${token}`
           : token;

@@ -157,3 +157,6 @@ export function useMessage() {
     createWarningModal,
   };
 }
+
+
+export default useMessage;

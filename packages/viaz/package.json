@@ -1,19 +1,19 @@
 {
   "name": "viaz",
-  "version": "0.0.2-beta.8",
+  "version": "0.0.2-beta.10",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "vite build"
   },
-  "main": "index.ts",
-  "module": "index.ts",
+  "type": "module",
+  "main": "dist/viaz.js",
+  "module": "dist/viaz.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "require": "dist/viaz.umd.js",
-      "module": "dist/viaz.mjs",
-      "types": "dist/index.d.ts"
+      "require": "./dist/viaz.umd.cjs",
+      "module": "./dist/viaz.js"
     },
     "./*": "./*"
   },
