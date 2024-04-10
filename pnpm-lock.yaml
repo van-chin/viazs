@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@utopia-utils/tree':
+        specifier: ^0.3.24
+        version: 0.3.24
     devDependencies:
       '@changesets/cli':
         specifier: ^2.27.1
@@ -2648,13 +2652,11 @@ packages:
 
   /@utopia-utils/share@0.3.24:
     resolution: {integrity: sha512-zBWMInRtUcm/0Ni85kPVodxiIzwmvGFrIV3/UE5X7RJnISxcevAem9Q7/nWGBWlOvEkY95BAbMehaoOQg4Bzqw==}
-    dev: true
 
   /@utopia-utils/tree@0.3.24:
     resolution: {integrity: sha512-7/CNvR1ePc+K+4RddJZqQ9y9cl+CQsUSYKI7CiFtVYzgAHXRxrwrUviSgFfnYuF4LEpxxu9WXMiCfSdxQLp8GA==}
     dependencies:
       '@utopia-utils/share': 0.3.24
-    dev: true
 
   /@visactor/vdataset@0.17.5:
     resolution: {integrity: sha512-zVBdLWHWrhldGc8JDjSYF9lvpFT4ZEFQDB0b6yvfSiHzHKHiSco+rWmUFvA7r4ObT6j2QWF1vZAV9To8Ml4vHw==}

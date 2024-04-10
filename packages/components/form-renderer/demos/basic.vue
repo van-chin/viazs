@@ -6,8 +6,9 @@
         <a-button @click="resetForm">重置</a-button>
       </a-space>
     </div>
-    {{ list }}
-    <vz-form-renderer @tb-name-change="onNameChange" ref="formRenderer" @day-checkboxChange="dayCheckboxChange"
+    <!-- {{ list }} -->
+    <vz-json-viewer :data="list.model"></vz-json-viewer>
+    <vz-form-renderer @tb-name-change="onTbNameChange" ref="formRenderer" @day-checkboxChange="dayCheckboxChange"
       :data="list"></vz-form-renderer>
   </div>
 </template>
@@ -19,7 +20,7 @@ import type { VzFormSchema } from "viaz";
 import type { CheckboxChange } from "@viaz/types";
 
 import data from "./data.json";
-
+import { update } from "lodash-es";
 const list = ref<VzFormSchema>(data);
 
 const formRenderer = ref();
@@ -28,8 +29,35 @@ onMounted(() => {
   console.info("formRenderer =>", formRenderer.value);
 });
 
-const onNameChange = (data: any) => {
+const onTbNameChange = (data: any) => {
   console.info('onNameChange 透传事情 监听 nbnb => xxxxxxxxxxxxx', data);
+  const { index, value } = data;
+  console.info('formRenderer.value.formInstance =>', formRenderer.value);
+  // let findedNode = formRenderer.value.findComponentNode('tb');
+  // console.info('findedNode =>', findedNode);
+
+
+  // let path = ['tb', index, '_components', 'age', 'props', 'disabled'];
+  let path = [index, '_components', 'age', 'props', 'disabled'];
+  // console.info('')
+  // // list.value.model.tb[index]['_components']
+
+  // update(list.value.model, path, () => {
+  //   if (value === '选项一') {
+  //     return true;
+  //   }
+  //   return false;
+  // });
+
+  // formRenderer.value.updateComponentProp('aaa','item.label','测试修改');
+  let updatedValue = true;
+
+
+  updatedValue = value === '选项一' ? false : true;
+  formRenderer.value.updateFormModel('tb', updatedValue, path);
+
+  // formRenderer.value.updateFormModel('tb','选项三','aa.bb');
+
 }
 
 const getFormData = () => {

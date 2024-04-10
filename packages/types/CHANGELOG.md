@@ -1,5 +1,14 @@
 # @viaz/types
 
+## 0.0.2-beta.11
+
+### Patch Changes
+
+- add from-table event
+- Updated dependencies
+  - @viaz/constants@0.0.2-beta.11
+  - @viaz/enums@0.0.2-beta.11
+
 ## 0.0.2-beta.10
 
 ### Patch Changes

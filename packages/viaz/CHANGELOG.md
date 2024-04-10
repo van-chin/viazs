@@ -1,5 +1,18 @@
 # viaz
 
+## 0.0.2-beta.11
+
+### Patch Changes
+
+- add from-table event
+- Updated dependencies
+  - @viaz/components@0.0.2-beta.11
+  - @viaz/directives@0.0.2-beta.11
+  - @viaz/constants@0.0.2-beta.11
+  - @viaz/hooks@0.0.2-beta.11
+  - @viaz/types@0.0.2-beta.11
+  - @viaz/utils@0.0.2-beta.11
+
 ## 0.0.2-beta.10
 
 ### Patch Changes

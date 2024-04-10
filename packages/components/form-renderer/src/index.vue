@@ -71,12 +71,18 @@ import type {
   VzFormRendererProps,
   UseFormType,
   VzFormExpose,
+  VzFormSchemaItem,
 } from "@viaz/types";
 import { useStyle } from "@viaz/hooks";
 import { Form } from "ant-design-vue";
 import { getCurrentInstance } from "vue";
 
 import { foreach } from "tree-lodash";
+
+import { update } from "lodash-es";
+
+//treeFindPath
+import { treeFindNode } from '@utopia-utils/tree';
 
 import { ref, watch, toRefs, reactive } from "vue";
 
@@ -115,7 +121,7 @@ const onFieldEvents = (field: string, params: any) => {
   console.info('onFieldEvents params=>', params);
   // columnField: field, event, params: params
 
-  const {columnField,event} = params;
+  const { columnField, event } = params;
 
   const eo = `${field}-${columnField}-${event}`;
 
@@ -158,9 +164,89 @@ const reset = () => {
   });
 })();
 
+
+/**
+ * 查找表单组件节点
+ * 
+ * @param componentItemName model key 模型字段
+ * 
+ * @returns { VzFormSchemaItem | false } 查找到的节点，未找到返回 false
+ */
+const findComponentNode = (componentItemName: string): VzFormSchemaItem | false => {
+  const findedNode: VzFormSchemaItem = treeFindNode(props.data.items[0].children, (item: VzFormSchemaItem) => item.item.name === componentItemName)[0];
+  console.info('findedNode =>', findedNode);
+
+  if (findedNode) {
+    return findedNode;
+  } else {
+    console.warn(`没有找到指定 ${componentItemName} 组件节点,请检查...`);
+    return false;
+  }
+};
+
+
+
+/**
+ * 更新表单组件节点  
+ * @param {string} componentItemName 组件 item.name
+ * @param { string|[] } path 路径
+ * @param {any} value 更新的值 参数 value
+ */
+const updateComponentProp = (componentItemName: string, path: string | [], value: any) => {
+  const findedNode = findComponentNode(componentItemName);
+  if (findedNode !== false) {
+    update(findedNode, path, () => value);
+  }
+};
+
+/**
+ * 更新表单model 数
+ * @param {string} fields 组件 item.name
+ * @param {any} value 更新的值 参数 value
+ * @param {string | []} path 针对要修改的 类型是 数组或对象
+ */
+const updateFormModel = (fields: string, value: any, path?: string | []) => {
+
+  console.info('updateFormModel => fields', fields);
+  console.info('updateFormModel => value', value);
+  
+  console.info('formInstance modelRef =>', formInstance.value.modelRef);
+
+
+  if (path !== undefined) {
+
+    /**
+     * TODO
+     * 需要增加对 对象 和 数组类型的字段进行修改
+     */
+
+    console.info(`修改对象或数组 formInstance.value.modelRef[${fields}] =>`, formInstance.value.modelRef[fields]);
+    console.info('updateFormModel => path', path);
+    update(formInstance.value.modelRef[fields], path, () => value);
+
+  } else {
+    formInstance.value.modelRef[fields] = value;
+  }
+
+
+
+
+
+
+
+
+  // const findedNode = findComponentNode(componentItemName);
+  // if (findedNode !== false) {
+  //   update(findedNode, path, () => value);
+  // }
+};
+
 defineExpose<VzFormExpose>({
   formInstance: formInstance.value,
   reset: reset,
+  findComponentNode: findComponentNode,
+  updateComponentProp: updateComponentProp,
+  updateFormModel: updateFormModel,
 } as VzFormExpose);
 
 watch(data, (newVal) => {

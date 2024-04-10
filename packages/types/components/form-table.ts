@@ -14,12 +14,12 @@ export interface VzFormTableColumn extends TableColumnType {
 export interface VzFormTableProps {
   /** options 接口函数 */
   api?:
-    | Function
-    | {
-        uri: string;
-        params?: object;
-        options?: object;
-      };
+  | Function
+  | {
+    uri: string;
+    params?: object;
+    options?: object;
+  };
   /** 接口参数 */
   params?: {
     [key: string]: any;
@@ -40,7 +40,13 @@ export interface VzFormTableProps {
   /**
    * 初始化
    */
-  initial: object;
+  initial: {
+    /** 组件 */
+    _components?: {
+      [key: string]: object,
+    },
+    [key: string]: any,
+  };
   /** table 的 rowKey */
   rowKey: string;
 }

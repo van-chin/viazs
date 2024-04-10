@@ -16,4 +16,19 @@ export interface VzFormExpose {
   formInstance: UseFormType;
   // 重置表单方法
   reset: Function;
+
+  /**
+ * 查找表单组件节点
+ * 
+ * @param componentItemName model key 模型字段
+ * 
+ * @returns { VzFormSchemaItem | false } 查找到的节点，未找到返回 false
+ */
+  findComponentNode: Function;
+  /**
+   * 更新组件节点属性
+   */
+  updateComponentProp: Function;
+  /** 更新表单模型 */
+  updateFormModel: Function;
 }

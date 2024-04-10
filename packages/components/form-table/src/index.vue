@@ -7,6 +7,12 @@
       </div>
     </div>
 
+    <!-- {{ initial }}
+
+    <p>
+      {{ initialComponents }}
+    </p> -->
+
     <a-table :class="`${prefixCls}-antdv-table`" v-bind="$attrs" :columns="parseedColumns" :data-source="modelValue"
       @change="onChange" :rowKey="rowKey" ref="tableRef" :customHeaderCell="customHeaderCell"
       :customHeaderRow="customHeaderRow">
@@ -123,8 +129,9 @@
         </template>
 
         <template v-else>
-          <template v-if="column.component">
-            <component :is="column.component.name" v-bind="column.component.props" v-on="parseEvents(column, index)"
+          <template v-if = "column.component">
+            <!-- <vz-json-viewer :data="record._components[column.key].props"></vz-json-viewer> -->
+            <component :is="column.component.name" v-bind="record._components[column.key].props" v-on="parseEvents(column, index)"
               :index="index" :class="column.component.name === 'ACheckbox' ||
                 column.component.name === 'ASwitch'
                 ? ''
@@ -157,9 +164,6 @@ import { nanoid } from "nanoid";
 import { ColumnFormatTypeEnum } from "@viaz/enums";
 
 import {
-  createReusableTemplate,
-  useResizeObserver,
-  useElementSize,
   useDateFormat,
 } from "@vueuse/core";
 
@@ -286,9 +290,14 @@ const customCell = (record, rowIndex, column) => {
   };
 };
 
+const initialComponents = ref({});
+
 const parseColumn = () => {
   let hasIndexColumn = false;
   parseedColumns.value = columns.map((column) => {
+    // console.info('parseColumn .column =>',column);
+    // console.info(column.title,`${column.key} =>`,column.component);
+    initialComponents.value[column.key] = column.component;
     if (column.key === "index") {
       hasIndexColumn = true;
     }
@@ -339,6 +348,9 @@ const calcIndex = (index: number) => {
 const onAddRow = () => {
   let clonedInitial = cloneDeep(initial);
   clonedInitial[rowKey] = nanoid();
+  clonedInitial['_components'] = cloneDeep(initialComponents.value);
+ 
+  console.info('clonedInitial=>',clonedInitial);
   modelValue.value.push(clonedInitial);
 
   emits("added", modelValue.value.length);

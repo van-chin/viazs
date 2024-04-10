@@ -1,5 +1,11 @@
 # @viaz/constants
 
+## 0.0.2-beta.11
+
+### Patch Changes
+
+- add from-table event
+
 ## 0.0.2-beta.10
 
 ### Patch Changes

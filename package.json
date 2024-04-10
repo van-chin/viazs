@@ -87,5 +87,8 @@
   },
   "keywords": [],
   "author": "Van Chin",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@utopia-utils/tree": "^0.3.24"
+  }
 }

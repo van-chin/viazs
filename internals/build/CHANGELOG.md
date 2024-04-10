@@ -1,5 +1,13 @@
 # @internals/build
 
+## 0.0.2-beta.22
+
+### Patch Changes
+
+- add from-table event
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.11
+
 ## 0.0.2-beta.21
 
 ### Patch Changes
