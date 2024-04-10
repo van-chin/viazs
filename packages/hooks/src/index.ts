@@ -1,4 +1,4 @@
 export * from "./useStyle";
 export * from "./useEnumeration";
-export * from "./useMessage";
+export { useMessage } from "./useMessage";
 export * from "./settings";

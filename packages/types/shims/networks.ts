@@ -1,4 +1,4 @@
-import type { AxiosRequestConfig, AxiosResponse } from "axios";
+import type { AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from "axios";
 
 export const nrlTypes = ["AXIOS", "ALOVA"] as const;
 
@@ -8,6 +8,12 @@ export interface DataApi {
   /** hostname-port-path hpp  */
   hpp?: string;
   options?: object;
+}
+
+export interface RetryInternalAxiosRequestConfig<D = any> extends InternalAxiosRequestConfig<D> {
+  /** 重试次数 */
+  __retryCount?: number;
+  requestOptions?: RequestOptions;
 }
 
 export interface DataParams {
@@ -62,6 +68,7 @@ export interface RequestOptions {
 
 export interface RetryRequest {
   isOpenRetry: boolean;
+  /** 请求次数 */
   count: number;
   waitTime: number;
 }

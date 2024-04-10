@@ -1,5 +1,13 @@
 # @imsjs/ims-ui-enums
 
+## 0.0.2-beta.12
+
+### Patch Changes
+
+- fixed build ts error
+- Updated dependencies
+  - @viaz/hooks@0.0.2-beta.12
+
 ## 0.0.2-beta.11
 
 ### Patch Changes

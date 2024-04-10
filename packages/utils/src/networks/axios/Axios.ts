@@ -86,6 +86,7 @@ export class VAxios {
 
     // Request interceptor configuration processing
     this.axiosInstance.interceptors.request.use(
+      // @ts-ignore
       (config: AxiosRequestConfig) => {
         // If cancel repeat request is turned on, then cancel repeat request is prohibited
         // @ts-ignore

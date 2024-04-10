@@ -1,5 +1,11 @@
 # @viaz/constants
 
+## 0.0.2-beta.12
+
+### Patch Changes
+
+- fixed build ts error
+
 ## 0.0.2-beta.11
 
 ### Patch Changes
