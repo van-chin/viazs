@@ -1,5 +1,13 @@
 # @imsjs/ims-ui-enums
 
+## 0.0.2-beta.13
+
+### Patch Changes
+
+- fixed has no exported member 'useMessage'
+- Updated dependencies
+  - @viaz/hooks@0.0.2-beta.13
+
 ## 0.0.2-beta.12
 
 ### Patch Changes

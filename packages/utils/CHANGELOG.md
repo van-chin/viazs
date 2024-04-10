@@ -1,5 +1,16 @@
 # @viaz/utils
 
+## 0.0.2-beta.13
+
+### Patch Changes
+
+- fixed has no exported member 'useMessage'
+- Updated dependencies
+  - @viaz/constants@0.0.2-beta.13
+  - @viaz/enums@0.0.2-beta.13
+  - @viaz/hooks@0.0.2-beta.13
+  - @viaz/types@0.0.2-beta.13
+
 ## 0.0.2-beta.12
 
 ### Patch Changes

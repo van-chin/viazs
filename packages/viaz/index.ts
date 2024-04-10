@@ -4,6 +4,8 @@ export * from "@viaz/utils";
 
 export * from "@viaz/hooks";
 
+export { useMessage } from "@viaz/hooks";
+
 export * from "@viaz/components";
 
 export * from "./make-installer";
