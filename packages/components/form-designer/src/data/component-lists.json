@@ -651,34 +651,6 @@
     "formItemProps": []
   },
   {
-    "id": "13",
-    "key": "13",
-    "title": "颜色选择器",
-    "icon": "mdi:color",
-    "type": "color-picker",
-    "componentName": "AInputNumber",
-    "vModelField": "value",
-    "item": {
-      "label": "颜色选择器",
-      "name": "",
-      "tooltip": "",
-      "extra": "",
-      "required": false,
-      "colon": true,
-      "displayState": true,
-      "rules": []
-    },
-    "component": {
-      "name": "AInputNumber",
-      "events": {},
-      "props": {
-        "placeholder": "请输入"
-      }
-    },
-    "componentProps": [],
-    "formItemProps": []
-  },
-  {
     "id": "vz-form-divider-15",
     "key": "vz-form-divider-15",
     "title": "表单分隔线",

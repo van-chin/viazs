@@ -2,32 +2,19 @@
   <div :class="prefixCls">
     <a-flex gap="small">
       <div class="w-105px flex items-center">
-        <a-select
-          class="w-105px"
-          v-model:value="valueType"
-          :options="valueTypes"
-          placeholder="值类型"
-        >
+        <a-select class="w-105px" v-model:value="valueType" :options="valueTypes" placeholder="值类型">
           <template #option="itemData">
             <div>{{ itemData.label }}</div>
 
-            <div
-              class="text-#0000004f italic"
-              style="font-size: 10px !important"
-            >
+            <div class="text-#0000004f italic" style="font-size: 10px !important">
               {{ itemData.title }}
             </div>
           </template>
         </a-select>
       </div>
       <div class="flex-1 flex items-center">
-        <a-input
-          class="w-full"
-          :title="modelValue"
-          v-if="valueType === 'string'"
-          placeholder="请输入"
-          v-model:value="(modelValue as string)"
-        ></a-input>
+        <a-input class="w-full" :title="modelValue" v-if="valueType === 'string'" placeholder="请输入"
+          v-model:value="(modelValue as string)"></a-input>
 
         <!-- <a-tooltip placement="top" arrow-point-at-center>
           <template #title>{{ modelValue }}</template>
@@ -40,26 +27,13 @@
           ></a-input>
         </a-tooltip> -->
 
-        <a-input-number
-          class="w-full"
-          v-if="valueType === 'number'"
-          v-model:value="(modelValue as number)"
-        ></a-input-number>
+        <a-input-number class="w-full" v-if="valueType === 'number'"
+          v-model:value="(modelValue as number)"></a-input-number>
 
-        <a-switch
-          v-if="valueType === 'boolean'"
-          v-model:checked="(modelValue as boolean)"
-        ></a-switch>
+        <a-switch v-if="valueType === 'boolean'" v-model:checked="(modelValue as boolean)"></a-switch>
 
-        <a-select
-          v-if="valueType === 'array'"
-          class="w-full"
-          v-model:value="(modelValue as [])"
-          mode="tags"
-          style="width: 100%"
-          :token-separators="[',']"
-          placeholder="请输入数组的值"
-        ></a-select>
+        <a-select v-if="valueType === 'array'" class="w-full" v-model:value="(modelValue as [])" mode="tags"
+          style="width: 100%" :token-separators="[',']" placeholder="请输入数组的值"></a-select>
 
         <div class="array-item" v-if="valueType === 'object'">object</div>
       </div>
@@ -139,45 +113,25 @@ const valueType = defineModel<string>("valueType", {
 //   }
 // );
 
+
 watch(
   valueType,
   (newValueType) => {
+    console.info('newValueType =>', newValueType);
     if (newValueType === "string") {
-      if (
-        Object.prototype.toString.call(modelValue.value) !== "[object String]"
-      ) {
-        modelValue.value = "";
-      }
-      console.info("modelValue.value =>", modelValue.value);
+      modelValue.value = "";
     }
-
     if (newValueType === "number") {
-      if (
-        Object.prototype.toString.call(modelValue.value) !== "[object Number]"
-      ) {
-        modelValue.value = 1;
-      }
+      modelValue.value = 0;
     }
-    //
-
     if (newValueType === "boolean") {
-      if (
-        Object.prototype.toString.call(modelValue.value) !== "[object Boolean]"
-      ) {
-        modelValue.value = true;
-      }
+      modelValue.value = true;
     }
     if (newValueType === "array") {
-      if (!Array.isArray(modelValue.value)) {
-        modelValue.value = [];
-      }
+      modelValue.value = [];
     }
     if (newValueType === "object") {
-      if (
-        Object.prototype.toString.call(modelValue.value) !== "[object Object]"
-      ) {
-        modelValue.value = {};
-      }
+      modelValue.value = {};
     }
   },
   {

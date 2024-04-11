@@ -1,5 +1,18 @@
 # viaz
 
+## 0.0.2-beta.14
+
+### Patch Changes
+
+- fixed form-table bug
+- Updated dependencies
+  - @viaz/components@0.0.2-beta.14
+  - @viaz/directives@0.0.2-beta.14
+  - @viaz/constants@0.0.2-beta.14
+  - @viaz/hooks@0.0.2-beta.14
+  - @viaz/types@0.0.2-beta.14
+  - @viaz/utils@0.0.2-beta.14
+
 ## 0.0.2-beta.13
 
 ### Patch Changes

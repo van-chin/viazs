@@ -36,6 +36,10 @@ const onTbNameChange = (data: any) => {
   // let findedNode = formRenderer.value.findComponentNode('tb');
   // console.info('findedNode =>', findedNode);
 
+    // /api/mers/v1/departments
+  
+      // isShowTree 1 
+    // merchantId 0 // affiliationedOrganizations
 
   // let path = ['tb', index, '_components', 'age', 'props', 'disabled'];
   let path = [index, '_components', 'age', 'props', 'disabled'];

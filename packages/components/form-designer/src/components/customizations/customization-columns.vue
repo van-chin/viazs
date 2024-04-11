@@ -16,8 +16,6 @@
   </div>
 
   <vz-modal v-model:open="opening" title="数列配置" width="100%">
-   
-
     <div :class="`${prefixCls}-modal-wrap`" class="w-full h-full">
       <vz-form-table :initial="initial" v-model:value="modelValue" :columns="columns" bordered row-key="id"
         :pagination="false">
@@ -26,36 +24,28 @@
             <a-input v-model:value="record[column.key]"></a-input>
           </template>
           <template v-if="column.dataIndex === 'dataIndex'">
-            <VzConfigurationValue v-model:value="record[column.key]"></VzConfigurationValue>
+            <VzConfigurationValue :valueTypes="valueTypes" v-model:value="record[column.key]"></VzConfigurationValue>
           </template>
 
           <!-- <template v-if="column.dataIndex === 'preview'">
             <component :is="record.component.name" v-bind="record.component.props"></component>
           </template> -->
-
-          
           <template v-if="column.key === 'component'">
             <div class="flex justify-between items-center">
               <div class="flex-1">
-                <a-select class="w-full" @change="(value, option) => onComponentChange(value, option, record)"
+                <a-select class="w-full" allowClear
+                  @change="(value, option) => onComponentChange(value, option, record)"
                   :fieldNames="{ label: 'title', value: 'componentName' }" v-model:value="record[column.key].name"
                   placeholder="请选择组件" :options="componentLists">
-
-
-
                   <template #option="item">
                     <div>{{ item.title }}</div>
-
                     <div class="text-#0000004f italic" style="font-size: 10px !important">
                       {{ item.type }}
                     </div>
                   </template>
-
                 </a-select>
               </div>
-                
-              <a-button type="link"
-                :disabled="!record.component.hasOwnProperty('type') || record.component.type === ''"
+              <a-button type="link" :disabled="!record.component.hasOwnProperty('type') || record.component.type === ''"
                 @click="onConfigurationProps(record, index)">属性</a-button>
 
             </div>
@@ -68,52 +58,35 @@
         <div :class="`${prefixCls}-modal-wrap-content-comp-props`">
           <div :class="`${prefixCls}-modal-wrap-content-comp-props-title`">
             <a-typography-text strong>组件属性</a-typography-text>
-
             <div class="flex items-center">
               <iconify-icon icon="ant-design:close-outlined" @click="onConfigurationPropsClose"
                 class="cursor-pointer hover:text-red"></iconify-icon>
             </div>
-
           </div>
           <div :class="`${prefixCls}-modal-wrap-content-comp-props-content`">
-            
             <vz-overlay-scrollbar>
               <div class="px-2">
                 <template v-for="item in activedRowComponentProps">
                   <template v-if="['events', 'class'].includes(item.field)">
-
-          
                     <VzDesignerCustomizationProp v-if="item.show !== false" v-bind="item"
                       v-model:value="activeRowComponent[item.field]" v-model:apply="item.apply">
                     </VzDesignerCustomizationProp>
-
                   </template>
                   <template v-else>
                     <VzDesignerCustomizationProp v-if="item.show !== false" v-bind="item"
-                      v-model:value="activeRowComponent.props[item.field]" v-model:params="activeRowComponent.props['params']"
-                      v-model:api="activeRowComponent.props['api']" v-model:apply="item.apply" v-model:mode="item.mode">
+                      v-model:value="activeRowComponent.props[item.field]"
+                      v-model:params="activeRowComponent.props['params']" v-model:api="activeRowComponent.props['api']"
+                      v-model:apply="item.apply" v-model:mode="item.mode">
                     </VzDesignerCustomizationProp>
-
-
                   </template>
                 </template>
               </div>
             </vz-overlay-scrollbar>
           </div>
         </div>
-
       </div>
-
-
     </div>
-
-
-
-
-
   </vz-modal>
-
-
 </template>
 <script lang="ts" setup>
 import { useStyle } from "@viaz/hooks";
@@ -128,13 +101,8 @@ import type { SelectProps } from 'ant-design-vue';
 // import VzDesignerCustomizationPropValue from "./customization-prop-value.vue";
 
 import VzDesignerCustomizationProp from "./customization-prop.vue";
-
-
-
 import componentLists from "../../data/component-lists.json";
-
 import componentProps from "../../data/component-props.json";
-
 const COMPONENT_NAME = "VzDesignerCustomizationColumns";
 defineOptions({
   name: COMPONENT_NAME,
@@ -155,12 +123,7 @@ const propsOpen = ref(false);
 const onConfigRule = () => {
   opening.value = true;
 };
-
-
-
-
 const activeRowComponent = ref({});
-
 const activedRowComponentProps = ref([]);
 
 const initial = {
@@ -170,14 +133,14 @@ const initial = {
   component: {
     name: "AInput",
     vModelField: "value",
-    type:'input',
+    type: 'input',
     props: {
       placeholder: "请输入",
     },
   },
 };
 
-const onConfigurationProps = (record:any, index: number) => {
+const onConfigurationProps = (record: any, index: number) => {
 
   // activeRowComponent.value = record.component.props;
   activeRowComponent.value = record.component;
@@ -191,22 +154,7 @@ const onConfigurationPropsClose = (index: number) => {
   propsOpen.value = false;
 };
 
-const dataSource = ref([
-  {
-    id: "1",
-    title: "姓名",
-    dataIndex: "name",
-    key: "name",
-    component: "AInput",
-  },
-  {
-    id: "1",
-    title: "年龄",
-    dataIndex: "age",
-    key: "age",
-    component: "AInput",
-  },
-]);
+
 
 const valueTypes = [
   {
@@ -221,7 +169,6 @@ const valueTypes = [
     key: 2,
     title: "数值",
   },
-
   {
     label: "ARRAY",
     value: "array",
@@ -334,15 +281,12 @@ const modelValue = defineModel<any>("value", {
 });
 
 const onComponentChange = (value, option, record) => {
-  console.info('onComponentChange => value', value);
-  console.info('onComponentChange => option', option);
-  console.info('onComponentChange => record', record);
-
-  record.component.type = option.type;
-
-  record.component.props = option.component.props
-
- 
+  if (value) {
+    record.component.type = option.type;
+    record.component.props = option.component.props
+  } else {
+    record.component = {};
+  }
 }
 
 (async function init() {

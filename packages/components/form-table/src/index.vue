@@ -127,19 +127,17 @@
             </div>
           </div>
         </template>
-
         <template v-else>
-          <template v-if = "column.component">
+          <template v-if="column.component && Object.getOwnPropertyNames(column.component).includes('name')">
             <!-- <vz-json-viewer :data="record._components[column.key].props"></vz-json-viewer> -->
-            <component :is="column.component.name" v-bind="record._components[column.key].props" v-on="parseEvents(column, index)"
-              :index="index" :class="column.component.name === 'ACheckbox' ||
+            <component :is="column.component.name" v-bind="record._components[column.key].props"
+              v-on="parseEvents(column, index)" :index="index" :class="column.component.name === 'ACheckbox' ||
                 column.component.name === 'ASwitch'
                 ? ''
                 : 'w-full'
                 " v-model:[column.component.vModelField]="record[column.dataIndex]">
             </component>
           </template>
-
           <template v-else>
             {{ text }}
           </template>
@@ -349,8 +347,13 @@ const onAddRow = () => {
   let clonedInitial = cloneDeep(initial);
   clonedInitial[rowKey] = nanoid();
   clonedInitial['_components'] = cloneDeep(initialComponents.value);
- 
-  console.info('clonedInitial=>',clonedInitial);
+
+  console.info('clonedInitial=>', clonedInitial);
+  // 
+  if (!modelValue.value) {
+    modelValue.value = [];
+  }
+
   modelValue.value.push(clonedInitial);
 
   emits("added", modelValue.value.length);

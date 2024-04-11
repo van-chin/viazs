@@ -5076,39 +5076,19 @@
       }
     },
     {
-      "label": "模式",
-      "field": "mode",
+      "label": "多选节点",
+      "field": "multiple",
       "visibilityToggler": true,
       "visible": true,
       "apply": true,
       "mode": "default",
       "tooltip": {
-        "title": "设置 Select 的模式为多选或标签"
+        "title": "支持多选节点"
       },
       "component": {
-        "name": "ARadioGroup",
-        "vModelField": "value",
-        "props": {
-          "options": [
-            {
-              "value": "",
-              "label": "默认"
-            },
-            {
-              "value": "multiple",
-              "label": "multiple"
-            },
-            {
-              "value": "tags",
-              "label": "tags"
-            },
-            {
-              "value": "combobox",
-              "label": "combobox"
-            }
-          ],
-          "optionType": "button"
-        }
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
       }
     },
     {
@@ -5167,24 +5147,6 @@
       }
     },
     {
-      "label": "自定义节点",
-      "field": "fieldNames",
-      "visibilityToggler": true,
-      "visible": true,
-      "apply": true,
-      "mode": "default",
-      "tooltip": {
-        "title": "自定义节点 label、value、options 的字段，默认 { label: label, value: value, options: options }"
-      },
-      "component": {
-        "name": "VzDesignerCustomizationFieldNames",
-        "vModelField": "value",
-        "props": {
-          "placeholder": "请输入 dropdown 下拉菜单的 style 属性"
-        }
-      }
-    },
-    {
       "label": "数据",
       "field": "options",
       "visibilityToggler": true,
@@ -5200,6 +5162,24 @@
         "props": {
           "api": {},
           "param": {}
+        }
+      }
+    },
+    {
+      "label": "自定义节点",
+      "field": "fieldNames",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "tooltip": {
+        "title": "自定义节点 label、value、options 的字段，默认 { label: label, value: value, options: options }"
+      },
+      "component": {
+        "name": "VzDesignerCustomizationFieldNames",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 dropdown 下拉菜单的 style 属性"
         }
       }
     },

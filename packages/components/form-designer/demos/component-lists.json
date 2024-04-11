@@ -848,20 +848,20 @@
           {
             "id": "1",
             "key": "name",
-            "name": "假数据",
+            "name": "张三",
             "age": 18
           },
           {
             "id": "2",
             "key": "name",
-            "name": "假数据二",
+            "name": "李四",
             "age": 19
           }
         ],
         "columns": [
           {
             "id": "1",
-            "title": "姓名",
+            "title": "数列1(姓名)",
             "dataIndex": "name",
             "key": "name",
             "component": {
@@ -869,13 +869,13 @@
               "vModelField": "value",
               "type": "input",
               "props": {
-                "placeholder": "请输入姓名"
+                "placeholder": "请输入 数列1(姓名)"
               }
             }
           },
           {
             "id": "2",
-            "title": "年龄",
+            "title": "数列2(年龄)",
             "dataIndex": "age",
             "key": "age",
             "component": {
@@ -883,18 +883,14 @@
               "vModelField": "value",
               "type": "input-number",
               "props": {
-                "placeholder": "请输入年龄"
+                "placeholder": "请输入 数列2(年龄)"
               }
             }
           }
         ],
         "initial": {
-          "name": "zs",
-          "age": 18,
-          "status": false,
-          "abc": true,
-          "users": [],
-          "abcd": {}
+          "name": "name1",
+          "age": 18
         }
       }
     },
