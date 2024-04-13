@@ -1,5 +1,55 @@
 # @internals/build
 
+## 0.0.2-beta.32
+
+### Patch Changes
+
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.21
+
+## 0.0.2-beta.31
+
+### Patch Changes
+
+- fixed vz-page keywords pressEnter evnet
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.20
+
+## 0.0.2-beta.30
+
+### Patch Changes
+
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.19
+
+## 0.0.2-beta.29
+
+### Patch Changes
+
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.18
+
+## 0.0.2-beta.28
+
+### Patch Changes
+
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.17
+
+## 0.0.2-beta.27
+
+### Patch Changes
+
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.16
+
+## 0.0.2-beta.26
+
+### Patch Changes
+
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.15
+
 ## 0.0.2-beta.25
 
 ### Patch Changes

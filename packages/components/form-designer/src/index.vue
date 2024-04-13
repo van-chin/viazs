@@ -10,11 +10,7 @@
       <VzDynamicPanel width="350px" placement="left" ref="dpElRef">
         <div :class="`${prefixCls}-contents-left `">
           <div :class="`${prefixCls}-contents-left-nav-bar`">
-            <a-tabs
-              tabPosition="left"
-              class="h-full"
-              :class="`${prefixCls}-contents-left-nav-bar-tabs`"
-            >
+            <a-tabs tabPosition="left" class="h-full" :class="`${prefixCls}-contents-left-nav-bar-tabs`">
               <a-tab-pane key="1">
                 <template #tab>
                   <div class="flex flex-col justify-center items-center">
@@ -25,27 +21,16 @@
                   </div>
                 </template>
 
-                <div
-                  :class="`${prefixCls}-contents-left-nav-bar-tabs-components`"
-                >
-                  <div
-                    :class="`${prefixCls}-contents-left-nav-bar-tabs-components-components`"
-                  >
-                    <div
-                      :class="`${prefixCls}-contents-left-nav-bar-tabs-components-components-searcher`"
-                    >
+                <div :class="`${prefixCls}-contents-left-nav-bar-tabs-components`">
+                  <div :class="`${prefixCls}-contents-left-nav-bar-tabs-components-components`">
+                    <div :class="`${prefixCls}-contents-left-nav-bar-tabs-components-components-searcher`">
                       <a-input-group compact>
                         <a-select placeholder="全部" allowClear class="w-25%">
                           <a-select-option value="form">表单</a-select-option>
                           <a-select-option value="layout">布局</a-select-option>
                         </a-select>
-                        <a-input
-                          v-model:value="componentKeywords"
-                          allowClear
-                          placeholder="搜索组件"
-                          @change="onFuseSeach"
-                          class="w-75%"
-                        >
+                        <a-input v-model:value="componentKeywords" allowClear placeholder="搜索组件" @change="onFuseSeach"
+                          class="w-75%">
                           <template #prefix>
                             <icon icon="ant-design:search-outlined"></icon>
                           </template>
@@ -55,58 +40,28 @@
 
                     <vz-overlay-scrollbar>
                       <a-empty v-show="fuseSearchLists.length === 0" />
-                      <a-row
-                        v-show="fuseSearchLists.length"
-                        ref="componentsListsRef"
-                        id="components-lists-ref"
-                        :class="`${prefixCls}-contents-left-nav-bar-tabs-components-components-lists`"
-                      >
-                        <a-col
-                          v-for="item in fuseSearchLists"
-                          :span="12"
-                          class="p-1"
-                          :key="item.id"
-                        >
-                          <div
-                            @click="quickAddComponent(item as VzFormSchemaItem)"
-                            :class="`${prefixCls}-contents-left-nav-bar-tabs-components-components-lists-item`"
-                          >
+                      <a-row v-show="fuseSearchLists.length" ref="componentsListsRef" id="components-lists-ref"
+                        :class="`${prefixCls}-contents-left-nav-bar-tabs-components-components-lists`">
+                        <a-col v-for="item in fuseSearchLists" :span="12" class="p-1" :key="item.id">
+                          <div @click="quickAddComponent(item as VzFormSchemaItem)"
+                            :class="`${prefixCls}-contents-left-nav-bar-tabs-components-components-lists-item`">
                             <div
-                              :class="`${prefixCls}-contents-left-nav-bar-tabs-components-components-lists-item-left`"
-                            >
-                              <icon
-                                class="icon"
-                                :icon="item.icon"
-                                :inline="true"
-                              ></icon>
+                              :class="`${prefixCls}-contents-left-nav-bar-tabs-components-components-lists-item-left`">
+                              <icon class="icon" :icon="item.icon" :inline="true"></icon>
                               <span class="title">{{ item.title }}</span>
                             </div>
 
-                            <icon
-                              :class="`icon question-icon`"
-                              icon="ant-design:question-circle-outlined"
-                            ></icon>
+                            <icon :class="`icon question-icon`" icon="ant-design:question-circle-outlined"></icon>
                           </div>
                         </a-col>
                       </a-row>
                     </vz-overlay-scrollbar>
                   </div>
-                  <div
-                    :class="`${prefixCls}-contents-left-nav-bar-tabs-components-outline`"
-                  >
-                    <a-tree
-                      blockNode
-                      selectable
-                      :showLine="true"
+                  <div :class="`${prefixCls}-contents-left-nav-bar-tabs-components-outline`">
+                    <a-tree blockNode selectable :showLine="true"
                       :class="`${prefixCls}-contents-left-nav-bar-tabs-components-outline-tree ${prefixCls}-components-outline-tree`"
-                      :showIcon="false"
-                      :tree-data="list.items"
-                      :fieldNames="fieldNames"
-                      :draggable="true"
-                      :height="300"
-                      @select="onOutlineSelect"
-                      v-model:selectedKeys="treeSelectedKeys"
-                    >
+                      :showIcon="false" :tree-data="list.items" :fieldNames="fieldNames" :draggable="true" :height="300"
+                      @select="onOutlineSelect" v-model:selectedKeys="treeSelectedKeys">
                       <template #title="item">
                         <div class="w-full flex justify-between items-center">
                           <div class="title-wrapper flex">
@@ -119,17 +74,10 @@
                           </div>
 
                           <a-space>
-                            <icon
-                              icon="ant-design:delete-outlined"
-                              class="action hover-color-#1677ff"
-                              :inline="true"
-                            />
+                            <icon icon="ant-design:delete-outlined" class="action hover-color-#1677ff" :inline="true" />
                             <!-- eye-outlined -->
-                            <icon
-                              icon="ant-design:eye-invisible-outlined"
-                              class="action hover-color-#1677ff"
-                              :inline="true"
-                            />
+                            <icon icon="ant-design:eye-invisible-outlined" class="action hover-color-#1677ff"
+                              :inline="true" />
                           </a-space>
                         </div>
                       </template>
@@ -148,19 +96,9 @@
                 </template>
 
                 <div class="tab-wrapper">
-                  <a-tree
-                    blockNode
-                    selectable
-                    :showLine="true"
-                    :class="`${prefixCls}-components-outline-tree`"
-                    :showIcon="false"
-                    :tree-data="list.items"
-                    :fieldNames="fieldNames"
-                    :draggable="true"
-                    :height="300"
-                    @select="onOutlineSelect"
-                    v-model:selectedKeys="treeSelectedKeys"
-                  >
+                  <a-tree blockNode selectable :showLine="true" :class="`${prefixCls}-components-outline-tree`"
+                    :showIcon="false" :tree-data="list.items" :fieldNames="fieldNames" :draggable="true" :height="300"
+                    @select="onOutlineSelect" v-model:selectedKeys="treeSelectedKeys">
                     <template #title="item">
                       <div class="w-full flex justify-between items-center">
                         <div class="title-wrapper flex">
@@ -173,17 +111,10 @@
                         </div>
 
                         <a-space>
-                          <icon
-                            icon="ant-design:delete-outlined"
-                            class="action hover-color-#1677ff"
-                            :inline="true"
-                          />
+                          <icon icon="ant-design:delete-outlined" class="action hover-color-#1677ff" :inline="true" />
                           <!-- eye-outlined -->
-                          <icon
-                            icon="ant-design:eye-invisible-outlined"
-                            class="action hover-color-#1677ff"
-                            :inline="true"
-                          />
+                          <icon icon="ant-design:eye-invisible-outlined" class="action hover-color-#1677ff"
+                            :inline="true" />
                         </a-space>
                       </div>
                     </template>
@@ -231,12 +162,7 @@
                   </a-radio-button>
                 </a-radio-group>
 
-                <a-radio-group
-                  v-model:value="elementTool"
-                  class="rgi"
-                  size="small"
-                  v-if="operationalView === 'design'"
-                >
+                <a-radio-group v-model:value="elementTool" class="rgi" size="small" v-if="operationalView === 'design'">
                   <a-radio-button value="move">
                     <icon icon="system-uicons:move"></icon>
                   </a-radio-button>
@@ -245,11 +171,7 @@
                   </a-radio-button>
                 </a-radio-group>
 
-                <a-radio-group
-                  v-model:value="targetDevice"
-                  class="rgi"
-                  size="small"
-                >
+                <a-radio-group v-model:value="targetDevice" class="rgi" size="small">
                   <a-radio-button value="pc">
                     <icon icon="iconoir:pc-check"></icon>
                   </a-radio-button>
@@ -268,31 +190,15 @@
             </div>
             <div :class="`${prefixCls}-contents-canvas-tools-right`">
               <a-space>
-                <a-radio-group
-                  v-model:value="fileAction"
-                  class="rgi"
-                  size="small"
-                >
-                  <a-radio-button
-                    :value="item.value"
-                    :key="item.value"
-                    v-for="item in fileActions"
-                    @click="onFileActionChange(item)"
-                  >
+                <a-radio-group v-model:value="fileAction" class="rgi" size="small">
+                  <a-radio-button :value="item.value" :key="item.value" v-for="item in fileActions"
+                    @click="onFileActionChange(item)">
                     <icon :icon="item.icon"></icon>
                   </a-radio-button>
                 </a-radio-group>
 
-                <a-radio-group
-                  v-model:value="operationalView"
-                  class="rgi"
-                  size="small"
-                >
-                  <a-radio-button
-                    :value="item.value"
-                    :key="item.value"
-                    v-for="item in operationalViewActions"
-                  >
+                <a-radio-group v-model:value="operationalView" class="rgi" size="small">
+                  <a-radio-button :value="item.value" :key="item.value" v-for="item in operationalViewActions">
                     <icon :icon="item.icon"></icon>
                   </a-radio-button>
                 </a-radio-group>
@@ -302,41 +208,24 @@
           <div :class="`${prefixCls}-contents-canvas-workspace`">
             <div
               :class="`${prefixCls}-contents-canvas-workspace-view ${prefixCls}-contents-canvas-workspace-view-design`"
-              v-show="operationalView === 'design'"
-            >
+              v-show="operationalView === 'design'">
               <vz-overlay-scrollbar>
-                <a-form
-                  :class="`${prefixCls}-contents-canvas-workspace-view-design-form`"
-                  v-bind="list.items[0].item"
-                >
-                  <nested-draggable
-                    @add-col="addGridCol"
-                    @delete="deleteItem"
-                    @copy="copyItem"
-                    :class="[
-                      `${prefixCls}-contents-canvas-workspace-view-design-form-draggable`,
-                      { 'no-item': !list.items[0].children.length },
-                    ]"
-                    v-model="list.items[0].children"
-                  ></nested-draggable>
+                <a-form :class="`${prefixCls}-contents-canvas-workspace-view-design-form`" v-bind="list.items[0].item">
+                  <nested-draggable @add-col="addGridCol" @delete="deleteItem" @copy="copyItem" :class="[
+                    `${prefixCls}-contents-canvas-workspace-view-design-form-draggable`,
+                    { 'no-item': !list.items[0].children.length },
+                  ]" v-model="list.items[0].children"></nested-draggable>
                 </a-form>
               </vz-overlay-scrollbar>
             </div>
-            <div
-              :class="`${prefixCls}-contents-canvas-workspace-view ${prefixCls}-contents-canvas-workspace-view-json`"
-              v-show="operationalView === 'json'"
-            >
-              <VzMonacoEditor
-                v-if="operationalView === 'json'"
-                v-model:value="jsonValue"
-                language="json"
-                @save="onJsonSave"
-              ></VzMonacoEditor>
+            <div :class="`${prefixCls}-contents-canvas-workspace-view ${prefixCls}-contents-canvas-workspace-view-json`"
+              v-show="operationalView === 'json'">
+              <VzMonacoEditor v-if="operationalView === 'json'" v-model:value="jsonValue" language="json"
+                @save="onJsonSave">
+              </VzMonacoEditor>
             </div>
-            <div
-              :class="`${prefixCls}-contents-canvas-workspace-view ${prefixCls}-contents-canvas-workspace-view-code`"
-              v-show="operationalView === 'code'"
-            >
+            <div :class="`${prefixCls}-contents-canvas-workspace-view ${prefixCls}-contents-canvas-workspace-view-code`"
+              v-show="operationalView === 'code'">
               <!-- <VzMonacoEditor
               v-if="operationalView === 'code'"
               v-model:value="codeTemplate"
@@ -344,20 +233,12 @@
             ></VzMonacoEditor> -->
               <!-- <VzCodeMirror v-model:value="jsonValue"></VzCodeMirror> -->
             </div>
-            <div
-              :class="`${prefixCls}-contents-canvas-workspace-view ${prefixCls}-contents-canvas-workspace-view-play`"
-              v-show="operationalView === 'play'"
-              data-simplebar
-              data-simplebar-auto-hide="false"
-            >
+            <div :class="`${prefixCls}-contents-canvas-workspace-view ${prefixCls}-contents-canvas-workspace-view-play`"
+              v-show="operationalView === 'play'" data-simplebar data-simplebar-auto-hide="false">
               <vz-overlay-scrollbar>
                 <div class="p-2">
-                  <component
-                    is="VzFormRenderer"
-                    ref="testRef"
-                    v-if="operationalView === 'play'"
-                    :data="list"
-                  ></component>
+                  <component is="VzFormRenderer" ref="testRef" v-if="operationalView === 'play'" :data="list">
+                  </component>
                 </div>
               </vz-overlay-scrollbar>
             </div>
@@ -369,32 +250,19 @@
             <div :class="`${prefixCls}-contents-right-header`">
               <div :class="`${prefixCls}-contents-right-header-breadcrumb`">
                 <a-breadcrumb separator=">">
-                  <a-breadcrumb-item
-                    v-for="breadcrumb in breadcrumbs"
-                    class="cursor-pointer"
-                    @click="
-                      breadcrumbClick(breadcrumb as VzFormSchemaFormOrItem)
-                    "
-                    >{{ breadcrumb.title }}
+                  <a-breadcrumb-item v-for="breadcrumb in breadcrumbs" class="cursor-pointer" @click="
+                    breadcrumbClick(breadcrumb as VzFormSchemaFormOrItem)
+                    ">{{ breadcrumb.title }}
                   </a-breadcrumb-item>
                 </a-breadcrumb>
               </div>
               <div :class="`${prefixCls}-contents-right-header-tabs-wrapper`">
                 <a-tabs centered v-model:activeKey="formComponentProp">
-                  <a-tab-pane
-                    key="form-props"
-                    :disabled="
-                      activeComponent.type === 'grid-layout' ||
-                      activeComponent.type === 'grid-layout-col'
-                    "
-                    tab="表单属性"
-                  >
+                  <a-tab-pane key="form-props" :disabled="activeComponent.type === 'grid-layout' ||
+                    activeComponent.type === 'grid-layout-col'
+                    " tab="表单属性">
                   </a-tab-pane>
-                  <a-tab-pane
-                    key="component-props"
-                    :disabled="activeComponent.type === 'grid-layout'"
-                    tab="组件属性"
-                  >
+                  <a-tab-pane key="component-props" :disabled="activeComponent.type === 'grid-layout'" tab="组件属性">
                   </a-tab-pane>
                 </a-tabs>
               </div>
@@ -405,56 +273,29 @@
                 <!-- 表单属性 -->
 
                 <div v-show="formComponentProp === 'form-props'" class="px-2">
-                  <template
-                    v-for="item in activeConfigurationComponent.formItemProps"
-                  >
-                    <VzDesignerCustomizationProp
-                      v-bind="item"
-                      v-model:value="activeComponent.item[item.field]"
-                      @model-name-focus="
-                        (field, value) => onModelNameFocus(field, value, item)
-                      "
-                      @model-name-change="
-                        (field, value) => onModelNameChange(field, value, item)
-                      "
-                      @model-name-blur="
-                        (field, value) => onModelNameBlur(field, value, item)
-                      "
-                    ></VzDesignerCustomizationProp>
+                  <template v-for="item in activeConfigurationComponent.formItemProps">
+                    <VzDesignerCustomizationProp v-bind="item" v-model:value="activeComponent.item[item.field]"
+                      @model-name-focus="(field, value) => onModelNameFocus(field, value, item)
+                        " @model-name-change="(field, value) => onModelNameChange(field, value, item)
+                          " @model-name-blur="(field, value) => onModelNameBlur(field, value, item)
+                            "></VzDesignerCustomizationProp>
                   </template>
                 </div>
 
                 <!-- 组件属性 -->
-                <div
-                  v-show="formComponentProp === 'component-props'"
-                  class="px-2"
-                >
-                  <template
-                    v-for="item in activeConfigurationComponent.componentProps"
-                  >
+                <div v-show="formComponentProp === 'component-props'" class="px-2">
+                  <template v-for="item in activeConfigurationComponent.componentProps">
                     <template v-if="['events', 'class'].includes(item.field)">
-                      <VzDesignerCustomizationProp
-                        v-if="item.show !== false"
-                        v-bind="item"
-                        v-model:value="activeComponent.component[item.field]"
-                        v-model:apply="item.apply"
-                      ></VzDesignerCustomizationProp>
+                      <VzDesignerCustomizationProp v-if="item.show !== false" v-bind="item"
+                        v-model:value="activeComponent.component[item.field]" v-model:apply="item.apply">
+                      </VzDesignerCustomizationProp>
                     </template>
 
                     <template v-else>
-                      <VzDesignerCustomizationProp
-                        v-if="item.show !== false"
-                        v-bind="item"
-                        v-model:value="
-                          activeComponent.component.props[item.field]
-                        "
-                        v-model:params="
-                          activeComponent.component.props['params']
-                        "
-                        v-model:api="activeComponent.component.props['api']"
-                        v-model:apply="item.apply"
-                        v-model:mode="item.mode"
-                      ></VzDesignerCustomizationProp>
+                      <VzDesignerCustomizationProp v-if="item.show !== false" v-bind="item" v-model:value="activeComponent.component.props[item.field]
+                        " v-model:params="activeComponent.component.props['params']
+                          " v-model:api="activeComponent.component.props['api']" v-model:apply="item.apply"
+                        v-model:mode="item.mode"></VzDesignerCustomizationProp>
                     </template>
                   </template>
                 </div>
@@ -1009,9 +850,9 @@ const onModelNameChange = (
         } else if (activeComponent.value.type === "switch") {
           if (
             typeof activeComponent.value.component.props.checkedValue ===
-              "undefined" ||
+            "undefined" ||
             typeof activeComponent.value.component.props.checkedValue ===
-              "boolean"
+            "boolean"
           ) {
             return [item, false];
           }
@@ -1075,9 +916,9 @@ const onModelNameBlur = (
         } else if (activeComponent.value.type === "switch") {
           if (
             typeof activeComponent.value.component.props.checkedValue ===
-              "undefined" ||
+            "undefined" ||
             typeof activeComponent.value.component.props.checkedValue ===
-              "boolean"
+            "boolean"
           ) {
             return [item, false];
           }
@@ -1261,11 +1102,11 @@ watch(
 
                 &-item {
                   border: 1px solid #eaeaea;
-                  --at-apply: p-2 cursor-pointer rd flex items-center
-                    justify-between;
+                  --at-apply: p-2 cursor-pointer rd flex items-center justify-between;
 
                   &-left {
                     --at-apply: flex items-center justify-start;
+
                     .icon {
                       font-size: 14px;
                       --at-apply: mr-1;
@@ -1436,6 +1277,7 @@ watch(
 
 <style lang="less">
 .Vz-form-designer-components-outline-tree {
+
   .ant-tree-switcher,
   .ant-tree-switcher_close {
     --at-apply: f-c-c;

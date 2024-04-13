@@ -517,6 +517,7 @@
       "events": {},
       "props": {
         "autofocus": false,
+        "disabled": false,
         "indeterminate": false
       }
     },

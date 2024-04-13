@@ -8,8 +8,12 @@
     </div>
     <!-- {{ list }} -->
     <vz-json-viewer :data="list.model"></vz-json-viewer>
-    <vz-form-renderer @tb-name-change="onTbNameChange" ref="formRenderer" @day-checkboxChange="dayCheckboxChange"
-      :data="list"></vz-form-renderer>
+    <vz-form-renderer @tb-name-change="onTbNameChange" ref="formRenderer" @keywords-pressEnter="onKeywordsPressEnter"
+      :data="list">
+      <template #test-demo="data">
+        <div class="bd-red">test-demo slot contents  {{ data }} </div>
+      </template>
+    </vz-form-renderer>
   </div>
 </template>
 
@@ -36,10 +40,10 @@ const onTbNameChange = (data: any) => {
   // let findedNode = formRenderer.value.findComponentNode('tb');
   // console.info('findedNode =>', findedNode);
 
-    // /api/mers/v1/departments
-  
-      // isShowTree 1 
-    // merchantId 0 // affiliationedOrganizations
+  // /api/mers/v1/departments
+
+  // isShowTree 1 
+  // merchantId 0 // affiliationedOrganizations
 
   // let path = ['tb', index, '_components', 'age', 'props', 'disabled'];
   let path = [index, '_components', 'age', 'props', 'disabled'];
@@ -80,6 +84,10 @@ const dayCheckboxChange = ({ checked }: { checked: boolean }) => {
 
 
 
+}
+
+const onKeywordsPressEnter = () => {
+  console.info('onKeywordsPressEnter =>xxx');
 }
 
 </script>

@@ -5754,6 +5754,91 @@
       }
     }
   ],
+  "checkbox": [
+    {
+      "label": "自动获取焦点",
+      "field": "autofocus",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "不确定状态",
+      "field": "indeterminate",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {}
+      }
+    },
+    {
+      "label": "默认值",
+      "field": "defaultValue",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 默认内容"
+        }
+      }
+    },
+    {
+      "label": "是否禁用",
+      "field": "disabled",
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "ASwitch",
+        "vModelField": "checked",
+        "props": {
+          "placeholder": "请输入占位提示"
+        }
+      }
+    },
+    {
+      "label": "事件",
+      "field": "events",
+      "tooltip": {
+        "title": "组件的事件，渲染组件可以进行响应"
+      },
+      "visibilityToggler": true,
+      "visible": true,
+      "apply": true,
+      "mode": "default",
+      "component": {
+        "name": "VzDesignerCustomizationEvents",
+        "vModelField": "value",
+        "props": {
+          "events": [
+            {
+              "name": "change",
+              "description": "变化时回调函数",
+              "callback": "Function(e:Event)",
+              "arguments": [
+                "e"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ],
   "checkbox-group": [
     {
       "label": "默认值",

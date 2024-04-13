@@ -13,8 +13,8 @@
       {{ initialComponents }}
     </p> -->
 
-    <a-table :class="`${prefixCls}-antdv-table`" v-bind="$attrs" :columns="parseedColumns" :data-source="modelValue"
-      @change="onChange" :rowKey="rowKey" ref="tableRef" :customHeaderCell="customHeaderCell"
+    <a-list :class="`${prefixCls}-antdv-list`" v-bind="$attrs" :columns="parseedColumns" :data-source="modelValue"
+      @change="onChange" :rowKey="rowKey" ref="listRef" :customHeaderCell="customHeaderCell"
       :customHeaderRow="customHeaderRow">
       <!-- 透传 slot  /** 开始 */  -->
       <template v-for="(_, name) in $slots" v-slot:[name]="slotProps">
@@ -146,7 +146,7 @@
       <!-- bodyCell end -->
 
       <!-- 内置默认的（会被透出solt重写覆盖） slot   ===== 结束 ===== -->
-    </a-table>
+    </a-list>
   </div>
 </template>
 <script lang="ts" setup>
@@ -154,7 +154,7 @@ import { useRequest } from "vue-hooks-plus";
 import { useStyle } from "@viaz/hooks";
 import { createNetWork } from "@viaz/utils";
 import { isFunction, isObject } from "@vue/shared";
-import type { VzFormTableProps, VzFormTableColumn } from "@viaz/types";
+import type { VzFormListProps, VzFormListColumn } from "@viaz/types";
 import { Icon } from "@iconify/vue";
 import { cloneDeep } from "lodash-es";
 import { nanoid } from "nanoid";
@@ -177,14 +177,14 @@ import {
 } from "vue";
 import type { PaginationProps } from "ant-design-vue";
 
-const { prefixCls } = useStyle("form-table");
+const { prefixCls } = useStyle("form-list");
 
-const COMPONENT_NAME = "VzFormTable";
+const COMPONENT_NAME = "VzFormList";
 defineOptions({
   name: COMPONENT_NAME,
 });
 
-const tableRef = ref();
+const listRef = ref();
 
 const {
   api,
@@ -194,7 +194,7 @@ const {
   columns = [],
   rowKey = "id",
   hab = false,
-} = defineProps<VzFormTableProps>();
+} = defineProps<VzFormListProps>();
 
 const modelValue = defineModel<object[]>("value", {
   default: [],
@@ -204,7 +204,7 @@ const currentInstance: ComponentInternalInstance = getCurrentInstance();
 
 const customHeaderRow = (columns, index) => {
   return {
-    class: "vz-form-table-header-row",
+    class: "vz-form-list-header-row",
   };
 };
 
@@ -218,12 +218,12 @@ const emitEventHandler = (field: string, event: string, params: any) => {
   const eo = `${field}-${event}`;
 
   currentInstance.emitsOptions[eo] = null;
-  console.info('form-table eo =>', eo);
+  console.info('form-list eo =>', eo);
   console.info('params =>', params);
   emits(eo, params);
   emits('fieldEvents', { columnField: field, event, params: params });
 };
-const parseEvents = (column: VzFormTableColumn, index: number) => {
+const parseEvents = (column: VzFormListColumn, index: number) => {
   if (column.component?.hasOwnProperty("events")) {
     // console.info('需要解析事件 =>',column.component,column.component.events);
     let emitsEvents: any = {};
@@ -251,7 +251,7 @@ const parseEvents = (column: VzFormTableColumn, index: number) => {
   }
 };
 
-const parseedColumns = ref<VzFormTableColumn[]>([]);
+const parseedColumns = ref<VzFormListColumn[]>([]);
 
 const slots = useSlots();
 const slotsNames = Object.keys(slots);
@@ -264,7 +264,7 @@ const customHeaderCell = (column) => {
       activeColumnKey.value = column.key;
       if (event.target) {
         let queryedHeaderCellNodeList = document.querySelectorAll(
-          ".vz-form-table-header-custom-header-cell"
+          ".vz-form-list-header-custom-header-cell"
         );
         queryedHeaderCellNodeList.forEach((node) => {
           node.classList.remove("active");
@@ -272,15 +272,15 @@ const customHeaderCell = (column) => {
         event.target.classList.add("active");
       }
     },
-    class: "vz-form-table-header-custom-header-cell",
+    class: "vz-form-list-header-custom-header-cell",
   };
 };
 
 const customCell = (record, rowIndex, column) => {
   return {
     class: [
-      "vz-form-table-normal-custom-cell",
-      "vz-form-table-custom-cell-" + column.key,
+      "vz-form-list-normal-custom-cell",
+      "vz-form-list-custom-cell-" + column.key,
       {
         active: column.key === activeColumnKey.value,
       },
@@ -315,7 +315,7 @@ const parseColumn = () => {
       align: "center",
       width: 80,
     };
-    parseedColumns.value.unshift(indexArray as VzFormTableColumn);
+    parseedColumns.value.unshift(indexArray as VzFormListColumn);
   }
 };
 
@@ -326,8 +326,8 @@ const currentPagination = ref({
   current: 1,
 });
 
-useDraggable(".vz-form-table .ant-table-tbody", modelValue, {
-  draggable: ".ant-table-row",
+useDraggable(".vz-form-list .ant-list-tbody", modelValue, {
+  draggable: ".ant-list-row",
 });
 
 const onChange = (pagination: PaginationProps) => {
@@ -418,17 +418,17 @@ watch(
 </script>
 
 <style lang="less">
-.vz-form-table-antdv-table {
-  .vz-form-table-header-row {
-    .vz-form-table-header-custom-header-cell.active {
+.vz-form-list-antdv-list {
+  .vz-form-list-header-row {
+    .vz-form-list-header-custom-header-cell.active {
       background-color: #e6f4ff;
       // outline: 1px solid red !important;
       // border: 1px solid #1890ff !important;
     }
   }
 
-  .ant-table-tbody {
-    .vz-form-table-normal-custom-cell.active {
+  .ant-list-tbody {
+    .vz-form-list-normal-custom-cell.active {
       background-color: #e6f4ff !important;
       // outline: 1px solid red !important;
       // border: 1px solid #1890ff !important;
@@ -438,7 +438,7 @@ watch(
 </style>
 
 <style lang="less" scoped>
-@prefix-cls: ~"@{namespace}-form-table";
+@prefix-cls: ~"@{namespace}-form-list";
 
 .@{prefix-cls} {
   --at-apply: min-w-100px w-full;
@@ -489,8 +489,8 @@ watch(
 </style>
 
 <style>
-.ims-form-table {
-  .ant-table-cell {
+.ims-form-list {
+  .ant-list-cell {
     .ant-select-selection-placeholder {
       text-align: left;
     }
@@ -501,7 +501,7 @@ watch(
   }
 }
 
-.ims-form-table-select-popup {
+.ims-form-list-select-popup {
   .ant-select-item-option {
     text-align: left;
   }

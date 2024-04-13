@@ -31,6 +31,8 @@
             <component :is="record.component.name" v-bind="record.component.props"></component>
           </template> -->
           <template v-if="column.key === 'component'">
+            <!-- <vz-json-viewer :data="column" title="column"></vz-json-viewer> -->
+            <!-- <vz-json-viewer :data="record" title="record"></vz-json-viewer> -->
             <div class="flex justify-between items-center">
               <div class="flex-1">
                 <a-select class="w-full" allowClear
@@ -127,9 +129,9 @@ const activeRowComponent = ref({});
 const activedRowComponentProps = ref([]);
 
 const initial = {
-  title: "表头-undefined",
-  key: "key-undefined",
-  dataIndex: "dataIndex-undefined",
+  title: "表头-1",
+  key: "key-1",
+  dataIndex: "dataIndex-1",
   component: {
     name: "AInput",
     vModelField: "value",
@@ -281,9 +283,12 @@ const modelValue = defineModel<any>("value", {
 });
 
 const onComponentChange = (value, option, record) => {
+  console.info('option =>', option.vModelField);
   if (value) {
     record.component.type = option.type;
+    record.component.vModelField = option.vModelField;
     record.component.props = option.component.props
+    // record.component.vModelField = option.component.props
   } else {
     record.component = {};
   }

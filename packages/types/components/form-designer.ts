@@ -87,6 +87,8 @@ export interface VzFormSchemaItem {
     displayState: true;
     /** 名称 (model名称) */
     name: string;
+    /** 自定义 slot 名称 */
+    slot?: string;
   };
   /**组件相关配置 */
   component: {

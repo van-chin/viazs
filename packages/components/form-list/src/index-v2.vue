@@ -7,113 +7,34 @@
       </div>
     </div>
 
-    <!-- {{ initial }}
-
-    <p>
-      {{ initialComponents }}
-    </p> -->
-
-    <a-table :class="`${prefixCls}-antdv-table`" v-bind="$attrs" :columns="parseedColumns" :data-source="modelValue"
-      @change="onChange" :rowKey="rowKey" ref="tableRef" :customHeaderCell="customHeaderCell"
-      :customHeaderRow="customHeaderRow">
-      <!-- 透传 slot  /** 开始 */  -->
-      <template v-for="(_, name) in $slots" v-slot:[name]="slotProps">
-        <template v-if="name === 'headerCell'">
-          <slot :name="name" v-bind="slotProps"></slot>
-
-          <template v-if="slotProps.column.key === 'operations'">
-            <div class="flex justify-between items-center">
-              <span>{{ slotProps.title }}</span>
-
-              <a-space>
-                <a-dropdown placement="bottom" :trigger="['click']">
-                  <template #overlay>
-                    <a-menu>
-                      <a-menu-item key="large"> 默认 </a-menu-item>
-                      <a-menu-item key="middle"> 中等 </a-menu-item>
-                      <a-menu-item key="small"> 紧凑 </a-menu-item>
-                    </a-menu>
-                  </template>
-                </a-dropdown>
-
-                <icon icon="ant-design:setting-outlined" :inline="true" class="cursor-pointer">
-                </icon>
-              </a-space>
-            </div>
-          </template>
-        </template>
-
-        <template v-else-if="name === 'bodyCell'">
-          <template v-if="slotProps.column.formatType === ColumnFormatTypeEnum.INDEX">
-            {{
-              (paginations?.current - 1) * paginations?.pageSize +
-              slotProps.index +
-              1
-            }}
-          </template>
-          <template v-if="slotProps.column.formatType === ColumnFormatTypeEnum.DATETIME">
-            {{
-              slotProps.text
-                ? unref(
-                  useDateFormat(slotProps.text, slotProps.column.formater)
-                )
-                : "-"
-            }}
-          </template>
-
-          <template v-if="slotProps.column.formatType === ColumnFormatTypeEnum.JOIN">
-            {{
-              slotProps.text
-                ? slotProps.text.join(slotProps.column.formater)
-                : "-"
-            }}
-          </template>
-
-          <template v-if="slotProps.column.key === 'operations'">
-            <slot :name="name" v-bind="slotProps"></slot>
-          </template>
-
-          <template v-if="slotProps.column.key === 'index'">
-            <div :class="`${prefixCls}-index-wrapper`">
-              <div :class="`${prefixCls}-index-wrapper-index index`">
-                {{ calcIndex(slotProps.index) }}
-              </div>
-              <div :class="`${prefixCls}-index-wrapper-delete delete`">
-                <a-button size="small" danger shape="circle" @click="onDeleteRow(slotProps.index)">
-                  <icon icon="ant-design:delete-outlined" :inline="true" />
-                </a-button>
-              </div>
-            </div>
-          </template>
-
-          <template v-else>
-            <slot :name="name" v-bind="slotProps"></slot>
-          </template>
-        </template>
-
-        <template v-else>
-          <slot :name="name" v-bind="slotProps || {}"></slot>
-        </template>
-      </template>
-
-      <!-- 透传 slot  /** 结束 */  -->
-
-      <!-- 内置默认的（会被透出solt重写覆盖） slot   ===== 开始 ===== -->
-
-      <!-- headerCell begin -->
+    <a-table
+      :class="`${prefixCls}-antdv-table`"
+      v-bind="$attrs"
+      :columns="parseedColumns"
+      :data-source="modelValue"
+      @change="onChange"
+      :rowKey="rowKey"
+      ref="tableRef"
+      :customHeaderCell="customHeaderCell"
+      :customHeaderRow="customHeaderRow"
+    >
       <template #headerCell="{ title, column }">
         <template v-if="column.key === 'index'">
           <div>
-            <a-button v-if="hab === false" size="small" type="primary" shape="circle" @click="onAddRow">
-              <iconify-icon icon="ant-design:plus-outlined" :inline="true"></iconify-icon>
+            <a-button
+              v-if="hab === false"
+              size="small"
+              type="primary"
+              shape="circle"
+              @click="onAddRow"
+            >
+              <icon icon="ant-design:plus-outlined" :inline="true" />
             </a-button>
             <span v-else>{{ title }}</span>
           </div>
         </template>
       </template>
-      <!-- headerCell end -->
 
-      <!-- bodyCell begin -->
       <template #bodyCell="{ column, text, record, index }">
         <template v-if="column.key === 'index'">
           <div :class="`${prefixCls}-index-wrapper`">
@@ -121,31 +42,60 @@
               {{ calcIndex(index) }}
             </div>
             <div :class="`${prefixCls}-index-wrapper-delete delete`">
-              <a-button size="small" danger shape="circle" @click="onDeleteRow(index)">
-                <iconify-icon icon="ant-design:delete-outlined" :inline="true"></iconify-icon>
+              <a-button
+                size="small"
+                danger
+                shape="circle"
+                @click="onDeleteRow(index)"
+              >
+                <icon icon="ant-design:delete-outlined" :inline="true" />
               </a-button>
             </div>
           </div>
         </template>
+
         <template v-else>
-          <template v-if="column.component && Object.getOwnPropertyNames(column.component).includes('name')">
-            <!-- <vz-json-viewer :data="record._components[column.key].props"></vz-json-viewer> -->
-            <component :is="column.component.name" v-bind="record._components[column.key].props"
-              v-on="parseEvents(column, index)" :index="index" :class="column.component.name === 'ACheckbox' ||
+          <template v-if="column.component">
+            <template v-if="Array.isArray(column.dataIndex)">
+              <component
+                :is="column.component.name"
+                v-bind="column.component.props"
+                v-on="parseEvents(column, index)"
+                :index="index"
+                :class="
+                  column.component.name === 'ACheckbox' ||
+                  column.component.name === 'ASwitch'
+                    ? ''
+                    : 'w-full'
+                "
+                v-model:[column.component.vModelField]="
+                  record[column.dataIndex[0]][column.dataIndex[1]]
+                "
+              >
+              </component>
+            </template>
+            <component
+              v-else
+              :is="column.component.name"
+              v-bind="column.component.props"
+              v-on="parseEvents(column, index)"
+              :index="index"
+              :class="
+                column.component.name === 'ACheckbox' ||
                 column.component.name === 'ASwitch'
-                ? ''
-                : 'w-full'
-                " v-model:[column.component.vModelField]="record[column.dataIndex]">
+                  ? ''
+                  : 'w-full'
+              "
+              v-model:[column.component.vModelField]="record[column.dataIndex]"
+            >
             </component>
           </template>
+
           <template v-else>
             {{ text }}
           </template>
         </template>
       </template>
-      <!-- bodyCell end -->
-
-      <!-- 内置默认的（会被透出solt重写覆盖） slot   ===== 结束 ===== -->
     </a-table>
   </div>
 </template>
@@ -158,12 +108,6 @@ import type { VzFormTableProps, VzFormTableColumn } from "@viaz/types";
 import { Icon } from "@iconify/vue";
 import { cloneDeep } from "lodash-es";
 import { nanoid } from "nanoid";
-
-import { ColumnFormatTypeEnum } from "@viaz/enums";
-
-import {
-  useDateFormat,
-} from "@vueuse/core";
 
 import { useDraggable } from "vue-draggable-plus";
 import type { ComponentInternalInstance } from "vue";
@@ -211,17 +155,15 @@ const customHeaderRow = (columns, index) => {
 const emits = defineEmits<{
   added: [totality: number];
   deleted: [totality: number];
-  fieldEvents: [params: any];
 }>();
 // 动态生成 emit 事件
 const emitEventHandler = (field: string, event: string, params: any) => {
   const eo = `${field}-${event}`;
 
   currentInstance.emitsOptions[eo] = null;
-  console.info('form-table eo =>', eo);
-  console.info('params =>', params);
+  // console.info('eo =>',eo);
+  // console.info('params =>',params);
   emits(eo, params);
-  emits('fieldEvents', { columnField: field, event, params: params });
 };
 const parseEvents = (column: VzFormTableColumn, index: number) => {
   if (column.component?.hasOwnProperty("events")) {
@@ -288,14 +230,9 @@ const customCell = (record, rowIndex, column) => {
   };
 };
 
-const initialComponents = ref({});
-
 const parseColumn = () => {
   let hasIndexColumn = false;
   parseedColumns.value = columns.map((column) => {
-    // console.info('parseColumn .column =>',column);
-    // console.info(column.title,`${column.key} =>`,column.component);
-    initialComponents.value[column.key] = column.component;
     if (column.key === "index") {
       hasIndexColumn = true;
     }
@@ -345,15 +282,9 @@ const calcIndex = (index: number) => {
 
 const onAddRow = () => {
   let clonedInitial = cloneDeep(initial);
-  let nanoId = nanoid();
-  clonedInitial[rowKey] = nanoId;
-  clonedInitial.key = 'key-' + nanoId;
-  clonedInitial.dataIndex = 'dataIndex' + nanoId;
-  clonedInitial['_components'] = cloneDeep(initialComponents.value);
-  if (!modelValue.value) {
-    modelValue.value = [];
-  }
+  clonedInitial[rowKey] = nanoid();
   modelValue.value.push(clonedInitial);
+
   emits("added", modelValue.value.length);
 };
 
@@ -456,7 +387,6 @@ watch(
   &-action-bar {
     --at-apply: flex justify-between items-center p-2 mb-2;
   }
-
   // border: 1px solid red;
   &-index-wrapper {
     // border: 1px solid red;
@@ -464,7 +394,6 @@ watch(
     height: 24px;
     min-height: 24px;
     --at-apply: flex justify-center items-center;
-
     &-index {
       // display: none;
     }
@@ -474,12 +403,10 @@ watch(
     }
 
     &:hover {
-
       // background-color: red;
       .index {
         display: none;
       }
-
       .delete {
         display: block;
       }
@@ -494,7 +421,6 @@ watch(
     .ant-select-selection-placeholder {
       text-align: left;
     }
-
     .ant-select-selection-item {
       text-align: left;
     }

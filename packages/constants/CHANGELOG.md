@@ -1,5 +1,47 @@
 # @viaz/constants
 
+## 0.0.2-beta.21
+
+### Patch Changes
+
+- fixed pressEnter event
+
+## 0.0.2-beta.20
+
+### Patch Changes
+
+- fixed vz-page keywords pressEnter evnet
+
+## 0.0.2-beta.19
+
+### Patch Changes
+
+- pressEvent
+
+## 0.0.2-beta.18
+
+### Patch Changes
+
+- add pressEvent
+
+## 0.0.2-beta.17
+
+### Patch Changes
+
+- fixed vz-form-table vModelField error
+
+## 0.0.2-beta.16
+
+### Patch Changes
+
+- fixed switc vModelFeild bug
+
+## 0.0.2-beta.15
+
+### Patch Changes
+
+- fix json config
+
 ## 0.0.2-beta.14
 
 ### Patch Changes

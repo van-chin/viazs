@@ -11,8 +11,8 @@
         ">
           <template v-if="action.component === 'VzPopconfirmButton'">
             <component :is="action.component" :key="`action-${index}`" v-bind="action.props" :disabled="action.emit === 'curd-destroy'
-                ? record.deletedAt !== null
-                : !record.deletedAt
+              ? record.deletedAt !== null
+              : !record.deletedAt
               " @confirm="onAction(action.emit, record)" />
           </template>
 
@@ -30,11 +30,8 @@
     border: '1px solid #ebedf0',
   }">
     <div :class="`${prefixCls}-filter`" v-if="!initialing" ref="filterEl">
-      <VzFormRenderer :data="searcher"></VzFormRenderer>
-      <!-- aa -->
-
-      <!-- <vz-form -->
-
+      <vz-form-renderer :data="searcher" ref="searcherFromRef" @keywords-pressEnter="onKeywordsPressEnter">
+      </vz-form-renderer>
       <div :class="`${prefixCls}-filter-condition-bar`" v-if="conditionBar">
         <fieldset>
           <legend>筛选条件</legend>
@@ -120,8 +117,7 @@
           layout="vertical"
           :validateInfos="filterForm.validateInfos"
         ></vz-form> -->
-
-        <VzFormRenderer :data="filter"></VzFormRenderer>
+        <VzFormRenderer :data="filter" ref="filterFromRef"></VzFormRenderer>
       </div>
       <template #footer>
         <div class="flex justify-between items-center">
@@ -342,6 +338,10 @@ import { ref, watch, computed, useSlots, unref, toRefs } from "vue";
 
 const COMPONENT_NAME = "VzPage";
 
+
+const searcherFromRef = ref();
+const filterFromRef = ref();
+
 const DEFAULT_ACTIONS: PageCurdAction[] = [
   {
     position: "fl",
@@ -553,6 +553,7 @@ const props = withDefaults(defineProps<PageCurdProps>(), {
   },
 });
 
+
 // differenceBy
 // const differenceSet: PageCurdAction[] = differenceBy(
 //   DEFAULT_ACTIONS,
@@ -610,7 +611,6 @@ const {
 const { initializeCurd, getLists, destroy, recovery } = curdStore;
 
 const slots = useSlots();
-console.info("slots =>", slots);
 const slotsNames = Object.keys(slots);
 
 const seType = ref<number>(1);
@@ -685,6 +685,14 @@ const onFilterFormSearch = () => {
   console.info("onFilterFormSearch");
   // filterForm.resetFields();
 };
+
+const onKeywordsPressEnter = () => {
+  console.info('onKeywordsPressEnter =>', searcherFromRef.value.formInstance);
+  // searcherFromRef.value.formInstance
+  // getLists(searcher.value.model);
+  fetchList();
+}
+
 
 // CURD 事件处理
 const onAction = (event: any, params: object = {}) => {

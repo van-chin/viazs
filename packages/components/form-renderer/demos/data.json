@@ -1,11 +1,9 @@
 {
   "model": {
-    "tb": [],
-    "aaa": ""
+    "keywords": ""
   },
   "rules": {
-    "tb": [],
-    "aaa": []
+    "keywords": []
   },
   "items": [
     {
@@ -30,182 +28,82 @@
       },
       "children": [
         {
-          "id": "KOJXLYEMljzcxewgncoMZ",
-          "key": "KOJXLYEMljzcxewgncoMZ",
-          "title": "输入表格",
-          "icon": "ant-design:cloud-upload-outlined",
-          "type": "vz-form-table",
-          "componentName": "VzFormTable",
+          "id": "YLRYbkXihLjmrtmLjjC5333",
+          "key": "YLRYbkXihLjmrtmLjjC5333",
+          "title": "输入框",
+          "icon": "iconoir:input-field",
+          "type": "input",
+          "componentName": "AInput",
           "vModelField": "value",
           "item": {
-            "label": "输入表格",
-            "name": "tb",
+            "label": "输入框",
+            "name": "test",
             "tooltip": "",
             "extra": "",
             "required": false,
             "colon": true,
             "displayState": true,
-            "rules": [],
-            "autoLink": false
+            "rules": []
+           
           },
           "component": {
-            "name": "VzFormTable",
-            "events": {},
-            "props": {
-              "rowKey": "id",
-              "bordered": true,
-              "dataSource": [
-                {
-                  "id": "1",
-                  "key": "name",
-                  "name": "假数据",
-                  "age": 18
-                },
-                {
-                  "id": "2",
-                  "key": "name",
-                  "name": "假数据二",
-                  "age": 19
-                }
-              ],
-              "columns": [
-                {
-                  "id": "1",
-                  "title": "选择",
-                  "dataIndex": "name",
-                  "key": "name",
-                  "component": {
-                    "name": "ASelect",
-                    "vModelField": "value",
-                    "type": "select",
-                    "props": {
-                      "bordered": true,
-                      "allowClear": true,
-                      "placeholder": "请选择",
-                      "virtual": true,
-                      "fieldNames": {
-                        "label": "label",
-                        "value": "value",
-                        "options": "options"
-                      },
-                      "options": [
-                        {
-                          "id": "1",
-                          "label": "选项一",
-                          "value": "选项一"
-                        },
-                        {
-                          "id": "2",
-                          "label": "选项二",
-                          "value": "选项二"
-                        },
-                        {
-                          "id": "3",
-                          "label": "选项三",
-                          "value": "选项三"
-                        }
-                      ],
-                      "events": {}
-                    },
-                    "events": {
-                      "change": [
-                        "value",
-                        "option"
-                      ]
-                    }
-                  }
-                },
-                {
-                  "id": "2",
-                  "title": "年龄",
-                  "dataIndex": "age",
-                  "key": "age",
-                  "component": {
-                    "name": "AInputNumber",
-                    "vModelField": "value",
-                    "type": "input-number",
-                    "props": {
-                      "placeholder": "请输入年龄"
-                    }
-                  }
-                }
-              ],
-              "initial": {
-                "name": "zs",
-                "age": 18,
-                "status": false,
-                "abc": true,
-                "users": [],
-                "abcd": {}
-              }
-            },
-            "emitsEvents": {}
-          },
-          "componentProps": [],
-          "formItemProps": [],
-          "class": "click-way-vz-form-table"
-        },
-        {
-          "id": "JnW26p-4jC1QD2sq27vOW",
-          "key": "JnW26p-4jC1QD2sq27vOW",
-          "title": "选择框",
-          "icon": "tabler:select",
-          "type": "select",
-          "componentName": "ASelect",
-          "vModelField": "value",
-          "item": {
-            "label": "选择框",
-            "name": "aaa",
-            "tooltip": "",
-            "extra": "",
-            "required": false,
-            "colon": true,
-            "displayState": true,
-            "rules": [],
-            "autoLink": false
-          },
-          "component": {
-            "name": "ASelect",
+            "name": "AInput",
+            
             "events": {
-              "change": [
-                "value",
-                "option"
+              "pressEnter": [
+                "e"
               ]
             },
             "props": {
+              "placeholder": "请输入",
               "bordered": true,
-              "allowClear": true,
-              "placeholder": "请选择",
-              "virtual": true,
-              "fieldNames": {
-                "label": "label",
-                "value": "value",
-                "options": "options"
-              },
-              "options": [
-                {
-                  "id": "1",
-                  "label": "选项一",
-                  "value": "选项一"
-                },
-                {
-                  "id": "2",
-                  "label": "选项二",
-                  "value": "选项二"
-                },
-                {
-                  "id": "3",
-                  "label": "选项三",
-                  "value": "选项三"
-                }
-              ],
+              "showCount": false,
+              "size": "",
               "events": {}
-            },
-            "emitsEvents": {}
+            }
           },
           "componentProps": [],
           "formItemProps": [],
-          "class": "click-way-select"
+          "class": "click-way-input"
+        },
+        {
+          "id": "YLRYbkXihLjmrtmLjjC53",
+          "key": "YLRYbkXihLjmrtmLjjC53",
+          "title": "输入框",
+          "icon": "iconoir:input-field",
+          "type": "input",
+          "componentName": "AInput",
+          "vModelField": "value",
+          "item": {
+            "label": "输入框",
+            "name": "keywords",
+            "tooltip": "",
+            "extra": "",
+            "required": false,
+            "colon": true,
+            "displayState": true,
+            "rules": [],
+            "slot":""
+          },
+          "component": {
+            "name": "AInput",
+            
+            "events": {
+              "pressEnter": [
+                "e"
+              ]
+            },
+            "props": {
+              "placeholder": "请输入",
+              "bordered": true,
+              "showCount": false,
+              "size": "",
+              "events": {}
+            }
+          },
+          "componentProps": [],
+          "formItemProps": [],
+          "class": "click-way-input"
         }
       ],
       "component": {

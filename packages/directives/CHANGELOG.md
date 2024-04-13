@@ -1,5 +1,61 @@
 # @viaz/directives
 
+## 0.0.2-beta.21
+
+### Patch Changes
+
+- fixed pressEnter event
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.21
+
+## 0.0.2-beta.20
+
+### Patch Changes
+
+- fixed vz-page keywords pressEnter evnet
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.20
+
+## 0.0.2-beta.19
+
+### Patch Changes
+
+- pressEvent
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.19
+
+## 0.0.2-beta.18
+
+### Patch Changes
+
+- add pressEvent
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.18
+
+## 0.0.2-beta.17
+
+### Patch Changes
+
+- fixed vz-form-table vModelField error
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.17
+
+## 0.0.2-beta.16
+
+### Patch Changes
+
+- fixed switc vModelFeild bug
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.16
+
+## 0.0.2-beta.15
+
+### Patch Changes
+
+- fix json config
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.15
+
 ## 0.0.2-beta.14
 
 ### Patch Changes

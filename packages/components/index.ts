@@ -26,6 +26,7 @@ export * from "./vtable";
 export * from "./curd";
 export * from "./page";
 export * from "./form-table";
+export * from "./form-list";
 export * from "./list-checkbox-group";
 export * from "./dynamic-panel";
 export * from "./hover-mask";

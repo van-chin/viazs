@@ -1,5 +1,96 @@
 # viaz
 
+## 0.0.2-beta.21
+
+### Patch Changes
+
+- fixed pressEnter event
+- Updated dependencies
+  - @viaz/components@0.0.2-beta.21
+  - @viaz/directives@0.0.2-beta.21
+  - @viaz/constants@0.0.2-beta.21
+  - @viaz/hooks@0.0.2-beta.21
+  - @viaz/types@0.0.2-beta.21
+  - @viaz/utils@0.0.2-beta.21
+
+## 0.0.2-beta.20
+
+### Patch Changes
+
+- fixed vz-page keywords pressEnter evnet
+- Updated dependencies
+  - @viaz/components@0.0.2-beta.20
+  - @viaz/directives@0.0.2-beta.20
+  - @viaz/constants@0.0.2-beta.20
+  - @viaz/hooks@0.0.2-beta.20
+  - @viaz/types@0.0.2-beta.20
+  - @viaz/utils@0.0.2-beta.20
+
+## 0.0.2-beta.19
+
+### Patch Changes
+
+- pressEvent
+- Updated dependencies
+  - @viaz/components@0.0.2-beta.19
+  - @viaz/directives@0.0.2-beta.19
+  - @viaz/constants@0.0.2-beta.19
+  - @viaz/hooks@0.0.2-beta.19
+  - @viaz/types@0.0.2-beta.19
+  - @viaz/utils@0.0.2-beta.19
+
+## 0.0.2-beta.18
+
+### Patch Changes
+
+- add pressEvent
+- Updated dependencies
+  - @viaz/components@0.0.2-beta.18
+  - @viaz/directives@0.0.2-beta.18
+  - @viaz/constants@0.0.2-beta.18
+  - @viaz/hooks@0.0.2-beta.18
+  - @viaz/types@0.0.2-beta.18
+  - @viaz/utils@0.0.2-beta.18
+
+## 0.0.2-beta.17
+
+### Patch Changes
+
+- fixed vz-form-table vModelField error
+- Updated dependencies
+  - @viaz/components@0.0.2-beta.17
+  - @viaz/directives@0.0.2-beta.17
+  - @viaz/constants@0.0.2-beta.17
+  - @viaz/hooks@0.0.2-beta.17
+  - @viaz/types@0.0.2-beta.17
+  - @viaz/utils@0.0.2-beta.17
+
+## 0.0.2-beta.16
+
+### Patch Changes
+
+- fixed switc vModelFeild bug
+- Updated dependencies
+  - @viaz/components@0.0.2-beta.16
+  - @viaz/directives@0.0.2-beta.16
+  - @viaz/constants@0.0.2-beta.16
+  - @viaz/hooks@0.0.2-beta.16
+  - @viaz/types@0.0.2-beta.16
+  - @viaz/utils@0.0.2-beta.16
+
+## 0.0.2-beta.15
+
+### Patch Changes
+
+- fix json config
+- Updated dependencies
+  - @viaz/components@0.0.2-beta.15
+  - @viaz/directives@0.0.2-beta.15
+  - @viaz/constants@0.0.2-beta.15
+  - @viaz/hooks@0.0.2-beta.15
+  - @viaz/types@0.0.2-beta.15
+  - @viaz/utils@0.0.2-beta.15
+
 ## 0.0.2-beta.14
 
 ### Patch Changes

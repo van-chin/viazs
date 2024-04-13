@@ -1,7 +1,5 @@
 <template>
   <div :class="prefixCls">
-    <!-- labelShow -->
-
     <a-form ref="formRef" v-bind="data.items[0].item" v-if="formInstance">
       <template v-for="(item, index) in data.items[0].children">
         <template v-if="item.type === 'grid-layout'">
@@ -22,7 +20,11 @@
                     formInstance.validateInfos[ric.item.name]
                   )
                   " :label="data.items[0].item.labelShow ? ric.item.label : ''">
-                  <component :class="ric.component.class" :is="ric.component.name || 'AInput'"
+
+                  <tetemplate v-if="Object.hasOwnProperty.call($slots, ric.item.slot)">
+                    <slot :name="ric.item.slot" :item="ric" :model="data.model"></slot>
+                  </tetemplate>
+                  <component v-else :class="ric.component.class" :is="ric.component.name || 'AInput'"
                     v-bind="ric.component.props" v-on="ric.component?.emitsEvents || {}"
                     v-model:[ric.vModelField]="data.model[ric.item.name]"></component>
                 </a-form-item>
@@ -45,20 +47,27 @@
             " :label="data.items[0].item.labelShow ? item.item.label : ''">
 
             <tetemplate v-if="item.component.name === 'VzFormTable'">
-              <!-- {{ item }} -->
-              <component :is="item.component.name || 'AInput'" :class="item.component.class"
+
+              <tetemplate v-if="Object.hasOwnProperty.call($slots, item.item.slot)">
+                <slot :name="item.item.slot" :item="item" :model="data.model"></slot>
+              </tetemplate>
+              <component v-else :is="item.component.name || 'AInput'" :class="item.component.class"
                 v-bind="item.component.props" v-on="item.component?.emitsEvents || {}"
                 @field-events="(params: any) => onFieldEvents(item.item.name, params)"
                 v-model:[item.vModelField]="data.model[item.item.name]"></component>
+
             </tetemplate>
 
             <tetemplate v-else>
-              <component :is="item.component.name || 'AInput'" :class="item.component.class"
+              
+             
+              <tetemplate v-if="Object.hasOwnProperty.call($slots, item.item.slot)">
+                <slot :name="item.item.slot" :item="item" :model="data.model"></slot>
+              </tetemplate>
+              <component v-else :is="item.component.name || 'AInput'" :class="item.component.class"
                 v-bind="item.component.props" v-on="item.component?.emitsEvents || {}"
                 v-model:[item.vModelField]="data.model[item.item.name]"></component>
             </tetemplate>
-
-
           </a-form-item>
         </template>
       </template>
@@ -84,7 +93,7 @@ import { update } from "lodash-es";
 //treeFindPath
 import { treeFindNode } from '@utopia-utils/tree';
 
-import { ref, watch, toRefs, reactive } from "vue";
+import { ref, watch, toRefs, reactive,useSlots } from "vue";
 
 const COMPONENT_NAME = "VzFormRenderer";
 defineOptions({
@@ -98,6 +107,11 @@ const useForm = Form.useForm;
 const formInstance = ref<UseFormType>();
 
 const formRef = ref();
+
+
+const slots = useSlots();
+
+const slotKeys = Object.keys(slots);
 
 const currentInstance = getCurrentInstance();
 
@@ -134,22 +148,26 @@ const { data } = toRefs(props);
 
 // 处理表单事件 emitsEvents
 
-foreach(props.data.items[0].children, (item) => {
-  if (item.component && item.component.events) {
-    // console.info(item.item.label, item.item, item.component.props.events);
-    let emitsEvents = {};
-    for (const key in item.component.events) {
-      emitsEvents[key] = (...args: any) => {
-        let params = reactive({});
-        item.component.events[key].map((pkey: string, index: number) => {
-          params[pkey] = args[index];
-        });
-        emitEventHandler(item.item.name, key, params);
-      };
+
+
+const parseEvents = () => {
+  foreach(props.data.items[0].children, (item) => {
+    if (item.component && item.component.events) {
+      console.info(item.item.label, item.item, item.component.props.events);
+      let emitsEvents = {};
+      for (const key in item.component.events) {
+        emitsEvents[key] = (...args: any) => {
+          let params = reactive({});
+          item.component.events[key].map((pkey: string, index: number) => {
+            params[pkey] = args[index];
+          });
+          emitEventHandler(item.item.name, key, params);
+        };
+      }
+      item.component.emitsEvents = emitsEvents;
     }
-    item.component.emitsEvents = emitsEvents;
-  }
-});
+  });
+}
 
 const reset = () => {
   formInstance.value?.clearValidate();
@@ -157,6 +175,7 @@ const reset = () => {
 };
 
 (async function init() {
+  parseEvents();
   formInstance.value = useForm(props.data.model, props.data.rules, {
     onValidate: (name, status, errors) => {
       emits("validateChange", name, status, errors);
@@ -209,7 +228,7 @@ const updateFormModel = (fields: string, value: any, path?: string | []) => {
 
   console.info('updateFormModel => fields', fields);
   console.info('updateFormModel => value', value);
-  
+
   console.info('formInstance modelRef =>', formInstance.value.modelRef);
 
 
@@ -250,6 +269,7 @@ defineExpose<VzFormExpose>({
 } as VzFormExpose);
 
 watch(data, (newVal) => {
+  parseEvents();
   formInstance.value = useForm(newVal.model, newVal.rules, {
     onValidate: (name, status, errors) => {
       emits("validateChange", name, status, errors);

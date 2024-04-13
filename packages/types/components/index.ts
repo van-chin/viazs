@@ -30,6 +30,8 @@ export * from "./uploader";
 
 export * from "./form-table";
 
+export * from "./form-list";
+
 export * from "./editor";
 
 export * from "./vtable";

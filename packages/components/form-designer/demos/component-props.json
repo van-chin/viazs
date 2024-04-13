@@ -160,6 +160,25 @@
       }
     },
     {
+      "label": "自定义SLOT",
+      "field": "slot",
+      "visibilityToggler": false,
+      "visible": true,
+      "apply": true,
+      "component": {
+        "name": "AInput",
+        "vModelField": "value",
+        "props": {
+          "placeholder": "请输入 自定义 slot 名称",
+          "allowClear": true
+        }
+      },
+      "required": true,
+      "tooltip": {
+        "title": "表单域 model 字段，在使用 validate、resetFields 方法的情况下，该属性是必填的。修改时会同步重置验证规则为[]"
+      }
+    },
+    {
       "label": "提示信息",
       "field": "tooltip",
       "visibilityToggler": false,

@@ -495,6 +495,36 @@
     "formItemProps": []
   },
   {
+    "id": "88",
+    "key": "88",
+    "title": "多选框",
+    "icon": "mingcute:checkbox-line",
+    "type": "checkbox",
+    "componentName": "ACheckbox",
+    "vModelField": "checked",
+    "item": {
+      "label": "多选框",
+      "name": "",
+      "tooltip": "",
+      "extra": "",
+      "required": false,
+      "colon": true,
+      "displayState": true,
+      "rules": []
+    },
+    "component": {
+      "name": "ACheckbox",
+      "events": {},
+      "props": {
+        "autofocus": false,
+        "disabled": false,
+        "indeterminate": false
+      }
+    },
+    "componentProps": [],
+    "formItemProps": []
+  },
+  {
     "id": "8",
     "key": "8",
     "title": "多选组合框",
