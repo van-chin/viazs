@@ -1,5 +1,11 @@
 # @viaz/constants
 
+## 0.0.2-beta.22
+
+### Patch Changes
+
+- add custom slot
+
 ## 0.0.2-beta.21
 
 ### Patch Changes

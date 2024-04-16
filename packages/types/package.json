@@ -1,6 +1,6 @@
 {
   "name": "@viaz/types",
-  "version": "0.0.2-beta.21",
+  "version": "0.0.2-beta.22",
   "description": "viaz types",
   "type": "module",
   "main": "index.ts",

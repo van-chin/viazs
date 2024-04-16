@@ -1,6 +1,6 @@
 {
   "name": "@viaz/directives",
-  "version": "0.0.2-beta.21",
+  "version": "0.0.2-beta.22",
   "description": "viaz directives",
   "type": "module",
   "main": "index.ts",

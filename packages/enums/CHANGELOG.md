@@ -1,5 +1,13 @@
 # @imsjs/ims-ui-enums
 
+## 0.0.2-beta.22
+
+### Patch Changes
+
+- add custom slot
+- Updated dependencies
+  - @viaz/hooks@0.0.2-beta.22
+
 ## 0.0.2-beta.21
 
 ### Patch Changes
