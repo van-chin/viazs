@@ -2,8 +2,8 @@
 import { fileURLToPath, URL } from "node:url";
 import { loadEnv } from "file:///D:/Users/Van/Wss/viazs/node_modules/.pnpm/vite@5.1.6_@types+node@20.11.19_less@4.2.0/node_modules/vite/dist/node/index.js";
 import UnoCSS2 from "file:///D:/Users/Van/Wss/viazs/node_modules/.pnpm/unocss@0.58.5_postcss@8.4.35_vite@5.1.6/node_modules/unocss/dist/vite.mjs";
-import vueJsx2 from "file:///D:/Users/Van/Wss/viazs/node_modules/.pnpm/@vitejs+plugin-vue-jsx@3.1.0_vite@5.1.6_vue@3.4.21/node_modules/@vitejs/plugin-vue-jsx/dist/index.mjs";
-import createVuePlugin from "file:///D:/Users/Van/Wss/viazs/node_modules/.pnpm/@vitejs+plugin-vue@5.0.4_vite@5.1.6_vue@3.4.21/node_modules/@vitejs/plugin-vue/dist/index.mjs";
+import vueJsx2 from "file:///D:/Users/Van/Wss/viazs/node_modules/.pnpm/@vitejs+plugin-vue-jsx@3.1.0_vite@5.1.6_vue@3.4.25/node_modules/@vitejs/plugin-vue-jsx/dist/index.mjs";
+import createVuePlugin from "file:///D:/Users/Van/Wss/viazs/node_modules/.pnpm/@vitejs+plugin-vue@5.0.4_vite@5.1.6_vue@3.4.25/node_modules/@vitejs/plugin-vue/dist/index.mjs";
 
 // plugins/vite-plugin-md.ts
 import path from "path";
@@ -197,8 +197,8 @@ function wrapperEnv(envConf) {
 }
 
 // ../internals/build/vite/index.ts
-import Vue from "file:///D:/Users/Van/Wss/viazs/node_modules/.pnpm/@vitejs+plugin-vue@5.0.4_vite@5.1.6_vue@3.4.21/node_modules/@vitejs/plugin-vue/dist/index.mjs";
-import vueJsx from "file:///D:/Users/Van/Wss/viazs/node_modules/.pnpm/@vitejs+plugin-vue-jsx@3.1.0_vite@5.1.6_vue@3.4.21/node_modules/@vitejs/plugin-vue-jsx/dist/index.mjs";
+import Vue from "file:///D:/Users/Van/Wss/viazs/node_modules/.pnpm/@vitejs+plugin-vue@5.0.4_vite@5.1.6_vue@3.4.25/node_modules/@vitejs/plugin-vue/dist/index.mjs";
+import vueJsx from "file:///D:/Users/Van/Wss/viazs/node_modules/.pnpm/@vitejs+plugin-vue-jsx@3.1.0_vite@5.1.6_vue@3.4.25/node_modules/@vitejs/plugin-vue-jsx/dist/index.mjs";
 
 // ../internals/build/vite/plugins/unoCssPlugin.ts
 import UnoCSS from "file:///D:/Users/Van/Wss/viazs/node_modules/.pnpm/unocss@0.58.5_postcss@8.4.35_vite@5.1.6/node_modules/unocss/dist/vite.mjs";
@@ -222,7 +222,7 @@ function configMkcert(env) {
 import { visualizer } from "file:///D:/Users/Van/Wss/viazs/node_modules/.pnpm/rollup-plugin-visualizer@5.12.0/node_modules/rollup-plugin-visualizer/dist/plugin/index.js";
 
 // ../internals/build/vite/plugins/svgLoaderPlugin.ts
-import svgLoader from "file:///D:/Users/Van/Wss/viazs/node_modules/.pnpm/vite-svg-loader@5.1.0_vue@3.4.21/node_modules/vite-svg-loader/index.js";
+import svgLoader from "file:///D:/Users/Van/Wss/viazs/node_modules/.pnpm/vite-svg-loader@5.1.0_vue@3.4.25/node_modules/vite-svg-loader/index.js";
 
 // ../internals/build/vite/plugins/dtsPlugin.ts
 import dts from "file:///D:/Users/Van/Wss/viazs/node_modules/.pnpm/vite-plugin-dts@3.7.3_@types+node@20.11.19_typescript@5.3.3_vite@5.1.6/node_modules/vite-plugin-dts/dist/index.mjs";

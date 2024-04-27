@@ -1,19 +1,33 @@
 {
-  "name": "@viaz/enums",
-  "version": "0.0.3-beta.1",
-  "description": "",
-  "keywords": [],
-  "license": "MIT",
-  "type": "module",
-  "author": "Van Chin",
-  "main": "index.ts",
-  "scripts": {
-    "build": "vite build"
-  },
-  "dependencies": {
-    "@viaz/hooks": "workspace:*"
-  },
-  "publishConfig": {
-    "access": "public"
-  }
+	"name": "@viaz/enums",
+	"version": "0.0.3-beta.1",
+	"description": "",
+	"keywords": [],
+	"license": "MIT",
+	"type": "module",
+	"author": "Van Chin",
+	"main": "index.ts",
+	"scripts": {
+		"build": "vite build",
+		"release": "release-it"
+	},
+	"release-it": {
+		"git": false,
+		"plugins": {
+			"@release-it/bumper": {
+				"out": {
+					"file": "package.json",
+					"path": [
+						"dependencies.@viaz/hooks"
+					]
+				}
+			}
+		}
+	},
+	"dependencies": {
+		"@viaz/hooks": "workspace:*"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
 }

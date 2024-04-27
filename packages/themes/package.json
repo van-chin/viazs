@@ -1,15 +1,19 @@
 {
-  "name": "@viaz/themes",
-  "version": "0.0.3-beta.1",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "keywords": [],
-  "author": "Van Chin",
-  "license": "MIT"
+	"name": "@viaz/themes",
+	"version": "0.0.3-beta.1",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "vite build",
+		"release": "release-it"
+	},
+	"release-it": {
+		"git": false
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"keywords": [],
+	"author": "Van Chin",
+	"license": "MIT"
 }

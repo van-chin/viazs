@@ -1,42 +1,60 @@
 {
-  "name": "viaz",
-  "version": "0.0.3-beta.1",
-  "description": "",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "vite build"
-  },
-  "type": "module",
-  "main": "dist/viaz.js",
-  "module": "dist/viaz.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/viaz.umd.cjs",
-      "module": "./dist/viaz.js"
-    },
-    "./*": "./*"
-  },
-  "files": [
-    "dist",
-    "README.md"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "@viaz/types": "workspace:*",
-    "@viaz/utils": "workspace:*",
-    "@viaz/directives": "workspace:*",
-    "@viaz/hooks": "workspace:*",
-    "@viaz/components": "workspace:*",
-    "@viaz/constants": "workspace:*"
-  },
-  "peerDependencies": {
-    "vue": ">=3.4.25",
-    "sortablejs": "^1.15.2"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT"
+	"name": "viaz",
+	"version": "0.0.3-beta.1",
+	"description": "",
+	"scripts": {
+		"build": "vite build",
+		"release": "release-it"
+	},
+	"release-it": {
+		"git": false,
+		"plugins": {
+			"@release-it/bumper": {
+				"out": {
+					"file": "package.json",
+					"path": [
+						"dependencies.@viaz/types",
+						"dependencies.@viaz/utils",
+						"dependencies.@viaz/directives",
+						"dependencies.@viaz/hooks",
+						"dependencies.@viaz/components",
+						"dependencies.@viaz/constants"
+					]
+				}
+			}
+		}
+	},
+	"type": "module",
+	"main": "dist/viaz.js",
+	"module": "dist/viaz.js",
+	"types": "dist/index.d.ts",
+	"exports": {
+		".": {
+			"require": "./dist/viaz.umd.cjs",
+			"module": "./dist/viaz.js"
+		},
+		"./*": "./*"
+	},
+	"files": [
+		"dist",
+		"README.md"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"@viaz/types": "workspace:*",
+		"@viaz/utils": "workspace:*",
+		"@viaz/directives": "workspace:*",
+		"@viaz/hooks": "workspace:*",
+		"@viaz/components": "workspace:*",
+		"@viaz/constants": "workspace:*"
+	},
+	"peerDependencies": {
+		"vue": ">=3.4.25",
+		"sortablejs": "^1.15.2"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "MIT"
 }

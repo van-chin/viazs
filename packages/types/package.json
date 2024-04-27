@@ -1,41 +1,56 @@
 {
-  "name": "@viaz/types",
-  "version": "0.0.3-beta.1",
-  "description": "viaz types",
-  "type": "module",
-  "main": "index.ts",
-  "module": "index.ts",
-  "types": "index.ts",
-  "exports": {
-    ".": {
-      "default": "index.ts",
-      "require": "index.ts",
-      "module": "index.ts"
-    }
-  },
-  "files": [
-    "index.ts",
-    "global.ts",
-    "shVz",
-    "components",
-    "dist",
-    "README.md"
-  ],
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "vite build"
-  },
-  "dependencies": {
-    "@viaz/enums": "workspace:*",
-    "@viaz/constants": "workspace:*"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "peerDependencies": {
-    "vue": "^3.4.25"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+	"name": "@viaz/types",
+	"version": "0.0.3-beta.1",
+	"description": "viaz types",
+	"type": "module",
+	"main": "index.ts",
+	"module": "index.ts",
+	"types": "index.ts",
+	"exports": {
+		".": {
+			"default": "index.ts",
+			"require": "index.ts",
+			"module": "index.ts"
+		}
+	},
+	"files": [
+		"index.ts",
+		"global.ts",
+		"shVz",
+		"components",
+		"dist",
+		"README.md"
+	],
+	"scripts": {
+		"build": "vite build",
+		"release": "release-it"
+	},
+	"release-it": {
+		"git": false,
+		"plugins": {
+			"@release-it/bumper": {
+				"out": {
+					"file": "package.json",
+					"path": [
+						"dependencies.@viaz/enums",
+						"dependencies.@viaz/constants"
+					]
+				}
+			}
+		}
+	},
+
+	"dependencies": {
+		"@viaz/enums": "workspace:*",
+		"@viaz/constants": "workspace:*"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"peerDependencies": {
+		"vue": "^3.4.25"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
 }

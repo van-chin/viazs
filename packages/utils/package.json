@@ -1,26 +1,42 @@
 {
-  "name": "@viaz/utils",
-  "version": "0.0.3-beta.1",
-  "description": "",
-  "type": "module",
-  "main": "index.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "vite build"
-  },
-  "peerDependencies": {
-    "vue": "^3.4.25"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "@viaz/constants": "workspace:*",
-    "@viaz/enums": "workspace:*",
-    "@viaz/hooks": "workspace:*",
-    "@viaz/types": "workspace:*"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT"
+	"name": "@viaz/utils",
+	"version": "0.0.3-beta.1",
+	"description": "",
+	"type": "module",
+	"main": "index.ts",
+	"scripts": {
+		"build": "vite build",
+		"release": "release-it"
+	},
+	"release-it": {
+		"git": false,
+		"plugins": {
+			"@release-it/bumper": {
+				"out": {
+					"file": "package.json",
+					"path": [
+						"dependencies.@viaz/types",
+						"dependencies.@viaz/hooks",
+						"dependencies.@viaz/enums",
+						"dependencies.@viaz/constants"
+					]
+				}
+			}
+		}
+	},
+	"peerDependencies": {
+		"vue": "^3.4.25"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"@viaz/constants": "workspace:*",
+		"@viaz/enums": "workspace:*",
+		"@viaz/hooks": "workspace:*",
+		"@viaz/types": "workspace:*"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "MIT"
 }

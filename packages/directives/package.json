@@ -1,23 +1,36 @@
 {
-  "name": "@viaz/directives",
-  "version": "0.0.3-beta.1",
-  "description": "viaz directives",
-  "type": "module",
-  "main": "index.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "vite build"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "dependencies": {
-    "@viaz/types": "workspace:*"
-  },
-  "peerDependencies": {
-    "vue": "^3.4.21"
-  },
-  "keywords": [],
-  "author": "Van Chin",
-  "license": "MIT"
+	"name": "@viaz/directives",
+	"version": "0.0.3-beta.1",
+	"description": "viaz directives",
+	"type": "module",
+	"main": "index.ts",
+	"scripts": {
+		"build": "vite build",
+		"release": "release-it"
+	},
+	"release-it": {
+		"git": false,
+		"plugins": {
+			"@release-it/bumper": {
+				"out": {
+					"file": "package.json",
+					"path": [
+						"dependencies.@viaz/types"
+					]
+				}
+			}
+		}
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"dependencies": {
+		"@viaz/types": "workspace:*"
+	},
+	"peerDependencies": {
+		"vue": "^3.4.25"
+	},
+	"keywords": [],
+	"author": "Van Chin",
+	"license": "MIT"
 }
