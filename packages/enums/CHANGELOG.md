@@ -1,5 +1,93 @@
 # @imsjs/ims-ui-enums
 
+## 0.0.2
+
+### Patch Changes
+
+- 95e54d4: add sm comps
+- 643e467: add comp events
+- 1572ab5: fixed vz-form-table vModelField error
+- 1572ab5: add pressEvent
+- adda175: feat: add useRefs
+- 49e7285: upadte sms
+- 22a2dc5: add from-table event
+- 1572ab5: fixed pressEnter event
+- 48ec961: update import entry
+- 49e7285: feat dy and form-designer
+- 3dca3df: fixed has no exported member 'useMessage'
+- 49e7285: feat dy
+- 49e7285: add dy
+- 49e7285: set beta version
+- 1572ab5: fixed switc vModelFeild bug
+- b8f922e: fixed form-table bug
+- 49e7285: test 2
+- 1572ab5: pressEvent
+- 91d5971: add custom slot
+- adda175: feat vz-tables des
+- 49e7285: optimize list-checkbox-group style & tooltip
+- 49e7285: test 4
+- 49e7285: fixed render bug
+- 49e7285: desd
+- 0c0e0cc: feat checkbox-group
+- adda175: fixed vz-table
+- adda175: fixed winthInstall
+- c3fe7dd: feat table vz-page actions
+- 48ec961: remove vz-page searcher
+- 49e7285: test switch pre tag apla to beta
+- 1572ab5: fix json config
+- adda175: feat vz-table vv
+- 95e54d4: omp code
+- 26a321d: fixed build ts error
+- adda175: feat and fixed bugs
+- adda175: feat vz-form-table
+- 49e7285: test
+- adda175: feat desiner
+- 49e7285: bug fixed
+- 49e7285: test re
+- 1572ab5: fixed vz-page keywords pressEnter evnet
+- Updated dependencies [95e54d4]
+- Updated dependencies [643e467]
+- Updated dependencies [1572ab5]
+- Updated dependencies [1572ab5]
+- Updated dependencies [adda175]
+- Updated dependencies [49e7285]
+- Updated dependencies [22a2dc5]
+- Updated dependencies [1572ab5]
+- Updated dependencies [48ec961]
+- Updated dependencies [49e7285]
+- Updated dependencies [3dca3df]
+- Updated dependencies [49e7285]
+- Updated dependencies [49e7285]
+- Updated dependencies [49e7285]
+- Updated dependencies [1572ab5]
+- Updated dependencies [b8f922e]
+- Updated dependencies [49e7285]
+- Updated dependencies [1572ab5]
+- Updated dependencies [91d5971]
+- Updated dependencies [adda175]
+- Updated dependencies [49e7285]
+- Updated dependencies [49e7285]
+- Updated dependencies [49e7285]
+- Updated dependencies [49e7285]
+- Updated dependencies [0c0e0cc]
+- Updated dependencies [adda175]
+- Updated dependencies [adda175]
+- Updated dependencies [c3fe7dd]
+- Updated dependencies [48ec961]
+- Updated dependencies [49e7285]
+- Updated dependencies [1572ab5]
+- Updated dependencies [adda175]
+- Updated dependencies [95e54d4]
+- Updated dependencies [26a321d]
+- Updated dependencies [adda175]
+- Updated dependencies [adda175]
+- Updated dependencies [49e7285]
+- Updated dependencies [adda175]
+- Updated dependencies [49e7285]
+- Updated dependencies [49e7285]
+- Updated dependencies [1572ab5]
+  - @viaz/hooks@0.0.2
+
 ## 0.0.2-beta.29
 
 ### Patch Changes

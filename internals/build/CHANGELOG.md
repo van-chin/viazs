@@ -1,5 +1,57 @@
 # @internals/build
 
+## 0.0.2
+
+### Patch Changes
+
+- 22a2dc5: add from-table event
+- 49e7285: test 2
+- adda175: fixed vz-table
+- adda175: fixed winthInstall
+- 1572ab5: fixed vz-page keywords pressEnter evnet
+- Updated dependencies [95e54d4]
+- Updated dependencies [643e467]
+- Updated dependencies [1572ab5]
+- Updated dependencies [1572ab5]
+- Updated dependencies [adda175]
+- Updated dependencies [49e7285]
+- Updated dependencies [22a2dc5]
+- Updated dependencies [1572ab5]
+- Updated dependencies [48ec961]
+- Updated dependencies [49e7285]
+- Updated dependencies [3dca3df]
+- Updated dependencies [49e7285]
+- Updated dependencies [49e7285]
+- Updated dependencies [49e7285]
+- Updated dependencies [1572ab5]
+- Updated dependencies [b8f922e]
+- Updated dependencies [49e7285]
+- Updated dependencies [1572ab5]
+- Updated dependencies [91d5971]
+- Updated dependencies [adda175]
+- Updated dependencies [49e7285]
+- Updated dependencies [49e7285]
+- Updated dependencies [49e7285]
+- Updated dependencies [49e7285]
+- Updated dependencies [0c0e0cc]
+- Updated dependencies [adda175]
+- Updated dependencies [adda175]
+- Updated dependencies [c3fe7dd]
+- Updated dependencies [48ec961]
+- Updated dependencies [49e7285]
+- Updated dependencies [1572ab5]
+- Updated dependencies [adda175]
+- Updated dependencies [95e54d4]
+- Updated dependencies [26a321d]
+- Updated dependencies [adda175]
+- Updated dependencies [adda175]
+- Updated dependencies [49e7285]
+- Updated dependencies [adda175]
+- Updated dependencies [49e7285]
+- Updated dependencies [49e7285]
+- Updated dependencies [1572ab5]
+  - @viaz/types@0.0.2
+
 ## 0.0.2-beta.40
 
 ### Patch Changes
