@@ -1,5 +1,47 @@
 # @viaz/constants
 
+## 0.0.2-beta.29
+
+### Patch Changes
+
+- feat desiner
+
+## 0.0.2-beta.28
+
+### Patch Changes
+
+- feat: add useRefs
+
+## 0.0.2-beta.27
+
+### Patch Changes
+
+- fixed winthInstall
+
+## 0.0.2-beta.26
+
+### Patch Changes
+
+- feat vz-table vv
+
+## 0.0.2-beta.25
+
+### Patch Changes
+
+- feat vz-tables des
+
+## 0.0.2-beta.24
+
+### Patch Changes
+
+- feat vz-form-table
+
+## 0.0.2-beta.23
+
+### Patch Changes
+
+- fixed vz-table
+
 ## 0.0.2-beta.22
 
 ### Patch Changes

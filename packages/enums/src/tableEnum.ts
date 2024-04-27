@@ -39,6 +39,7 @@ export enum ColumnFormatTypeEnum {
   INDEX = 3,
   /** 数据转成  */
   JOIN = 4,
+  LINK = 5,
 }
 export const ColumnFormatTypeEnums = [
   {

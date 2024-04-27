@@ -1,55 +1,70 @@
 <template>
-  <div :class="prefixCls">
-    
-    <vz-checkbox-group  v-model:value="modelChecked" v-bind="$attrs" :max="1" @change="onCheckboxGroupChange"></vz-checkbox-group>
-    <a-input-number v-model:value="modelValue" v-bind="$attrs" :disabled="!modelChecked.length" ></a-input-number>
-  </div>
+	<div :class="prefixCls">
+		<vz-checkbox-group
+			v-model:value="modelChecked"
+			v-bind="$attrs"
+			:min="checkedMin"
+			:max="checkedMax"
+			@change="onCheckboxGroupChange"
+		></vz-checkbox-group>
+		<a-input-number
+			v-model:value="modelValue"
+			v-bind="$attrs"
+			:disabled="!modelChecked.length"
+		></a-input-number>
+	</div>
 </template>
 
 <script lang="ts" setup>
+	import type {
+		VzCheckboxGroupInputNumberProps,
+		CheckboxValue,
+	} from "@viaz/types";
 
-import type { VzCheckboxGroupInputNumberProps,CheckboxValue } from "@viaz/types";
+	import type { CheckboxGroupProps } from "ant-design-vue";
 
-import type { CheckboxGroupProps } from "ant-design-vue";
+	import { useStyle } from "@viaz/hooks";
+	import { toRefs } from "vue";
 
-import { useStyle } from "@viaz/hooks";
-import { toRefs } from "vue";
+	const { prefixCls } = useStyle("checkbox-group-input-number");
 
-const { prefixCls } = useStyle("checkbox-group-input-number");
+	const COMPONENT_NAME = "VzCheckboxGroupInputNumber";
 
-const COMPONENT_NAME = "VzCheckboxGroupInputNumber";
+	defineOptions({
+		name: COMPONENT_NAME,
+	});
 
-defineOptions({
-  name: COMPONENT_NAME,
-});
+	const emits = defineEmits<{
+		checkboxGroupChange: [checkedValue: CheckboxValue[]];
+	}>();
 
-const emits = defineEmits<{
-  checkboxGroupChange: [checkedValue: CheckboxValue[]]
-}>();
+	const props = withDefaults(
+		defineProps<VzCheckboxGroupInputNumberProps>(),
+		{}
+	);
 
-const props = withDefaults(defineProps<VzCheckboxGroupInputNumberProps>(), {});
+	const { checkedMin, checkedMax } = toRefs(props);
 
-const modelChecked = defineModel("checked",{default:[]});
+	const modelChecked = defineModel("checked", { default: [] });
 
-const modelValue = defineModel<string>("value", {});
+	const modelValue = defineModel<string>("value", {});
 
-const onCheckboxGroupChange: CheckboxGroupProps["onChange"] = (checkedValue) => {
-  emits('checkboxGroupChange', checkedValue);
-}
-
-
+	const onCheckboxGroupChange: CheckboxGroupProps["onChange"] = (
+		checkedValue
+	) => {
+		emits("checkboxGroupChange", checkedValue);
+	};
 </script>
 
 <style lang="less" scoped>
-@prefix-cls: ~"@{namespace}-checkbox-group-input-number";
+	@prefix-cls: ~"@{namespace}-checkbox-group-input-number";
 
-.@{prefix-cls} {
-  --at-apply: w-full h-full;
+	.@{prefix-cls} {
+		--at-apply: w-full h-full;
 
-  display: inline-grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  column-gap: 4px;
-
-}
+		display: inline-grid;
+		grid-template-columns: auto 1fr;
+		align-items: center;
+		column-gap: 4px;
+	}
 </style>

@@ -4,7 +4,9 @@ export * from "@viaz/utils";
 
 export * from "@viaz/hooks";
 
-export { useMessage } from "@viaz/hooks";
+export { useMessage, useStyle, useRefs } from "@viaz/hooks";
+
+export { withInstall } from "@viaz/utils";
 
 export * from "@viaz/components";
 

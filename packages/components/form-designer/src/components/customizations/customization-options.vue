@@ -12,7 +12,7 @@
             icon="ant-design:menu-outlined"
             style="font-size: 16px"
             :inline="true"
-            class="cursor-move text-#888"
+            class="cursor-move text-[#888]"
           ></Icon>
         </div>
         <a-input
@@ -38,17 +38,17 @@
           icon="ant-design:delete-outlined"
           style="font-size: 16px"
           :inline="true"
-          class="cursor-pointer text-#888 hover:text-red"
+          class="cursor-pointer text-[#888] hover:text-red"
         ></Icon>
       </a-space>
       <a-button block type="dashed" @click="addItem">添加选项</a-button>
     </div>
     <div v-show="mode === 'api'">
       <div>
-        <div class="text-12px text-#070c14 cursor-pointer mb-2">
+        <div class="text-[12px] text-[#070c14] cursor-pointer mb-2">
           接口 <span>{{ modelApi.protocol }}{{ modelApi.hpp }}</span>
         </div>
-        <div class="p-2 bg-#fff rd mb-2">
+        <div class="p-2 bg-[#fff] rd mb-2">
           <a-input v-model:value="modelApi.hpp">
             <template #addonBefore>
               <a-select
@@ -65,13 +65,13 @@
               <Icon
                 icon="ant-design:api-outlined"
                 :inline="true"
-                class="cursor-pointer text-#888 hover:text-red"
+                class="cursor-pointer text-[#888] hover:text-red"
               ></Icon>
             </template>
           </a-input>
         </div>
 
-        <div class="text-12px text-#070c14 cursor-pointer mb-2">参数</div>
+        <div class="text-[12px] text-[#070c14] cursor-pointer mb-2">参数</div>
         <div ref="paramsRef">
           <a-space
             :size="3"
@@ -84,7 +84,7 @@
                 icon="ant-design:menu-outlined"
                 style="font-size: 16px"
                 :inline="true"
-                class="cursor-move text-#888"
+                class="cursor-move text-[#888]"
               ></Icon>
             </div>
             <div>
@@ -92,12 +92,12 @@
             </div>
             <a-input placeholder="key" v-model:value="item.key">
               <template #prefix>
-                <span class="text-#0000004f text-10px">key</span>
+                <span class="text-[#0000004f] text-[10px]">key</span>
               </template>
             </a-input>
             <a-input placeholder="value" v-model:value="item.value">
               <template #prefix>
-                <span class="text-#0000004f text-10px">value</span></template
+                <span class="text-[#0000004f] text-[10px]">value</span></template
               >
             </a-input>
             <Icon
@@ -105,7 +105,7 @@
               icon="ant-design:delete-outlined"
               style="font-size: 16px"
               :inline="true"
-              class="cursor-pointer text-#888 hover:text-red"
+              class="cursor-pointer text-[#888] hover:text-red"
             ></Icon>
           </a-space>
           <a-button block type="dashed" @click="addParamItem"
@@ -121,7 +121,7 @@
         icon="iconoir:fx"
         style="font-size: 16px"
         :inline="true"
-        class="cursor-pointer text-#888 hover:text-red ml-2"
+        class="cursor-pointer text-[#888] hover:text-red ml-2"
       ></Icon>
     </div>
   </div>

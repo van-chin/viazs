@@ -15,12 +15,7 @@
             height="1.2rem"
             class="cursor-move text-#888"
           ></iconify-icon>
-          <!-- <Icon
-            icon="ant-design:menu-outlined"
-            style="font-size: 16px"
-            :inline="true"
-            class="cursor-move text-#888"
-          ></Icon> -->
+
         </div>
         <div>
           <fieldset :class="`${prefixCls}-item-fieldset`">

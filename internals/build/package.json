@@ -1,6 +1,6 @@
 {
   "name": "@internals/build",
-  "version": "0.0.2-beta.33",
+  "version": "0.0.1",
   "description": "",
   "private": true,
   "type": "module",
@@ -16,7 +16,7 @@
     "@viaz/types": "workspace:*"
   },
   "peerDependencies": {
-    "vue": "^3.4.19",
+    "vue": "^3.4.25",
     "dotenv": "^16.4.5",
     "markdown-it": "^14.0.0"
   }

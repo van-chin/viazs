@@ -1,6 +1,6 @@
 {
   "name": "@viaz/types",
-  "version": "0.0.2-beta.22",
+  "version": "0.0.1",
   "description": "viaz types",
   "type": "module",
   "main": "index.ts",
@@ -33,7 +33,7 @@
     "access": "public"
   },
   "peerDependencies": {
-    "vue": "^3.4.19"
+    "vue": "^3.4.25"
   },
   "keywords": [],
   "author": "",

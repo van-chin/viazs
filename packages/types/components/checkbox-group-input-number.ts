@@ -1,3 +1,5 @@
 export interface VzCheckboxGroupInputNumberProps {
-    checkboxLabel?: string;
+	checkboxLabel?: string;
+	checkedMin?: number;
+	checkedMax?: number;
 }

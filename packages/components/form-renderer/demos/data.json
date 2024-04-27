@@ -1,118 +1,2383 @@
 {
-  "model": {
-    "keywords": ""
-  },
-  "rules": {
-    "keywords": []
-  },
-  "items": [
-    {
-      "id": "tHGUhT0q4Ddzuf86gjg21",
-      "key": "tHGUhT0q4Ddzuf86gjg21",
-      "title": "表单",
-      "icon": "iconoir:input-field",
-      "type": "form",
-      "vModelField": "value",
-      "item": {
-        "name": "f_9GqdghhCcT4Dr6VZp-i",
-        "colon": true,
-        "displayState": true,
-        "labelShow": true,
-        "layout": "horizontal",
-        "labelAlign": "right",
-        "labelCol": {
-          "style": {
-            "width": "100px"
-          }
-        }
-      },
-      "children": [
-        {
-          "id": "YLRYbkXihLjmrtmLjjC5333",
-          "key": "YLRYbkXihLjmrtmLjjC5333",
-          "title": "输入框",
-          "icon": "iconoir:input-field",
-          "type": "input",
-          "componentName": "AInput",
-          "vModelField": "value",
-          "item": {
-            "label": "输入框",
-            "name": "test",
-            "tooltip": "",
-            "extra": "",
-            "required": false,
-            "colon": true,
-            "displayState": true,
-            "rules": []
-           
-          },
-          "component": {
-            "name": "AInput",
-            
-            "events": {
-              "pressEnter": [
-                "e"
-              ]
-            },
-            "props": {
-              "placeholder": "请输入",
-              "bordered": true,
-              "showCount": false,
-              "size": "",
-              "events": {}
-            }
-          },
-          "componentProps": [],
-          "formItemProps": [],
-          "class": "click-way-input"
-        },
-        {
-          "id": "YLRYbkXihLjmrtmLjjC53",
-          "key": "YLRYbkXihLjmrtmLjjC53",
-          "title": "输入框",
-          "icon": "iconoir:input-field",
-          "type": "input",
-          "componentName": "AInput",
-          "vModelField": "value",
-          "item": {
-            "label": "输入框",
-            "name": "keywords",
-            "tooltip": "",
-            "extra": "",
-            "required": false,
-            "colon": true,
-            "displayState": true,
-            "rules": [],
-            "slot":""
-          },
-          "component": {
-            "name": "AInput",
-            
-            "events": {
-              "pressEnter": [
-                "e"
-              ]
-            },
-            "props": {
-              "placeholder": "请输入",
-              "bordered": true,
-              "showCount": false,
-              "size": "",
-              "events": {}
-            }
-          },
-          "componentProps": [],
-          "formItemProps": [],
-          "class": "click-way-input"
-        }
-      ],
-      "component": {
-        "name": "AForm",
-        "props": {}
-      },
-      "componentProps": [],
-      "formItemProps": [],
-      "class": ""
-    }
-  ]
+	"items": [
+		{
+			"id": "tHGUhT0q4Ddzuf86gjg21",
+			"key": "tHGUhT0q4Ddzuf86gjg21",
+			"icon": "iconoir:input-field",
+			"item": {
+				"name": "f_9GqdghhCcT4Dr6VZp-i",
+				"colon": true,
+				"layout": "horizontal",
+				"labelCol": {
+					"style": {
+						"width": "100px"
+					}
+				},
+				"labelShow": true,
+				"labelAlign": "right",
+				"displayState": true
+			},
+			"type": "form",
+			"class": "",
+			"title": "表单",
+			"children": [
+				{
+					"id": "EXD8do-J6gzWMKz0RuMZx",
+					"key": "EXD8do-J6gzWMKz0RuMZx",
+					"icon": "ant-design:cloud-upload-outlined",
+					"item": {
+						"name": "treatmentItems",
+						"slot": "treatment-items",
+						"colon": true,
+						"extra": "",
+						"label": "",
+						"rules": [],
+						"tooltip": "",
+						"required": false,
+						"displayState": true
+					},
+					"type": "vz-form-table",
+					"class": "click-way-vz-form-table",
+					"title": "输入表格",
+					"component": {
+						"name": "VzFormTable",
+						"props": {
+							"rowKey": "id",
+							"columns": [
+								{
+									"id": "1",
+									"key": "merchantName",
+									"title": "开单门店",
+									"component": {
+										"type": "input",
+										"props": {
+											"placeholder": "请输入 数列1(姓名)"
+										},
+										"vModelField": "value"
+									},
+									"dataIndex": ["merchant", "name"]
+								},
+								{
+									"id": "2",
+									"key": "name",
+									"title": "项目名称",
+									"component": {
+										"type": "input-number",
+										"props": {
+											"placeholder": "请输入 数列2(年龄)"
+										},
+										"vModelField": "value"
+									},
+									"dataIndex": "name"
+								},
+								{
+									"id": "Xc8cb9cdgpxvx5vXFSEYh",
+									"key": "treatmentDepartmentStaffIds",
+									"title": "科室/医生",
+									"component": {
+										"name": "VzCascader",
+										"type": "vz-cascader",
+										"props": {
+											"api": {
+												"hpp": "/api/mers/v1/merchants"
+											},
+											"params": [
+												{
+													"id": "NjsTovYva9fM1cMGWNxwy",
+													"key": "isShowTree",
+													"value": "0",
+													"status": true
+												}
+											],
+											"options": [
+												{
+													"label": "Zhejiang",
+													"value": "zhejiang",
+													"children": [
+														{
+															"label": "Hangzhou",
+															"value": "hangzhou",
+															"children": [
+																{
+																	"label": "West Lake",
+																	"value": "xihu"
+																}
+															]
+														}
+													]
+												},
+												{
+													"label": "Jiangsu",
+													"value": "jiangsu",
+													"children": [
+														{
+															"label": "Nanjing",
+															"value": "nanjing",
+															"children": [
+																{
+																	"label": "Zhong Hua Men",
+																	"value": "zhonghuamen"
+																}
+															]
+														}
+													]
+												}
+											],
+											"bordered": true,
+											"multiple": false,
+											"allowClear": true,
+											"fieldNames": {
+												"label": "name",
+												"value": "id",
+												"children": "children"
+											},
+											"expandTrigger": "click",
+											"changeOnSelect": false
+										},
+										"vModelField": "value"
+									},
+									"dataIndex": "treatmentDepartmentStaffIds",
+									"_components": {
+										"key": {
+											"name": "AInput",
+											"props": {
+												"placeholder": "请输入 KEY"
+											},
+											"vModelField": "value"
+										},
+										"title": {
+											"name": "AInput",
+											"props": {
+												"placeholder": "请输入 表头"
+											},
+											"vModelField": "value"
+										},
+										"component": {
+											"name": "ASelect",
+											"props": {
+												"options": [],
+												"allowClear": true,
+												"placeholder": "请选择 组件"
+											},
+											"vModelField": "value"
+										},
+										"dataIndex": {
+											"name": "VzConfigurationValue",
+											"props": {
+												"placeholder": "请输入 KEY"
+											},
+											"vModelField": "value"
+										}
+									}
+								},
+								{
+									"id": "wfKXN-65wD8MHJJbUlzd8",
+									"key": "treatmentQuantity",
+									"title": "治疗次数",
+									"component": {
+										"name": "AInputNumber",
+										"type": "input-number",
+										"props": {
+											"min": 1,
+											"step": 1,
+											"bordered": true,
+											"controls": true,
+											"keyboard": true,
+											"placeholder": "请输入"
+										},
+										"vModelField": "value"
+									},
+									"dataIndex": "treatmentQuantity",
+									"_components": {
+										"key": {
+											"name": "AInput",
+											"props": {
+												"placeholder": "请输入 KEY"
+											},
+											"vModelField": "value"
+										},
+										"title": {
+											"name": "AInput",
+											"props": {
+												"placeholder": "请输入 表头"
+											},
+											"vModelField": "value"
+										},
+										"component": {
+											"name": "ASelect",
+											"props": {
+												"options": [],
+												"allowClear": true,
+												"placeholder": "请选择 组件"
+											},
+											"vModelField": "value"
+										},
+										"dataIndex": {
+											"name": "VzConfigurationValue",
+											"props": {
+												"placeholder": "请输入 KEY"
+											},
+											"vModelField": "value"
+										}
+									}
+								},
+								{
+									"id": "cskhv-FugVdFvEZFbPUsN",
+									"key": "residueQuantity",
+									"title": "剩余次数",
+									"component": {
+										"type": "input",
+										"props": {
+											"placeholder": "请输入"
+										},
+										"vModelField": "value"
+									},
+									"dataIndex": "residueQuantity",
+									"_components": {
+										"key": {
+											"name": "AInput",
+											"props": {
+												"placeholder": "请输入 KEY"
+											},
+											"vModelField": "value"
+										},
+										"title": {
+											"name": "AInput",
+											"props": {
+												"placeholder": "请输入 表头"
+											},
+											"vModelField": "value"
+										},
+										"component": {
+											"name": "ASelect",
+											"props": {
+												"options": [],
+												"allowClear": true,
+												"placeholder": "请选择 组件"
+											},
+											"vModelField": "value"
+										},
+										"dataIndex": {
+											"name": "VzConfigurationValue",
+											"props": {
+												"placeholder": "请输入 KEY"
+											},
+											"vModelField": "value"
+										}
+									}
+								},
+								{
+									"id": "o16Oi5kTXug23E2NVjjm2",
+									"key": "totalQuantity",
+									"title": "总次数",
+									"component": {
+										"type": "input",
+										"props": {
+											"placeholder": "请输入"
+										},
+										"vModelField": "value"
+									},
+									"dataIndex": "dataIndexo16Oi5kTXug23E2NVjjm2",
+									"_components": {
+										"key": {
+											"name": "AInput",
+											"props": {
+												"placeholder": "请输入 KEY"
+											},
+											"vModelField": "value"
+										},
+										"title": {
+											"name": "AInput",
+											"props": {
+												"placeholder": "请输入 表头"
+											},
+											"vModelField": "value"
+										},
+										"component": {
+											"name": "ASelect",
+											"props": {
+												"options": [],
+												"allowClear": true,
+												"placeholder": "请选择 组件"
+											},
+											"vModelField": "value"
+										},
+										"dataIndex": {
+											"name": "VzConfigurationValue",
+											"props": {
+												"placeholder": "请输入 KEY"
+											},
+											"vModelField": "value"
+										}
+									}
+								},
+								{
+									"id": "WDb6h_E14V1Vdf_09GDNR",
+									"key": "expiredAt",
+									"title": "有效期至",
+									"component": {
+										"type": "input",
+										"props": {
+											"placeholder": "请输入"
+										},
+										"vModelField": "value"
+									},
+									"dataIndex": "expiredAt",
+									"_components": {
+										"key": {
+											"name": "AInput",
+											"props": {
+												"placeholder": "请输入 KEY"
+											},
+											"vModelField": "value"
+										},
+										"title": {
+											"name": "AInput",
+											"props": {
+												"placeholder": "请输入 表头"
+											},
+											"vModelField": "value"
+										},
+										"component": {
+											"name": "ASelect",
+											"props": {
+												"options": [],
+												"allowClear": true,
+												"placeholder": "请选择 组件"
+											},
+											"vModelField": "value"
+										},
+										"dataIndex": {
+											"name": "VzConfigurationValue",
+											"props": {
+												"placeholder": "请输入 KEY"
+											},
+											"vModelField": "value"
+										}
+									}
+								},
+								{
+									"id": "JlBoK_ez2x18C8_JnCiQN",
+									"key": "orderCreator",
+									"title": "订单开单人",
+									"component": {
+										"type": "input",
+										"props": {
+											"placeholder": "请输入"
+										},
+										"vModelField": "value"
+									},
+									"dataIndex": ["order", "creator", "name"],
+									"_components": {
+										"key": {
+											"name": "AInput",
+											"props": {
+												"placeholder": "请输入 KEY"
+											},
+											"vModelField": "value"
+										},
+										"title": {
+											"name": "AInput",
+											"props": {
+												"placeholder": "请输入 表头"
+											},
+											"vModelField": "value"
+										},
+										"component": {
+											"name": "ASelect",
+											"props": {
+												"options": [],
+												"allowClear": true,
+												"placeholder": "请选择 组件"
+											},
+											"vModelField": "value"
+										},
+										"dataIndex": {
+											"name": "VzConfigurationValue",
+											"props": {
+												"placeholder": "请输入 KEY"
+											},
+											"vModelField": "value"
+										}
+									}
+								},
+								{
+									"id": "LZBlnWpBPUYNyb9qy95Ff",
+									"key": "orderCreatedAt",
+									"title": "开单日期",
+									"width": 600,
+									"formater": "YYYY-MM-DD",
+									"component": {
+										"type": "input",
+										"props": {
+											"placeholder": "请输入"
+										},
+										"vModelField": "value"
+									},
+									"dataIndex": ["order", "createdAt"],
+									"formatType": 1,
+									"_components": {
+										"key": {
+											"name": "AInput",
+											"props": {
+												"placeholder": "请输入 KEY"
+											},
+											"vModelField": "value"
+										},
+										"title": {
+											"name": "AInput",
+											"props": {
+												"placeholder": "请输入 表头"
+											},
+											"vModelField": "value"
+										},
+										"component": {
+											"name": "ASelect",
+											"props": {
+												"options": [],
+												"allowClear": true,
+												"placeholder": "请选择 组件"
+											},
+											"vModelField": "value"
+										},
+										"dataIndex": {
+											"name": "VzConfigurationValue",
+											"props": {
+												"placeholder": "请输入 KEY"
+											},
+											"vModelField": "value"
+										}
+									}
+								}
+							],
+							"initial": {
+								"name": "name",
+								"merchantId": "true",
+								"treatmentQuantity": "true",
+								"treatmentDepartmentStaffIds": []
+							},
+							"bordered": true,
+							"dataSource": [
+								{
+									"id": "1",
+									"age": 18,
+									"key": "name",
+									"name": "张三"
+								},
+								{
+									"id": "2",
+									"age": 19,
+									"key": "name",
+									"name": "李四"
+								}
+							]
+						},
+						"events": []
+					},
+					"vModelField": "value",
+					"componentName": "VzFormTable",
+					"formItemProps": [],
+					"componentProps": []
+				},
+				{
+					"id": "CnQoPpQTt9rsAnsOVnA6H",
+					"key": "CnQoPpQTt9rsAnsOVnA6H",
+					"icon": "tabler:select",
+					"item": {
+						"name": "YBF_0VLqR1pUZ05aO3UdV",
+						"colon": true,
+						"extra": "",
+						"label": "选择框",
+						"rules": [],
+						"tooltip": "",
+						"required": false,
+						"displayState": true
+					},
+					"type": "select",
+					"class": "click-way-select",
+					"title": "选择框",
+					"component": {
+						"name": "ASelect",
+						"props": {
+							"events": [],
+							"options": [
+								{
+									"id": "1",
+									"label": "选项一",
+									"value": "选项一"
+								},
+								{
+									"id": "2",
+									"label": "选项二",
+									"value": "选项二"
+								},
+								{
+									"id": "3",
+									"label": "选项三",
+									"value": "选项三"
+								}
+							],
+							"virtual": true,
+							"bordered": true,
+							"allowClear": true,
+							"fieldNames": {
+								"label": "label",
+								"value": "value",
+								"options": "options"
+							},
+							"placeholder": "请选择"
+						},
+						"events": []
+					},
+					"vModelField": "value",
+					"componentName": "ASelect",
+					"formItemProps": [],
+					"componentProps": []
+				}
+			],
+			"component": {
+				"name": "AForm",
+				"props": []
+			},
+			"vModelField": "value",
+			"formItemProps": [],
+			"componentProps": []
+		}
+	],
+	"model": {
+		"userId": "6767",
+		"visitId": "702622807947575036286",
+		"createdBy": 45,
+		"treatmentItems": [
+			{
+				"id": "912621267316109214498",
+				"orderId": "911621267315949833320",
+				"merchantId": "501591516518949324907",
+				"reservationId": "701621266784091113034",
+				"visitId": "702621267062408349996",
+				"consultId": "703621267131954103173",
+				"userId": "6767",
+				"typeId": null,
+				"relatedId": "806613648906336602412",
+				"name": "项目名称001-update-001",
+				"statusId": "206618374007372123617",
+				"cashStatusId": "206618374007372123617",
+				"billingerId": null,
+				"assistantedBillingerId": null,
+				"amount": null,
+				"serviceItems": null,
+				"description": null,
+				"remark": null,
+				"createdAt": "2024-04-17T09:02:38.000000Z",
+				"updatedAt": "2024-04-17T09:02:38.000000Z",
+				"deletedAt": null,
+				"quantity": 10,
+				"discount": "1.00",
+				"presented": false,
+				"unitPrice": "398.00",
+				"totalPrice": "3980.00",
+				"user": {
+					"id": 6767,
+					"name": "高广元",
+					"pid": 6766,
+					"referrerId": 6766,
+					"positionCategoryId": 777,
+					"email": null,
+					"emailVerifiedAt": null,
+					"password": null,
+					"rememberToken": null,
+					"createdAt": "2022-09-01T10:25:45.000000Z",
+					"updatedAt": "2024-04-21T15:04:33.000000Z",
+					"nickName": null,
+					"mobile": "13350199920",
+					"openid": null,
+					"wechatId": null,
+					"age": 22,
+					"birthday": "1990-05-03",
+					"address": null,
+					"hobbies": null,
+					"consumptionFeature": null,
+					"socialAttribute": null,
+					"developmentMode": null,
+					"consultingProject": null,
+					"remark": null,
+					"serialNumber": "20220901681000092",
+					"status": true,
+					"occupation": null,
+					"gender": 1,
+					"tags": null,
+					"avatar": null,
+					"deletedAt": null,
+					"hospitalId": 1,
+					"departmentId": null,
+					"adminId": 122,
+					"idNo": null,
+					"balance": "0.00",
+					"from": null,
+					"contents": null,
+					"categoryId": 171,
+					"unionid": null,
+					"referrer": null,
+					"relationedConsultId": 0,
+					"firstConsumedAt": "2024-01-24 22:53:13",
+					"firstVisitedAt": "2024-01-24 22:53:13",
+					"lastVisitedAt": "2024-04-21 23:04:33",
+					"lastConsumedAt": "2024-01-24 22:53:13",
+					"lastRevisitedAt": "2024-01-24 22:51:55",
+					"lastDeductedAt": "2024-01-24 22:51:55",
+					"liveness": null,
+					"pids": null,
+					"referralCode": null,
+					"merchantId": "501555263651364211972",
+					"integral": 34,
+					"levelId": "206590903023618754820",
+					"groupId": "206590906390147498340",
+					"counselorId": "148",
+					"onlineCounselorId": "131",
+					"doctorId": "134",
+					"nurseId": "132",
+					"firstReservationedAt": "2024-01-24 23:00:01",
+					"lastReservationedAt": "2024-01-24 23:00:01",
+					"firstConsumptionedAt": "2024-01-24 23:00:01",
+					"lastConsumptionedAt": "2024-01-24 23:00:01",
+					"lastConsumptionedAmount": "234.00",
+					"consumptionedAmount": "234.00",
+					"owedAmount": "0.00",
+					"beauticianId": "137",
+					"channelId": "601591066100007960669",
+					"channelIds": [
+						"601591065061569595587",
+						"601591066100007960669"
+					],
+					"channelNames": ["谨俏学苑", "遂宁机构"],
+					"counselorAssistantId": "0",
+					"developerId": "0",
+					"isShare": 0,
+					"irritabilityTagIds": null,
+					"impressionTagIds": null,
+					"maritalStatusId": "0",
+					"fertilityStatusId": null,
+					"hobbiesInterests": null,
+					"administrativeDivisionId": "0",
+					"merchantIds": null,
+					"merchantNames": null,
+					"servicerId": "62",
+					"typeId": "206613728700495563177",
+					"createdMerchantId": "501555263651364211972",
+					"createdBy": "512618789160886470709",
+					"passportNo": null,
+					"occupationId": null,
+					"channel": {
+						"id": "601591066100007960669",
+						"parentId": "601591065061569595587",
+						"parentIds": ["601591065061569595587"],
+						"parentNames": ["谨俏学苑"],
+						"name": "遂宁机构",
+						"alias": "遂宁机构",
+						"code": "snsj",
+						"status": true,
+						"sort": 1,
+						"description": "遂宁机构",
+						"remark": "遂宁机构",
+						"createdBy": null,
+						"deletedBy": null,
+						"createdAt": "2024-01-25T00:53:47.000000Z",
+						"updatedAt": "2024-01-25T00:53:47.000000Z",
+						"deletedAt": null
+					},
+					"level": {
+						"id": "206590903023618754820",
+						"dataDictionaryIds": [
+							"205590897352072496737",
+							"205590897502497014180"
+						],
+						"dataDictionaryNames": ["会员", "等级"],
+						"dataDictionaryId": "205590897502497014180",
+						"parentId": "0",
+						"parentIds": null,
+						"parentNames": null,
+						"tenantId": null,
+						"name": "三星会员",
+						"label": "三星会员",
+						"code": "gold",
+						"value": "3",
+						"status": true,
+						"sort": 3,
+						"description": "三星会员",
+						"remark": "三星会员",
+						"createdBy": null,
+						"deletedBy": null,
+						"createdAt": "2024-01-22T14:05:47.000000Z",
+						"updatedAt": "2024-01-22T14:05:47.000000Z",
+						"deletedAt": null
+					}
+				},
+				"order": {
+					"id": "911621267315949833320",
+					"consultId": "703621267131954103173",
+					"visitId": "702621267062408349996",
+					"reservationId": "701621266784091113034",
+					"merchantId": "501591516518949324907",
+					"userId": "6767",
+					"typeId": "206620541061831327854",
+					"statusId": "206618374007372123617",
+					"cashStatusId": "206618374007372123617",
+					"billingerId": "512618763553993655188",
+					"assistantedBillingerId": "512618763553993655188",
+					"amount": "3989.00",
+					"serviceItems": [
+						{
+							"id": "806613648906336602412",
+							"name": "项目名称001-update-001",
+							"source": [
+								"807620443843069741584",
+								"808620443843153629121"
+							],
+							"discount": 1,
+							"quantity": 10,
+							"presented": false,
+							"unitPrice": "398.00",
+							"totalPrice": "3980.00",
+							"_components": {
+								"name": [],
+								"source": {
+									"name": "ACascader",
+									"type": "cascader",
+									"props": {
+										"options": [
+											{
+												"id": "807620443842927136253",
+												"name": "院内平台",
+												"sort": 1,
+												"prices": [
+													{
+														"id": "808620443842994244552",
+														"name": "常规售价xxxx",
+														"sort": 1,
+														"remark": null,
+														"status": true,
+														"staffId": "0",
+														"createdAt": "2024-04-14T01:02:39.000000Z",
+														"defaulted": true,
+														"deletedAt": null,
+														"relatedId": "806613648906336602412",
+														"unitPrice": "1.00",
+														"updatedAt": "2024-04-14T01:02:39.000000Z",
+														"totalPrice": "1.00",
+														"description": null,
+														"billingSourceId": "807620443842927136253",
+														"defaultQuantity": 1,
+														"perOperationFee": "0.00"
+													}
+												],
+												"remark": null,
+												"status": true,
+												"saleable": true,
+												"createdAt": "2024-04-14T01:02:39.000000Z",
+												"defaulted": false,
+												"deletedAt": null,
+												"relatedId": "806613648906336602412",
+												"updatedAt": "2024-04-14T01:02:39.000000Z",
+												"deductable": true,
+												"rebateable": true,
+												"description": null,
+												"presentable": true,
+												"discountable": true
+											},
+											{
+												"id": "807620443843069741584",
+												"name": "新的来源",
+												"sort": 1,
+												"prices": [
+													{
+														"id": "808620443843153629121",
+														"name": "新的售价",
+														"sort": 1,
+														"remark": null,
+														"status": true,
+														"staffId": "0",
+														"createdAt": "2024-04-14T01:02:39.000000Z",
+														"defaulted": false,
+														"deletedAt": null,
+														"relatedId": "806613648906336602412",
+														"unitPrice": "398.00",
+														"updatedAt": "2024-04-14T01:02:39.000000Z",
+														"totalPrice": "398.00",
+														"description": null,
+														"billingSourceId": "807620443843069741584",
+														"defaultQuantity": 10,
+														"perOperationFee": "220.00"
+													}
+												],
+												"remark": null,
+												"status": true,
+												"saleable": true,
+												"createdAt": "2024-04-14T01:02:39.000000Z",
+												"defaulted": false,
+												"deletedAt": null,
+												"relatedId": "806613648906336602412",
+												"updatedAt": "2024-04-14T01:02:39.000000Z",
+												"deductable": true,
+												"rebateable": true,
+												"description": null,
+												"presentable": true,
+												"discountable": true
+											}
+										],
+										"bordered": true,
+										"multiple": false,
+										"allowClear": true,
+										"fieldNames": {
+											"label": "name",
+											"value": "id",
+											"children": "prices"
+										},
+										"placeholder": "请选择开单来源及售价",
+										"expandTrigger": "click",
+										"changeOnSelect": false
+									},
+									"events": {
+										"change": ["value", "selectedOptions"]
+									},
+									"vModelField": "value"
+								},
+								"discount": {
+									"name": "AInputNumber",
+									"type": "input-number",
+									"props": {
+										"max": 1,
+										"min": 0.01,
+										"step": 0.01,
+										"bordered": true,
+										"controls": true,
+										"disabled": false,
+										"keyboard": true,
+										"precision": 2,
+										"placeholder": "请输入"
+									},
+									"events": {
+										"change": ["e"]
+									},
+									"vModelField": "value"
+								},
+								"quantity": {
+									"name": "AInputNumber",
+									"type": "input-number",
+									"props": {
+										"min": 1,
+										"step": 1,
+										"bordered": true,
+										"controls": true,
+										"keyboard": true,
+										"placeholder": "请输入"
+									},
+									"events": {
+										"change": ["e"]
+									},
+									"vModelField": "value"
+								},
+								"presented": {
+									"name": "ACheckbox",
+									"type": "checkbox",
+									"props": {
+										"disabled": false,
+										"autofocus": false,
+										"indeterminate": false
+									},
+									"events": {
+										"change": ["e"]
+									},
+									"vModelField": "checked"
+								},
+								"unitPrice": {
+									"name": "AInputNumber",
+									"type": "input-number",
+									"props": {
+										"min": 0,
+										"step": 1,
+										"prefix": "￥",
+										"bordered": true,
+										"controls": true,
+										"keyboard": true,
+										"precision": 2,
+										"placeholder": "请输入"
+									},
+									"events": {
+										"change": ["e"]
+									},
+									"vModelField": "value"
+								}
+							},
+							"perOperationFee": "220.00"
+						},
+						{
+							"id": "806620293875583421426",
+							"name": "测试价格",
+							"source": [
+								"807620300833669516269",
+								"808620300833812122931"
+							],
+							"discount": 1,
+							"quantity": 3,
+							"presented": false,
+							"unitPrice": "3.00",
+							"totalPrice": "9.00",
+							"_components": {
+								"name": [],
+								"source": {
+									"name": "ACascader",
+									"type": "cascader",
+									"props": {
+										"options": [
+											{
+												"id": "807620300833493355172",
+												"name": "院内平台",
+												"sort": 1,
+												"prices": [
+													{
+														"id": "808620300833568850252",
+														"name": "常规售价xxxx",
+														"sort": 1,
+														"remark": null,
+														"status": true,
+														"staffId": "0",
+														"createdAt": "2024-04-13T16:34:32.000000Z",
+														"defaulted": true,
+														"deletedAt": null,
+														"relatedId": "806620293875583421426",
+														"unitPrice": "1.00",
+														"updatedAt": "2024-04-13T16:34:32.000000Z",
+														"totalPrice": "1.00",
+														"description": null,
+														"billingSourceId": "807620300833493355172",
+														"defaultQuantity": 1,
+														"perOperationFee": "0.00"
+													},
+													{
+														"id": "808620300833623379211",
+														"name": "测试增加一",
+														"sort": 1,
+														"remark": null,
+														"status": true,
+														"staffId": "0",
+														"createdAt": "2024-04-14T01:00:51.000000Z",
+														"defaulted": false,
+														"deletedAt": null,
+														"relatedId": "806620293875583421426",
+														"unitPrice": "100.00",
+														"updatedAt": "2024-04-14T01:00:51.000000Z",
+														"totalPrice": "100.00",
+														"description": null,
+														"billingSourceId": "807620300833493355172",
+														"defaultQuantity": 20,
+														"perOperationFee": "0.01"
+													}
+												],
+												"remark": null,
+												"status": true,
+												"saleable": true,
+												"createdAt": "2024-04-13T16:34:32.000000Z",
+												"defaulted": false,
+												"deletedAt": null,
+												"relatedId": "806620293875583421426",
+												"updatedAt": "2024-04-13T16:34:32.000000Z",
+												"deductable": true,
+												"rebateable": true,
+												"description": null,
+												"presentable": true,
+												"discountable": true
+											},
+											{
+												"id": "807620300833669516269",
+												"name": "新的来源",
+												"sort": 1,
+												"prices": [
+													{
+														"id": "808620300833728237453",
+														"name": "新的售价1",
+														"sort": 1,
+														"remark": null,
+														"status": true,
+														"staffId": "0",
+														"createdAt": "2024-04-13T16:34:32.000000Z",
+														"defaulted": false,
+														"deletedAt": null,
+														"relatedId": "806620293875583421426",
+														"unitPrice": "1.00",
+														"updatedAt": "2024-04-13T16:34:32.000000Z",
+														"totalPrice": "1.00",
+														"description": null,
+														"billingSourceId": "807620300833669516269",
+														"defaultQuantity": 1,
+														"perOperationFee": "0.00"
+													},
+													{
+														"id": "808620300833774372066",
+														"name": "新的售价2",
+														"sort": 1,
+														"remark": null,
+														"status": true,
+														"staffId": "0",
+														"createdAt": "2024-04-14T01:00:51.000000Z",
+														"defaulted": false,
+														"deletedAt": null,
+														"relatedId": "806620293875583421426",
+														"unitPrice": "2.00",
+														"updatedAt": "2024-04-14T01:00:51.000000Z",
+														"totalPrice": "2.00",
+														"description": null,
+														"billingSourceId": "807620300833669516269",
+														"defaultQuantity": 2,
+														"perOperationFee": "0.00"
+													},
+													{
+														"id": "808620300833812122931",
+														"name": "新的售价3",
+														"sort": 1,
+														"remark": null,
+														"status": true,
+														"staffId": "0",
+														"createdAt": "2024-04-14T09:01:54.000000Z",
+														"defaulted": false,
+														"deletedAt": null,
+														"relatedId": "806620293875583421426",
+														"unitPrice": "3.00",
+														"updatedAt": "2024-04-14T09:01:54.000000Z",
+														"totalPrice": "3.00",
+														"description": null,
+														"billingSourceId": "807620300833669516269",
+														"defaultQuantity": 3,
+														"perOperationFee": "0.00"
+													}
+												],
+												"remark": null,
+												"status": true,
+												"saleable": true,
+												"createdAt": "2024-04-13T16:34:32.000000Z",
+												"defaulted": false,
+												"deletedAt": null,
+												"relatedId": "806620293875583421426",
+												"updatedAt": "2024-04-13T16:34:32.000000Z",
+												"deductable": true,
+												"rebateable": true,
+												"description": null,
+												"presentable": true,
+												"discountable": true
+											}
+										],
+										"bordered": true,
+										"multiple": false,
+										"allowClear": true,
+										"fieldNames": {
+											"label": "name",
+											"value": "id",
+											"children": "prices"
+										},
+										"placeholder": "请选择开单来源及售价",
+										"expandTrigger": "click",
+										"changeOnSelect": false
+									},
+									"events": {
+										"change": ["value", "selectedOptions"]
+									},
+									"vModelField": "value"
+								},
+								"discount": {
+									"name": "AInputNumber",
+									"type": "input-number",
+									"props": {
+										"max": 1,
+										"min": 0.01,
+										"step": 0.01,
+										"bordered": true,
+										"controls": true,
+										"disabled": false,
+										"keyboard": true,
+										"precision": 2,
+										"placeholder": "请输入"
+									},
+									"events": {
+										"change": ["e"]
+									},
+									"vModelField": "value"
+								},
+								"quantity": {
+									"name": "AInputNumber",
+									"type": "input-number",
+									"props": {
+										"min": 1,
+										"step": 1,
+										"bordered": true,
+										"controls": true,
+										"keyboard": true,
+										"placeholder": "请输入"
+									},
+									"events": {
+										"change": ["e"]
+									},
+									"vModelField": "value"
+								},
+								"presented": {
+									"name": "ACheckbox",
+									"type": "checkbox",
+									"props": {
+										"disabled": false,
+										"autofocus": false,
+										"indeterminate": false
+									},
+									"events": {
+										"change": ["e"]
+									},
+									"vModelField": "checked"
+								},
+								"unitPrice": {
+									"name": "AInputNumber",
+									"type": "input-number",
+									"props": {
+										"min": 0,
+										"step": 1,
+										"prefix": "￥",
+										"bordered": true,
+										"controls": true,
+										"keyboard": true,
+										"precision": 2,
+										"placeholder": "请输入"
+									},
+									"events": {
+										"change": ["e"]
+									},
+									"vModelField": "value"
+								}
+							},
+							"perOperationFee": "0.00"
+						}
+					],
+					"description": null,
+					"remark": "ssss",
+					"createdBy": "512618763553993655188",
+					"createdAt": "2024-04-17T09:02:38.000000Z",
+					"updatedAt": "2024-04-17T09:02:38.000000Z",
+					"deletedAt": null,
+					"creator": {
+						"id": "512618763553993655188",
+						"name": "杨蓓",
+						"nickname": "杨蓓",
+						"mobile": "15808372085",
+						"gender": 0,
+						"status": true,
+						"sort": 1,
+						"description": "ddd",
+						"remark": "ddddd",
+						"affiliationedOrganizations": [
+							{
+								"id": "tdR2MWsdOHvFBooLkDsnK",
+								"merchantId": "501553099288566039695",
+								"_components": {
+									"merchantId": {
+										"name": "VzSelect",
+										"type": "vz-select",
+										"props": {
+											"api": {
+												"hpp": "/api/mers/v1/merchants"
+											},
+											"events": {
+												"change": ["value", "option"]
+											},
+											"params": [
+												{
+													"id": "SApZbWQHs284llfJdKLgu",
+													"key": "isShowTree",
+													"value": "0",
+													"status": true
+												},
+												{
+													"id": "UnB5CkbU37oRzZfOAQ1AW",
+													"key": "k-UnB5CkbU37oRzZfOAQ1AW",
+													"value": "v-UnB5CkbU37oRzZfOAQ1AW",
+													"status": true
+												}
+											],
+											"options": [
+												{
+													"id": "1",
+													"label": "选项一",
+													"value": "选项一"
+												},
+												{
+													"id": "2",
+													"label": "选项二",
+													"value": "选项二"
+												},
+												{
+													"id": "3",
+													"label": "选项三",
+													"value": "选项三"
+												}
+											],
+											"virtual": true,
+											"bordered": true,
+											"allowClear": true,
+											"fieldNames": {
+												"label": "name",
+												"value": "id",
+												"options": "options"
+											},
+											"placeholder": "请选择商家门店"
+										},
+										"events": {
+											"change": ["value", "option"]
+										},
+										"vModelField": "value"
+									},
+									"positionIds": {
+										"name": "ASelect",
+										"type": "select",
+										"props": {
+											"mode": "multiple",
+											"events": [],
+											"options": [
+												{
+													"id": "1",
+													"label": "选项一",
+													"value": "选项一"
+												},
+												{
+													"id": "2",
+													"label": "选项二",
+													"value": "选项二"
+												},
+												{
+													"id": "3",
+													"label": "选项三",
+													"value": "选项三"
+												}
+											],
+											"virtual": true,
+											"bordered": true,
+											"allowClear": true,
+											"fieldNames": {
+												"label": "label",
+												"value": "value",
+												"options": "options"
+											},
+											"placeholder": "请选择"
+										},
+										"vModelField": "value"
+									},
+									"departmentIds": {
+										"name": "VzCascader",
+										"type": "vz-cascader",
+										"props": {
+											"api": {
+												"hpp": "/api/mers/v1/departments"
+											},
+											"params": [
+												{
+													"id": "SApZbWQHs284llfJdKLgu",
+													"key": "isShowTree",
+													"value": 1,
+													"status": true
+												},
+												{
+													"id": "UnB5CkbU37oRzZfOAQ1AW",
+													"key": "merchantId",
+													"value": "501553099288566039695",
+													"status": true
+												}
+											],
+											"options": [
+												{
+													"label": "Zhejiang",
+													"value": "zhejiang",
+													"children": [
+														{
+															"label": "Hangzhou",
+															"value": "hangzhou",
+															"children": [
+																{
+																	"label": "West Lake",
+																	"value": "xihu"
+																}
+															]
+														}
+													]
+												},
+												{
+													"label": "Jiangsu",
+													"value": "jiangsu",
+													"children": [
+														{
+															"label": "Nanjing",
+															"value": "nanjing",
+															"children": [
+																{
+																	"label": "Zhong Hua Men",
+																	"value": "zhonghuamen"
+																}
+															]
+														}
+													]
+												}
+											],
+											"bordered": true,
+											"multiple": false,
+											"allowClear": true,
+											"fieldNames": {
+												"label": "name",
+												"value": "id",
+												"children": "children"
+											},
+											"placeholder": "请选择部门科室",
+											"expandTrigger": "click",
+											"changeOnSelect": false
+										},
+										"vModelField": "value"
+									}
+								},
+								"positionIds": ["选项一", "选项二", "选项三"],
+								"departmentIds": [
+									"511606725928566917362",
+									"511606481086003807655"
+								]
+							}
+						],
+						"createdBy": null,
+						"deletedBy": null,
+						"createdAt": "2024-04-10T11:13:35.000000Z",
+						"updatedAt": "2024-04-10T11:13:35.000000Z",
+						"deletedAt": null
+					}
+				},
+				"merchant": {
+					"id": "501591516518949324907",
+					"parentId": "501555263651364211972",
+					"parentIds": ["501555263651364211972"],
+					"parentNames": ["成都华医惠康总部"],
+					"name": "达州筹备店一",
+					"alias": "达州筹备店一",
+					"code": "ssdfdfd",
+					"status": true,
+					"sort": 2,
+					"description": "达州店二",
+					"remark": "达州店二",
+					"createdBy": null,
+					"deletedBy": null,
+					"createdAt": "2024-01-24T06:43:35.000000Z",
+					"updatedAt": "2024-01-24T06:43:35.000000Z",
+					"deletedAt": null,
+					"administrativeDivisionIds": [
+						"51000000000001",
+						"51170000000002"
+					],
+					"administrativeDivisionNames": ["四川省", "达州市"],
+					"administrativeDivisionId": "51170000000002",
+					"address": "xs"
+				},
+				"status": {
+					"id": "206618374007372123617",
+					"dataDictionaryIds": [
+						"205591138393656658129",
+						"205619034143619023777"
+					],
+					"dataDictionaryNames": ["院务", "收银状态"],
+					"dataDictionaryId": "205619034143619023777",
+					"parentId": "0",
+					"parentIds": "",
+					"parentNames": [],
+					"tenantId": null,
+					"name": "待收银",
+					"label": "待收银",
+					"code": "visit-face-diagnosed",
+					"value": "6",
+					"status": true,
+					"sort": 1,
+					"description": "待收银",
+					"remark": "待收银",
+					"createdBy": null,
+					"deletedBy": null,
+					"createdAt": "2024-04-08T01:25:40.000000Z",
+					"updatedAt": "2024-04-08T01:25:40.000000Z",
+					"deletedAt": null
+				},
+				"cashStatus": {
+					"id": "206618374007372123617",
+					"dataDictionaryIds": [
+						"205591138393656658129",
+						"205619034143619023777"
+					],
+					"dataDictionaryNames": ["院务", "收银状态"],
+					"dataDictionaryId": "205619034143619023777",
+					"parentId": "0",
+					"parentIds": "",
+					"parentNames": [],
+					"tenantId": null,
+					"name": "待收银",
+					"label": "待收银",
+					"code": "visit-face-diagnosed",
+					"value": "6",
+					"status": true,
+					"sort": 1,
+					"description": "待收银",
+					"remark": "待收银",
+					"createdBy": null,
+					"deletedBy": null,
+					"createdAt": "2024-04-08T01:25:40.000000Z",
+					"updatedAt": "2024-04-08T01:25:40.000000Z",
+					"deletedAt": null
+				},
+				"_components": {
+					"treatmentDepartmentStaffIds": {
+						"name": "VzCascader",
+						"type": "vz-cascader",
+						"props": {
+							"fieldNames": {
+								"label": "name",
+								"value": "id",
+								"children": "children"
+							},
+							"placeholder": "请选择 科室/医生",
+							"api": {
+								"hpp": "/api/mers/v1/merchants"
+							},
+							"params": [
+								{
+									"id": "NjsTovYva9fM1cMGWNxwy",
+									"key": "isShowTree",
+									"value": "1",
+									"status": true
+								}
+							]
+						}
+					},
+					"treatmentQuantity": {
+						"name": "AInputNumber",
+						"type": "input-number",
+						"props": {
+							"placeholder": "治疗次数",
+							"min": 1,
+							"max": 1
+						}
+					}
+				}
+			},
+			{
+				"id": "912621267316180517180",
+				"orderId": "911621267315949833320",
+				"merchantId": "501591516518949324907",
+				"reservationId": "701621266784091113034",
+				"visitId": "702621267062408349996",
+				"consultId": "703621267131954103173",
+				"userId": "6767",
+				"typeId": null,
+				"relatedId": "806620293875583421426",
+				"name": "测试价格",
+				"statusId": "206618374007372123617",
+				"cashStatusId": "206618374007372123617",
+				"billingerId": null,
+				"assistantedBillingerId": null,
+				"amount": null,
+				"serviceItems": null,
+				"description": null,
+				"remark": null,
+				"createdAt": "2024-04-17T09:02:38.000000Z",
+				"updatedAt": "2024-04-17T09:02:38.000000Z",
+				"deletedAt": null,
+				"quantity": 3,
+				"discount": "1.00",
+				"presented": false,
+				"unitPrice": "3.00",
+				"totalPrice": "9.00",
+				"user": {
+					"id": 6767,
+					"name": "高广元",
+					"pid": 6766,
+					"referrerId": 6766,
+					"positionCategoryId": 777,
+					"email": null,
+					"emailVerifiedAt": null,
+					"password": null,
+					"rememberToken": null,
+					"createdAt": "2022-09-01T10:25:45.000000Z",
+					"updatedAt": "2024-04-21T15:04:33.000000Z",
+					"nickName": null,
+					"mobile": "13350199920",
+					"openid": null,
+					"wechatId": null,
+					"age": 22,
+					"birthday": "1990-05-03",
+					"address": null,
+					"hobbies": null,
+					"consumptionFeature": null,
+					"socialAttribute": null,
+					"developmentMode": null,
+					"consultingProject": null,
+					"remark": null,
+					"serialNumber": "20220901681000092",
+					"status": true,
+					"occupation": null,
+					"gender": 1,
+					"tags": null,
+					"avatar": null,
+					"deletedAt": null,
+					"hospitalId": 1,
+					"departmentId": null,
+					"adminId": 122,
+					"idNo": null,
+					"balance": "0.00",
+					"from": null,
+					"contents": null,
+					"categoryId": 171,
+					"unionid": null,
+					"referrer": null,
+					"relationedConsultId": 0,
+					"firstConsumedAt": "2024-01-24 22:53:13",
+					"firstVisitedAt": "2024-01-24 22:53:13",
+					"lastVisitedAt": "2024-04-21 23:04:33",
+					"lastConsumedAt": "2024-01-24 22:53:13",
+					"lastRevisitedAt": "2024-01-24 22:51:55",
+					"lastDeductedAt": "2024-01-24 22:51:55",
+					"liveness": null,
+					"pids": null,
+					"referralCode": null,
+					"merchantId": "501555263651364211972",
+					"integral": 34,
+					"levelId": "206590903023618754820",
+					"groupId": "206590906390147498340",
+					"counselorId": "148",
+					"onlineCounselorId": "131",
+					"doctorId": "134",
+					"nurseId": "132",
+					"firstReservationedAt": "2024-01-24 23:00:01",
+					"lastReservationedAt": "2024-01-24 23:00:01",
+					"firstConsumptionedAt": "2024-01-24 23:00:01",
+					"lastConsumptionedAt": "2024-01-24 23:00:01",
+					"lastConsumptionedAmount": "234.00",
+					"consumptionedAmount": "234.00",
+					"owedAmount": "0.00",
+					"beauticianId": "137",
+					"channelId": "601591066100007960669",
+					"channelIds": [
+						"601591065061569595587",
+						"601591066100007960669"
+					],
+					"channelNames": ["谨俏学苑", "遂宁机构"],
+					"counselorAssistantId": "0",
+					"developerId": "0",
+					"isShare": 0,
+					"irritabilityTagIds": null,
+					"impressionTagIds": null,
+					"maritalStatusId": "0",
+					"fertilityStatusId": null,
+					"hobbiesInterests": null,
+					"administrativeDivisionId": "0",
+					"merchantIds": null,
+					"merchantNames": null,
+					"servicerId": "62",
+					"typeId": "206613728700495563177",
+					"createdMerchantId": "501555263651364211972",
+					"createdBy": "512618789160886470709",
+					"passportNo": null,
+					"occupationId": null,
+					"channel": {
+						"id": "601591066100007960669",
+						"parentId": "601591065061569595587",
+						"parentIds": ["601591065061569595587"],
+						"parentNames": ["谨俏学苑"],
+						"name": "遂宁机构",
+						"alias": "遂宁机构",
+						"code": "snsj",
+						"status": true,
+						"sort": 1,
+						"description": "遂宁机构",
+						"remark": "遂宁机构",
+						"createdBy": null,
+						"deletedBy": null,
+						"createdAt": "2024-01-25T00:53:47.000000Z",
+						"updatedAt": "2024-01-25T00:53:47.000000Z",
+						"deletedAt": null
+					},
+					"level": {
+						"id": "206590903023618754820",
+						"dataDictionaryIds": [
+							"205590897352072496737",
+							"205590897502497014180"
+						],
+						"dataDictionaryNames": ["会员", "等级"],
+						"dataDictionaryId": "205590897502497014180",
+						"parentId": "0",
+						"parentIds": null,
+						"parentNames": null,
+						"tenantId": null,
+						"name": "三星会员",
+						"label": "三星会员",
+						"code": "gold",
+						"value": "3",
+						"status": true,
+						"sort": 3,
+						"description": "三星会员",
+						"remark": "三星会员",
+						"createdBy": null,
+						"deletedBy": null,
+						"createdAt": "2024-01-22T14:05:47.000000Z",
+						"updatedAt": "2024-01-22T14:05:47.000000Z",
+						"deletedAt": null
+					}
+				},
+				"order": {
+					"id": "911621267315949833320",
+					"consultId": "703621267131954103173",
+					"visitId": "702621267062408349996",
+					"reservationId": "701621266784091113034",
+					"merchantId": "501591516518949324907",
+					"userId": "6767",
+					"typeId": "206620541061831327854",
+					"statusId": "206618374007372123617",
+					"cashStatusId": "206618374007372123617",
+					"billingerId": "512618763553993655188",
+					"assistantedBillingerId": "512618763553993655188",
+					"amount": "3989.00",
+					"serviceItems": [
+						{
+							"id": "806613648906336602412",
+							"name": "项目名称001-update-001",
+							"source": [
+								"807620443843069741584",
+								"808620443843153629121"
+							],
+							"discount": 1,
+							"quantity": 10,
+							"presented": false,
+							"unitPrice": "398.00",
+							"totalPrice": "3980.00",
+							"_components": {
+								"name": [],
+								"source": {
+									"name": "ACascader",
+									"type": "cascader",
+									"props": {
+										"options": [
+											{
+												"id": "807620443842927136253",
+												"name": "院内平台",
+												"sort": 1,
+												"prices": [
+													{
+														"id": "808620443842994244552",
+														"name": "常规售价xxxx",
+														"sort": 1,
+														"remark": null,
+														"status": true,
+														"staffId": "0",
+														"createdAt": "2024-04-14T01:02:39.000000Z",
+														"defaulted": true,
+														"deletedAt": null,
+														"relatedId": "806613648906336602412",
+														"unitPrice": "1.00",
+														"updatedAt": "2024-04-14T01:02:39.000000Z",
+														"totalPrice": "1.00",
+														"description": null,
+														"billingSourceId": "807620443842927136253",
+														"defaultQuantity": 1,
+														"perOperationFee": "0.00"
+													}
+												],
+												"remark": null,
+												"status": true,
+												"saleable": true,
+												"createdAt": "2024-04-14T01:02:39.000000Z",
+												"defaulted": false,
+												"deletedAt": null,
+												"relatedId": "806613648906336602412",
+												"updatedAt": "2024-04-14T01:02:39.000000Z",
+												"deductable": true,
+												"rebateable": true,
+												"description": null,
+												"presentable": true,
+												"discountable": true
+											},
+											{
+												"id": "807620443843069741584",
+												"name": "新的来源",
+												"sort": 1,
+												"prices": [
+													{
+														"id": "808620443843153629121",
+														"name": "新的售价",
+														"sort": 1,
+														"remark": null,
+														"status": true,
+														"staffId": "0",
+														"createdAt": "2024-04-14T01:02:39.000000Z",
+														"defaulted": false,
+														"deletedAt": null,
+														"relatedId": "806613648906336602412",
+														"unitPrice": "398.00",
+														"updatedAt": "2024-04-14T01:02:39.000000Z",
+														"totalPrice": "398.00",
+														"description": null,
+														"billingSourceId": "807620443843069741584",
+														"defaultQuantity": 10,
+														"perOperationFee": "220.00"
+													}
+												],
+												"remark": null,
+												"status": true,
+												"saleable": true,
+												"createdAt": "2024-04-14T01:02:39.000000Z",
+												"defaulted": false,
+												"deletedAt": null,
+												"relatedId": "806613648906336602412",
+												"updatedAt": "2024-04-14T01:02:39.000000Z",
+												"deductable": true,
+												"rebateable": true,
+												"description": null,
+												"presentable": true,
+												"discountable": true
+											}
+										],
+										"bordered": true,
+										"multiple": false,
+										"allowClear": true,
+										"fieldNames": {
+											"label": "name",
+											"value": "id",
+											"children": "prices"
+										},
+										"placeholder": "请选择开单来源及售价",
+										"expandTrigger": "click",
+										"changeOnSelect": false
+									},
+									"events": {
+										"change": ["value", "selectedOptions"]
+									},
+									"vModelField": "value"
+								},
+								"discount": {
+									"name": "AInputNumber",
+									"type": "input-number",
+									"props": {
+										"max": 1,
+										"min": 0.01,
+										"step": 0.01,
+										"bordered": true,
+										"controls": true,
+										"disabled": false,
+										"keyboard": true,
+										"precision": 2,
+										"placeholder": "请输入"
+									},
+									"events": {
+										"change": ["e"]
+									},
+									"vModelField": "value"
+								},
+								"quantity": {
+									"name": "AInputNumber",
+									"type": "input-number",
+									"props": {
+										"min": 1,
+										"step": 1,
+										"bordered": true,
+										"controls": true,
+										"keyboard": true,
+										"placeholder": "请输入"
+									},
+									"events": {
+										"change": ["e"]
+									},
+									"vModelField": "value"
+								},
+								"presented": {
+									"name": "ACheckbox",
+									"type": "checkbox",
+									"props": {
+										"disabled": false,
+										"autofocus": false,
+										"indeterminate": false
+									},
+									"events": {
+										"change": ["e"]
+									},
+									"vModelField": "checked"
+								},
+								"unitPrice": {
+									"name": "AInputNumber",
+									"type": "input-number",
+									"props": {
+										"min": 0,
+										"step": 1,
+										"prefix": "￥",
+										"bordered": true,
+										"controls": true,
+										"keyboard": true,
+										"precision": 2,
+										"placeholder": "请输入"
+									},
+									"events": {
+										"change": ["e"]
+									},
+									"vModelField": "value"
+								}
+							},
+							"perOperationFee": "220.00"
+						},
+						{
+							"id": "806620293875583421426",
+							"name": "测试价格",
+							"source": [
+								"807620300833669516269",
+								"808620300833812122931"
+							],
+							"discount": 1,
+							"quantity": 3,
+							"presented": false,
+							"unitPrice": "3.00",
+							"totalPrice": "9.00",
+							"_components": {
+								"name": [],
+								"source": {
+									"name": "ACascader",
+									"type": "cascader",
+									"props": {
+										"options": [
+											{
+												"id": "807620300833493355172",
+												"name": "院内平台",
+												"sort": 1,
+												"prices": [
+													{
+														"id": "808620300833568850252",
+														"name": "常规售价xxxx",
+														"sort": 1,
+														"remark": null,
+														"status": true,
+														"staffId": "0",
+														"createdAt": "2024-04-13T16:34:32.000000Z",
+														"defaulted": true,
+														"deletedAt": null,
+														"relatedId": "806620293875583421426",
+														"unitPrice": "1.00",
+														"updatedAt": "2024-04-13T16:34:32.000000Z",
+														"totalPrice": "1.00",
+														"description": null,
+														"billingSourceId": "807620300833493355172",
+														"defaultQuantity": 1,
+														"perOperationFee": "0.00"
+													},
+													{
+														"id": "808620300833623379211",
+														"name": "测试增加一",
+														"sort": 1,
+														"remark": null,
+														"status": true,
+														"staffId": "0",
+														"createdAt": "2024-04-14T01:00:51.000000Z",
+														"defaulted": false,
+														"deletedAt": null,
+														"relatedId": "806620293875583421426",
+														"unitPrice": "100.00",
+														"updatedAt": "2024-04-14T01:00:51.000000Z",
+														"totalPrice": "100.00",
+														"description": null,
+														"billingSourceId": "807620300833493355172",
+														"defaultQuantity": 20,
+														"perOperationFee": "0.01"
+													}
+												],
+												"remark": null,
+												"status": true,
+												"saleable": true,
+												"createdAt": "2024-04-13T16:34:32.000000Z",
+												"defaulted": false,
+												"deletedAt": null,
+												"relatedId": "806620293875583421426",
+												"updatedAt": "2024-04-13T16:34:32.000000Z",
+												"deductable": true,
+												"rebateable": true,
+												"description": null,
+												"presentable": true,
+												"discountable": true
+											},
+											{
+												"id": "807620300833669516269",
+												"name": "新的来源",
+												"sort": 1,
+												"prices": [
+													{
+														"id": "808620300833728237453",
+														"name": "新的售价1",
+														"sort": 1,
+														"remark": null,
+														"status": true,
+														"staffId": "0",
+														"createdAt": "2024-04-13T16:34:32.000000Z",
+														"defaulted": false,
+														"deletedAt": null,
+														"relatedId": "806620293875583421426",
+														"unitPrice": "1.00",
+														"updatedAt": "2024-04-13T16:34:32.000000Z",
+														"totalPrice": "1.00",
+														"description": null,
+														"billingSourceId": "807620300833669516269",
+														"defaultQuantity": 1,
+														"perOperationFee": "0.00"
+													},
+													{
+														"id": "808620300833774372066",
+														"name": "新的售价2",
+														"sort": 1,
+														"remark": null,
+														"status": true,
+														"staffId": "0",
+														"createdAt": "2024-04-14T01:00:51.000000Z",
+														"defaulted": false,
+														"deletedAt": null,
+														"relatedId": "806620293875583421426",
+														"unitPrice": "2.00",
+														"updatedAt": "2024-04-14T01:00:51.000000Z",
+														"totalPrice": "2.00",
+														"description": null,
+														"billingSourceId": "807620300833669516269",
+														"defaultQuantity": 2,
+														"perOperationFee": "0.00"
+													},
+													{
+														"id": "808620300833812122931",
+														"name": "新的售价3",
+														"sort": 1,
+														"remark": null,
+														"status": true,
+														"staffId": "0",
+														"createdAt": "2024-04-14T09:01:54.000000Z",
+														"defaulted": false,
+														"deletedAt": null,
+														"relatedId": "806620293875583421426",
+														"unitPrice": "3.00",
+														"updatedAt": "2024-04-14T09:01:54.000000Z",
+														"totalPrice": "3.00",
+														"description": null,
+														"billingSourceId": "807620300833669516269",
+														"defaultQuantity": 3,
+														"perOperationFee": "0.00"
+													}
+												],
+												"remark": null,
+												"status": true,
+												"saleable": true,
+												"createdAt": "2024-04-13T16:34:32.000000Z",
+												"defaulted": false,
+												"deletedAt": null,
+												"relatedId": "806620293875583421426",
+												"updatedAt": "2024-04-13T16:34:32.000000Z",
+												"deductable": true,
+												"rebateable": true,
+												"description": null,
+												"presentable": true,
+												"discountable": true
+											}
+										],
+										"bordered": true,
+										"multiple": false,
+										"allowClear": true,
+										"fieldNames": {
+											"label": "name",
+											"value": "id",
+											"children": "prices"
+										},
+										"placeholder": "请选择开单来源及售价",
+										"expandTrigger": "click",
+										"changeOnSelect": false
+									},
+									"events": {
+										"change": ["value", "selectedOptions"]
+									},
+									"vModelField": "value"
+								},
+								"discount": {
+									"name": "AInputNumber",
+									"type": "input-number",
+									"props": {
+										"max": 1,
+										"min": 0.01,
+										"step": 0.01,
+										"bordered": true,
+										"controls": true,
+										"disabled": false,
+										"keyboard": true,
+										"precision": 2,
+										"placeholder": "请输入"
+									},
+									"events": {
+										"change": ["e"]
+									},
+									"vModelField": "value"
+								},
+								"quantity": {
+									"name": "AInputNumber",
+									"type": "input-number",
+									"props": {
+										"min": 1,
+										"step": 1,
+										"bordered": true,
+										"controls": true,
+										"keyboard": true,
+										"placeholder": "请输入"
+									},
+									"events": {
+										"change": ["e"]
+									},
+									"vModelField": "value"
+								},
+								"presented": {
+									"name": "ACheckbox",
+									"type": "checkbox",
+									"props": {
+										"disabled": false,
+										"autofocus": false,
+										"indeterminate": false
+									},
+									"events": {
+										"change": ["e"]
+									},
+									"vModelField": "checked"
+								},
+								"unitPrice": {
+									"name": "AInputNumber",
+									"type": "input-number",
+									"props": {
+										"min": 0,
+										"step": 1,
+										"prefix": "￥",
+										"bordered": true,
+										"controls": true,
+										"keyboard": true,
+										"precision": 2,
+										"placeholder": "请输入"
+									},
+									"events": {
+										"change": ["e"]
+									},
+									"vModelField": "value"
+								}
+							},
+							"perOperationFee": "0.00"
+						}
+					],
+					"description": null,
+					"remark": "ssss",
+					"createdBy": "512618763553993655188",
+					"createdAt": "2024-04-17T09:02:38.000000Z",
+					"updatedAt": "2024-04-17T09:02:38.000000Z",
+					"deletedAt": null,
+					"creator": {
+						"id": "512618763553993655188",
+						"name": "杨蓓",
+						"nickname": "杨蓓",
+						"mobile": "15808372085",
+						"gender": 0,
+						"status": true,
+						"sort": 1,
+						"description": "ddd",
+						"remark": "ddddd",
+						"affiliationedOrganizations": [
+							{
+								"id": "tdR2MWsdOHvFBooLkDsnK",
+								"merchantId": "501553099288566039695",
+								"_components": {
+									"merchantId": {
+										"name": "VzSelect",
+										"type": "vz-select",
+										"props": {
+											"api": {
+												"hpp": "/api/mers/v1/merchants"
+											},
+											"events": {
+												"change": ["value", "option"]
+											},
+											"params": [
+												{
+													"id": "SApZbWQHs284llfJdKLgu",
+													"key": "isShowTree",
+													"value": "0",
+													"status": true
+												},
+												{
+													"id": "UnB5CkbU37oRzZfOAQ1AW",
+													"key": "k-UnB5CkbU37oRzZfOAQ1AW",
+													"value": "v-UnB5CkbU37oRzZfOAQ1AW",
+													"status": true
+												}
+											],
+											"options": [
+												{
+													"id": "1",
+													"label": "选项一",
+													"value": "选项一"
+												},
+												{
+													"id": "2",
+													"label": "选项二",
+													"value": "选项二"
+												},
+												{
+													"id": "3",
+													"label": "选项三",
+													"value": "选项三"
+												}
+											],
+											"virtual": true,
+											"bordered": true,
+											"allowClear": true,
+											"fieldNames": {
+												"label": "name",
+												"value": "id",
+												"options": "options"
+											},
+											"placeholder": "请选择商家门店"
+										},
+										"events": {
+											"change": ["value", "option"]
+										},
+										"vModelField": "value"
+									},
+									"positionIds": {
+										"name": "ASelect",
+										"type": "select",
+										"props": {
+											"mode": "multiple",
+											"events": [],
+											"options": [
+												{
+													"id": "1",
+													"label": "选项一",
+													"value": "选项一"
+												},
+												{
+													"id": "2",
+													"label": "选项二",
+													"value": "选项二"
+												},
+												{
+													"id": "3",
+													"label": "选项三",
+													"value": "选项三"
+												}
+											],
+											"virtual": true,
+											"bordered": true,
+											"allowClear": true,
+											"fieldNames": {
+												"label": "label",
+												"value": "value",
+												"options": "options"
+											},
+											"placeholder": "请选择"
+										},
+										"vModelField": "value"
+									},
+									"departmentIds": {
+										"name": "VzCascader",
+										"type": "vz-cascader",
+										"props": {
+											"api": {
+												"hpp": "/api/mers/v1/departments"
+											},
+											"params": [
+												{
+													"id": "SApZbWQHs284llfJdKLgu",
+													"key": "isShowTree",
+													"value": 1,
+													"status": true
+												},
+												{
+													"id": "UnB5CkbU37oRzZfOAQ1AW",
+													"key": "merchantId",
+													"value": "501553099288566039695",
+													"status": true
+												}
+											],
+											"options": [
+												{
+													"label": "Zhejiang",
+													"value": "zhejiang",
+													"children": [
+														{
+															"label": "Hangzhou",
+															"value": "hangzhou",
+															"children": [
+																{
+																	"label": "West Lake",
+																	"value": "xihu"
+																}
+															]
+														}
+													]
+												},
+												{
+													"label": "Jiangsu",
+													"value": "jiangsu",
+													"children": [
+														{
+															"label": "Nanjing",
+															"value": "nanjing",
+															"children": [
+																{
+																	"label": "Zhong Hua Men",
+																	"value": "zhonghuamen"
+																}
+															]
+														}
+													]
+												}
+											],
+											"bordered": true,
+											"multiple": false,
+											"allowClear": true,
+											"fieldNames": {
+												"label": "name",
+												"value": "id",
+												"children": "children"
+											},
+											"placeholder": "请选择部门科室",
+											"expandTrigger": "click",
+											"changeOnSelect": false
+										},
+										"vModelField": "value"
+									}
+								},
+								"positionIds": ["选项一", "选项二", "选项三"],
+								"departmentIds": [
+									"511606725928566917362",
+									"511606481086003807655"
+								]
+							}
+						],
+						"createdBy": null,
+						"deletedBy": null,
+						"createdAt": "2024-04-10T11:13:35.000000Z",
+						"updatedAt": "2024-04-10T11:13:35.000000Z",
+						"deletedAt": null
+					}
+				},
+				"merchant": {
+					"id": "501591516518949324907",
+					"parentId": "501555263651364211972",
+					"parentIds": ["501555263651364211972"],
+					"parentNames": ["成都华医惠康总部"],
+					"name": "达州筹备店一",
+					"alias": "达州筹备店一",
+					"code": "ssdfdfd",
+					"status": true,
+					"sort": 2,
+					"description": "达州店二",
+					"remark": "达州店二",
+					"createdBy": null,
+					"deletedBy": null,
+					"createdAt": "2024-01-24T06:43:35.000000Z",
+					"updatedAt": "2024-01-24T06:43:35.000000Z",
+					"deletedAt": null,
+					"administrativeDivisionIds": [
+						"51000000000001",
+						"51170000000002"
+					],
+					"administrativeDivisionNames": ["四川省", "达州市"],
+					"administrativeDivisionId": "51170000000002",
+					"address": "xs"
+				},
+				"status": {
+					"id": "206618374007372123617",
+					"dataDictionaryIds": [
+						"205591138393656658129",
+						"205619034143619023777"
+					],
+					"dataDictionaryNames": ["院务", "收银状态"],
+					"dataDictionaryId": "205619034143619023777",
+					"parentId": "0",
+					"parentIds": "",
+					"parentNames": [],
+					"tenantId": null,
+					"name": "待收银",
+					"label": "待收银",
+					"code": "visit-face-diagnosed",
+					"value": "6",
+					"status": true,
+					"sort": 1,
+					"description": "待收银",
+					"remark": "待收银",
+					"createdBy": null,
+					"deletedBy": null,
+					"createdAt": "2024-04-08T01:25:40.000000Z",
+					"updatedAt": "2024-04-08T01:25:40.000000Z",
+					"deletedAt": null
+				},
+				"cashStatus": {
+					"id": "206618374007372123617",
+					"dataDictionaryIds": [
+						"205591138393656658129",
+						"205619034143619023777"
+					],
+					"dataDictionaryNames": ["院务", "收银状态"],
+					"dataDictionaryId": "205619034143619023777",
+					"parentId": "0",
+					"parentIds": "",
+					"parentNames": [],
+					"tenantId": null,
+					"name": "待收银",
+					"label": "待收银",
+					"code": "visit-face-diagnosed",
+					"value": "6",
+					"status": true,
+					"sort": 1,
+					"description": "待收银",
+					"remark": "待收银",
+					"createdBy": null,
+					"deletedBy": null,
+					"createdAt": "2024-04-08T01:25:40.000000Z",
+					"updatedAt": "2024-04-08T01:25:40.000000Z",
+					"deletedAt": null
+				},
+				"_components": {
+					"treatmentDepartmentStaffIds": {
+						"name": "VzCascader",
+						"type": "vz-cascader",
+						"props": {
+							"fieldNames": {
+								"label": "name",
+								"value": "id",
+								"children": "children"
+							},
+							"placeholder": "请选择 科室/医生",
+							"api": {
+								"hpp": "/api/mers/v1/merchants"
+							},
+							"params": [
+								{
+									"id": "NjsTovYva9fM1cMGWNxwy",
+									"key": "isShowTree",
+									"value": "1",
+									"status": true
+								}
+							]
+						}
+					},
+					"treatmentQuantity": {
+						"name": "AInputNumber",
+						"type": "input-number",
+						"props": {
+							"placeholder": "治疗次数",
+							"min": 1,
+							"max": 1
+						}
+					}
+				}
+			}
+		],
+		"treatmentTypeId": null,
+		"faceDiagnoseStaffId": null,
+		"id": "702622807947575036286"
+	},
+	"rules": {
+		"treatmentItems": [],
+		"YBF_0VLqR1pUZ05aO3UdV": []
+	}
 }

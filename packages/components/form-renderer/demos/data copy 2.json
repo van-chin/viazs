@@ -1,0 +1,113 @@
+{
+	"model": {
+		"keywords": ""
+	},
+	"rules": {
+		"keywords": []
+	},
+	"items": [
+		{
+			"id": "tHGUhT0q4Ddzuf86gjg21",
+			"key": "tHGUhT0q4Ddzuf86gjg21",
+			"title": "表单",
+			"icon": "iconoir:input-field",
+			"type": "form",
+			"vModelField": "value",
+			"item": {
+				"name": "f_9GqdghhCcT4Dr6VZp-i",
+				"colon": true,
+				"displayState": true,
+				"labelShow": true,
+				"layout": "horizontal",
+				"labelAlign": "right",
+				"labelCol": {
+					"style": {
+						"width": "100px"
+					}
+				}
+			},
+			"children": [
+				{
+					"id": "YLRYbkXihLjmrtmLjjC5333",
+					"key": "YLRYbkXihLjmrtmLjjC5333",
+					"title": "输入框",
+					"icon": "iconoir:input-field",
+					"type": "input",
+					"componentName": "AInput",
+					"vModelField": "value",
+					"item": {
+						"label": "输入框",
+						"name": "test",
+						"tooltip": "",
+						"extra": "",
+						"required": false,
+						"colon": true,
+						"displayState": true,
+						"rules": []
+					},
+					"component": {
+						"name": "AInput",
+
+						"events": {
+							"pressEnter": ["e"]
+						},
+						"props": {
+							"placeholder": "请输入",
+							"bordered": true,
+							"showCount": false,
+							"size": "",
+							"events": {}
+						}
+					},
+					"componentProps": [],
+					"formItemProps": [],
+					"class": "click-way-input"
+				},
+				{
+					"id": "YLRYbkXihLjmrtmLjjC53",
+					"key": "YLRYbkXihLjmrtmLjjC53",
+					"title": "输入框",
+					"icon": "iconoir:input-field",
+					"type": "input",
+					"componentName": "AInput",
+					"vModelField": "value",
+					"item": {
+						"label": "输入框",
+						"name": "keywords",
+						"tooltip": "",
+						"extra": "",
+						"required": false,
+						"colon": true,
+						"displayState": true,
+						"rules": [],
+						"slot": ""
+					},
+					"component": {
+						"name": "AInput",
+
+						"events": {
+							"pressEnter": ["e"]
+						},
+						"props": {
+							"placeholder": "请输入",
+							"bordered": true,
+							"showCount": false,
+							"size": "",
+							"events": {}
+						}
+					},
+					"componentProps": [],
+					"formItemProps": [],
+					"class": "click-way-input"
+				}
+			],
+			"component": {
+				"name": "AForm",
+				"props": {}
+			},
+			"componentProps": [],
+			"formItemProps": [],
+			"class": ""
+		}
+	]
+}

@@ -1,5 +1,56 @@
 # @internals/build
 
+## 0.0.2-beta.40
+
+### Patch Changes
+
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.29
+
+## 0.0.2-beta.39
+
+### Patch Changes
+
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.28
+
+## 0.0.2-beta.38
+
+### Patch Changes
+
+- fixed winthInstall
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.27
+
+## 0.0.2-beta.37
+
+### Patch Changes
+
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.26
+
+## 0.0.2-beta.36
+
+### Patch Changes
+
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.25
+
+## 0.0.2-beta.35
+
+### Patch Changes
+
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.24
+
+## 0.0.2-beta.34
+
+### Patch Changes
+
+- fixed vz-table
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.23
+
 ## 0.0.2-beta.33
 
 ### Patch Changes

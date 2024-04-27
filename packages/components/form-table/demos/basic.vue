@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <vz-form-table rowKey="id" @name-change="onNameChange" :columns="columns" bordered :initial="initial"
+    <vz-form-table rowKey="id" :allow-add="false" @name-change="onNameChange" :columns="columns" bordered :initial="initial"
       v-model:value="dataSource"></vz-form-table>
 
     <VzJsonViewer class="h-200px" :data="dataSource"></VzJsonViewer>

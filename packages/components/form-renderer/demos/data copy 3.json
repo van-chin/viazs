@@ -1,0 +1,561 @@
+{
+    "items": [
+        {
+            "id": "tHGUhT0q4Ddzuf86gjg21",
+            "key": "tHGUhT0q4Ddzuf86gjg21",
+            "icon": "iconoir:input-field",
+            "item": {
+                "name": "f_9GqdghhCcT4Dr6VZp-i",
+                "colon": true,
+                "layout": "horizontal",
+                "labelCol": {
+                    "style": {
+                        "width": "100px"
+                    }
+                },
+                "labelShow": true,
+                "labelAlign": "right",
+                "displayState": true
+            },
+            "type": "form",
+            "class": "",
+            "title": "表单",
+            "children": [
+                {
+                    "id": "EXD8do-J6gzWMKz0RuMZx",
+                    "key": "EXD8do-J6gzWMKz0RuMZx",
+                    "icon": "ant-design:cloud-upload-outlined",
+                    "item": {
+                        "name": "treatmentItems",
+                        "slot": "treatment-items",
+                        "colon": true,
+                        "extra": "",
+                        "label": "治疗项目",
+                        "rules": [],
+                        "tooltip": "",
+                        "required": false,
+                        "displayState": true
+                    },
+                    "type": "vz-form-table",
+                    "class": "click-way-vz-form-table",
+                    "title": "输入表格",
+                    "component": {
+                        "name": "VzFormTable",
+                        "props": {
+                            "rowKey": "id",
+                            "columns": [
+                                {
+                                    "id": "1",
+                                    "key": "merchantName",
+                                    "title": "开单门店",
+                                    "component": {
+                                        "type": "input",
+                                        "props": {
+                                            "placeholder": "请输入 数列1(姓名)"
+                                        },
+                                        "vModelField": "value"
+                                    },
+                                    "dataIndex": [
+                                        "merchant",
+                                        "name"
+                                    ]
+                                },
+                                {
+                                    "id": "2",
+                                    "key": "name",
+                                    "title": "项目名称",
+                                    "component": {
+                                        "type": "input-number",
+                                        "props": {
+                                            "placeholder": "请输入 数列2(年龄)"
+                                        },
+                                        "vModelField": "value"
+                                    },
+                                    "dataIndex": "name"
+                                },
+                                {
+                                    "id": "Xc8cb9cdgpxvx5vXFSEYh",
+                                    "key": "treatmentDepartmentStaffIds",
+                                    "title": "科室/医生",
+                                    "component": {
+                                        "name": "VzCascader",
+                                        "type": "vz-cascader",
+                                        "props": {
+                                            "api": {
+                                                "hpp": "ddd"
+                                            },
+                                            "params": [],
+                                            "options": [
+                                                {
+                                                    "label": "Zhejiang",
+                                                    "value": "zhejiang",
+                                                    "children": [
+                                                        {
+                                                            "label": "Hangzhou",
+                                                            "value": "hangzhou",
+                                                            "children": [
+                                                                {
+                                                                    "label": "West Lake",
+                                                                    "value": "xihu"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "label": "Jiangsu",
+                                                    "value": "jiangsu",
+                                                    "children": [
+                                                        {
+                                                            "label": "Nanjing",
+                                                            "value": "nanjing",
+                                                            "children": [
+                                                                {
+                                                                    "label": "Zhong Hua Men",
+                                                                    "value": "zhonghuamen"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "bordered": true,
+                                            "multiple": false,
+                                            "allowClear": true,
+                                            "fieldNames": {
+                                                "label": "label",
+                                                "value": "value",
+                                                "children": "children"
+                                            },
+                                            "expandTrigger": "click",
+                                            "changeOnSelect": false
+                                        },
+                                        "vModelField": "value"
+                                    },
+                                    "dataIndex": "treatmentDepartmentStaffIds",
+                                    "_components": {
+                                        "key": {
+                                            "name": "AInput",
+                                            "props": {
+                                                "placeholder": "请输入 KEY"
+                                            },
+                                            "vModelField": "value"
+                                        },
+                                        "title": {
+                                            "name": "AInput",
+                                            "props": {
+                                                "placeholder": "请输入 表头"
+                                            },
+                                            "vModelField": "value"
+                                        },
+                                        "component": {
+                                            "name": "ASelect",
+                                            "props": {
+                                                "options": [],
+                                                "allowClear": true,
+                                                "placeholder": "请选择 组件"
+                                            },
+                                            "vModelField": "value"
+                                        },
+                                        "dataIndex": {
+                                            "name": "VzConfigurationValue",
+                                            "props": {
+                                                "placeholder": "请输入 KEY"
+                                            },
+                                            "vModelField": "value"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "wfKXN-65wD8MHJJbUlzd8",
+                                    "key": "treatmentQuantity",
+                                    "title": "治疗次数",
+                                    "component": {
+                                        "name": "AInputNumber",
+                                        "type": "input-number",
+                                        "props": {
+                                            "min": 1,
+                                            "step": 1,
+                                            "bordered": true,
+                                            "controls": true,
+                                            "keyboard": true,
+                                            "placeholder": "请输入"
+                                        },
+                                        "vModelField": "value"
+                                    },
+                                    "dataIndex": "treatmentQuantity",
+                                    "_components": {
+                                        "key": {
+                                            "name": "AInput",
+                                            "props": {
+                                                "placeholder": "请输入 KEY"
+                                            },
+                                            "vModelField": "value"
+                                        },
+                                        "title": {
+                                            "name": "AInput",
+                                            "props": {
+                                                "placeholder": "请输入 表头"
+                                            },
+                                            "vModelField": "value"
+                                        },
+                                        "component": {
+                                            "name": "ASelect",
+                                            "props": {
+                                                "options": [],
+                                                "allowClear": true,
+                                                "placeholder": "请选择 组件"
+                                            },
+                                            "vModelField": "value"
+                                        },
+                                        "dataIndex": {
+                                            "name": "VzConfigurationValue",
+                                            "props": {
+                                                "placeholder": "请输入 KEY"
+                                            },
+                                            "vModelField": "value"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "cskhv-FugVdFvEZFbPUsN",
+                                    "key": "residueQuantity",
+                                    "title": "剩余次数",
+                                    "component": {
+                                        "type": "input",
+                                        "props": {
+                                            "placeholder": "请输入"
+                                        },
+                                        "vModelField": "value"
+                                    },
+                                    "dataIndex": "residueQuantity",
+                                    "_components": {
+                                        "key": {
+                                            "name": "AInput",
+                                            "props": {
+                                                "placeholder": "请输入 KEY"
+                                            },
+                                            "vModelField": "value"
+                                        },
+                                        "title": {
+                                            "name": "AInput",
+                                            "props": {
+                                                "placeholder": "请输入 表头"
+                                            },
+                                            "vModelField": "value"
+                                        },
+                                        "component": {
+                                            "name": "ASelect",
+                                            "props": {
+                                                "options": [],
+                                                "allowClear": true,
+                                                "placeholder": "请选择 组件"
+                                            },
+                                            "vModelField": "value"
+                                        },
+                                        "dataIndex": {
+                                            "name": "VzConfigurationValue",
+                                            "props": {
+                                                "placeholder": "请输入 KEY"
+                                            },
+                                            "vModelField": "value"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "o16Oi5kTXug23E2NVjjm2",
+                                    "key": "totalQuantity",
+                                    "title": "总次数",
+                                    "component": {
+                                        "type": "input",
+                                        "props": {
+                                            "placeholder": "请输入"
+                                        },
+                                        "vModelField": "value"
+                                    },
+                                    "dataIndex": "dataIndexo16Oi5kTXug23E2NVjjm2",
+                                    "_components": {
+                                        "key": {
+                                            "name": "AInput",
+                                            "props": {
+                                                "placeholder": "请输入 KEY"
+                                            },
+                                            "vModelField": "value"
+                                        },
+                                        "title": {
+                                            "name": "AInput",
+                                            "props": {
+                                                "placeholder": "请输入 表头"
+                                            },
+                                            "vModelField": "value"
+                                        },
+                                        "component": {
+                                            "name": "ASelect",
+                                            "props": {
+                                                "options": [],
+                                                "allowClear": true,
+                                                "placeholder": "请选择 组件"
+                                            },
+                                            "vModelField": "value"
+                                        },
+                                        "dataIndex": {
+                                            "name": "VzConfigurationValue",
+                                            "props": {
+                                                "placeholder": "请输入 KEY"
+                                            },
+                                            "vModelField": "value"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "WDb6h_E14V1Vdf_09GDNR",
+                                    "key": "expiredAt",
+                                    "title": "有效期至",
+                                    "component": {
+                                        "type": "input",
+                                        "props": {
+                                            "placeholder": "请输入"
+                                        },
+                                        "vModelField": "value"
+                                    },
+                                    "dataIndex": "expiredAt",
+                                    "_components": {
+                                        "key": {
+                                            "name": "AInput",
+                                            "props": {
+                                                "placeholder": "请输入 KEY"
+                                            },
+                                            "vModelField": "value"
+                                        },
+                                        "title": {
+                                            "name": "AInput",
+                                            "props": {
+                                                "placeholder": "请输入 表头"
+                                            },
+                                            "vModelField": "value"
+                                        },
+                                        "component": {
+                                            "name": "ASelect",
+                                            "props": {
+                                                "options": [],
+                                                "allowClear": true,
+                                                "placeholder": "请选择 组件"
+                                            },
+                                            "vModelField": "value"
+                                        },
+                                        "dataIndex": {
+                                            "name": "VzConfigurationValue",
+                                            "props": {
+                                                "placeholder": "请输入 KEY"
+                                            },
+                                            "vModelField": "value"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "JlBoK_ez2x18C8_JnCiQN",
+                                    "key": "orderCreator",
+                                    "title": "订单开单人",
+                                    "component": {
+                                        "type": "input",
+                                        "props": {
+                                            "placeholder": "请输入"
+                                        },
+                                        "vModelField": "value"
+                                    },
+                                    "dataIndex": [
+                                        "order",
+                                        "creator",
+                                        "name"
+                                    ],
+                                    "_components": {
+                                        "key": {
+                                            "name": "AInput",
+                                            "props": {
+                                                "placeholder": "请输入 KEY"
+                                            },
+                                            "vModelField": "value"
+                                        },
+                                        "title": {
+                                            "name": "AInput",
+                                            "props": {
+                                                "placeholder": "请输入 表头"
+                                            },
+                                            "vModelField": "value"
+                                        },
+                                        "component": {
+                                            "name": "ASelect",
+                                            "props": {
+                                                "options": [],
+                                                "allowClear": true,
+                                                "placeholder": "请选择 组件"
+                                            },
+                                            "vModelField": "value"
+                                        },
+                                        "dataIndex": {
+                                            "name": "VzConfigurationValue",
+                                            "props": {
+                                                "placeholder": "请输入 KEY"
+                                            },
+                                            "vModelField": "value"
+                                        }
+                                    }
+                                },
+                                {
+                                    "id": "LZBlnWpBPUYNyb9qy95Ff",
+                                    "key": "orderCreatedAt",
+                                    "title": "开单日期",
+                                    "component": {
+                                        "type": "input",
+                                        "props": {
+                                            "placeholder": "请输入"
+                                        },
+                                        "vModelField": "value"
+                                    },
+                                    "dataIndex": [
+                                        "order",
+                                        "createdAt"
+                                    ],
+                                    "_components": {
+                                        "key": {
+                                            "name": "AInput",
+                                            "props": {
+                                                "placeholder": "请输入 KEY"
+                                            },
+                                            "vModelField": "value"
+                                        },
+                                        "title": {
+                                            "name": "AInput",
+                                            "props": {
+                                                "placeholder": "请输入 表头"
+                                            },
+                                            "vModelField": "value"
+                                        },
+                                        "component": {
+                                            "name": "ASelect",
+                                            "props": {
+                                                "options": [],
+                                                "allowClear": true,
+                                                "placeholder": "请选择 组件"
+                                            },
+                                            "vModelField": "value"
+                                        },
+                                        "dataIndex": {
+                                            "name": "VzConfigurationValue",
+                                            "props": {
+                                                "placeholder": "请输入 KEY"
+                                            },
+                                            "vModelField": "value"
+                                        }
+                                    }
+                                }
+                            ],
+                            "initial": {
+                                "name": "name",
+                                "merchantId": "true",
+                                "treatmentQuantity": "true",
+                                "treatmentDepartmentStaffIds": []
+                            },
+                            "bordered": true,
+                            "dataSource": [
+                                {
+                                    "id": "1",
+                                    "age": 18,
+                                    "key": "name",
+                                    "name": "张三"
+                                },
+                                {
+                                    "id": "2",
+                                    "age": 19,
+                                    "key": "name",
+                                    "name": "李四"
+                                }
+                            ]
+                        },
+                        "events": []
+                    },
+                    "vModelField": "value",
+                    "componentName": "VzFormTable",
+                    "formItemProps": [],
+                    "componentProps": []
+                }
+            ],
+            "component": {
+                "name": "AForm",
+                "props": []
+            },
+            "vModelField": "value",
+            "formItemProps": [],
+            "componentProps": []
+        }
+    ],
+    "model": {
+        "userId": "6767",
+        "visitId": "702622807947575036286",
+        "createdBy": 45,
+        "treatmentItems": [
+            {
+                "id": "912621267316109214498",
+                "orderId": "911621267315949833320",
+                "merchantId": "501591516518949324907",
+                "reservationId": "701621266784091113034",
+                "visitId": "702621267062408349996",
+                "consultId": "703621267131954103173",
+                "userId": "6767",
+                "typeId": null,
+                "relatedId": "806613648906336602412",
+                "name": "项目名称001-update-001",
+                "statusId": "206618374007372123617",
+                "cashStatusId": "206618374007372123617",
+                "billingerId": null,
+                "assistantedBillingerId": null,
+                "amount": null,
+                "serviceItems": null,
+                "description": null,
+                "remark": null,
+                "createdAt": "2024-04-17T09:02:38.000000Z",
+                "updatedAt": "2024-04-17T09:02:38.000000Z",
+                "deletedAt": null,
+                "quantity": 10,
+                "discount": "1.00",
+                "presented": false,
+                "unitPrice": "398.00",
+                "totalPrice": "3980.00"
+            },
+            {
+                "id": "912621267316180517180",
+                "orderId": "911621267315949833320",
+                "merchantId": "501591516518949324907",
+                "reservationId": "701621266784091113034",
+                "visitId": "702621267062408349996",
+                "consultId": "703621267131954103173",
+                "userId": "6767",
+                "typeId": null,
+                "relatedId": "806620293875583421426",
+                "name": "测试价格",
+                "statusId": "206618374007372123617",
+                "cashStatusId": "206618374007372123617",
+                "billingerId": null,
+                "assistantedBillingerId": null,
+                "amount": null,
+                "serviceItems": null,
+                "description": null,
+                "remark": null,
+                "createdAt": "2024-04-17T09:02:38.000000Z",
+                "updatedAt": "2024-04-17T09:02:38.000000Z",
+                "deletedAt": null,
+                "quantity": 3,
+                "discount": "1.00",
+                "presented": false,
+                "unitPrice": "3.00",
+                "totalPrice": "9.00"
+            }
+        ],
+        "treatmentTypeId": null,
+        "faceDiagnoseStaffId": null,
+        "id": "702622807947575036286"
+    },
+    "rules": {
+        "treatmentItems": []
+    }
+}

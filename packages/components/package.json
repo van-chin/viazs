@@ -1,6 +1,6 @@
 {
   "name": "@viaz/components",
-  "version": "0.0.2-beta.22",
+  "version": "0.0.1",
   "description": "",
   "type": "module",
   "main": "index.ts",
@@ -18,7 +18,7 @@
   },
   "peerDependencies": {
     "iconify-icon": "^2.0.0",
-    "vue": "^3.4.19"
+    "vue": "^3.4.25"
   },
   "publishConfig": {
     "access": "public"

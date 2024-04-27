@@ -1,5 +1,61 @@
 # @viaz/directives
 
+## 0.0.2-beta.29
+
+### Patch Changes
+
+- feat desiner
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.29
+
+## 0.0.2-beta.28
+
+### Patch Changes
+
+- feat: add useRefs
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.28
+
+## 0.0.2-beta.27
+
+### Patch Changes
+
+- fixed winthInstall
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.27
+
+## 0.0.2-beta.26
+
+### Patch Changes
+
+- feat vz-table vv
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.26
+
+## 0.0.2-beta.25
+
+### Patch Changes
+
+- feat vz-tables des
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.25
+
+## 0.0.2-beta.24
+
+### Patch Changes
+
+- feat vz-form-table
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.24
+
+## 0.0.2-beta.23
+
+### Patch Changes
+
+- fixed vz-table
+- Updated dependencies
+  - @viaz/types@0.0.2-beta.23
+
 ## 0.0.2-beta.22
 
 ### Patch Changes
