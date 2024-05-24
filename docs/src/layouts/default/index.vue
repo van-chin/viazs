@@ -228,10 +228,14 @@
 		),
 
 		getItem(
-			"数据展示 1",
+			"数据展示 3",
 			"grp",
 			null,
-			[getItem("Table 表格", "table"), getItem("Page 页面", "page")],
+			[
+				getItem("Table 表格", "table"),
+				getItem("Page 页面", "page"),
+				getItem("OverlayScrollbar 滚动", "overlay-scrollbar"),
+			],
 			"group"
 		),
 		getItem(

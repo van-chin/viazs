@@ -584,13 +584,17 @@
 							"name": "change",
 							"description": "输入框内容变化时的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "pressEnter",
 							"description": "按下回车的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						}
 					]
 				}
@@ -889,13 +893,17 @@
 							"name": "change",
 							"description": "输入框内容变化时的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "pressEnter",
 							"description": "按下回车的回调xxxxx",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						}
 					]
 				}
@@ -1322,19 +1330,25 @@
 							"name": "change",
 							"description": "输入框内容变化时的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "pressEnter",
 							"description": "按下回车的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "step",
 							"description": "点击上下箭头的回调",
 							"callback": "function(value: number, info: { offset: number, type: 'up' | 'down' }) => void",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						}
 					]
 				}
@@ -1654,25 +1668,33 @@
 							"name": "change",
 							"description": "输入框内容变化时的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "pressEnter",
 							"description": "按下回车的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "focus",
 							"description": "获得焦点时回调",
 							"callback": "function(value: string)",
-							"arguments": ["value"]
+							"arguments": [
+								"value"
+							]
 						},
 						{
 							"name": "blur",
 							"description": "失去焦点时的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						}
 					]
 				}
@@ -2357,67 +2379,90 @@
 							"name": "change",
 							"description": "选中 option，或 input 的 value 变化（combobox 模式下）时，调用此函数",
 							"callback": "function(value, option:Option | Array<Option>)",
-							"arguments": ["value", "option"]
+							"arguments": [
+								"value",
+								"option"
+							]
 						},
 						{
 							"name": "deselect",
 							"description": "取消选中时调用，参数为选中项的 value (或 key) 值，仅在 multiple 或 tags 模式下生效",
 							"callback": "function(value，option:Option)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "dropdownVisibleChange",
 							"description": "展开下拉菜单的回调",
 							"callback": "function(open: boolean)",
-							"arguments": ["open"]
+							"arguments": [
+								"open"
+							]
 						},
 						{
 							"name": "inputKeyDown",
 							"description": "键盘按下时回调",
 							"callback": "function(e: Event)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "mouseenter",
 							"description": "鼠标移入时回调",
 							"callback": "function(e: Event)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "mouseleave",
 							"description": "鼠标移出时回调",
 							"callback": "function(e: Event)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "popupScroll",
 							"description": "下拉列表滚动时的回调",
 							"callback": "function(e: Event)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "search",
 							"description": "文本框值变化时回调",
 							"callback": "function(e: Event)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "select",
 							"description": "被选中时调用，参数为选中项的 value (或 key) 值",
 							"callback": "function(value, option:Option)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "focus",
 							"description": "获得焦点时回调",
 							"callback": "function(value: string)",
-							"arguments": ["value"]
+							"arguments": [
+								"value"
+							]
 						},
 						{
 							"name": "blur",
 							"description": "失去焦点时的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						}
 					]
 				}
@@ -3102,67 +3147,90 @@
 							"name": "change",
 							"description": "选中 option，或 input 的 value 变化（combobox 模式下）时，调用此函数",
 							"callback": "function(value, option:Option | Array<Option>)",
-							"arguments": ["value", "option"]
+							"arguments": [
+								"value",
+								"option"
+							]
 						},
 						{
 							"name": "deselect",
 							"description": "取消选中时调用，参数为选中项的 value (或 key) 值，仅在 multiple 或 tags 模式下生效",
 							"callback": "function(value，option:Option)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "dropdownVisibleChange",
 							"description": "展开下拉菜单的回调",
 							"callback": "function(open: boolean)",
-							"arguments": ["open"]
+							"arguments": [
+								"open"
+							]
 						},
 						{
 							"name": "inputKeyDown",
 							"description": "键盘按下时回调",
 							"callback": "function(e: Event)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "mouseenter",
 							"description": "鼠标移入时回调",
 							"callback": "function(e: Event)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "mouseleave",
 							"description": "鼠标移出时回调",
 							"callback": "function(e: Event)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "popupScroll",
 							"description": "下拉列表滚动时的回调",
 							"callback": "function(e: Event)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "search",
 							"description": "文本框值变化时回调",
 							"callback": "function(e: Event)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "select",
 							"description": "被选中时调用，参数为选中项的 value (或 key) 值",
 							"callback": "function(value, option:Option)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "focus",
 							"description": "获得焦点时回调",
 							"callback": "function(value: string)",
-							"arguments": ["value"]
+							"arguments": [
+								"value"
+							]
 						},
 						{
 							"name": "blur",
 							"description": "失去焦点时的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						}
 					]
 				}
@@ -3847,67 +3915,90 @@
 							"name": "change",
 							"description": "选中 option，或 input 的 value 变化（combobox 模式下）时，调用此函数",
 							"callback": "function(value, option:Option | Array<Option>)",
-							"arguments": ["value", "option"]
+							"arguments": [
+								"value",
+								"option"
+							]
 						},
 						{
 							"name": "deselect",
 							"description": "取消选中时调用，参数为选中项的 value (或 key) 值，仅在 multiple 或 tags 模式下生效",
 							"callback": "function(value，option:Option)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "dropdownVisibleChange",
 							"description": "展开下拉菜单的回调",
 							"callback": "function(open: boolean)",
-							"arguments": ["open"]
+							"arguments": [
+								"open"
+							]
 						},
 						{
 							"name": "inputKeyDown",
 							"description": "键盘按下时回调",
 							"callback": "function(e: Event)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "mouseenter",
 							"description": "鼠标移入时回调",
 							"callback": "function(e: Event)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "mouseleave",
 							"description": "鼠标移出时回调",
 							"callback": "function(e: Event)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "popupScroll",
 							"description": "下拉列表滚动时的回调",
 							"callback": "function(e: Event)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "search",
 							"description": "文本框值变化时回调",
 							"callback": "function(e: Event)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "select",
 							"description": "被选中时调用，参数为选中项的 value (或 key) 值",
 							"callback": "function(value, option:Option)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "focus",
 							"description": "获得焦点时回调",
 							"callback": "function(value: string)",
-							"arguments": ["value"]
+							"arguments": [
+								"value"
+							]
 						},
 						{
 							"name": "blur",
 							"description": "失去焦点时的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						}
 					]
 				}
@@ -4701,31 +4792,42 @@
 							"name": "change",
 							"description": "选择完成后的回调",
 							"callback": "function(value, selectedOptions)",
-							"arguments": ["value", "selectedOptions"]
+							"arguments": [
+								"value",
+								"selectedOptions"
+							]
 						},
 						{
 							"name": "dropdownVisibleChange",
 							"description": "展开下拉菜单的回调",
 							"callback": "function(value: boolean)",
-							"arguments": ["value"]
+							"arguments": [
+								"value"
+							]
 						},
 						{
 							"name": "search",
 							"description": "监听搜索，返回输入的值",
 							"callback": "function(value: string)",
-							"arguments": ["value"]
+							"arguments": [
+								"value"
+							]
 						},
 						{
 							"name": "focus",
 							"description": "获得焦点时回调",
 							"callback": "function(value: string)",
-							"arguments": ["value"]
+							"arguments": [
+								"value"
+							]
 						},
 						{
 							"name": "blur",
 							"description": "失去焦点时的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						}
 					]
 				}
@@ -5497,31 +5599,42 @@
 							"name": "change",
 							"description": "选择完成后的回调",
 							"callback": "function(value, selectedOptions)",
-							"arguments": ["value", "selectedOptions"]
+							"arguments": [
+								"value",
+								"selectedOptions"
+							]
 						},
 						{
 							"name": "dropdownVisibleChange",
 							"description": "展开下拉菜单的回调",
 							"callback": "function(value: boolean)",
-							"arguments": ["value"]
+							"arguments": [
+								"value"
+							]
 						},
 						{
 							"name": "search",
 							"description": "监听搜索，返回输入的值",
 							"callback": "function(value: string)",
-							"arguments": ["value"]
+							"arguments": [
+								"value"
+							]
 						},
 						{
 							"name": "focus",
 							"description": "获得焦点时回调",
 							"callback": "function(value: string)",
-							"arguments": ["value"]
+							"arguments": [
+								"value"
+							]
 						},
 						{
 							"name": "blur",
 							"description": "失去焦点时的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						}
 					]
 				}
@@ -5701,7 +5814,9 @@
 							"name": "change",
 							"description": "选项变化时的回调函数",
 							"callback": "function(e:Event)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						}
 					]
 				}
@@ -5792,7 +5907,9 @@
 							"name": "change",
 							"description": "选项变化时的回调函数",
 							"callback": "function(checkedValue:string|string[])",
-							"arguments": ["checkedValue"]
+							"arguments": [
+								"checkedValue"
+							]
 						}
 					]
 				}
@@ -5875,7 +5992,9 @@
 							"name": "change",
 							"description": "变化时回调函数",
 							"callback": "Function(e:Event)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						}
 					]
 				}
@@ -6320,25 +6439,35 @@
 							"name": "openChange",
 							"description": "弹出日历和关闭日历的回调",
 							"callback": "function(status)",
-							"arguments": ["status"]
+							"arguments": [
+								"status"
+							]
 						},
 						{
 							"name": "panelChange",
 							"description": "日期面板变化时的回调",
 							"callback": "function(value, mode)",
-							"arguments": ["value", "mode"]
+							"arguments": [
+								"value",
+								"mode"
+							]
 						},
 						{
 							"name": "change",
 							"description": "时间发生变化的回调",
 							"callback": "function(date: dayjs | string, dateString: string)",
-							"arguments": ["date", "dateString"]
+							"arguments": [
+								"date",
+								"dateString"
+							]
 						},
 						{
 							"name": "ok",
 							"description": "点击确定按钮的回调",
 							"callback": "function(date: dayjs | string)",
-							"arguments": ["date"]
+							"arguments": [
+								"date"
+							]
 						}
 					]
 				}
@@ -6733,31 +6862,45 @@
 							"name": "openChange",
 							"description": "弹出日历和关闭日历的回调",
 							"callback": "function(status)",
-							"arguments": ["status"]
+							"arguments": [
+								"status"
+							]
 						},
 						{
 							"name": "panelChange",
 							"description": "日期面板变化时的回调",
 							"callback": "function(value, mode)",
-							"arguments": ["value", "mode"]
+							"arguments": [
+								"value",
+								"mode"
+							]
 						},
 						{
 							"name": "calendarChange",
 							"description": "待选日期发生变化的回调",
 							"callback": "function(dates: [dayjs, dayjs] | [string, string], dateStrings: [string, string], info: { range:start|end })",
-							"arguments": ["dates", "dateStrings", "info"]
+							"arguments": [
+								"dates",
+								"dateStrings",
+								"info"
+							]
 						},
 						{
 							"name": "change",
 							"description": "日期范围发生变化的回调",
 							"callback": "function(dates: [dayjs, dayjs] | [string, string], dateStrings: [string, string])",
-							"arguments": ["dates", "dateStrings"]
+							"arguments": [
+								"dates",
+								"dateStrings"
+							]
 						},
 						{
 							"name": "ok",
 							"description": "点击确定按钮的回调",
 							"callback": "function(dates: [dayjs, dayjs] | [string, string])",
-							"arguments": ["dates"]
+							"arguments": [
+								"dates"
+							]
 						}
 					]
 				}
@@ -7066,13 +7209,17 @@
 							"name": "change",
 							"description": "当 Slider 的值发生改变时，会触发 change 事件，并把改变后的值作为参数传入。",
 							"callback": "function(value)",
-							"arguments": ["value"]
+							"arguments": [
+								"value"
+							]
 						},
 						{
 							"name": "afterChange",
 							"description": "与 mouseup 触发时机一致，把当前值作为参数传入。",
 							"callback": "function(value)",
-							"arguments": ["value"]
+							"arguments": [
+								"value"
+							]
 						}
 					]
 				}
@@ -7251,13 +7398,17 @@
 							"name": "change",
 							"description": "当 Slider 的值发生改变时，会触发 change 事件，并把改变后的值作为参数传入。",
 							"callback": "function(value)",
-							"arguments": ["value"]
+							"arguments": [
+								"value"
+							]
 						},
 						{
 							"name": "afterChange",
 							"description": "与 mouseup 触发时机一致，把当前值作为参数传入。",
 							"callback": "function(value)",
-							"arguments": ["value"]
+							"arguments": [
+								"value"
+							]
 						}
 					]
 				}
@@ -7473,37 +7624,49 @@
 							"name": "change",
 							"description": "上传文件改变时的状态，详见 change",
 							"callback": "function(info: UploadChangeParam)",
-							"arguments": ["info"]
+							"arguments": [
+								"info"
+							]
 						},
 						{
 							"name": "download",
 							"description": "点击下载文件时的回调，如果没有指定，则默认跳转到文件 url 对应的标签页。",
 							"callback": "function(file:UploadFile): void",
-							"arguments": ["file"]
+							"arguments": [
+								"file"
+							]
 						},
 						{
 							"name": "drop",
 							"description": "当文件被拖入上传区域时执行的回调功能",
 							"callback": "(event: DragEvent) => void",
-							"arguments": ["event"]
+							"arguments": [
+								"event"
+							]
 						},
 						{
 							"name": "preview",
 							"description": "点击文件链接或预览图标时的回调",
 							"callback": "function(file: UploadFile)",
-							"arguments": ["file"]
+							"arguments": [
+								"file"
+							]
 						},
 						{
 							"name": "reject",
 							"description": "拖拽文件不符合 accept 类型时的回调",
 							"callback": "function(fileList)",
-							"arguments": ["fileList"]
+							"arguments": [
+								"fileList"
+							]
 						},
 						{
 							"name": "remove",
 							"description": "点击移除文件时的回调，返回值为 false 时不移除。支持返回一个 Promise 对象，Promise 对象 resolve(false) 或 reject 时不移除",
 							"callback": "function(file): boolean | Promise",
-							"arguments": ["file"]
+							"arguments": [
+								"file"
+							]
 						}
 					]
 				}
@@ -7635,18 +7798,15 @@
 			}
 		},
 		{
-			"label": "分隔线颜色",
-			"field": "borderColor",
+			"label": "是否增加",
+			"field": "allowAdd",
 			"visibilityToggler": true,
 			"visible": true,
-			"tooltip": {
-				"title": "请使用 RGB/A 色标值"
-			},
 			"apply": true,
 			"mode": "default",
 			"component": {
-				"name": "AInput",
-				"vModelField": "value",
+				"name": "ASwitch",
+				"vModelField": "checked",
 				"props": {}
 			}
 		}
@@ -7826,7 +7986,9 @@
 							"name": "change",
 							"description": "选项变化时的回调函数",
 							"callback": "function(checkedValue:string|string[])",
-							"arguments": ["checkedValue"]
+							"arguments": [
+								"checkedValue"
+							]
 						}
 					]
 				}
@@ -8140,19 +8302,25 @@
 							"name": "change",
 							"description": "输入框内容变化时的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "checkboxChange",
 							"description": "复选框变化时的回调",
 							"callback": "(checked: boolean) => void",
-							"arguments": ["checked"]
+							"arguments": [
+								"checked"
+							]
 						},
 						{
 							"name": "pressEnter",
 							"description": "按下回车的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						}
 					]
 				}
@@ -8466,19 +8634,25 @@
 							"name": "change",
 							"description": "输入框内容变化时的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "checkboxChange",
 							"description": "复选框变化时的回调",
 							"callback": "(checked: boolean) => void",
-							"arguments": ["checked"]
+							"arguments": [
+								"checked"
+							]
 						},
 						{
 							"name": "pressEnter",
 							"description": "按下回车的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						}
 					]
 				}
@@ -8792,19 +8966,25 @@
 							"name": "change",
 							"description": "输入框内容变化时的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "checkboxChange",
 							"description": "复选框变化时的回调",
 							"callback": "(checked: boolean) => void",
-							"arguments": ["checked"]
+							"arguments": [
+								"checked"
+							]
 						},
 						{
 							"name": "pressEnter",
 							"description": "按下回车的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						}
 					]
 				}
@@ -9118,19 +9298,25 @@
 							"name": "change",
 							"description": "输入框内容变化时的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "checkboxChange",
 							"description": "复选框变化时的回调",
 							"callback": "(checked: boolean) => void",
-							"arguments": ["checked"]
+							"arguments": [
+								"checked"
+							]
 						},
 						{
 							"name": "pressEnter",
 							"description": "按下回车的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						}
 					]
 				}
@@ -9490,19 +9676,25 @@
 							"name": "change",
 							"description": "输入框内容变化时的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "checkboxGroupChange",
 							"description": "复选框组变化时的回调",
 							"callback": "(checkedValue: CheckboxValue[]) => void",
-							"arguments": ["checkedValue"]
+							"arguments": [
+								"checkedValue"
+							]
 						},
 						{
 							"name": "pressEnter",
 							"description": "按下回车的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						}
 					]
 				}
@@ -9862,19 +10054,25 @@
 							"name": "change",
 							"description": "输入框内容变化时的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						},
 						{
 							"name": "checkboxGroupChange",
 							"description": "复选框组变化时的回调",
 							"callback": "(checkedValue: CheckboxValue[]) => void",
-							"arguments": ["checkedValue"]
+							"arguments": [
+								"checkedValue"
+							]
 						},
 						{
 							"name": "pressEnter",
 							"description": "按下回车的回调",
 							"callback": "function(e)",
-							"arguments": ["e"]
+							"arguments": [
+								"e"
+							]
 						}
 					]
 				}

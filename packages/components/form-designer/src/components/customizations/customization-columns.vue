@@ -58,6 +58,10 @@
 						></a-select>
 					</template>
 
+					<template v-if="column.dataIndex === 'ellipsis'">
+						<a-switch v-model:checked="record[column.key]" />
+					</template>
+
 					<template v-if="column.dataIndex === 'align'">
 						<a-select
 							class="w-100px"
@@ -509,6 +513,17 @@
 				props: {
 					placeholder: "请选择对齐方式",
 				},
+			},
+		},
+		{
+			title: "ELLIPSIS",
+			dataIndex: "ellipsis",
+			key: "ellipsis",
+			align: "center",
+			component: {
+				name: "ASwitch",
+				vModelField: "checked",
+				props: {},
 			},
 		},
 		{

@@ -814,6 +814,7 @@
 			"props": {
 				"rowKey": "id",
 				"bordered": true,
+				"allowAdd": true,
 				"dataSource": [
 					{
 						"id": "1",

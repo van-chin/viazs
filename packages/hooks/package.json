@@ -1,16 +1,16 @@
 {
   "name": "@viaz/hooks",
-  "version": "0.0.3-beta.1",
+  "version": "0.1.3",
   "description": "viaz hooks",
   "main": "index.ts",
   "type": "module",
   "scripts": {
-		"build": "vite build",
-		"release": "release-it"
-	},
-	"release-it": {
-		"git": false
-	},
+    "build": "vite build",
+    "release": "release-it"
+  },
+  "release-it": {
+    "git": false
+  },
   "publishConfig": {
     "access": "public"
   },

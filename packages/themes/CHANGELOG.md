@@ -1,5 +1,17 @@
 # @viaz/themes
 
+## 0.1.0
+
+### Minor Changes
+
+- token
+
+## 0.0.3
+
+### Patch Changes
+
+- fixed bug
+
 ## 0.0.2
 
 ### Patch Changes

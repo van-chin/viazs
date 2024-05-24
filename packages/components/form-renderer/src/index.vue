@@ -1,6 +1,10 @@
 <template>
 	<div :class="prefixCls">
-		<a-form ref="formRef" v-bind="data.items[0].item" v-if="formInstance">
+		<a-form
+			:ref="toRef('formRef')"
+			v-bind="data.items[0].item"
+			v-if="formInstance"
+		>
 			<template v-for="(item, index) in data.items[0].children">
 				<template v-if="item.type === 'grid-layout'">
 					<a-row :gutter="6">
@@ -161,7 +165,7 @@
 		VzFormExpose,
 		VzFormSchemaItem,
 	} from "@viaz/types";
-	import { useStyle } from "@viaz/hooks";
+	import { useStyle, useRefs } from "@viaz/hooks";
 	import { Form } from "ant-design-vue";
 	import { getCurrentInstance } from "vue";
 
@@ -185,11 +189,14 @@
 
 	const formInstance = ref<UseFormType>();
 
-	const formRef = ref();
-
 	const slots = useSlots();
 
 	const slotKeys = Object.keys(slots);
+
+	const { refs, toRef } = useRefs<{
+		formRef: InstanceType<typeof HTMLElement>;
+	}>();
+
 
 	const currentInstance = getCurrentInstance();
 
@@ -204,8 +211,11 @@
 	const emitEventHandler = (field: string, event: string, params: any) => {
 		const eo = `${field}-${event}`;
 		currentInstance.emitsOptions[eo] = null;
-		console.log('🚀 ~ file: index.vue:207 ~ emitEventHandler ~ eo:', eo);
-		console.log('🚀 ~ file: index.vue:207 ~ emitEventHandler ~ params:', params);
+		console.log("🚀 ~ file: index.vue:207 ~ emitEventHandler ~ eo:", eo);
+		console.log(
+			"🚀 ~ file: index.vue:207 ~ emitEventHandler ~ params:",
+			params
+		);
 		emits(eo, params);
 	};
 
@@ -339,6 +349,7 @@
 	};
 
 	defineExpose<VzFormExpose>({
+		refs: refs,
 		formInstance: formInstance.value,
 		reset: reset,
 		findComponentNode: findComponentNode,

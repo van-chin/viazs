@@ -232,6 +232,18 @@ const components: AppRouteModule = {
 				icon: "simple-icons:about-dot-me",
 			},
 		},
+		{
+			path: "overlay-scrollbar",
+			name: "components.overlay-scrollbar",
+			component: () =>
+				import(
+					"@viaz/components/overlay-scrollbar/demos/index.demo.md"
+				),
+			meta: {
+				title: "components.overlay-scrollbar",
+				icon: "simple-icons:about-dot-me",
+			},
+		},
 	],
 };
 
