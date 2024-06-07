@@ -1,3 +1,6 @@
+import "iconify-icon";
+import installer from "./defaults";
+
 export * from "@viaz/types";
 
 export * from "@viaz/utils";
@@ -11,8 +14,6 @@ export { withInstall } from "@viaz/utils";
 export * from "@viaz/components";
 
 export * from "./make-installer";
-
-import installer from "./defaults";
 
 export const install = installer.install;
 

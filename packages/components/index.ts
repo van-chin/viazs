@@ -1,4 +1,5 @@
 import "uno.css";
+import "iconify-icon";
 export * from "./button";
 export * from "./cascader";
 export * from "./form-divider";

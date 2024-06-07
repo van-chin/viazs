@@ -1,5 +1,21 @@
 # @imsjs/ims-ui-enums
 
+## 0.1.5
+
+### Patch Changes
+
+- form-table deleted event add index params
+- Updated dependencies
+  - @viaz/hooks@0.1.5
+
+## 0.1.4
+
+### Patch Changes
+
+- fixed templte
+- Updated dependencies
+  - @viaz/hooks@0.1.4
+
 ## 0.1.3
 
 ### Patch Changes

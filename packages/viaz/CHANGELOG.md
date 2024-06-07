@@ -1,5 +1,31 @@
 # viaz
 
+## 0.1.5
+
+### Patch Changes
+
+- form-table deleted event add index params
+- Updated dependencies
+  - @viaz/components@0.1.5
+  - @viaz/directives@0.1.5
+  - @viaz/constants@0.1.5
+  - @viaz/hooks@0.1.5
+  - @viaz/types@0.1.5
+  - @viaz/utils@0.1.5
+
+## 0.1.4
+
+### Patch Changes
+
+- fixed templte
+- Updated dependencies
+  - @viaz/components@0.1.4
+  - @viaz/directives@0.1.4
+  - @viaz/constants@0.1.4
+  - @viaz/hooks@0.1.4
+  - @viaz/types@0.1.4
+  - @viaz/utils@0.1.4
+
 ## 0.1.3
 
 ### Patch Changes

@@ -42,7 +42,7 @@
 											: ''
 									"
 								>
-									<tetemplate
+									<template
 										v-if="
 											Object.hasOwnProperty.call(
 												$slots,
@@ -55,7 +55,7 @@
 											:item="ric"
 											:model="data.model"
 										></slot>
-									</tetemplate>
+									</template>
 									<component
 										v-else
 										:class="ric.component.class"
@@ -95,10 +95,10 @@
 							data.items[0].item.labelShow ? item.item.label : ''
 						"
 					>
-						<tetemplate
+						<template
 							v-if="item.component.name === 'VzFormTable'"
 						>
-							<tetemplate
+							<template
 								v-if="
 									Object.hasOwnProperty.call(
 										$slots,
@@ -111,7 +111,7 @@
 									:item="item"
 									:model="data.model"
 								></slot>
-							</tetemplate>
+							</template>
 							<component
 								v-else
 								:is="item.component.name || 'AInput'"
@@ -123,10 +123,10 @@
 									data.model[item.item.name]
 								"
 							></component>
-						</tetemplate>
+						</template>
 
-						<tetemplate v-else>
-							<tetemplate
+						<template v-else>
+							<template
 								v-if="
 									Object.hasOwnProperty.call(
 										$slots,
@@ -139,7 +139,7 @@
 									:item="item"
 									:model="data.model"
 								></slot>
-							</tetemplate>
+							</template>
 							<component
 								v-else
 								:is="item.component.name || 'AInput'"
@@ -150,7 +150,7 @@
 									data.model[item.item.name]
 								"
 							></component>
-						</tetemplate>
+						</template>
 					</a-form-item>
 				</template>
 			</template>

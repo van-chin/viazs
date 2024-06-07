@@ -1,5 +1,17 @@
 # @viaz/constants
 
+## 0.1.5
+
+### Patch Changes
+
+- form-table deleted event add index params
+
+## 0.1.4
+
+### Patch Changes
+
+- fixed templte
+
 ## 0.1.3
 
 ### Patch Changes

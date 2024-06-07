@@ -301,6 +301,7 @@
 		toRefs,
 	} from "vue";
 	import type { PaginationProps } from "ant-design-vue";
+	import { number } from "zod";
 
 	const { prefixCls } = useStyle("form-table");
 
@@ -349,7 +350,7 @@
 
 	const emits = defineEmits<{
 		added: [totality: number];
-		deleted: [totality: number];
+		deleted: [totality: number, index: number];
 		fieldEvents: [params: any];
 	}>();
 	// 动态生成 emit 事件
@@ -499,7 +500,7 @@
 		// console.info("onDeleteRow =>");
 		modelValue.value.splice(index, 1);
 
-		emits("deleted", modelValue.value.length);
+		emits("deleted", modelValue.value.length, index);
 	};
 
 	const { data, loading, run } = useRequest(
