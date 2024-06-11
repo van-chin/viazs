@@ -1,5 +1,18 @@
 # viaz
 
+## 0.1.10
+
+### Patch Changes
+
+- fixed bug
+- Updated dependencies
+  - @viaz/components@0.1.10
+  - @viaz/directives@0.1.10
+  - @viaz/constants@0.1.10
+  - @viaz/hooks@0.1.10
+  - @viaz/types@0.1.10
+  - @viaz/utils@0.1.10
+
 ## 0.1.9
 
 ### Patch Changes

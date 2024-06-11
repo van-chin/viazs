@@ -1,5 +1,13 @@
 # @viaz/directives
 
+## 0.1.10
+
+### Patch Changes
+
+- fixed bug
+- Updated dependencies
+  - @viaz/types@0.1.10
+
 ## 0.1.9
 
 ### Patch Changes

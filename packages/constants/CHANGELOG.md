@@ -1,5 +1,11 @@
 # @viaz/constants
 
+## 0.1.10
+
+### Patch Changes
+
+- fixed bug
+
 ## 0.1.9
 
 ### Patch Changes

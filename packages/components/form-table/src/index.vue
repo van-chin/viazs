@@ -270,7 +270,8 @@
 								"
 							>
 								{{
-									text ? text.toFixed(column.formater) : text
+
+									text ? parseFloat(text).toFixed(column.formater) : text
 								}}
 							</template>
 						</template>

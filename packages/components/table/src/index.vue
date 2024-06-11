@@ -144,7 +144,7 @@
 						>
 							{{
 								slotProps.text
-									? slotProps.text.toFixed(
+									? parseFloat(slotProps.text).toFixed(
 											slotProps.column.formater
 									  )
 									: slotProps.text

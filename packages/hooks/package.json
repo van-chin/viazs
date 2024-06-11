@@ -1,6 +1,6 @@
 {
   "name": "@viaz/hooks",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "viaz hooks",
   "main": "index.ts",
   "type": "module",
