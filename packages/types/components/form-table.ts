@@ -35,6 +35,8 @@ export interface VzFormTableProps {
 	componentsClone?: boolean;
 	/** 是否允许增加 */
 	allowAdd?: boolean;
+	/** 是否可拖拽 */
+	draggable?: boolean;
 
 	/**
 	 * 表格列配置

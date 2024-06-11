@@ -196,7 +196,7 @@
 								size="small"
 								danger
 								shape="circle"
-								@click="onDeleteRow(index)"
+								@click="onDeleteRow(index, record)"
 							>
 								<iconify-icon
 									icon="ant-design:delete-outlined"
@@ -262,6 +262,17 @@
 							>
 								{{ text ? text.join(column.formater) : "-" }}
 							</template>
+
+							<template
+								v-if="
+									column.formatType ===
+									ColumnFormatTypeEnum.TOFIXED
+								"
+							>
+								{{
+									text ? text.toFixed(column.formater) : text
+								}}
+							</template>
 						</template>
 
 						<template v-else>{{ text }}</template>
@@ -317,6 +328,7 @@
 	const props = withDefaults(defineProps<VzFormTableProps>(), {
 		rowKey: "id",
 		allowAdd: true,
+		draggable: true,
 		componentsClone: true,
 		scroll: {
 			x: "max-content",
@@ -347,10 +359,9 @@
 			class: "vz-form-table-header-row",
 		};
 	};
-
 	const emits = defineEmits<{
 		added: [totality: number];
-		deleted: [totality: number, index: number];
+		deleted: [totality: number, index: number, item: any];
 		fieldEvents: [params: any];
 	}>();
 	// 动态生成 emit 事件
@@ -496,11 +507,11 @@
 		emits("added", modelValue.value.length);
 	};
 
-	const onDeleteRow = (index: number) => {
+	const onDeleteRow = (index: number, item: any) => {
 		// console.info("onDeleteRow =>");
 		modelValue.value.splice(index, 1);
 
-		emits("deleted", modelValue.value.length, index);
+		emits("deleted", modelValue.value.length, index, item);
 	};
 
 	const { data, loading, run } = useRequest(

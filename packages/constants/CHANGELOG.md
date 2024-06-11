@@ -1,5 +1,29 @@
 # @viaz/constants
 
+## 0.1.9
+
+### Patch Changes
+
+- fixed bug
+
+## 0.1.8
+
+### Patch Changes
+
+- fixed bug
+
+## 0.1.7
+
+### Patch Changes
+
+- add format and formater
+
+## 0.1.6
+
+### Patch Changes
+
+- add item param
+
 ## 0.1.5
 
 ### Patch Changes

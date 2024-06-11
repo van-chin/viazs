@@ -1,5 +1,37 @@
 # @viaz/directives
 
+## 0.1.9
+
+### Patch Changes
+
+- fixed bug
+- Updated dependencies
+  - @viaz/types@0.1.9
+
+## 0.1.8
+
+### Patch Changes
+
+- fixed bug
+- Updated dependencies
+  - @viaz/types@0.1.8
+
+## 0.1.7
+
+### Patch Changes
+
+- add format and formater
+- Updated dependencies
+  - @viaz/types@0.1.7
+
+## 0.1.6
+
+### Patch Changes
+
+- add item param
+- Updated dependencies
+  - @viaz/types@0.1.6
+
 ## 0.1.5
 
 ### Patch Changes

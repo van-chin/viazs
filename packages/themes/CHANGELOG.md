@@ -1,5 +1,11 @@
 # @viaz/themes
 
+## 0.1.1
+
+### Patch Changes
+
+- add format and formater
+
 ## 0.1.0
 
 ### Minor Changes

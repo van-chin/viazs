@@ -136,7 +136,20 @@
 							}}
 						</template>
 
-
+						<template
+							v-if="
+								slotProps.column.formatType ===
+								ColumnFormatTypeEnum.TOFIXED
+							"
+						>
+							{{
+								slotProps.text
+									? slotProps.text.toFixed(
+											slotProps.column.formater
+									  )
+									: slotProps.text
+							}}
+						</template>
 
 						<template v-if="slotProps.column.key === 'operations'">
 							<slot :name="name" v-bind="slotProps"></slot>
@@ -543,15 +556,11 @@
 	const slots = useSlots();
 	const slotsNames = Object.keys(slots);
 
-
-
 	const parseColumns = () => {
 		columns.value.forEach((item) => {
 			if (item.dataIndex.includes(".")) {
 				item.dataIndex = item.dataIndex.split(".");
 			}
-
-
 		});
 	};
 
