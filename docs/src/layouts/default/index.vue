@@ -182,6 +182,14 @@
 		),
 
 		getItem(
+			"上传",
+			"grp",
+			null,
+			[getItem("UploaderUppy 上传", "uploader-uppy")],
+			"group"
+		),
+
+		getItem(
 			"数据录入 10",
 			"grp",
 			null,
@@ -267,7 +275,7 @@
 
 		&-header {
 			--at-apply: flex flex-row flex-justify-between items-center px-4
-				h-64px;
+				h-[64px];
 
 			position: -webkit-sticky;
 			position: sticky;

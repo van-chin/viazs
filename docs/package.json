@@ -12,16 +12,16 @@
   },
   "dependencies": {
     "@viaz/components": "workspace:*",
+    "@viaz/hooks": "workspace:*",
     "@viaz/types": "workspace:*",
     "@viaz/utils": "workspace:*",
-    "@viaz/hooks": "workspace:*",
-    "@vueuse/core": "^10.8.0",
-    "markdown-it": "^14.0.0",
+    "@vueuse/core": "^10.11.0",
+    "markdown-it": "^14.1.0",
     "viaz": "workspace:*"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/markdown-it": "^13.0.7",
+    "@types/markdown-it": "^13.0.8",
     "fs-extra": "^11.2.0",
     "markdown-it-shikiji": "^0.10.2",
     "shikiji": "^0.10.2"

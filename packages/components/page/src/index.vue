@@ -682,6 +682,7 @@
 
 		"curd-batch-destroy",
 		"curd-batch-recovery",
+		"initialized",
 	]);
 
 	const filterFormRef = ref();
@@ -800,8 +801,6 @@
 
 	const { actions } = toRefs(props);
 
-	console.info("actions =>", actions);
-
 	const selectedRowKeys = ref<any[]>([]); // Check here to configure the default column
 
 	const onSelectChange = (changableRowKeys: any[]) => {
@@ -871,6 +870,12 @@
 	// const filterForm = ref();
 	(async function initialization() {
 		await initializeCurd();
+
+		emit("initialized", {
+			searcher: searcher.value,
+			filter: filter.value,
+			refs: refs,
+		});
 	})();
 
 	// 是否展示已选择中的过滤器查询/搜索条件

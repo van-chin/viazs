@@ -1,6 +1,6 @@
 {
 	"name": "@viaz/types",
-	"version": "0.1.10",
+	"version": "0.1.13",
 	"description": "viaz types",
 	"type": "module",
 	"main": "index.ts",
@@ -40,8 +40,8 @@
 		}
 	},
 	"dependencies": {
-		"@viaz/enums": "workspace:*",
-		"@viaz/constants": "workspace:*"
+		"@viaz/constants": "workspace:*",
+		"@viaz/enums": "workspace:*"
 	},
 	"publishConfig": {
 		"access": "public"

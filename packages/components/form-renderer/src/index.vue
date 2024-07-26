@@ -95,9 +95,7 @@
 							data.items[0].item.labelShow ? item.item.label : ''
 						"
 					>
-						<template
-							v-if="item.component.name === 'VzFormTable'"
-						>
+						<template v-if="item.component.name === 'VzFormTable'">
 							<template
 								v-if="
 									Object.hasOwnProperty.call(
@@ -173,10 +171,14 @@
 
 	import { update } from "lodash-es";
 
+	import dayjs, { Dayjs } from "dayjs";
+
 	//treeFindPath
 	import { treeFindNode } from "@utopia-utils/core";
 
 	import { ref, watch, toRefs, reactive, useSlots } from "vue";
+
+	dayjs.locale("zh-cn");
 
 	const COMPONENT_NAME = "VzFormRenderer";
 	defineOptions({
@@ -196,7 +198,6 @@
 	const { refs, toRef } = useRefs<{
 		formRef: InstanceType<typeof HTMLElement>;
 	}>();
-
 
 	const currentInstance = getCurrentInstance();
 
@@ -235,6 +236,8 @@
 
 	const parseEvents = () => {
 		foreach(props.data.items[0].children, (item) => {
+			// ARangePicker includes // presets
+
 			if (item.component && item.component.events) {
 				let emitsEvents = {};
 				for (const key in item.component.events) {
@@ -249,6 +252,16 @@
 					};
 				}
 				item.component.emitsEvents = emitsEvents;
+			}
+			if (["ARangePicker"].includes(item.component.name)) {
+				if (item.component.props.presets?.length) {
+					item.component.props.presets.forEach((preset) => {
+						preset.value = [
+							dayjs(preset.value[0]),
+							dayjs(preset.value[1]),
+						];
+					});
+				}
 			}
 		});
 	};

@@ -244,6 +244,16 @@ const components: AppRouteModule = {
 				icon: "simple-icons:about-dot-me",
 			},
 		},
+		{
+			path: "uploader-uppy",
+			name: "components.uploader-uppy",
+			component: () =>
+				import("@viaz/components/uploader-uppy/demos/index.demo.md"),
+			meta: {
+				title: "components.uploader-uppy",
+				icon: "simple-icons:about-dot-me",
+			},
+		},
 	],
 };
 

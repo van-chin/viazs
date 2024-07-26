@@ -1,5 +1,29 @@
 # @viaz/directives
 
+## 0.1.13
+
+### Patch Changes
+
+- fixed bug
+- Updated dependencies
+  - @viaz/types@0.1.13
+
+## 0.1.12
+
+### Patch Changes
+
+- update ARangePicker presets
+- Updated dependencies
+  - @viaz/types@0.1.12
+
+## 0.1.11
+
+### Patch Changes
+
+- add inited event
+- Updated dependencies
+  - @viaz/types@0.1.11
+
 ## 0.1.10
 
 ### Patch Changes

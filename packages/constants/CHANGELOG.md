@@ -1,5 +1,23 @@
 # @viaz/constants
 
+## 0.1.13
+
+### Patch Changes
+
+- fixed bug
+
+## 0.1.12
+
+### Patch Changes
+
+- update ARangePicker presets
+
+## 0.1.11
+
+### Patch Changes
+
+- add inited event
+
 ## 0.1.10
 
 ### Patch Changes

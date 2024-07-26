@@ -1,12 +1,12 @@
 <template>
 	<div class="h-400px">
-
-    <vz-button type="link" @click="onTest">测试</vz-button>
+		<vz-button type="link" @click="onTest">测试</vz-button>
 		<vz-page
 			row-key="id"
 			:actions="curdActions"
 			:store="reservationStore"
 			:tables="tables"
+			@inited="onInited"
 			:ref="toRef('page')"
 		>
 			<template #bodyCell="{ column, text, record }">
@@ -36,7 +36,6 @@
 		page: InstanceType<typeof HTMLElement>;
 	}>();
 
-
 	const tables = {
 		rowKey: "id",
 		pagination: false,
@@ -44,9 +43,13 @@
 		expandFixed: "right",
 	};
 
-  const onTest = () => {
-    console.info('refs =>',refs.page);
-  }
+	const onTest = () => {
+		console.info("refs =>", refs.page);
+	};
+
+	const onInited = (data) => {
+		console.info("onInited", data);
+	};
 
 	const columns = [
 		{

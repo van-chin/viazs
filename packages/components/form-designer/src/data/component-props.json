@@ -5829,9 +5829,9 @@
             {
               "name": "change",
               "description": "变化时回调函数",
-              "callback": "Function(e:Event)",
+              "callback": "Function(checkedValue)",
               "arguments": [
-                "e"
+                "checkedValue"
               ]
             }
           ]

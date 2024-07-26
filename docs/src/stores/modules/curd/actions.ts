@@ -14,14 +14,14 @@ export interface CurdActions extends PiniaActionTree {
   getSearcherSchema(params: object): void;
 
   getFilterSchema(params: object): void;
-  /** 
-   * 获取表单 Schema 
+  /**
+   * 获取表单 Schema
    * @param params  参数 {}
    * @param type 类型 `cuer` 编辑 | `filter` 过滤器 | `searcher` 搜索器
   */
   getFormSchema(params: object,type: string): void;
 
-  
+
 
   destroy(params: object): void;
   recovery(params: object): void;
