@@ -1,30 +1,35 @@
-import type { AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from "axios";
+import type {
+	AxiosRequestConfig,
+	AxiosResponse,
+	InternalAxiosRequestConfig,
+} from "axios";
 
 export const nrlTypes = ["AXIOS", "ALOVA"] as const;
 
 export interface DataApi {
-  /** 协议 */
-  protocol?: string;
-  /** hostname-port-path hpp  */
-  hpp?: string;
-  options?: object;
+	/** 协议 */
+	protocol?: string;
+	/** hostname-port-path hpp  */
+	hpp?: string;
+	options?: object;
 }
 
-export interface RetryInternalAxiosRequestConfig<D = any> extends InternalAxiosRequestConfig<D> {
-  /** 重试次数 */
-  __retryCount?: number;
-  requestOptions?: RequestOptions;
+export interface RetryInternalAxiosRequestConfig<D = any>
+	extends InternalAxiosRequestConfig<D> {
+	/** 重试次数 */
+	__retryCount?: number;
+	requestOptions?: RequestOptions;
 }
 
 export interface DataParams {
-  /** 唯一标识 */
-  id?: string;
-  /** 参数字段 */
-  key: string;
-  /** 参数值 */
-  value?: string | boolean | number;
-  /** 状态 */
-  status: boolean;
+	/** 唯一标识 */
+	id?: string;
+	/** 参数字段 */
+	key: string;
+	/** 参数值 */
+	value?: string | boolean | number;
+	/** 状态 */
+	status: boolean;
 }
 
 /** 网络请求库类型 */
@@ -34,129 +39,135 @@ export type ErrorMessageMode = "none" | "modal" | "message" | undefined;
 export type SuccessMessageMode = ErrorMessageMode;
 
 export interface RequestOptions {
-  // Splicing request parameters to url
-  joinParamsToUrl?: boolean;
-  // Format request parameter time
-  formatDate?: boolean;
-  // Whether to process the request result
-  isTransformResponse?: boolean;
-  // Whether to return native response headers
-  // For example: use this attribute when you need to get the response headers
-  isReturnNativeResponse?: boolean;
-  // Whether to join url
-  joinPrefix?: boolean;
-  // Interface address, use the default apiUrl if you leave it blank
-  apiUrl?: string;
-  // 请求拼接路径
-  urlPrefix?: string;
-  // Error message prompt type
-  errorMessageMode?: ErrorMessageMode;
-  // Success message prompt type
-  successMessageMode?: SuccessMessageMode;
-  // Whether to add a timestamp
-  joinTime?: boolean;
-  ignoreCancelToken?: boolean;
-  // Whether to send token in header
-  withToken?: boolean;
-  // 请求重试机制
-  retryRequest?: RetryRequest;
+	// Splicing request parameters to url
+	joinParamsToUrl?: boolean;
+	// Format request parameter time
+	formatDate?: boolean;
+	// Whether to process the request result
+	isTransformResponse?: boolean;
+	// Whether to return native response headers
+	// For example: use this attribute when you need to get the response headers
+	isReturnNativeResponse?: boolean;
+	// Whether to join url
+	joinPrefix?: boolean;
+	// Interface address, use the default apiUrl if you leave it blank
+	apiUrl?: string;
+	// 请求拼接路径
+	urlPrefix?: string;
+	// Error message prompt type
+	errorMessageMode?: ErrorMessageMode;
+	// Success message prompt type
+	successMessageMode?: SuccessMessageMode;
+	// Whether to add a timestamp
+	joinTime?: boolean;
+	ignoreCancelToken?: boolean;
+	// Whether to send token in header
+	withToken?: boolean;
+	// 请求重试机制
+	retryRequest?: RetryRequest;
 
-  withAuthorizationRefreshToken?: boolean;
+	withAuthorizationRefreshToken?: boolean;
 
-  withAuthorizationAccessToken?: boolean;
+	withAuthorizationAccessToken?: boolean;
 }
 
 export interface RetryRequest {
-  isOpenRetry: boolean;
-  /** 请求次数 */
-  count: number;
-  waitTime: number;
+	isOpenRetry: boolean;
+	/** 请求次数 */
+	count: number;
+	waitTime: number;
 }
 export interface Result<T = any> {
-  code: number;
-  type: "success" | "error" | "warning";
-  message: string;
-  data: T;
+	code: number;
+	type: "success" | "error" | "warning";
+	message: string;
+	data: T;
 }
 
 export interface ApiResponseData<T = any> {
-  code: number;
-  data: T;
-  message: string;
-  meta?: object;
-  links: object;
-  debug?: object;
+	/** 业务状态码 */
+	code: number;
+	/** 业务数据 */
+	data: T;
+	/** 业务提示消息 */
+	message: string;
+	/** 业务meta 数据 */
+	meta?: object;
+	/** 相关链接 */
+	links: object;
+	/** 调试数据 */
+	debug?: object;
 }
 
 // multipart/form-data: upload file
 export interface UploadFileParams<T = any> {
-  // Other parameters
-  data?: Recordable<T>;
-  // File parameter interface field name
-  name?: string;
-  // file name
-  file: File | Blob;
-  // file name
-  filename?: string;
-  [key: string]: any;
+	// Other parameters
+	data?: Recordable<T>;
+	// File parameter interface field name
+	name?: string;
+	// file name
+	file: File | Blob;
+	// file name
+	filename?: string;
+	[key: string]: any;
 }
 
 // export interface NetWorkOptions AlovaOptions;
 
 export interface CreateAxiosOptions extends AxiosRequestConfig {
-  authenticationScheme?: string;
-  transform?: AxiosTransform;
-  requestOptions?: RequestOptions;
+	authenticationScheme?: string;
+	transform?: AxiosTransform;
+	requestOptions?: RequestOptions;
 }
 
 export abstract class AxiosTransform {
-  /**
-   * @description: Process configuration before request
-   * @description: Process configuration before request
-   */
-  beforeRequestHook?: (
-    config: AxiosRequestConfig,
-    options: RequestOptions
-  ) => AxiosRequestConfig;
+	/**
+	 * @description: Process configuration before request
+	 * @description: Process configuration before request
+	 */
+	beforeRequestHook?: (
+		config: AxiosRequestConfig,
+		options: RequestOptions
+	) => AxiosRequestConfig;
 
-  /**
-   * @description: 处理响应数据
-   */
-  transformResponseHook?: (
-    res: AxiosResponse<Result>,
-    options: RequestOptions
-  ) => any;
+	/**
+	 * @description: 处理响应数据
+	 */
+	transformResponseHook?: (
+		res: AxiosResponse<Result>,
+		options: RequestOptions
+	) => any;
 
-  /**
-   * @description: 请求失败处理
-   */
-  requestCatchHook?: (e: Error, options: RequestOptions) => Promise<any>;
+	/**
+	 * @description: 请求失败处理
+	 */
+	requestCatchHook?: (e: Error, options: RequestOptions) => Promise<any>;
 
-  /**
-   * @description: 请求之前的拦截器
-   */
-  requestInterceptors?: (
-    config: AxiosRequestConfig,
-    options: CreateAxiosOptions
-  ) => AxiosRequestConfig;
+	/**
+	 * @description: 请求之前的拦截器
+	 */
+	requestInterceptors?: (
+		config: AxiosRequestConfig,
+		options: CreateAxiosOptions
+	) => AxiosRequestConfig;
 
-  /**
-   * @description: 请求之后的拦截器
-   */
-  responseInterceptors?: (res: AxiosResponse<any>) => AxiosResponse<any>;
+	/**
+	 * @description: 请求之后的拦截器
+	 */
+	responseInterceptors?: (res: AxiosResponse<any>) => AxiosResponse<any>;
 
-  /**
-   * @description: 请求之前的拦截器错误处理
-   */
-  requestInterceptorsCatch?: (error: Error) => void;
+	/**
+	 * @description: 请求之前的拦截器错误处理
+	 */
+	requestInterceptorsCatch?: (error: Error) => void;
 
-  /**
-   * @description: 请求之后的拦截器错误处理
-   */
-  responseInterceptorsCatch?: (
-    axiosInstance: AxiosResponse,
-    error: Error
-  ) => void;
+	/**
+	 * @description: 请求之后的拦截器错误处理
+	 */
+	responseInterceptorsCatch?: (
+		axiosInstance: AxiosResponse,
+		error: Error
+	) => void;
 }
 
 // export
