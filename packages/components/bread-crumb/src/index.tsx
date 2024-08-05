@@ -1,4 +1,4 @@
-import { Breadcrumb, BreadcrumbItem } from "ant-design-vue";
+import { Breadcrumb, BreadcrumbItem } from "ant-design-vue/es";
 import { VzNavMenu } from "../../nav-menu";
 import { defineComponent } from "vue";
 

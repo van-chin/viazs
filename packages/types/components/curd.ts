@@ -5,7 +5,7 @@ import type {
 } from "../shims/pinia";
 
 import type { Store, StoreDefinition } from "pinia";
-import type { PaginationProps } from "ant-design-vue";
+import type { PaginationProps } from "ant-design-vue/es/pagination";
 import type { VzTableColumn, DataTable } from "./table";
 import type { IFormItem } from "./form";
 

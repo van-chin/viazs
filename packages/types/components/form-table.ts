@@ -1,6 +1,6 @@
-import type { SelectProps as ASelectProps } from "ant-design-vue";
+import type { SelectProps as ASelectProps } from "ant-design-vue/es/select";
 
-import type { TableColumnType } from "ant-design-vue";
+import type { ColumnType  as TableColumnType } from "ant-design-vue/es/table";
 
 import { ConfigurationComponent } from "./form-designer";
 

@@ -10,6 +10,7 @@ import { configVisualizer } from "./plugins/visualizerPlugin";
 import { configSvgLoader } from "./plugins/svgLoaderPlugin";
 
 import { configDts } from "./plugins/dtsPlugin";
+import { configInspect } from "./plugins/inspectPlugin";
 
 export * from "./preprocessor/less";
 
@@ -18,28 +19,30 @@ export * from "./proxy";
 export { configMkcert };
 
 export function configVitePlugins(viteEnv: ViteEnv, isBuild: boolean) {
-  const vitePlugins: (PluginOption | PluginOption[])[] = [
-    Vue({
-      include: [/\.(vue|md)$/],
-      script: {
-        propsDestructure: true,
-      },
-    }),
-    vueJsx(),
-  ];
-  if (!isBuild) {
-    vitePlugins.push(configMkcert(viteEnv));
-  }
+	const vitePlugins: (PluginOption | PluginOption[])[] = [
+		Vue({
+			include: [/\.(vue|md)$/],
+			script: {
+				propsDestructure: true,
+			},
+		}),
+		vueJsx(),
+	];
+	if (!isBuild) {
+		vitePlugins.push(configMkcert(viteEnv));
+	}
 
-  vitePlugins.push(configUnoCss());
+	vitePlugins.push(configInspect());
 
-  vitePlugins.push(configDts());
+	vitePlugins.push(configUnoCss());
 
-  vitePlugins.push(configSvgLoader());
+	vitePlugins.push(configDts());
 
-  if (isBuild) {
-    vitePlugins.push(configVisualizer());
-  }
+	vitePlugins.push(configSvgLoader());
 
-  return vitePlugins as PluginOption[];
+	if (isBuild) {
+		vitePlugins.push(configVisualizer());
+	}
+
+	return vitePlugins as PluginOption[];
 }

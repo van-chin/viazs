@@ -40,7 +40,7 @@ const props = withDefaults(defineProps<VzCheckboxGroupProps>(), {
 
 const { api, options, params, min, max,fieldNames } = toRefs(props);
 
-
+// test hmr
 
 const { data, run } = useRequest(
   () => {

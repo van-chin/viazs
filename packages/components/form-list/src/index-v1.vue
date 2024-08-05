@@ -131,7 +131,7 @@ import {
 import { useDraggable } from "vue-draggable-plus";
 import type { ComponentInternalInstance } from "vue";
 import { getCurrentInstance, ref, reactive, watch, computed } from "vue";
-import type { PaginationProps } from "ant-design-vue";
+import type { PaginationProps } from "ant-design-vue/es/pagination";
 
 const { prefixCls } = useStyle("form-table");
 
@@ -373,7 +373,7 @@ watch(
 @prefix-cls: ~"@{namespace}-form-table";
 
 .@{prefix-cls} {
-  --at-apply: min-w-100px w-full;
+  --at-apply: min-w-[100px] w-full;
 
   &-header-item {
     // border: 1px solid red;

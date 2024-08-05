@@ -12,7 +12,7 @@
 import { useStyle } from "@viaz/hooks";
 import { VzUploaderProps } from "@viaz/types";
 import { Icon } from "@iconify/vue";
-import type { UploadProps, UploadChangeParam } from "ant-design-vue";
+import type { UploadProps, UploadChangeParam } from "ant-design-vue/es/upload";
 const { prefixCls } = useStyle("uploader");
 const COMPONENT_NAME = "VzUploader";
 defineOptions({

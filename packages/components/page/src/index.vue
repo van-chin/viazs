@@ -559,7 +559,8 @@
 		PageCurdActionPositionEnum,
 		TableColumnCombinationModeEnum,
 	} from "@viaz/enums";
-	import { Table } from "ant-design-vue";
+	// import { Table } from "ant-design-vue/es/table";
+	import Table from "ant-design-vue/es/table";
 
 	import { PageCurdProps, PageCurdAction, VzTableColumn } from "@viaz/types";
 

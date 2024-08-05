@@ -50,7 +50,7 @@
 
 					<template v-if="column.dataIndex === 'formatType'">
 						<a-select
-							class="w-100px"
+							class="w-[100px]"
 							allowClear
 							v-model:value="record[column.key]"
 							placeholder="请选择格式化类型"
@@ -64,7 +64,7 @@
 
 					<template v-if="column.dataIndex === 'align'">
 						<a-select
-							class="w-100px"
+							class="w-[100px]"
 							allowClear
 							v-model:value="record[column.key]"
 							placeholder="请选择 对齐方式"
@@ -74,7 +74,7 @@
 
 					<template v-if="column.dataIndex === 'fixed'">
 						<a-select
-							class="w-100px"
+							class="w-[100px]"
 							allowClear
 							v-model:value="record[column.key]"
 							placeholder="请选择固定位置"
@@ -116,7 +116,7 @@
 									<template #option="item">
 										<div>{{ item.title }}</div>
 										<div
-											class="text-#0000004f italic"
+											class="text-[#0000004f] italic"
 											style="font-size: 10px !important"
 										>
 											{{ item.type }}
@@ -217,7 +217,7 @@
 	import { ref, reactive, watch } from "vue";
 	import { useDraggable } from "vue-draggable-plus";
 
-	import type { SelectProps } from "ant-design-vue";
+	import type { SelectProps } from "ant-design-vue/es/select";
 
 	// import formItemRulePropsJson from "../../data/rule-props.json";
 
@@ -622,16 +622,16 @@
 
 					background-color: #fff;
 
-					--at-apply: w-400px h-full flex flex-col rd;
+					--at-apply: w-[400px] h-full flex flex-col rd;
 
 					&-title {
 						border-bottom: 1px solid #f0f0f0;
-						--at-apply: h-40px flex items-center justify-between
+						--at-apply: h-[40px] flex items-center justify-between
 							px-2 shadow-sm;
 					}
 
 					&-content {
-						--at-apply: flex-1 min-h-100px;
+						--at-apply: flex-1 min-h-[100px];
 					}
 				}
 			}
@@ -653,7 +653,7 @@
 				--at-apply: px-1 py-1;
 
 				&-legend {
-					--at-apply: "px-1 py-0 text-#0000004f italic";
+					--at-apply: "px-1 py-0 text-[#0000004f] italic";
 				}
 			}
 

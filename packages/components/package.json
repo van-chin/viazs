@@ -45,7 +45,7 @@
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
-		"@visactor/vtable": "^1.5.3",
+		"@visactor/vtable": "^1.5.4",
 		"@vueuse/core": "^10.11.0",
 		"lodash-es": "^4.17.21",
 		"vue-hooks-plus": "^2.2.1",

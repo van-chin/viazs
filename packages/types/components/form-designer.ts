@@ -1,4 +1,5 @@
-import type { TooltipProps, FormProps, FormItemProps } from "ant-design-vue";
+import type { TooltipProps } from "ant-design-vue/es/tooltip";
+import type {  FormProps, FormItemProps } from "ant-design-vue/es/form";
 
 export interface VzFormDesignerProps {
   /** 是否展头部 */

@@ -1,4 +1,4 @@
-// import type { FormItemProps } from "ant-design-vue";
+// import type { FormItemProps } from "ant-design-vue/es/form";
 
 export interface VzFormRendererProps {
   /** 表单数据 */
@@ -7,7 +7,7 @@ export interface VzFormRendererProps {
   eoPrefix?: string;
 }
 
-import { Form } from "ant-design-vue";
+import  Form  from "ant-design-vue/es/form";
 
 export type UseFormType = ReturnType<typeof Form.useForm>;
 
@@ -19,9 +19,9 @@ export interface VzFormExpose {
 
   /**
  * 查找表单组件节点
- * 
+ *
  * @param componentItemName model key 模型字段
- * 
+ *
  * @returns { VzFormSchemaItem | false } 查找到的节点，未找到返回 false
  */
   findComponentNode: Function;

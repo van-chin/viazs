@@ -6,16 +6,16 @@
       @change="onChange"
     >
       <div :class="`${prefixCls}-item`" :key="item.name" v-for="item in events">
-        <div class="w-145px">
+        <div class="w-[145px]">
           <a-checkbox :value="item.name" class="flex justify-left items-center">
-            <span class="break-all text-10px">{{ item.name }}</span>
+            <span class="break-all text-[10px]">{{ item.name }}</span>
           </a-checkbox>
         </div>
-        <div class="flex-1 w-100px text-10px">
-          <div class="text-#0000004f mb-1 overflow-hidden text-ellipsis">
+        <div class="flex-1 w-[100px] text-[10px]">
+          <div class="text-[#0000004f] mb-1 overflow-hidden text-ellipsis">
             {{ item.description }}
           </div>
-          <div class="text-#c41d7f overflow-hidden text-ellipsis italic">
+          <div class="text-[#c41d7f] overflow-hidden text-ellipsis italic">
             {{ item.callback }}
           </div>
         </div>
@@ -26,7 +26,7 @@
 <script lang="ts" setup>
 import { useStyle } from "@viaz/hooks";
 import { ref, watch } from "vue";
-import type { CheckboxGroupProps } from "ant-design-vue";
+import type { CheckboxGroupProps } from "ant-design-vue/es/checkbox";
 const COMPONENT_NAME = "VzDesignerCustomizationEvents";
 defineOptions({
   name: COMPONENT_NAME,
@@ -87,7 +87,7 @@ watch(
   --at-apply: p-2 pb-0 w-full rd;
   background-color: #eeeeee;
   &-item {
-    --at-apply: "rd bg-#fff mb-2 p-2 flex justify-between items-center w-full";
+    --at-apply: "rd bg-[#fff] mb-2 p-2 flex justify-between items-center w-full";
   }
 }
 </style>

@@ -58,7 +58,7 @@
 		{ id: "license", name: "License", placeholder: "specify license" },
 	]);
 
-	console.log("🚀 ~ file: index.vue:22 ~ props:", props);
+	console.log("🚀 ~ file: index.vue:22 ~ props  vv:", props);
 
 	const uppy = new Uppy({
 		locale: zh_CN,

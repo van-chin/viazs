@@ -1,4 +1,4 @@
-import type { FormItemProps } from "ant-design-vue";
+import type { FormItemProps } from "ant-design-vue/es/form";
 
 export interface IFormItem {
   // component:Object;

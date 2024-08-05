@@ -1,4 +1,4 @@
-import type { SelectProps as ASelectProps } from "ant-design-vue";
+import type { SelectProps as ASelectProps } from "ant-design-vue/es/select";
 export interface VzTagSelectProps {
   /** options 接口函数 */
   api?:

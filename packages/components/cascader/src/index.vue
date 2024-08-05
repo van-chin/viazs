@@ -12,7 +12,7 @@ import { createNetWork } from "@viaz/utils";
 import { useStyle } from "@viaz/hooks";
 
 import { VzCascaderProps, DataApi } from "@viaz/types";
-import type { CascaderProps } from "ant-design-vue";
+import type { CascaderProps } from "ant-design-vue/es/cascader";
 import { ref, watch, toRefs } from "vue";
 
 const { prefixCls } = useStyle("cascader");
@@ -29,7 +29,7 @@ const dataOptions = ref<CascaderProps["options"]>([]);
 const props = defineProps<VzCascaderProps>();
 
 const { api, options = [], params } = toRefs(props);
-
+// test
 const { data, loading, run } = useRequest(
   () => {
     if (isFunction(api)) {
@@ -122,6 +122,6 @@ watch(
 @prefix-cls: ~"@{namespace}-cascader";
 
 .@{prefix-cls} {
-  --at-apply: min-w-200px w-full;
+  --at-apply: min-w-[200px] w-full;
 }
 </style>

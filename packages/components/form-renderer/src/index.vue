@@ -164,7 +164,7 @@
 		VzFormSchemaItem,
 	} from "@viaz/types";
 	import { useStyle, useRefs } from "@viaz/hooks";
-	import { Form } from "ant-design-vue";
+	import { Form } from "ant-design-vue/es";
 	import { getCurrentInstance } from "vue";
 
 	import { foreach } from "tree-lodash";

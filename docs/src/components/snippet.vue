@@ -72,7 +72,7 @@ interface VzSnippetProps {
 
 import { ref } from "vue";
 import { useClipboard } from "@vueuse/core";
-import { getHighlighter } from "shikiji";
+import { getHighlighter } from "shiki";
 
 import { useStyle, useMessage } from "viaz";
 

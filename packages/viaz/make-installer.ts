@@ -5,7 +5,7 @@ import type {
 
 import type { App, Plugin } from "vue";
 
-import { ConfigProvider } from "ant-design-vue";
+import ConfigProvider from "ant-design-vue/es/config-provider";
 import { INSTALLED_KEY } from "@viaz/constants";
 import { version } from "./version";
 

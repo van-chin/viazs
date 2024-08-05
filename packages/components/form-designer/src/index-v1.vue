@@ -36,7 +36,7 @@
                     :class="`${prefixCls}-contents-left-nav-bar-tabs-components-components-searcher`"
                   >
                     <a-input-group compact>
-                      <a-select placeholder="全部" allowClear class="w-25%">
+                      <a-select placeholder="全部" allowClear class="w-[25%]">
                         <a-select-option value="form">表单</a-select-option>
                         <a-select-option value="layout">布局</a-select-option>
                       </a-select>
@@ -45,7 +45,7 @@
                         allowClear
                         placeholder="搜索组件"
                         @change="onFuseSeach"
-                        class="w-75%"
+                        class="w-[75%]"
                       >
                         <template #prefix>
                           <icon icon="ant-design:search-outlined"></icon>
@@ -114,7 +114,7 @@
                           <div class="title-name">
                             {{ item.title }}
                           </div>
-                          <span class="ml-1 text-#0000004f text-10px">{{
+                          <span class="ml-1 text-[#0000004f] text-[10px]">{{
                             item.type
                           }}</span>
                         </div>
@@ -122,13 +122,13 @@
                         <a-space>
                           <icon
                             icon="ant-design:delete-outlined"
-                            class="action hover-color-#1677ff"
+                            class="action hover-color-[#1677ff]"
                             :inline="true"
                           />
                           <!-- eye-outlined -->
                           <icon
                             icon="ant-design:eye-invisible-outlined"
-                            class="action hover-color-#1677ff"
+                            class="action hover-color-[#1677ff]"
                             :inline="true"
                           />
                         </a-space>
@@ -168,7 +168,7 @@
                         <div class="title-name">
                           {{ item.title }}
                         </div>
-                        <span class="ml-1 text-#0000004f text-10px">{{
+                        <span class="ml-1 text-[#0000004f] text-[10px]">{{
                           item.type
                         }}</span>
                       </div>
@@ -176,13 +176,13 @@
                       <a-space>
                         <icon
                           icon="ant-design:delete-outlined"
-                          class="action hover-color-#1677ff"
+                          class="action hover-color-[#1677ff]"
                           :inline="true"
                         />
                         <!-- eye-outlined -->
                         <icon
                           icon="ant-design:eye-invisible-outlined"
-                          class="action hover-color-#1677ff"
+                          class="action hover-color-[#1677ff]"
                           :inline="true"
                         />
                       </a-space>
@@ -482,7 +482,7 @@ import { nanoid } from "nanoid";
 import { StorageSerializers, useStorage } from "@vueuse/core";
 import NestedDraggable from "./components/nested-draggable.vue";
 import VzDesignerCustomizationProp from "./components/customizations/customization-prop.vue";
-import type { TreeProps } from "ant-design-vue";
+import type { TreeProps } from "ant-design-vue/es/tree";
 
 import VzMonacoEditor from "../../monaco-editor";
 
@@ -1143,7 +1143,7 @@ watch(
   }
 
   &-header {
-    --at-apply: h-48px min-h-48px flex justify-between items-center;
+    --at-apply: h-[48px] min-h-[48px] flex justify-between items-center;
 
     border-bottom: 1px solid #eaeaea;
 
@@ -1171,7 +1171,7 @@ watch(
       --at-apply: flex flex-row h-full;
 
       &-nav-bar {
-        --at-apply: w-356px;
+        --at-apply: w-[356px];
 
         &-tabs {
           // border: 1px solid red;
@@ -1270,7 +1270,7 @@ watch(
 
             &-outline {
               // border: 1px solid red;
-              --at-apply: h-300px;
+              --at-apply: h-[300px];
             }
           }
         }
@@ -1280,7 +1280,7 @@ watch(
     }
 
     &-canvas {
-      --at-apply: "bg-#eeeeee flex-1 px-2 flex flex-col  h-full box-border";
+      --at-apply: "bg-[#eeeeee] flex-1 px-2 flex flex-col  h-full box-border";
 
       overflow: hidden;
 
@@ -1310,7 +1310,7 @@ watch(
       }
 
       &-workspace {
-        --at-apply: "flex-1 bg-#fff h-full box-border";
+        --at-apply: "flex-1 bg-[#fff] h-full box-border";
         overflow: hidden;
 
         &-view {
@@ -1360,18 +1360,18 @@ watch(
     }
 
     &-right {
-      --at-apply: w-400px flex flex-col h-full;
+      --at-apply: w-[400px] flex flex-col h-full;
 
       &-header {
-        --at-apply: h-86px min-h-86px;
+        --at-apply: h-[86px] min-h-[86px];
 
         &-breadcrumb {
-          --at-apply: h-40px min-h-40px flex items-center px-2;
+          --at-apply: h-[40px] min-h-[40px] flex items-center px-2;
           border-bottom: 1px solid #eaeaea;
         }
 
         &-tabs-wrapper {
-          --at-apply: h-46px min-h-46px;
+          --at-apply: h-[46px] min-h-[46px];
 
           :deep(.ant-tabs-nav) {
             margin-bottom: 0;

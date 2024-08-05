@@ -41,7 +41,7 @@ const { data, loading, run } = useRequest(
     manual: true,
   }
 );
-
+// test
 const getOptions = () => {
   if (options) {
     // optionsData.value = options;
@@ -83,6 +83,6 @@ watch(
 @prefix-cls: ~"@{namespace}-tag-select";
 
 .@{prefix-cls} {
-  --at-apply: min-w-100px w-full;
+  --at-apply: min-w-[100px] w-full;
 }
 </style>

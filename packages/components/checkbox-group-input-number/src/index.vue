@@ -21,7 +21,7 @@
 		CheckboxValue,
 	} from "@viaz/types";
 
-	import type { CheckboxGroupProps } from "ant-design-vue";
+	import type { CheckboxGroupProps } from "ant-design-vue/es/checkbox";
 
 	import { useStyle } from "@viaz/hooks";
 	import { toRefs } from "vue";

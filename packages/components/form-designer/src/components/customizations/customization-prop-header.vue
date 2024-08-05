@@ -15,7 +15,7 @@
         ></a-checkbox>
       </div>
       <div
-        class="cursor-pointer flex items-center text-13px text-#4e5969"
+        class="cursor-pointer flex items-center text-[13px] text-[#4e5969]"
         @click="toggleShowContent"
       >
         <a-tooltip
@@ -40,7 +40,7 @@
         </div>
       </div>
       <div
-        class="text-12px text-#0000004f italic cursor-pointer"
+        class="text-[12px] text-[#0000004f] italic cursor-pointer"
         @click="toggleShowContent"
       >
         {{ field }}
@@ -50,8 +50,8 @@
       <div v-if="modelMode !== 'default'">
         <a-dropdown trigger="click">
           <a class="ant-dropdown-link" @click.prevent>
-            <div class="flex justify-center items-center text-#1677ff">
-              <span class="text-12px">{{ modes[modelMode].title }}</span>
+            <div class="flex justify-center items-center text-[#1677ff]">
+              <span class="text-[12px]">{{ modes[modelMode].title }}</span>
               <icon icon="ant-design:down-outlined"></icon>
             </div>
           </a>
@@ -67,7 +67,7 @@
 
       <div
         v-else
-        class="b border-solid border-#e5e6eb p-2px flex justify-center items-center"
+        class="b border-solid border-[#e5e6eb] p-[2px] flex justify-center items-center"
       >
         <icon icon="tabler:code" color="#0000004f"></icon>
       </div>
@@ -79,9 +79,10 @@
 import { useStyle } from "@viaz/hooks";
 import { ref } from "vue";
 
-import { Tooltip as ATooltip } from "ant-design-vue";
 
-import type { MenuProps } from "ant-design-vue";
+import ATooltip from "ant-design-vue/es/tooltip";
+
+import type { MenuProps } from "ant-design-vue/es/menu";
 
 const COMPONENT_NAME = "VzDesignerCustomizationPropHeader";
 defineOptions({

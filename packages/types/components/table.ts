@@ -1,4 +1,4 @@
-import type { TableColumnType } from "ant-design-vue";
+import type { ColumnType as TableColumnType } from "ant-design-vue/es/table";
 
 import {
   TableColumnTypeEnum,

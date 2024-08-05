@@ -175,7 +175,7 @@ import {
   computed,
   useSlots,
 } from "vue";
-import type { PaginationProps } from "ant-design-vue";
+import type { PaginationProps } from "ant-design-vue/es/pagination";
 
 const { prefixCls } = useStyle("form-list");
 
@@ -441,7 +441,7 @@ watch(
 @prefix-cls: ~"@{namespace}-form-list";
 
 .@{prefix-cls} {
-  --at-apply: min-w-100px w-full;
+  --at-apply: min-w-[100px] w-full;
 
   &-header-item {
     // border: 1px solid red;

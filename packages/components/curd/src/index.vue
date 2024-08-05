@@ -331,15 +331,15 @@
               <!-- 组合方式(combination mode) "+" 为组合符号 -->
               <!-- 1. 合并(merge)：由外部内容替换覆盖 A + B => A + B -->
               <!-- 2. 覆盖(overlay)：由外部内容替换覆盖 A + B => A -->
-              <!-- 3. 覆盖合并(overlay_merge)：根据A、B的情况进行分析后，根据分析结果，选择性的进行 覆盖和合并 
+              <!-- 3. 覆盖合并(overlay_merge)：根据A、B的情况进行分析后，根据分析结果，选择性的进行 覆盖和合并
                 1): A:{1,2,3} + B:{1,2,4} => {1,2,3,4}
                 2): A:{1,2,3} + B:{1,2,4} => {1,2,3,4}
                 3): xxxx
-                ... 
+                ...
                 n): xxxxx
                -->
 
-              <!-- 
+              <!--
                 先实现 1 2 两种方式，3方式 后续再考虑实现
 
                 默认为合并
@@ -493,7 +493,7 @@ import {
   CurdActionPositionEnum,
   TableColumnCombinationModeEnum,
 } from "@viaz/enums";
-import { Table } from "ant-design-vue";
+import { Table } from "ant-design-vue/es";
 
 import { CurdProps, CurdAction } from "@viaz/types";
 

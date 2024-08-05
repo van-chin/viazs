@@ -10,7 +10,7 @@
 <script lang="ts" setup>
 
 import type { VzCheckboxGroupInputProps, CheckboxValue } from "@viaz/types";
-import type { CheckboxGroupProps } from "ant-design-vue";
+import type { CheckboxGroupProps } from "ant-design-vue/es/checkbox";
 import { useStyle } from "@viaz/hooks";
 
 const { prefixCls } = useStyle("checkbox-group-input");

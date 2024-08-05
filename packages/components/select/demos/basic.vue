@@ -1,5 +1,6 @@
 <template>
 	<div>
+		<div>444</div>
 		<VzSelect
 			:api="{
 				hpp: 'stage/v1/nodes',
@@ -12,8 +13,6 @@
 </template>
 
 <script setup lang="ts">
-	// import { VzSelect, useMessage } from "viaz";
-
 	const fieldNames = {
 		label: "name",
 		value: "id",
@@ -25,4 +24,6 @@
 		{ value: "Yiminghe", label: "yiminghe" },
 		{ value: "disabled", label: "Disabled", disabled: true },
 	];
+
+	console.info("options xx =>", options);
 </script>

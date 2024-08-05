@@ -1,4 +1,4 @@
-import type { CascaderProps as ACascaderProps } from "ant-design-vue";
+import type { CascaderProps as ACascaderProps } from "ant-design-vue/es/cascader";
 
 import { DataApi, DataParams } from "../shims/networks";
 

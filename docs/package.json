@@ -11,6 +11,7 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "ant-design-vue": "^4.2.3",
     "@viaz/components": "workspace:*",
     "@viaz/hooks": "workspace:*",
     "@viaz/types": "workspace:*",
@@ -21,9 +22,9 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "@types/markdown-it": "^13.0.9",
+    "@types/markdown-it": "^14.1.2",
     "fs-extra": "^11.2.0",
-    "markdown-it-shikiji": "^0.10.2",
-    "shikiji": "^0.10.2"
+    "@shikijs/markdown-it": "^1.12.1",
+    "shiki": "^1.12.1"
   }
 }

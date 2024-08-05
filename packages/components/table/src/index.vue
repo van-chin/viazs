@@ -270,7 +270,7 @@
 		</div>
 
 		<div
-			:class="`${prefixCls}-footer-bar flex justify-between items-center bg-white px-2 h-50px `"
+			:class="`${prefixCls}-footer-bar flex justify-between items-center bg-white px-2 h-[50px] `"
 			v-if="footerBar"
 		>
 			<div>
@@ -290,18 +290,13 @@
 </template>
 
 <script lang="ts" setup>
-	import { Table as ATable, Pagination as APagination } from "ant-design-vue";
-	import type { PaginationProps } from "ant-design-vue";
+	import { Table as ATable, Pagination as APagination } from "ant-design-vue/es";
+	import type { PaginationProps } from "ant-design-vue/es/pagination";
 	import { Icon } from "@iconify/vue";
 	import { useStyle } from "@viaz/hooks";
 
 	import { ColumnFormatTypeEnum } from "@viaz/enums";
 
-	import {
-		// VzJsonPretty,
-		VzButton,
-		VzPopconfirmButton,
-	} from "../../button";
 
 	import {
 		ref,
