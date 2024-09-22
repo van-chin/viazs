@@ -1,5 +1,35 @@
 # @viaz/constants
 
+## 0.2.4
+
+### Patch Changes
+
+- xxx
+
+## 0.2.3
+
+### Patch Changes
+
+- Acol fixed
+
+## 0.2.2
+
+### Patch Changes
+
+- add header token
+
+## 0.2.1
+
+### Patch Changes
+
+- fixed net bugss
+
+## 0.2.0
+
+### Minor Changes
+
+- fixed bug ....
+
 ## 0.1.13
 
 ### Patch Changes

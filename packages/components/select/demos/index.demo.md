@@ -2,11 +2,14 @@
 
 下拉选择器。
 
-### 何时使用
+## 何时使用
 
 -   弹出一个下拉菜单给用户选择操作，用于代替原生的选择器，或者需要一个更优雅的多选器时。
 -   当选项少时（少于 5 项），建议直接将选项平铺，使用 Radio 是更好的选择。
 -   如果你在寻找一个可输可选的输入框，那你可能需要 AutoComplete。
+
+
+## 代码演示
 
 :::snippet
 基础用法
@@ -14,11 +17,11 @@
 <basic />
 :::
 
-### API
+## API
 
 通过设置 Button 的属性来产生不同的按钮样式，推荐顺序为：`type` -> `size` -> `shape` -> `status` -> `disabled`。
 
-#### Props
+### Props
 
 | 参数     | 描述           | 类型                                            | 默认值  |
 | -------- | -------------- | ----------------------------------------------- | ------- |
@@ -26,11 +29,11 @@
 | shape    | 按钮的形状     | 'round' \| 'circle' \| 'square'                 | -       |
 | status   | 按钮的状态     | 'primary' \| 'success' \| 'warning' \| 'danger' | -       |
 | size     | 按钮的大小     | 's' \| 'm' \| 'l' \| 'xl'                       | `l`     |
-| disabled | 按钮是否被禁用 | boolean                                         | false   |
+| immediate | 是否立即发起请求,在API 模式下有效 | boolean                                         | false   |
 | loading  | 按钮是否加载中 | boolean                                         | false   |
 | long     | 按钮是否通栏   | boolean                                         | false   |
 
-#### Slots
+### Slots
 
 | 参数 | 描述 | 默认值 |
 | ---- | ---- | ------ |

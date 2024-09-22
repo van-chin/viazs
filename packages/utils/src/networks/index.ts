@@ -4,9 +4,9 @@ import type { CreateAxiosOptions } from "@viaz/types";
 
 import { createAxios, defHttp } from "./axios";
 
-// import { alovaInstance } from "./alova";
+import alovaInstance from "./alova";
 
-export { createAxios, defHttp };
+export { createAxios, defHttp, alovaInstance };
 
 /**
  * @description 创建网络请求

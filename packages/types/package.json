@@ -1,16 +1,16 @@
 {
 	"name": "@viaz/types",
-	"version": "0.1.13",
+	"version": "0.2.4",
 	"description": "viaz types",
 	"type": "module",
-	"main": "index.ts",
-	"module": "index.ts",
-	"types": "index.ts",
+	"main": "./index.ts",
+	"module": "./index.ts",
+	"types": "./index.ts",
 	"exports": {
 		".": {
-			"default": "index.ts",
-			"require": "index.ts",
-			"module": "index.ts"
+			"default": "./index.ts",
+			"require": "./index.ts",
+			"module": "./index.ts"
 		}
 	},
 	"files": [
@@ -47,7 +47,7 @@
 		"access": "public"
 	},
 	"peerDependencies": {
-		"vue": "^3.4.27"
+		"vue": "^3.4.35"
 	},
 	"keywords": [],
 	"author": "",

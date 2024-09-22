@@ -66,7 +66,35 @@
 		name: COMPONENT_NAME,
 	});
 
-	const props = withDefaults(defineProps<VzConfigurationObjectProps>(), {});
+	// const props = withDefaults(defineProps<VzConfigurationObjectProps>(), {});
+	const {
+		valueTypes = [
+			{
+				label: "STR",
+				value: "string",
+				key: 1,
+				title: "字符串",
+			},
+			{
+				label: "NUM",
+				value: "number",
+				key: 2,
+				title: "数值",
+			},
+			{
+				label: "BOOL",
+				value: "boolean",
+				key: 3,
+				title: "布尔值",
+			},
+			{
+				label: "ARR",
+				value: "array",
+				key: 4,
+				title: "数组",
+			},
+		],
+	} = defineProps<VzConfigurationObjectProps>();
 
 	const { prefixCls } = useStyle("configuration-object");
 
@@ -81,39 +109,6 @@
 	const { refs, toRef } = useRefs<{
 		objects: InstanceType<typeof HTMLElement>;
 	}>();
-
-	const valueTypes = [
-		{
-			label: "STRING",
-			value: "string",
-			key: 1,
-			title: "字符串",
-		},
-		{
-			label: "NUMBER",
-			value: "number",
-			key: 2,
-			title: "数值",
-		},
-		{
-			label: "BOOLEAN",
-			value: "boolean",
-			key: 3,
-			title: "布尔值",
-		},
-		{
-			label: "ARRAY",
-			value: "array",
-			key: 4,
-			title: "数组",
-		},
-		// {
-		// 	label: "OBJECT",
-		// 	value: "object",
-		// 	key: 5,
-		// 	title: "对象",
-		// },
-	];
 
 	const addModelValuesItem = () => {
 		let itemId = nanoid();

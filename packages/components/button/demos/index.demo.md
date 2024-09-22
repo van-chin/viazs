@@ -29,11 +29,6 @@
 <basic />
 :::
 
-:::snippet
-高级用法
-按钮有三种类型：`primary` 、`secondary` 、`outline` 。主按钮在同一个操作区域建议最多出现一次。
-<basic />
-:::
 
 ### API
 

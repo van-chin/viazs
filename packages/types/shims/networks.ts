@@ -7,11 +7,12 @@ import type {
 export const nrlTypes = ["AXIOS", "ALOVA"] as const;
 
 export interface DataApi {
-	/** 协议 */
+	/** 协议 'http' 或 'https' */
 	protocol?: string;
-	/** hostname-port-path hpp  */
-	hpp?: string;
-	options?: object;
+	/** 主机名 */
+	hostname?:string;
+	/** 资源路径  */
+	path: string;
 }
 
 export interface RetryInternalAxiosRequestConfig<D = any>

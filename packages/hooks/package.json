@@ -1,6 +1,6 @@
 {
   "name": "@viaz/hooks",
-  "version": "0.1.13",
+  "version": "0.2.4",
   "description": "viaz hooks",
   "main": "index.ts",
   "type": "module",
@@ -15,7 +15,7 @@
     "access": "public"
   },
   "peerDependencies": {
-    "vue": "^3.4.27"
+    "vue": "^3.4.35"
   },
   "keywords": [],
   "author": "Van Chin",

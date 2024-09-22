@@ -1,5 +1,53 @@
 # @viaz/types
 
+## 0.2.4
+
+### Patch Changes
+
+- xxx
+- Updated dependencies
+  - @viaz/constants@0.2.4
+  - @viaz/enums@0.2.4
+
+## 0.2.3
+
+### Patch Changes
+
+- Acol fixed
+- Updated dependencies
+  - @viaz/constants@0.2.3
+  - @viaz/enums@0.2.3
+
+## 0.2.2
+
+### Patch Changes
+
+- add header token
+- Updated dependencies
+  - @viaz/constants@0.2.2
+  - @viaz/enums@0.2.2
+
+## 0.2.1
+
+### Patch Changes
+
+- fixed net bugss
+- Updated dependencies
+  - @viaz/constants@0.2.1
+  - @viaz/enums@0.2.1
+
+## 0.2.0
+
+### Minor Changes
+
+- fixed bug ....
+
+### Patch Changes
+
+- Updated dependencies
+  - @viaz/constants@0.2.0
+  - @viaz/enums@0.2.0
+
 ## 0.1.13
 
 ### Patch Changes

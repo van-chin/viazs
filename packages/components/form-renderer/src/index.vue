@@ -12,14 +12,14 @@
 							:key="index"
 							v-for="(rowItem, index) in item.children"
 							:span="
-								rowItem.component.props.span
-									? rowItem.component.props.span
+								rowItem.component?.props.span
+									? rowItem.component?.props.span
 									: 24 / item.children.length
 							"
 						>
 							<template v-for="ric in rowItem.children">
 								<a-form-item
-									v-if="ric.item.displayState === true"
+									v-if="ric.item?.displayState === true"
 									v-bind="
 										ric.type === 'ims-form-divider'
 											? Object.assign(
@@ -74,7 +74,7 @@
 
 				<template v-else>
 					<a-form-item
-						v-if="item.item.displayState === true"
+						v-if="item.item?.displayState === true"
 						v-bind="
 							item.type === 'ims-form-divider'
 								? Object.assign(
@@ -238,29 +238,32 @@
 		foreach(props.data.items[0].children, (item) => {
 			// ARangePicker includes // presets
 
-			if (item.component && item.component.events) {
-				let emitsEvents = {};
-				for (const key in item.component.events) {
-					emitsEvents[key] = (...args: any) => {
-						let params = reactive({});
-						item.component.events[key].map(
-							(pkey: string, index: number) => {
-								params[pkey] = args[index];
-							}
-						);
-						emitEventHandler(item.item.name, key, params);
-					};
+			if (item.component) {
+				if (item.component.events) {
+					let emitsEvents = {};
+					for (const key in item.component.events) {
+						emitsEvents[key] = (...args: any) => {
+							let params = reactive({});
+							item.component.events[key].map(
+								(pkey: string, index: number) => {
+									params[pkey] = args[index];
+								}
+							);
+							emitEventHandler(item.item.name, key, params);
+						};
+					}
+					item.component.emitsEvents = emitsEvents;
 				}
-				item.component.emitsEvents = emitsEvents;
-			}
-			if (["ARangePicker"].includes(item.component.name)) {
-				if (item.component.props.presets?.length) {
-					item.component.props.presets.forEach((preset) => {
-						preset.value = [
-							dayjs(preset.value[0]),
-							dayjs(preset.value[1]),
-						];
-					});
+
+				if (["ARangePicker"].includes(item.component.name)) {
+					if (item.component.props.presets?.length) {
+						item.component.props.presets.forEach((preset) => {
+							preset.value = [
+								dayjs(preset.value[0]),
+								dayjs(preset.value[1]),
+							];
+						});
+					}
 				}
 			}
 		});

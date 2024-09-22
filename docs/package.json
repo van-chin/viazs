@@ -11,20 +11,20 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
-    "ant-design-vue": "^4.2.3",
     "@viaz/components": "workspace:*",
     "@viaz/hooks": "workspace:*",
     "@viaz/types": "workspace:*",
     "@viaz/utils": "workspace:*",
-    "@vueuse/core": "^10.11.0",
+    "@vueuse/core": "^10.11.1",
+    "ant-design-vue": "^4.2.3",
     "markdown-it": "^14.1.0",
     "viaz": "workspace:*"
   },
   "devDependencies": {
+    "@shikijs/markdown-it": "^1.17.0",
     "@types/fs-extra": "^11.0.4",
     "@types/markdown-it": "^14.1.2",
     "fs-extra": "^11.2.0",
-    "@shikijs/markdown-it": "^1.12.1",
-    "shiki": "^1.12.1"
+    "shiki": "^1.17.0"
   }
 }

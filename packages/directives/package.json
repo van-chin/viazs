@@ -1,6 +1,6 @@
 {
 	"name": "@viaz/directives",
-	"version": "0.1.13",
+	"version": "0.2.4",
 	"description": "viaz directives",
 	"type": "module",
 	"main": "index.ts",
@@ -28,7 +28,7 @@
 		"@viaz/types": "workspace:*"
 	},
 	"peerDependencies": {
-		"vue": "^3.4.27"
+		"vue": "^3.4.35"
 	},
 	"keywords": [],
 	"author": "Van Chin",

@@ -1,34 +1,92 @@
 <template>
-	<!-- <a-select
-    :class="prefixCls"
-    v-bind="$attrs"
-    :options="dataOptions"
-  ></a-select> -->
-  <div :class="prefixCls" >
-	select 1234567
-  </div>
+	<a-select
+		:class="prefixCls"
+		v-bind="$attrs"
+		:options="dataOptions"
+		:loading="loading"
+	></a-select>
 </template>
 <script lang="ts" setup>
 	import { useStyle } from "@viaz/hooks";
-	import type { VzSelectProps } from "@viaz/types/components/select";
-	import { ref, toRefs } from "vue";
-
+	import { useWatcher } from "alova/client";
+	import { alovaInstance } from "@viaz/utils";
+	import ASelect from "ant-design-vue/es/select";
+	import type { VzSelectProps } from "@viaz/types";
+	import { ref, watch } from "vue";
 	const { prefixCls } = useStyle("select");
-
 	const COMPONENT_NAME = "VzSelect";
 	defineOptions({
 		name: COMPONENT_NAME,
 	});
 
-	const dataOptions = ref<any[]>([]);
+	const dataOptions = ref<VzSelectProps["options"]>([]);
+	const {
+		api = { path: "/" },
+		options,
+		params = {},
+		immediate = false,
+	} = defineProps<VzSelectProps>();
 
-	const props = defineProps<VzSelectProps>();
-	// const props = defineProps();
-	// 是类型引入的原因么
+	console.info("params =>", params);
 
-	const { api, options = [], params } = toRefs(props);
-  // 修改 script 里的内容 时间 几十秒 到页面更新的时间 快分钟级了
-	console.info("测试 v1script 修改 HMR  v10 =>", "vvvv");
+	const { loading, data, send, onSuccess } = useWatcher(
+		() => {
+			let url = "/";
+			if (api) {
+				url = api.path;
+			}
+			// 暂未处理 protocol hostname
+			return alovaInstance.Get<VzSelectProps["options"]>(url, {
+				cacheFor: 0,
+				params: parseParams(params),
+			});
+		},
+		// params 或 api 发生变化，重新发起请求
+		[api, params],
+		{
+			initialData: [],
+			immediate: immediate,
+		}
+	);
+	onSuccess(() => {
+		dataOptions.value = data.value;
+	});
+
+	const parseParams = (params: any) => {
+		if (Array.isArray(params)) {
+			let parsedParams: Record<string, string | number | boolean> = {};
+			params.forEach((item) => {
+				if (item.status === true) {
+					parsedParams[item.key] = item.value;
+				}
+			});
+			return parsedParams;
+		} else {
+			return params;
+		}
+	};
+
+	if (options && options.length >= 1) {
+		dataOptions.value = options;
+	} else {
+		if (Array.isArray(params)) {
+			let requestParams = parseParams(params);
+			console.info("requestParams =>", requestParams);
+			send(requestParams);
+		} else {
+			send(params);
+		}
+	}
+
+	// watch(
+	// 	() => api,
+	// 	(val) => {
+	// 		console.info("newVal =>", val);
+	// 	},
+	// 	{
+	// 		deep: true,
+	// 	}
+	// );
 </script>
 
 <style lang="less" scoped>

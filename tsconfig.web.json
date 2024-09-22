@@ -10,6 +10,7 @@
   "include": [
     "packages",
     "packages/**/*",
+    "packages/**/*.ts",
     "typings/components.d.ts",
     "typings/env.d.ts"
   ],
