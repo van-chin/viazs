@@ -18,6 +18,10 @@ export interface VzTableProps {
    * 行拖拽
    */
   sortable?: boolean;
+  /**
+   * table Dom Id
+   */
+  tableId?: string;
   animation?: number;
   dragHandler?: string | undefined;
   dataTable?: object;

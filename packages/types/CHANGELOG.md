@@ -1,5 +1,23 @@
 # @viaz/types
 
+## 0.2.7
+
+### Patch Changes
+
+- add props tableId
+- Updated dependencies
+  - @viaz/constants@0.2.7
+  - @viaz/enums@0.2.7
+
+## 0.2.6
+
+### Patch Changes
+
+- fixed sortable
+- Updated dependencies
+  - @viaz/constants@0.2.6
+  - @viaz/enums@0.2.6
+
 ## 0.2.5
 
 ### Patch Changes

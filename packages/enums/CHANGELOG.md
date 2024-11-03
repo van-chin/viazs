@@ -1,5 +1,21 @@
 # @imsjs/ims-ui-enums
 
+## 0.2.7
+
+### Patch Changes
+
+- add props tableId
+- Updated dependencies
+  - @viaz/hooks@0.2.7
+
+## 0.2.6
+
+### Patch Changes
+
+- fixed sortable
+- Updated dependencies
+  - @viaz/hooks@0.2.6
+
 ## 0.2.5
 
 ### Patch Changes

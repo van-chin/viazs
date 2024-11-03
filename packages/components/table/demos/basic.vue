@@ -5,6 +5,8 @@
 			:paginations="{ pageSize: 10 }"
 			:lists="dataSource"
 			:columns="columns"
+			sortable
+			tableId="test-table"
 			rowKey="key"
 			@sortableEnd="onSortableEnd"
 			:actions="actions"

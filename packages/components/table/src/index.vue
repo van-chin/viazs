@@ -19,7 +19,7 @@
 	<div :class="`${prefixCls}-wrapper`">
 		<!-- <Vz-json-viewer :data="modelLists"></Vz-json-viewer> -->
 		<div :class="`${prefixCls}-content`" ref="contentElRef">
-			<a-table :class="prefixCls" v-bind="$attrs" ref="tableRef" :data-source="modelLists || []" bordered
+			<a-table :class="prefixCls" :id="tableId" v-bind="$attrs" ref="tableRef" :data-source="modelLists || []" bordered
 				expandFixed="right" :columns="states.currentColumns" :pagination="false"
 				:scroll="{ x: tableWrapperWidth, y: tableWrapperHeight - 56 }" @resizeColumn="onResizeColumn">
 				<!-- 透传 slot  /** 开始 */  -->
@@ -321,6 +321,7 @@ const props = withDefaults(defineProps<VzTableProps>(), {
 const {
 	sortable,
 	animation,
+	tableId,
 	uri,
 	schemes,
 	footerBar,
@@ -621,30 +622,33 @@ const onResizeColumn = (width: number, column: any) => {
 // Sortable
 // 行拖动排序
 setTimeout(() => {
-	const containerSelector = '.ant-table-tbody';
-	const containers = document.querySelector(containerSelector);
-	const sortabler = new Sortable(containers as HTMLElement, {
-		draggable: '.ant-table-row',
-		mirror: {
-			appendTo: containerSelector,
-			constrainDimensions: true,
-		},
-		plugins:[Plugins.SortAnimation],
-		sortAnimation:{
-			duration: 200,
-      		easingFunction: 'ease-in-out',
-		}
-	});
-	sortabler.on('sortable:stop',(sortableStopEvent:SortableStopEvent)=>{
-		modelLists.value[sortableStopEvent.oldIndex] = modelLists.value.splice(sortableStopEvent.newIndex,1,modelLists.value[sortableStopEvent.oldIndex])[0];
-		emit("sortableEnd", {
-			oldIndex: sortableStopEvent.oldIndex,
-			newIndex: sortableStopEvent.newIndex,
-			dragEvent: sortableStopEvent.dragEvent,
-			sortabledDataSource: modelLists.value
+	if(sortable.value) {
+		const containerSelector = `#${tableId.value} .ant-table-tbody`;
+		const containers = document.querySelector(containerSelector);
+		const sortabler = new Sortable(containers as HTMLElement, {
+			draggable: '.ant-table-row',
+			mirror: {
+				appendTo: containerSelector,
+				constrainDimensions: true,
+			},
+			plugins:[Plugins.SortAnimation],
+			sortAnimation:{
+				duration: 200,
+				easingFunction: 'ease-in-out',
+			}
 		});
+		sortabler.on('sortable:stop',(sortableStopEvent:SortableStopEvent)=>{
+			modelLists.value[sortableStopEvent.oldIndex] = modelLists.value.splice(sortableStopEvent.newIndex,1,modelLists.value[sortableStopEvent.oldIndex])[0];
+			emit("sortableEnd", {
+				oldIndex: sortableStopEvent.oldIndex,
+				newIndex: sortableStopEvent.newIndex,
+				dragEvent: sortableStopEvent.dragEvent,
+				sortabledDataSource: modelLists.value
+			});
 
-	})
+		})
+	}
+	
 }, 100);
 
 </script>
@@ -660,7 +664,7 @@ setTimeout(() => {
 }
 
 .@{prefix-cls}-content {
-	--at-apply: h-full flex-1 w-full bd-red;
+	--at-apply: h-full flex-1 w-full min-h-10px;
 
 	overflow: hidden;
 }

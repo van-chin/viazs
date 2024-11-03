@@ -1,5 +1,17 @@
 # @viaz/hooks
 
+## 0.2.7
+
+### Patch Changes
+
+- add props tableId
+
+## 0.2.6
+
+### Patch Changes
+
+- fixed sortable
+
 ## 0.2.5
 
 ### Patch Changes
