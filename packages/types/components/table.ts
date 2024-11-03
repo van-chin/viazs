@@ -36,6 +36,36 @@ export interface SortableProps {
   dragHandler?: string | undefined;
 }
 
+// export class SortableStopEvent extends SortableEvent {
+//   readonly oldIndex: number;
+//   readonly newIndex: number;
+//   readonly oldContainer: HTMLElement;
+//   readonly newContainer: HTMLElement;
+// }
+
+
+export interface SortableEndParams {
+  /**
+   * 排序前的索引值
+   */
+  oldIndex: number;
+  /**
+   * 排序后的索引值
+   */
+  newIndex: number;
+  
+  /**
+   * 事件 DragEvent
+   */
+  dragEvent: any;
+  // dragEvent: DragStopEvent;
+  
+  /**
+   * 排序后的 数据
+   */
+  sortabledDataSource: any[];
+}
+
 export interface DragEndParams {
   /**
    * 事件 DragEvent

@@ -24,8 +24,7 @@ defineOptions({
 });
 
 const props = defineProps<VzButtonProps>();
-// 修改 script 内容 HMR 很慢,不知道原因
-console.log('🚀 ~ file: index.vue:30 ~ props 123 xx => :', props);
+
 </script>
 
 <style lang="less" scoped>

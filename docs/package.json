@@ -16,15 +16,15 @@
     "@viaz/types": "workspace:*",
     "@viaz/utils": "workspace:*",
     "@vueuse/core": "^10.11.1",
-    "ant-design-vue": "^4.2.3",
+    "ant-design-vue": "^4.2.5",
     "markdown-it": "^14.1.0",
     "viaz": "workspace:*"
   },
   "devDependencies": {
-    "@shikijs/markdown-it": "^1.17.0",
+    "@shikijs/markdown-it": "^1.22.2",
     "@types/fs-extra": "^11.0.4",
     "@types/markdown-it": "^14.1.2",
     "fs-extra": "^11.2.0",
-    "shiki": "^1.17.0"
+    "shiki": "^1.22.2"
   }
 }

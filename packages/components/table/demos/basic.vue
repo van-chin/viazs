@@ -1,11 +1,12 @@
 <template>
+	<vz-json-viewer :data="dataSource"></vz-json-viewer>
 	<div class="h-400px">
 		<vz-table
 			:paginations="{ pageSize: 10 }"
 			:lists="dataSource"
 			:columns="columns"
 			rowKey="key"
-			@dragEnd="dragEnded"
+			@sortableEnd="onSortableEnd"
 			:actions="actions"
 		>
 			<template #bodyCell="{ column, text, record }">
@@ -24,12 +25,15 @@
 	import { event } from "@visactor/vtable/es/tools/helper";
 	import { ref } from "vue";
 
+	import { SortableEndParams } from "@viaz/types";
+
 	const customRender = ({ text, record, index, column }) => {
 		return text;
 	};
 
-	const dragEnded = (data) => {
-		console.info("dragEnded =>", data);
+	const onSortableEnd = (data:SortableEndParams) => {
+		console.info("onSortableEnd =>", data);
+		console.info("onSortableEnd =>", data.sortabledDataSource);
 	};
 
 
@@ -44,7 +48,7 @@
 			events: {
 				click: ["value"],
 			},
-			width: 100,
+			width: 200,
 			fixed: "left",
 		},
 		{
@@ -133,21 +137,51 @@
 	const dataSource = ref([
 		{
 			key: "1",
-			name: "胡彦斌西湖区湖底公园1号-西湖区湖底公园1号-西湖区湖底公园1号",
+			name: "1-胡彦斌西湖区湖底公园1号-西湖区湖底公园1号-西湖区湖底公园1号",
 			age: 32,
 			address: "西湖区湖底公园1号",
 		},
 		{
 			key: "2",
-			name: "胡彦祖",
+			name: "2-胡彦祖",
 			age: 42,
 			address: "西湖区湖底公园1号",
 		},
 		{
 			key: "3",
-			name: "胡彦祖3333",
+			name: "3-胡彦祖3333",
 			age: 44,
 			address: "西湖区湖底公园1号",
 		},
+		{
+			key: "4",
+			name: "4-胡彦斌西湖区湖底公园1号-西湖区湖底公园1号-西湖区湖底公园1号",
+			age: 32,
+			address: "西湖区湖底公园1号",
+		},
+		// {
+		// 	key: "5",
+		// 	name: "5-胡彦祖",
+		// 	age: 42,
+		// 	address: "西湖区湖底公园1号",
+		// },
+		// {
+		// 	key: "6",
+		// 	name: "6-胡彦祖3333",
+		// 	age: 44,
+		// 	address: "西湖区湖底公园1号",
+		// },
+		// {
+		// 	key: "7",
+		// 	name: "7-胡彦祖",
+		// 	age: 42,
+		// 	address: "西湖区湖底公园1号",
+		// },
+		// {
+		// 	key: "8",
+		// 	name: "8-胡彦祖3333",
+		// 	age: 44,
+		// 	address: "西湖区湖底公园1号",
+		// },
 	]);
 </script>
