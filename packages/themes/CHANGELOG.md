@@ -1,5 +1,11 @@
 # @viaz/themes
 
+## 0.1.3
+
+### Patch Changes
+
+- refecter table dragbble
+
 ## 0.1.2
 
 ### Patch Changes

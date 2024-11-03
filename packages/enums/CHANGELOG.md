@@ -1,5 +1,13 @@
 # @imsjs/ims-ui-enums
 
+## 0.2.5
+
+### Patch Changes
+
+- refecter table dragbble
+- Updated dependencies
+  - @viaz/hooks@0.2.5
+
 ## 0.2.4
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # viaz
 
+## 0.2.5
+
+### Patch Changes
+
+- refecter table dragbble
+- Updated dependencies
+  - @viaz/components@0.2.5
+  - @viaz/constants@0.2.5
+  - @viaz/directives@0.2.5
+  - @viaz/hooks@0.2.5
+  - @viaz/types@0.2.5
+  - @viaz/utils@0.2.5
+
 ## 0.2.4
 
 ### Patch Changes
