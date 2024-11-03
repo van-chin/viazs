@@ -68,6 +68,7 @@ export default ({ mode, command }: ConfigEnv): UserConfig => {
           "@wangeditor/editor",
           "@wangeditor/editor-for-vue",
           "@visactor/vtable",
+          "@shopify/draggable",
           "vue-draggable-plus",
         ],
         output: {
@@ -82,6 +83,7 @@ export default ({ mode, command }: ConfigEnv): UserConfig => {
             "ant-design-vue/es": "antDesignVueEs",
             sortablejs: "Sortable",
             "@visactor/vtable": "vtable",
+            "@shopify/draggable": "shopifyDraggable",
             "@wangeditor/editor-for-vue": "editorForVue",
             "vue-draggable-plus": "vueDraggablePlus",
           },
