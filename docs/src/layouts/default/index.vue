@@ -1,307 +1,266 @@
 <template>
-	<div :class="prefixCls">
-		<div :class="`${prefixCls}-header`">
-			<div class="flex items-center">
-				<iconify-icon
-					icon="devicon:antdesign"
-					class="text-6 mr-2"
-				></iconify-icon>
+  <div :class="prefixCls">
+    <div :class="`${prefixCls}-header`">
+      <div class="flex items-center">
+        <iconify-icon
+          icon="devicon:antdesign"
+          class="text-6 mr-2"
+        ></iconify-icon>
 
-				VIAZ
-			</div>
-			<div class="flex items-center">
-				<a-menu
-					v-model:selectedKeys="current"
-					mode="horizontal"
-					:items="items"
-					class="header-nav-menu"
-				/>
+        VIAZ
+      </div>
+      <div class="flex items-center">
+        <a-menu
+          v-model:selectedKeys="current"
+          mode="horizontal"
+          :items="items"
+          class="header-nav-menu"
+        />
 
-				<a-dropdown class="ml-2">
-					<template #overlay>
-						<a-menu>
-							<a-menu-item key="1">5.14.1</a-menu-item>
-							<a-menu-item key="2">4.x</a-menu-item>
-							<a-menu-item key="3">3.x</a-menu-item>
-							<a-menu-item key="4">2.x</a-menu-item>
-							<a-menu-item key="5">1.x</a-menu-item>
-							<a-menu-item key="6">0.x</a-menu-item>
-						</a-menu>
-					</template>
-					<a-button>
-						<div class="flex items-center">
-							5.14.1
-							<iconify-icon
-								icon="ant-design:down-outlined"
-								style="vertical-align: -0.125em"
-							></iconify-icon>
-						</div>
-					</a-button>
-				</a-dropdown>
-			</div>
-		</div>
+        <a-dropdown class="ml-2">
+          <template #overlay>
+            <a-menu>
+              <a-menu-item key="1">5.14.1</a-menu-item>
+              <a-menu-item key="2">4.x</a-menu-item>
+              <a-menu-item key="3">3.x</a-menu-item>
+              <a-menu-item key="4">2.x</a-menu-item>
+              <a-menu-item key="5">1.x</a-menu-item>
+              <a-menu-item key="6">0.x</a-menu-item>
+            </a-menu>
+          </template>
+          <a-button>
+            <div class="flex items-center">
+              5.14.1
+              <iconify-icon
+                icon="ant-design:down-outlined"
+                style="vertical-align: -0.125em"
+              ></iconify-icon>
+            </div>
+          </a-button>
+        </a-dropdown>
+      </div>
+    </div>
 
-		<div :class="`${prefixCls}-contents`">
-			<OverlayScrollbarsComponent
-				ref="scrollbarRef"
-				class="overlayscrollbars-vue h-full"
-				:options="{
-					scrollbars: {
-						autoHide: 'leave',
-						autoHideDelay: 1,
-					},
-				}"
-				defer
-			>
-				<a-menu
-					id="dddddd"
-					style="width: 256px"
-					mode="inline"
-					:items="componentItems"
-					@click="onComponentMenuClick"
-				></a-menu>
-			</OverlayScrollbarsComponent>
-			<overlay-scrollbars-component
-				class="overlayscrollbars-vue h-full flex-1 p-2"
-				:options="{
-					scrollbars: {
-						autoHide: 'leave',
-						autoHideDelay: 1,
-					},
-				}"
-				defer
-			>
-				<router-view></router-view>
-			</overlay-scrollbars-component>
-		</div>
-	</div>
+    <div :class="`${prefixCls}-contents`">
+      <OverlayScrollbarsComponent
+        ref="scrollbarRef"
+        class="overlayscrollbars-vue h-full"
+        :options="{
+          scrollbars: {
+            autoHide: 'leave',
+            autoHideDelay: 1,
+          },
+        }"
+        defer
+      >
+        <a-menu
+          id="dddddd"
+          style="width: 256px"
+          mode="inline"
+          :items="componentItems"
+          @click="onComponentMenuClick"
+        ></a-menu>
+      </OverlayScrollbarsComponent>
+      <overlay-scrollbars-component
+        class="overlayscrollbars-vue h-full flex-1 p-2"
+        :options="{
+          scrollbars: {
+            autoHide: 'leave',
+            autoHideDelay: 1,
+          },
+        }"
+        defer
+      >
+        <router-view></router-view>
+      </overlay-scrollbars-component>
+    </div>
+  </div>
 </template>
 
 <script lang="ts" setup>
-	import { useStyle } from "viaz";
+import { useStyle } from "viaz";
 
-	import { reactive, ref, watch, VueElement, h } from "vue";
+import { reactive, ref, watch, VueElement, h } from "vue";
 
-	import { OverlayScrollbarsComponent } from "overlayscrollbars-vue";
+import { OverlayScrollbarsComponent } from "overlayscrollbars-vue";
 
-	const { prefixCls } = useStyle("default-layout");
+const { prefixCls } = useStyle("default-layout");
 
-	const COMPONENT_NAME = "DefaultLayout";
-	defineOptions({
-		name: COMPONENT_NAME,
-	});
+const COMPONENT_NAME = "DefaultLayout";
+defineOptions({
+  name: COMPONENT_NAME,
+});
 
-	import type { MenuProps, ItemType } from "ant-design-vue";
-	import { useRouter } from "vue-router";
+import type { MenuProps, ItemType } from "ant-design-vue";
+import { useRouter } from "vue-router";
 
-	const router = useRouter();
+const router = useRouter();
 
-	const current = ref<string[]>(["mail"]);
-	const items = ref<MenuProps["items"]>([
-		{
-			key: "mail",
+const current = ref<string[]>(["mail"]);
+const items = ref<MenuProps["items"]>([
+  {
+    key: "mail",
 
-			label: "设计",
-			title: "Navigation One",
-		},
-		{
-			key: "app",
+    label: "设计",
+    title: "Navigation One",
+  },
+  {
+    key: "app",
 
-			label: "研发",
-			title: "Navigation Two",
-		},
-		{
-			key: "components",
+    label: "研发",
+    title: "Navigation Two",
+  },
+  {
+    key: "components",
 
-			label: "组件",
-			title: "Navigation Two",
-		},
-		{
-			key: "blogs",
+    label: "组件",
+    title: "Navigation Two",
+  },
+  {
+    key: "blogs",
 
-			label: "博客",
-			title: "Navigation Two",
-		},
-	]);
+    label: "博客",
+    title: "Navigation Two",
+  },
+]);
 
-	const onComponentMenuClick: MenuProps["onClick"] = ({
-		item,
-		key,
-		keyPath,
-	}) => {
-		console.info("onComponentMenuClick.item =>", item);
-		console.info("onComponentMenuClick.key =>", key);
-		console.info("onComponentMenuClick.keyPath =>", keyPath);
+const onComponentMenuClick: MenuProps["onClick"] = ({ item, key, keyPath }) => {
+  console.info("onComponentMenuClick.item =>", item);
+  console.info("onComponentMenuClick.key =>", key);
+  console.info("onComponentMenuClick.keyPath =>", keyPath);
 
-		router.push({ path: `/components/${key}` });
-	};
+  router.push({ path: `/components/${key}` });
+};
 
-	function getItem(
-		label: VueElement | string,
-		key: string,
-		icon?: any,
-		children?: ItemType[],
-		type?: "group"
-	): ItemType {
-		return {
-			key,
-			icon,
-			children,
-			label,
-			type,
-		} as ItemType;
-	}
+function getItem(
+  label: VueElement | string,
+  key: string,
+  icon?: any,
+  children?: ItemType[],
+  type?: "group"
+): ItemType {
+  return {
+    key,
+    icon,
+    children,
+    label,
+    type,
+  } as ItemType;
+}
 
-	const componentItems: ItemType[] = reactive([
-		getItem("组件总览", "overview"),
+const componentItems: ItemType[] = reactive([
+  getItem("组件总览", "overview"),
 
-		getItem(
-			"通用",
-			"grp",
-			null,
-			[getItem("Button 按钮", "button")],
-			"group"
-		),
+  getItem("通用", "grp", null, [getItem("Button 按钮", "button")], "group"),
 
-		//
+  //
 
-		getItem(
-			"布局",
-			"grp",
-			null,
-			[getItem("DynamicPanel 动态面板", "dynamic-panel")],
-			"group"
-		),
+  getItem(
+    "布局",
+    "grp",
+    null,
+    [getItem("DynamicPanel 动态面板", "dynamic-panel")],
+    "group"
+  ),
 
-		getItem(
-			"导航",
-			"grp",
-			null,
-			[getItem("Button 按钮", "button")],
-			"group"
-		),
+  getItem("导航", "grp", null, [getItem("Button 按钮", "button")], "group"),
 
-		getItem(
-			"上传",
-			"grp",
-			null,
-			[getItem("UploaderUppy 上传", "uploader-uppy")],
-			"group"
-		),
+  getItem(
+    "上传",
+    "grp",
+    null,
+    [getItem("UploaderUppy 上传", "uploader-uppy")],
+    "group"
+  ),
 
-		getItem(
-			"数据录入 10",
-			"grp",
-			null,
-			[
-				getItem("Select 选择框", "select"),
-				getItem(
-					"ListCheckboxGroup 列表多选框组",
-					"list-checkbox-group"
-				),
-				getItem("FormTable 表单表格", "form-table"),
-				getItem("ConfigurationObject 配置对象", "configuration-object"),
-				getItem("ConfigurationValue 配置值", "configuration-value"),
-				getItem("CheckboxGroup 复选框组", "checkbox-group"),
-				getItem("CheckboxInput 复选输入框", "checkbox-input"),
-				getItem(
-					"CheckboxInputNumber 复选数字输入框",
-					"checkbox-input-number"
-				),
-				getItem(
-					"CheckboxDatePicker 复选日期选择框",
-					"checkbox-date-picker"
-				),
-				getItem(
-					"CheckboxDateRangePicker 复选日期范围选择框",
-					"checkbox-date-range-picker"
-				),
-				getItem(
-					"CheckboxGroupInput 复选框组输入框",
-					"checkbox-group-input"
-				),
-				getItem(
-					"Tagify 标签",
-					"tagify"
-				),
-				getItem(
-					"TagSelect 标签选择",
-					"tag-select"
-				),
-			],
-			"group"
-		),
+  getItem(
+    "数据录入 10",
+    "grp",
+    null,
+    [
+      getItem("Select 选择框", "select"),
+      getItem("ListCheckboxGroup 列表多选框组", "list-checkbox-group"),
+      getItem("FormTable 表单表格", "form-table"),
+      getItem("ConfigurationObject 配置对象", "configuration-object"),
+      getItem("ConfigurationValue 配置值", "configuration-value"),
+      getItem("CheckboxGroup 复选框组", "checkbox-group"),
+      getItem("CheckboxInput 复选输入框", "checkbox-input"),
+      getItem("CheckboxInputNumber 复选数字输入框", "checkbox-input-number"),
+      getItem("CheckboxDatePicker 复选日期选择框", "checkbox-date-picker"),
+      getItem(
+        "CheckboxDateRangePicker 复选日期范围选择框",
+        "checkbox-date-range-picker"
+      ),
+      getItem("CheckboxGroupInput 复选框组输入框", "checkbox-group-input"),
+      getItem("Tagify 标签", "tagify"),
+      getItem("TagSelect 标签选择", "tag-select"),
+    ],
+    "group"
+  ),
 
-		getItem(
-			"表单 2",
-			"grp",
-			null,
-			[
-				getItem("FormDesigner 表单设计器", "form-designer"),
-				getItem("FormRenderer 表单渲染器", "form-renderer"),
-			],
-			"group"
-		),
+  getItem(
+    "表单 2",
+    "grp",
+    null,
+    [
+      getItem("FormDesigner 表单设计器", "form-designer"),
+      getItem("FormRenderer 表单渲染器", "form-renderer"),
+    ],
+    "group"
+  ),
 
-		getItem(
-			"数据展示 3",
-			"grp",
-			null,
-			[
-				getItem("Table 表格", "table"),
-				getItem("Page 页面", "page"),
-				getItem("OverlayScrollbar 滚动", "overlay-scrollbar"),
-			],
-			"group"
-		),
-		getItem(
-			"反馈",
-			"grp",
-			null,
-			[getItem("xxxxx 按钮", "button")],
-			"group"
-		),
-		getItem(
-			"其他 1",
-			"grp",
-			null,
-			[getItem("HoverMask 悬停遮罩", "hover-mask")],
-			"group"
-		),
-	]);
+  getItem(
+    "数据展示 3",
+    "grp",
+    null,
+    [
+      getItem("Table 表格", "table"),
+      getItem("Page 页面", "page"),
+      getItem("OverlayScrollbar 滚动", "overlay-scrollbar"),
+      getItem("Explorer 资源管理器", "explorer"),
+    ],
+    "group"
+  ),
+  getItem("反馈", "grp", null, [getItem("xxxxx 按钮", "button")], "group"),
+  getItem(
+    "其他 1",
+    "grp",
+    null,
+    [getItem("HoverMask 悬停遮罩", "hover-mask")],
+    "group"
+  ),
+]);
 </script>
 
 <style lang="less" scoped>
-	@prefix-cls: ~"@{namespace}-default-layout";
+@prefix-cls: ~"@{namespace}-default-layout";
 
-	.@{prefix-cls} {
-		--at-apply: w-full h-full flex flex-col;
+.@{prefix-cls} {
+  --at-apply: w-full h-full flex flex-col;
 
-		.ant-menu-horizontal {
-			border-bottom: 1px solid transparent;
-		}
+  .ant-menu-horizontal {
+    border-bottom: 1px solid transparent;
+  }
 
-		&-header {
-			--at-apply: flex flex-row flex-justify-between items-center px-4
-				h-[64px];
+  &-header {
+    --at-apply: flex flex-row flex-justify-between items-center px-4 h-[64px];
 
-			position: -webkit-sticky;
-			position: sticky;
-			top: 0;
-			z-index: 1000;
-			max-width: 100%;
-			background: #ffffff;
-			box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03),
-				0 1px 6px -1px rgba(0, 0, 0, 0.02),
-				0 2px 4px 0 rgba(0, 0, 0, 0.02);
-			-webkit-backdrop-filter: blur(8px);
-			backdrop-filter: blur(8px);
-		}
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    max-width: 100%;
+    background: #ffffff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03),
+      0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
 
-		&-contents {
-			--at-apply: w-full flex flex-1;
-			height: calc(100% - 64px);
-			// overflow: hidden;
-		}
-	}
+  &-contents {
+    --at-apply: w-full flex flex-1;
+    height: calc(100% - 64px);
+    // overflow: hidden;
+  }
+}
 </style>

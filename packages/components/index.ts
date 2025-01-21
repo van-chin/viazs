@@ -47,3 +47,4 @@ export * from "./checkbox-group-input-number";
 export * from "./uploader-uppy";
 
 export * from "./tagify";
+export * from "./explorer";
