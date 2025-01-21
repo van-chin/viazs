@@ -1,5 +1,70 @@
 # @imsjs/ims-ui-enums
 
+## 0.5.2
+
+### Patch Changes
+
+- fixed table
+- Updated dependencies
+  - @viaz/hooks@0.5.2
+
+## 0.5.1
+
+### Patch Changes
+
+- ss
+- Updated dependencies
+  - @viaz/hooks@0.5.1
+
+## 0.5.0
+
+### Minor Changes
+
+- sss
+
+### Patch Changes
+
+- Updated dependencies
+  - @viaz/hooks@0.5.0
+
+## 0.4.0
+
+### Minor Changes
+
+- ddd
+
+### Patch Changes
+
+- Updated dependencies
+  - @viaz/hooks@0.4.0
+
+## 0.3.0
+
+### Minor Changes
+
+- ddddd
+
+### Patch Changes
+
+- Updated dependencies
+  - @viaz/hooks@0.3.0
+
+## 0.2.9
+
+### Patch Changes
+
+- ddd
+- Updated dependencies
+  - @viaz/hooks@0.2.9
+
+## 0.2.8
+
+### Patch Changes
+
+- ddd
+- Updated dependencies
+  - @viaz/hooks@0.2.8
+
 ## 0.2.7
 
 ### Patch Changes

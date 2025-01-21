@@ -1,6 +1,6 @@
 {
 	"name": "@viaz/constants",
-	"version": "0.2.7",
+	"version": "0.5.2",
 	"license": "MIT",
 	"main": "index.ts",
 	"author": "Van Chin",

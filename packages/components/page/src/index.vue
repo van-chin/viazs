@@ -352,12 +352,14 @@
 						</a-space>
 					</div>
 				</div>
+
+
 			</template>
 		</a-drawer>
 		<!-- {{ slotsNames }} -->
 		<div :class="`${prefixCls}-table`">
-			<!-- <vz-json-viewer :data="paginations" editable showLine></vz-json-viewer> -->
-			<!-- {{ paginations }} -->
+			<!-- <vz-json-viewer :data="columns" editable showLine></vz-json-viewer> -->
+			
 			<vz-table
 				v-if="!initialing"
 				v-bind="$attrs"

@@ -40,7 +40,8 @@ import {
 	VzCheckboxDateRangePicker,
 	VzCheckboxGroupInputNumber,
 	VzFormList,
-	VzUploaderUppy
+	VzUploaderUppy,
+	VzTagify
 } from "@viaz/components";
 
 export default [
@@ -83,5 +84,6 @@ export default [
 	VzCheckboxDateRangePicker,
 	VzCheckboxGroupInputNumber,
 	VzFormList,
-	VzUploaderUppy
+	VzUploaderUppy,
+	VzTagify
 ] as Plugin[];

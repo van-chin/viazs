@@ -13,6 +13,8 @@ export interface DataApi {
 	hostname?:string;
 	/** 资源路径  */
 	path: string;
+	/** hpp */
+	hpp: string;
 }
 
 export interface RetryInternalAxiosRequestConfig<D = any>

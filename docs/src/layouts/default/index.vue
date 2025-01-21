@@ -220,6 +220,14 @@
 					"CheckboxGroupInput 复选框组输入框",
 					"checkbox-group-input"
 				),
+				getItem(
+					"Tagify 标签",
+					"tagify"
+				),
+				getItem(
+					"TagSelect 标签选择",
+					"tag-select"
+				),
 			],
 			"group"
 		),

@@ -1,19 +1,19 @@
 <template>
 	<div>
-		
+		<vz-tag-select
 
-		<vz-select
-			:api="api"
-			:params="params"
+		:api="api"
+
+		:params="params"
+		:fieldNames="fieldNames"
 			
-			:fieldNames="fieldNames"
-			placeholder="请选择"
-		></vz-select>
+		></vz-tag-select>
 	</div>
 </template>
 
 <script setup lang="ts">
 	import { ref } from "vue";
+	
 	const api = ref({
 		hpp: "oms/v1/dataDictionaryItems",
 	});
@@ -29,4 +29,10 @@
 		label: "name",
 		value: "id"
 	});
+
+	
+
+	
+
+	
 </script>

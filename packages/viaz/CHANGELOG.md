@@ -1,5 +1,105 @@
 # viaz
 
+## 0.5.2
+
+### Patch Changes
+
+- fixed table
+- Updated dependencies
+  - @viaz/components@0.5.2
+  - @viaz/directives@0.5.2
+  - @viaz/constants@0.5.2
+  - @viaz/hooks@0.5.2
+  - @viaz/types@0.5.2
+  - @viaz/utils@0.5.2
+
+## 0.5.1
+
+### Patch Changes
+
+- ss
+- Updated dependencies
+  - @viaz/components@0.5.1
+  - @viaz/directives@0.5.1
+  - @viaz/constants@0.5.1
+  - @viaz/hooks@0.5.1
+  - @viaz/types@0.5.1
+  - @viaz/utils@0.5.1
+
+## 0.5.0
+
+### Minor Changes
+
+- sss
+
+### Patch Changes
+
+- Updated dependencies
+  - @viaz/components@0.5.0
+  - @viaz/directives@0.5.0
+  - @viaz/constants@0.5.0
+  - @viaz/hooks@0.5.0
+  - @viaz/types@0.5.0
+  - @viaz/utils@0.5.0
+
+## 0.4.0
+
+### Minor Changes
+
+- ddd
+
+### Patch Changes
+
+- Updated dependencies
+  - @viaz/components@0.4.0
+  - @viaz/directives@0.4.0
+  - @viaz/constants@0.4.0
+  - @viaz/hooks@0.4.0
+  - @viaz/types@0.4.0
+  - @viaz/utils@0.4.0
+
+## 0.3.0
+
+### Minor Changes
+
+- ddddd
+
+### Patch Changes
+
+- Updated dependencies
+  - @viaz/components@0.3.0
+  - @viaz/directives@0.3.0
+  - @viaz/constants@0.3.0
+  - @viaz/hooks@0.3.0
+  - @viaz/types@0.3.0
+  - @viaz/utils@0.3.0
+
+## 0.2.9
+
+### Patch Changes
+
+- ddd
+- Updated dependencies
+  - @viaz/components@0.2.9
+  - @viaz/directives@0.2.9
+  - @viaz/constants@0.2.9
+  - @viaz/hooks@0.2.9
+  - @viaz/types@0.2.9
+  - @viaz/utils@0.2.9
+
+## 0.2.8
+
+### Patch Changes
+
+- ddd
+- Updated dependencies
+  - @viaz/components@0.2.8
+  - @viaz/types@0.2.8
+  - @viaz/constants@0.2.8
+  - @viaz/directives@0.2.8
+  - @viaz/hooks@0.2.8
+  - @viaz/utils@0.2.8
+
 ## 0.2.7
 
 ### Patch Changes

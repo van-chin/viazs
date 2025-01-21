@@ -1,5 +1,47 @@
 # @viaz/themes
 
+## 0.4.2
+
+### Patch Changes
+
+- fixed table
+
+## 0.4.1
+
+### Patch Changes
+
+- ss
+
+## 0.4.0
+
+### Minor Changes
+
+- sss
+
+## 0.3.0
+
+### Minor Changes
+
+- ddd
+
+## 0.2.0
+
+### Minor Changes
+
+- ddddd
+
+## 0.1.7
+
+### Patch Changes
+
+- ddd
+
+## 0.1.6
+
+### Patch Changes
+
+- ddd
+
 ## 0.1.5
 
 ### Patch Changes

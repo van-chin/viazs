@@ -1,5 +1,47 @@
 # @viaz/constants
 
+## 0.5.2
+
+### Patch Changes
+
+- fixed table
+
+## 0.5.1
+
+### Patch Changes
+
+- ss
+
+## 0.5.0
+
+### Minor Changes
+
+- sss
+
+## 0.4.0
+
+### Minor Changes
+
+- ddd
+
+## 0.3.0
+
+### Minor Changes
+
+- ddddd
+
+## 0.2.9
+
+### Patch Changes
+
+- ddd
+
+## 0.2.8
+
+### Patch Changes
+
+- ddd
+
 ## 0.2.7
 
 ### Patch Changes

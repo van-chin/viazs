@@ -254,6 +254,28 @@ const components: AppRouteModule = {
 				icon: "simple-icons:about-dot-me",
 			},
 		},
+		{
+			path: "tagify",
+			name: "components.tagify",
+			component: () =>
+				import("@viaz/components/tagify/demos/index.demo.md"),
+			meta: {
+				title: "components.tagify",
+				icon: "simple-icons:about-dot-me",
+			},
+		},
+		{
+			path: "tag-select",
+			name: "components.tag-select",
+			component: () =>
+				import("@viaz/components/tag-select/demos/index.demo.md"),
+			meta: {
+				title: "components.tag-select",
+				icon: "simple-icons:about-dot-me",
+			},
+		},
+
+		
 	],
 };
 
