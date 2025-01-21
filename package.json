@@ -24,7 +24,7 @@
 		"update:dependencies": "npx taze -r -w",
 		"install:dependencies": "pnpm --filter ./packages/** install --force",
 		"install:docs": "pnpm --filter ./docs install",
-		"prepare": "husky install"
+		"prepare": "husky"
 	},
 	"config": {
 		"commitizen": {
