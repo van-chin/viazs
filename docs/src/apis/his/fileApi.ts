@@ -1,15 +1,15 @@
-import { defHttp } from "@/utils/http/axios";
-import { ErrorMessageMode } from "#/axios";
+import { defHttp } from "viaz";
+import type { ErrorMessageMode } from "viaz";
 
-import { ServiceItem } from "@/models";
+import type { ExplorerFile } from "@/models/modules/his/fileModel";
 
-export const uri = "hiss/v1/serviceItems";
+export const uri = "/api/hiss/v1/files";
 
-export const serviceItemListsApi = (
+export const fileListsApi = (
   params = {},
   mode: ErrorMessageMode = "message"
 ) => {
-  return defHttp.get<ServiceItem[]>(
+  return defHttp.get<ExplorerFile[]>(
     { url: uri, params },
     {
       errorMessageMode: mode,
@@ -18,11 +18,11 @@ export const serviceItemListsApi = (
   );
 };
 
-export const serviceItemDetailApi = (
+export const fileDetailApi = (
   params: object & { id: string },
   mode: ErrorMessageMode = "message"
 ) => {
-  return defHttp.get<ServiceItem>(
+  return defHttp.get<ExplorerFile>(
     { url: `${uri}/${params.id}`, params },
     {
       errorMessageMode: mode,
@@ -30,7 +30,7 @@ export const serviceItemDetailApi = (
   );
 };
 
-export const serviceItemUpdateApi = (
+export const fileUpdateApi = (
   params: object & { id: number },
   mode: ErrorMessageMode = "message"
 ) => {
@@ -45,7 +45,7 @@ export const serviceItemUpdateApi = (
   );
 };
 
-export const serviceItemStoreApi = (
+export const fileStoreApi = (
   params = {},
   mode: ErrorMessageMode = "message"
 ) => {
@@ -58,7 +58,7 @@ export const serviceItemStoreApi = (
   );
 };
 
-export const serviceItemDeleteApi = (
+export const fileDeleteApi = (
   params: object & { id: number },
   mode: ErrorMessageMode = "message"
 ) => {
@@ -71,7 +71,7 @@ export const serviceItemDeleteApi = (
   );
 };
 
-export const serviceItemRecoveryApi = (
+export const fileRecoveryApi = (
   params: object & { id: number },
   mode: ErrorMessageMode = "message"
 ) => {
@@ -84,7 +84,7 @@ export const serviceItemRecoveryApi = (
   );
 };
 
-export const serviceItemCuFormApi = (
+export const fileCuFormApi = (
   params = {},
   mode: ErrorMessageMode = "message"
 ) => {
@@ -96,7 +96,7 @@ export const serviceItemCuFormApi = (
   );
 };
 
-export const serviceItemFilterFormApi = (
+export const fileFilterFormApi = (
   params = {},
   mode: ErrorMessageMode = "message"
 ) => {
@@ -108,7 +108,7 @@ export const serviceItemFilterFormApi = (
   );
 };
 
-export const serviceItemAllColumnsApi = (
+export const fileAllColumnsApi = (
   params = {},
   mode: ErrorMessageMode = "message"
 ) => {
@@ -120,7 +120,7 @@ export const serviceItemAllColumnsApi = (
   );
 };
 
-export const serviceItemColumnsApi = (
+export const fileColumnsApi = (
   params = {},
   mode: ErrorMessageMode = "message"
 ) => {
@@ -132,7 +132,7 @@ export const serviceItemColumnsApi = (
   );
 };
 
-export const serviceItemSearcherSchemaApi = (
+export const fileSearcherSchemaApi = (
   params = {},
   mode: ErrorMessageMode = "message"
 ) => {
@@ -144,7 +144,7 @@ export const serviceItemSearcherSchemaApi = (
   );
 };
 
-export const serviceItemFilterSchemaApi = (
+export const fileFilterSchemaApi = (
   params = {},
   mode: ErrorMessageMode = "message"
 ) => {
@@ -156,7 +156,7 @@ export const serviceItemFilterSchemaApi = (
   );
 };
 
-export const serviceItemCuerSchemaApi = (
+export const fileCuerSchemaApi = (
   params = {},
   mode: ErrorMessageMode = "message"
 ) => {
