@@ -51,7 +51,7 @@
 		"@viaz/utils": "workspace:*"
 	},
 	"peerDependencies": {
-		"vue": ">=3.4.35",
+		"vue": ">=3.5.13",
 		"sortablejs": "^1.15.2"
 	},
 	"keywords": [],

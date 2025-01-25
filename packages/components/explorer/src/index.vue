@@ -10,7 +10,7 @@
         <div :class="`${prefixCls}-flex-contents-header`">
           <div>
             <a-space>
-              <a-button type="primary">上传</a-button>
+              <a-button type="primary" @click="onUpload">上传</a-button>
               <a-button :disabled="true">删除</a-button>
               <a-button :disabled="true">移动</a-button>
             </a-space>
@@ -45,7 +45,13 @@
                   <div
                     :class="`${prefixCls}-flex-contents-main-file-item-cover`"
                   >
-                    <vz-hover-mask>
+                    <a-image
+                      :src="item.cover"
+                      width="140px"
+                      height="120px"
+                      v-if="item.extension != 'mp4'"
+                    />
+                    <vz-hover-mask v-else>
                       <div class="w-full">
                         <img
                           :src="item.cover"
@@ -55,9 +61,13 @@
 
                       <template #mask>
                         <div class="mask-contents">
-                          <a-button type="link" @click="onPreview(item)"
-                            >预览</a-button
+                          <div
+                            class="flex justify-center items-center text-white gap-1"
+                            @click="onPreview(item)"
                           >
+                            <Eye :size="16" />
+                            <span>预览</span>
+                          </div>
                         </div>
                       </template>
                     </vz-hover-mask>
@@ -110,14 +120,45 @@
       </div>
     </div>
   </div>
+
+  <a-modal
+    v-model:open="previewing"
+    title="预览"
+    centered
+    @ok="onPreviewCancel"
+    @cancel="onPreviewCancel"
+  >
+    <div class="h-280px w-full">
+      <div id="mse" ref="mseRef" class="w-full h-full"></div>
+    </div>
+  </a-modal>
+  <a-modal
+    v-model:open="uploading"
+    title="上传"
+    centered
+    width="650px"
+    @ok="onUploadCancel"
+    @cancel="onUploadCancel"
+  >
+    <div class="h-full w-full">
+      <VzUploaderUppy></VzUploaderUppy>
+    </div>
+  </a-modal>
 </template>
 
 <script lang="ts" setup>
 import type { VzExplorerProps } from "@viaz/types";
 
+import { Eye } from "lucide-vue-next";
+
 import { useStyle } from "@viaz/hooks";
 import { ref } from "vue";
 import { storeToRefs } from "pinia";
+
+import Player from "xgplayer";
+import "xgplayer/dist/index.min.css";
+import HlsPlugin from "xgplayer-hls";
+
 const { prefixCls } = useStyle("explorer");
 
 const COMPONENT_NAME = "VzExplorer";
@@ -137,9 +178,12 @@ const controls = ref({
   min: 1,
 });
 
-const keywords = ref("");
+const previewing = ref(false);
+const uploading = ref(false);
 
-const { gapless = true, store } = defineProps<VzExplorerProps>();
+const currentPreview = ref({});
+
+const { store } = defineProps<VzExplorerProps>();
 
 const { getLists } = store;
 
@@ -169,8 +213,37 @@ const calcDisabled = (itemId: string) => {
   }
 };
 
+const onUpload = () => {
+  uploading.value = true;
+};
+
+const onUploadCancel = () => {
+  uploading.value = false;
+};
+
+const mainplayer = ref<any>(null);
+
 const onPreview = (item: any) => {
   console.info("item =>", item);
+  currentPreview.value = item;
+
+  previewing.value = true;
+
+  setTimeout(() => {
+    mainplayer.value = new Player({
+      id: "mse",
+      url: currentPreview.value.url,
+      height: "100%",
+      width: "100%",
+      plugins: [HlsPlugin],
+    });
+    console.info("mainplayer =>", mainplayer);
+  }, 500);
+};
+
+const onPreviewCancel = () => {
+  mainplayer.value.destroy();
+  previewing.value = false;
 };
 
 const onItemChange = (e: Event) => {
@@ -225,8 +298,8 @@ const onSearch = () => {
             cursor: pointer;
 
             &-image {
-              width: 100%;
-              height: 100%;
+              width: 140px;
+              height: 120px;
               --at-apply: rd;
             }
 

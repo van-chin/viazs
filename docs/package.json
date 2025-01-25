@@ -15,16 +15,16 @@
     "@viaz/hooks": "workspace:*",
     "@viaz/types": "workspace:*",
     "@viaz/utils": "workspace:*",
-    "@vueuse/core": "^12.2.0",
+    "@vueuse/core": "^12.5.0",
     "ant-design-vue": "^4.2.6",
     "markdown-it": "^14.1.0",
     "viaz": "workspace:*"
   },
   "devDependencies": {
-    "@shikijs/markdown-it": "^1.24.4",
+    "@shikijs/markdown-it": "^1.29.1",
     "@types/fs-extra": "^11.0.4",
     "@types/markdown-it": "^14.1.2",
-    "fs-extra": "^11.2.0",
-    "shiki": "^1.24.4"
+    "fs-extra": "^11.3.0",
+    "shiki": "^1.29.1"
   }
 }
