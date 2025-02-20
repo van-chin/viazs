@@ -45,10 +45,10 @@
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
-		"@visactor/vtable": "^1.15.1",
-		"@vueuse/core": "^12.5.0",
+		"@visactor/vtable": "^1.16.2",
+		"@vueuse/core": "^12.7.0",
 		"lodash-es": "^4.17.21",
-		"vue-hooks-plus": "^2.2.1",
+		"vue-hooks-plus": "^2.2.3",
 		"vue-json-pretty": "^2.4.0"
 	}
 }
